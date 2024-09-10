@@ -1,8 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  content: [
+    "./app/**/*.{vue,js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{vue,js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{vue,js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{vue,js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        "gold":"#C4B466"
+      }
+    },
   },
   plugins: [],
 }
