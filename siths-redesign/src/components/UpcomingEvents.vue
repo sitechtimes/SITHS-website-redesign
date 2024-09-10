@@ -1,56 +1,75 @@
 <template>
-    <div class="flex flex-col justify-center items-center ">
-        <h1 class="text-4xl font-semibold">Upcoming Events</h1>
-        <ul class="timeline">
-            <li>
-                <div class="timeline-start timeline-box">
-                    <p class="text-lg w-24 text-gold">Faculty Picture Day & Underclassmen Pictures</p>
-                    <p class="text-lg w-24 font-semibold">9/10/24</p>
+    <div class="flex flex-col justify-center items-center mt-6 space-y-8">
+        <h1 class="text-4xl font-semibold mb-8">UPCOMING EVENTS</h1>
+        <div class="flex flex-row items-center justify-center space-x-8">
+            <!-- event 1 -->
+            <div class="flex flex-col items-center h-36">
+                <div class="flex flex-col items-center">
+                    <p class="text-lg font-semibold underline mb-2">9/10/24</p>
+                    <div class="w-32 text-center">
+                        <p class="text-lg">Faculty Picture Day & Underclassmen Pictures</p>
+                    </div>
                 </div>
-                <div class="timeline-middle">
-                    <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+            </div>
+            <!-- vertical line -->
+            <div class="flex items-center">
+                <div class="w-[1px] h-36 bg-gold"></div>
+            </div>
+            <!-- event 2 -->
+            <div class="flex flex-col items-center h-36">
+                <div class="flex flex-col items-center">
+                    <p class="text-lg font-semibold underline mb-2">9/12/24</p>
+                    <div class="w-32 text-center">
+                        <p class="text-lg">Cheer Tryouts</p>
+                    </div>
                 </div>
-                <hr class="bg-blue-500" />
-            </li>
-            <li>
-                <hr class="bg-primary" />
-                <div class="timeline-middle">
-                    <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+            </div>
+            <!-- vertical line -->
+            <div class="flex items-center">
+                <div class="w-[1px] h-36 bg-gold"></div>
+            </div>
+            <!-- event 3 -->
+            <div class="flex flex-col items-center h-36">
+                <div class="flex flex-col items-center">
+                    <p class="text-lg font-semibold underline mb-2">9/15/24</p>
+                    <div class="w-32 text-center">
+                        <p class="text-lg">11 Min Homeroom</p>
+                    </div>
                 </div>
-                <div class="timeline-end timeline-box"> <p class="text-lg w-24">Cheer Tryouts</p></div>
-                <hr class="bg-primary" />
-            </li>
-            <li>
-                <hr class="bg-primary" />
-                <div class="timeline-start timeline-box"> <p class="text-lg w-24">11 Min Homeroom</p></div>
-                <div class="timeline-middle">
-                    <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+            </div>
+            <!-- vertical line -->
+            <div class="flex items-center">
+                <div class="w-[1px] h-36 bg-gold"></div>
+            </div>
+            <!-- event 4 -->
+            <div class="flex flex-col items-center h-36">
+                <div class="flex flex-col items-center">
+                    <p class="text-lg font-semibold underline mb-2">9/18/24</p>
+                    <div class="w-32 text-center">
+                        <p class="text-lg">Debate Team Info Meeting</p>
+                    </div>
                 </div>
-                <hr class="bg-blue-500"/>
-            </li>
-            <li>
-                <hr />
-                <div class="timeline-middle">
-                    <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+            </div>
+            <!-- vertical line -->
+            <div class="flex items-center">
+                <div class="w-[1px] h-36 bg-gold"></div>
+            </div>
+            <!-- event 5 -->
+            <div class="flex flex-col items-center h-36">
+                <div class="flex flex-col items-center">
+                    <p class="text-lg font-semibold underline mb-2">9/20/24</p>
+                    <div class="w-32 text-center">
+                        <p class="text-lg">Tech Connects Meeting</p>
+                    </div>
                 </div>
-                <div class="timeline-end timeline-box">
-                    <p class="text-lg w-24">Debate Team Info Meeting</p>
-                </div>
-                <hr />
-            </li>
-            <li>
-                <hr />
-                <div class="timeline-start timeline-box">
-                    <p class="text-lg w-24">Tech Connects Meeting</p>
-                </div>
-                <div class="timeline-middle">
-                    <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
-                </div>
-            </li>
-        </ul>
+            </div>
+        </div>
+        <button class="btn btn-link mt-8 text-lg">Show All Events</button>
     </div>
 </template>
 
 <script setup>
-
 </script>
+
+<style scoped>
+</style>
