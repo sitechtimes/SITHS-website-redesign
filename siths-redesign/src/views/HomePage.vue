@@ -30,14 +30,17 @@
         <!-- filler -->
         <p class="text-lg leading-relaxed">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt orci ac urna fermentum, nec facilisis magna iaculis. Proin vel lacinia turpis. Sed vehicula, odio et accumsan consectetur, orci urna fringilla mi, sit amet malesuada erat lacus nec mi. Vivamus aliquam libero sit amet lacus vehicula, ac viverra dolor fringilla. Fusce aliquam massa nec turpis condimentum venenatis. Suspendisse sed magna purus. Donec imperdiet metus non libero ornare, at volutpat arcu accumsan. Phasellus nec faucibus libero. Nullam eu orci nisl. Sed vestibulum, odio sed ornare laoreet, dolor justo varius ligula, ut porttitor dui nisi sed nisl. 
-          <br><br>
-          Donec vestibulum ullamcorper lorem, at porttitor felis rhoncus eget. Vivamus sed fermentum velit, nec lobortis urna. Mauris maximus viverra lacus sit amet fermentum. Nulla facilisi. Integer sit amet purus sit amet elit egestas lobortis. In id magna id velit vehicula scelerisque. Sed vel vehicula orci, ut ultrices nunc. Etiam consectetur libero sed dolor tincidunt tristique. Suspendisse potenti. 
-        </p>
+         </p>
       </div>
     </div>
+    <MissionStatement />
+    <UpcomingEvents />
   </template>
   
   <script setup>
+import MissionStatement from '@/components/MissionStatement.vue';
+import UpcomingEvents from '@/components/UpcomingEvents.vue';
+
   
   </script>
   

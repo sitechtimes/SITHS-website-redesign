@@ -9,10 +9,11 @@ export default {
   theme: {
     extend: {
       colors:{
-        "gold":"#C4B466"
+        "gold":"#C4B466",
+        "gray":"#323232",
       }
     },
   },
-  plugins: [],
+  plugins: [require('daisyui'),],
 }
 
