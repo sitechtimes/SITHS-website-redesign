@@ -11,8 +11,13 @@ export default {
       colors:{
         "gold":"#C4B466",
         "gray":"#323232",
-      }
+      },
+      fontFamily: {
+        "kumbh": ["Kumbh Sans", "sans-serif"],
+        "playfair": ["Playfair", "serif"]
+      },
     },
+    
   },
   plugins: [require('daisyui'),],
 }

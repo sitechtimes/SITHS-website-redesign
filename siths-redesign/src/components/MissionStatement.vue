@@ -9,12 +9,12 @@
             </div>
 
             <!-- carousel -->
-            <div class="relative w-1/2">
+            <div class="relative w-1/2 flex flex-col justify-center items-center">
                 <div class="carousel w-full flex items-center justify-between">
                     <!-- slide 1 -->
-                    <div id="slide1" class="carousel-item flex w-full items-center justify-center pt-24 pb-4 relative flex-grow">
+                    <div id="slide1" class="carousel-item flex w-full items-center justify-center pb-4 relative flex-grow">
                         <a href="#slide2" class="btn btn-circle text-gray text-xl mx-6">❮</a>
-                        <div class="flex flex-col w-2/3 space-y-4 text-center">
+                        <div class="flex flex-col w-2/3 h-2/3 space-y-4 text-center">
                             <h1 class="text-4xl font-semibold text-gray">Vision</h1>
                             <p class="text-gray text-xl">
                                 Staten Island Technical High School places a high priority on academics and developing
@@ -29,9 +29,9 @@
                     </div>
 
                     <!-- slide 2 -->
-                    <div id="slide2" class="carousel-item flex w-full items-center justify-center pt-24 pb-4 relative flex-grow">
+                    <div id="slide2" class="carousel-item flex w-full items-center justify-center pb-4 relative flex-grow">
                         <a href="#slide1" class="btn btn-circle text-gray text-xl mx-6">❮</a>
-                        <div class="flex flex-col w-2/3 space-y-4 text-center">
+                        <div class="flex flex-col w-2/3 h-2/3 space-y-4 text-center">
                             <h1 class="text-4xl font-semibold text-gray">Mission</h1>
                             <p class="text-gray text-xl">
                                 The SITHS community fosters the development of well-rounded, passionate life-long learners

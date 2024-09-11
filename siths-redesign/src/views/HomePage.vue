@@ -1,31 +1,35 @@
 <template>
     <div class="w-full h-screen flex flex-row justify-center items-center">
       <!-- left side -->
-      <div class="flex flex-col justify-center items-center">
+      <div class="flex flex-col justify-center items-start">
         <!-- header texts -->
         <div class="text-left">
           <h1 class="text-6xl mb-2">Welcome to</h1>
           <h1 class="text-8xl text-gold font-semibold mb-4">Staten Island</h1>
           <h1 class="text-8xl mb-4">Technical</h1>
           <h1 class="text-8xl mb-4">High School</h1>
+          <div class="flex flex-row items-center">
+          <img src="../assets/icons/location-pin.svg" alt="Location pin icon">
+          <p class="p-4 text-lg">485 Clawson St, Staten Island, NY 10306</p>
         </div>
-        <div class="flex flex-row justify-center mt-10">
-          <div class="flex flex-col items-center mr-8">
-            <h2 class="text-2xl font-bold">Founded In</h2>
-            <p class="text-xl font-semibold">1988</p>
+        </div>
+        <div class="flex flex-row justify-center items-start my-6">
+          <div class="flex flex-col items-left mr-8">
+            <h2 class="text-2xl font-semibold">Founded <br>In</h2>
+            <p class="text-3xl font-semibold font-playfair">1988</p>
           </div>
-          <div class="flex flex-col items-center mr-8">
-            <h2 class="text-2xl font-bold">PSAL Teams</h2>
-            <p class="text-xl font-semibold">32</p>
+          <div class="flex flex-col items-left mr-8">
+            <h2 class="text-2xl font-semibold">PSAL <br/> Teams</h2>
+            <p class="text-3xl font-semibold font-playfair">32</p>
           </div>
-          <div class="flex flex-col items-center">
-            <h2 class="text-2xl font-bold">Clubs and Activities</h2>
-            <p class="text-xl font-semibold">92</p>
+          <div class="flex flex-col items-left">
+            <h2 class="text-2xl font-semibold">Clubs <br/> and Activities</h2>
+            <p class="text-3xl font-semibold font-playfair">92</p>
           </div>
         </div>
       </div>
       
-      <!-- right sdide -->
+      <!-- right side -->
       <div class="w-1/3 h-full p-10 flex flex-col justify-center">
         <!-- filler -->
         <p class="text-lg leading-relaxed">
