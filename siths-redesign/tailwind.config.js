@@ -16,6 +16,9 @@ export default {
         "kumbh": ["Kumbh Sans", "sans-serif"],
         "playfair": ["Playfair", "serif"]
       },
+      backgroundImage: {
+        "city-skyline" : "url('/src/assets/cityskyline.png')",
+      }
     },
     
   },
