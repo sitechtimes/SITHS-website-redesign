@@ -79,6 +79,7 @@ const toggleVisibility = () => {
 
   <div ref="menu" class="absolute bg-[#272525] h-[90vh] w-full flex items-center justify-center">
     menu options
+    <router-link :to="{name: 'clubs'}" class="text-3xl text-white">Clubs and Activities</router-link>
   </div>
 </template>
 
