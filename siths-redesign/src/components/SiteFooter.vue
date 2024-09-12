@@ -60,7 +60,7 @@
             <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt orci ac urna
                 fermentum, nec facilisis magna iaculis. Proin vel lacinia turpis. Sed vehicula, odio et accumsan</p>
             <!-- social media icons -->
-            <div class="flex flex-col space-y-2">
+            <div class="flex flex-col space-y-2 z-20">
                 <h2 class="text-xl font-bold">FOLLOW US</h2>
                 <div class="flex flex-row items-center space-x-2">
                     <a href="https://www.facebook.com/SITechHS?ref=embed_page" target="_blank" rel="noopener noreferrer">

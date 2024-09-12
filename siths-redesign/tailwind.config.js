@@ -18,6 +18,8 @@ export default {
       },
       backgroundImage: {
         "city-skyline" : "url('./imgs/cityskyline.png')",
+        "left-gear": "url('./imgs/left-gear.svg')",
+        "right-gear": "url('./imgs/right-gear.svg')",
       }
     },
     
