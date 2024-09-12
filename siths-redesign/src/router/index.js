@@ -7,7 +7,12 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('../views/HomePage.vue')
-    }
+    },
+    {
+      path: '/bellschdule',
+      name: 'bellschedule',
+      component: () => import('../views/BellSchedule.vue')
+    },
   ]
 })
 
