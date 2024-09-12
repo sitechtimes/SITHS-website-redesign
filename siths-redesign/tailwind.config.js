@@ -17,7 +17,7 @@ export default {
         "playfair": ["Playfair", "serif"]
       },
       backgroundImage: {
-        "city-skyline" : "url('/src/assets/cityskyline.png')",
+        "city-skyline" : "url('./imgs/cityskyline.png')",
       }
     },
     
