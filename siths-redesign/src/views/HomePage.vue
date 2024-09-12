@@ -11,9 +11,8 @@
           <div class="flex flex-row items-center">
           <img src="../assets/icons/location-pin.svg" alt="Location pin icon">
           <p class="p-4 text-lg">485 Clawson St, Staten Island, NY 10306</p>
-        </div>
-        </div>
-        <div class="flex flex-row justify-center items-start my-6">
+        </div>        
+        <div class="flex flex-row justify-between items-start my-6 pr-10">
           <div class="flex flex-col items-left mr-8">
             <h2 class="text-2xl font-semibold">Founded <br>In</h2>
             <p class="text-3xl font-semibold font-playfair">1988</p>
@@ -27,6 +26,8 @@
             <p class="text-3xl font-semibold font-playfair">92</p>
           </div>
         </div>
+        </div>
+
       </div>
       
       <!-- right side -->
