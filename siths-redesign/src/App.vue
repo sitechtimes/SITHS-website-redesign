@@ -14,5 +14,4 @@ import SiteHeader from './components/SiteHeader.vue';
 </script>
 
 <style lang="css" scoped>
-
 </style>
