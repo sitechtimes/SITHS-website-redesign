@@ -40,7 +40,7 @@ import { ref, onMounted } from 'vue';
 import sanityClient from '../client.js';
 
 const schedules = ref([]);
-
+// if the dropdown is clicked and the index is the same, then rtoggle an "active" class
 const fetchSchedules = async () => {
     const query = '*[_type == "schedules"]';
     try {

@@ -8,8 +8,9 @@
   </div>
 
   <!-- navigation menu -->
-  <div ref="menu" id="nav" class="absolute bg-[#272525] h-screen w-full flex items-center justify-center">
+  <div ref="menu" id="nav" class="absolute bg-[#272525] h-screen w-full flex flex-col flex-wrap items-center justify-center">
     <RouterLink to="/" class="text-3xl text-white">Home</RouterLink>
+    <RouterLink to="/bellschedule" class="text-3xl text-white">Bell Schedule</RouterLink>
   </div>
 </template>
 
