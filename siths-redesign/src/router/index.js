@@ -12,7 +12,7 @@ const router = createRouter({
       path: '/clubs',
       name: 'clubs',
       component: () => import('../views/ClubsPage.vue')
-    }
+    },
     {
       path: '/bellschedule',
       name: 'bellschedule',
