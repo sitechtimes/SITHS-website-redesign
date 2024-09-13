@@ -11,13 +11,14 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@sanity/client": "^6.21.3",
     "gsap": "^3.12.5",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
-    "@vitejs/plugin-vue": "^5.0.5",
+    "@vitejs/plugin-vue": "^5.1.3",
     "@vue/eslint-config-prettier": "^9.0.0",
     "autoprefixer": "^10.4.20",
     "daisyui": "^4.12.10",

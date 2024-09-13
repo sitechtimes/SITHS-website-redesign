@@ -5,6 +5,7 @@ export default {
     "./pages/**/*.{vue,js,ts,jsx,tsx,mdx}",
     "./components/**/*.{vue,js,ts,jsx,tsx,mdx}",
     "./src/**/*.{vue,js,ts,jsx,tsx,mdx}",
+    './studio/**/*.js',
   ],
   theme: {
     extend: {

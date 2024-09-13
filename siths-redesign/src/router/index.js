@@ -13,6 +13,11 @@ const router = createRouter({
       name: 'clubs',
       component: () => import('../views/ClubsPage.vue')
     }
+    {
+      path: '/bellschedule',
+      name: 'bellschedule',
+      component: () => import('../views/BellSchedule.vue')
+    },
   ]
 })
 
