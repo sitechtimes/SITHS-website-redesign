@@ -6,6 +6,7 @@
     <div id="menu-content" class="absolute top-40 left-16 flex flex-col space-y-8 z-10">
       <RouterLink to="/" class="text-4xl text-white" @click="toggleMenu">Home</RouterLink>
       <RouterLink to="/bellschedule" class="text-4xl text-white" @click="toggleMenu">Bell Schedule</RouterLink>
+      <RouterLink to="/staff" class="text-4xl text-white" @click="toggleMenu">Faculty and Staff</RouterLink>
     </div>
   </div>
 
