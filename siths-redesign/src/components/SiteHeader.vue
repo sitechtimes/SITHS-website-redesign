@@ -1,9 +1,7 @@
 <template>
   <!-- menu toggle-->
-  <div id="menu" class="fixed inset-0 h-screen w-full bg-[#272525] ease-in duration-200 z-30"
+  <div class="fixed inset-0 h-screen w-full bg-[#272525] ease-in duration-200 z-30"
     :class="{ 'hidden': !menuVisibility }">
-    <div id="overlay" class="absolute inset-0 opacity-100 -z-10"></div>
-
     <!-- nav links -->
     <div id="menu-content" class="absolute top-40 left-16 flex flex-col space-y-8 z-10">
       <RouterLink to="/" class="text-4xl text-white" @click="toggleMenu">Home</RouterLink>
@@ -17,7 +15,7 @@
       <img src="../assets/icons/menu-bar.png" alt="Menu icon" class="w-8 h-8" />
     </div>
     <div class="flex flex-row justify-center items-center space-x-4">
-      <RouterLink to="/" class="text-3xl text-white"><img src="../assets/icons/animated-logo.gif" class="w-12" alt=""></RouterLink>
+      <RouterLink to="/" class="text-3xl text-white"><img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo"></RouterLink>
       <RouterLink to="/" class="text-3xl text-white">SITECH</RouterLink>
     </div>
     <div class="p-4">SEARCH</div>
