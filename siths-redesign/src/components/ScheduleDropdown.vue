@@ -1,15 +1,16 @@
 <template>
     <div class="flex flex-col items-center justify-center">
         <!-- iterate over each schedule and display it -->
-        <div v-for="(schedule, index) in schedules" :key="schedule.index" class="mb-4 flex flex-col justify-center items-center">
+        <div v-for="(schedule, index) in schedules" :key="index" class="mb-4 flex flex-col justify-center items-center">
             <div
-                class="bg-white text-gray text-2xl font-semibold w-[50vw] rounded-2xl py-2 px-6 flex items-center justify-between">
+                @click="toggleVisibility(index)"
+                class="bg-white text-gray text-2xl font-semibold w-[50vw] rounded-2xl py-2 px-6 flex items-center justify-between cursor-pointer">
                 <span>{{ schedule.name }}</span>
                 <img class="w-4" src="../assets/icons/arrow.png" alt="Arrow icon">
             </div>
 
-            <!-- schedule table -->
-            <div class="mt-2 p-2 bg-base-100 rounded-box w-[50vw]">
+            <!-- table only shows if the index of the table is included in visibleSchedules array -->
+            <div v-if="visibleSchedules.includes(index)" class="mt-2 p-2 bg-base-100 rounded-box w-[50vw]">
                 <div class="flex flex-col justify-center items-center">
                     <table class="table">
                         <thead class="text-lg">
@@ -20,7 +21,7 @@
                                 <th>Length (Minutes)</th>
                             </tr>
                         </thead>
-                        <tbody class="">
+                        <tbody>
                             <tr v-for="(period, index) in schedule.periods" :key="index">
                                 <td>{{ period.periodNumber }}</td>
                                 <td>{{ period.startTime }}</td>
@@ -40,18 +41,28 @@ import { ref, onMounted } from 'vue';
 import sanityClient from '../client.js';
 
 const schedules = ref([]);
-// if the dropdown is clicked and the index is the same, then rtoggle an "active" class
+const visibleSchedules = ref([]);
+
+//fetch schedules from Sanity CMS
 const fetchSchedules = async () => {
     const query = '*[_type == "schedules"]';
     try {
         const data = await sanityClient.fetch(query);
-        if (data.length > 0) {
+        if (data.length > 0) { //make sure we have data to display
             schedules.value = data;
         } else {
             console.log('No schedules found');
         }
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching schedules:', error);
+    }
+};
+
+const toggleVisibility = (index) => {
+    if (visibleSchedules.value.includes(index)) { //if the table is already visible, remove it from the visibleSchedules array (toggles visibility off)
+        visibleSchedules.value.splice(visibleSchedules.value.indexOf(index), 1);
+    } else { //if the table is not already visible, make it visible
+        visibleSchedules.value.push(index);
     }
 };
 
