@@ -1,50 +1,56 @@
 <template>
-  <div class="flex flex-row justify-between">
-    <img class="m-4" src="../assets/icons/menu-bar.png" alt="hamburger icon" @click="toggleVisibility">
-    <div class="p-4 flex flex-row text-center justify-center items-center">
-      <router-link :to="{name: 'home'}" class="text-3xl text-white">SITECH</router-link>
+  <!-- menu toggle-->
+  <div id="menu" class="fixed inset-0 h-screen w-full bg-[#272525] ease-in duration-200 z-30"
+    :class="{ 'hidden': !menuVisibility }">
+    <div id="overlay" class="absolute inset-0 opacity-100 -z-10"></div>
+
+    <!-- nav links -->
+    <div id="menu-content" class="absolute top-40 left-16 flex flex-col space-y-8 z-10">
+      <RouterLink to="/" class="text-4xl text-white" @click="toggleMenu">Home</RouterLink>
+      <RouterLink to="/bellschedule" class="text-4xl text-white" @click="toggleMenu">Bell Schedule</RouterLink>
     </div>
-    <div class="p-4">SEARCH</div>
   </div>
 
-  <!-- navigation menu -->
-  <div ref="menu" id="nav" class="absolute bg-[#272525] h-screen w-full flex flex-col flex-wrap items-center justify-center">
-    <RouterLink to="/" class="text-3xl text-white">Home</RouterLink>
-    <RouterLink to="/bellschedule" class="text-3xl text-white">Bell Schedule</RouterLink>
+  <!-- logo and search -->
+  <div class="flex flex-row justify-between items-center p-4 text-white">
+    <div @click="toggleMenu" class=" z-40">
+      <img src="../assets/icons/menu-bar.png" alt="Menu icon" class="w-8 h-8" />
+    </div>
+    <div class="flex flex-row justify-center items-center space-x-4">
+      <RouterLink to="/" class="text-3xl text-white"><img src="../assets/icons/animated-logo.gif" class="w-12" alt=""></RouterLink>
+      <RouterLink to="/" class="text-3xl text-white">SITECH</RouterLink>
+    </div>
+    <div class="p-4">SEARCH</div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { gsap } from 'gsap'
+import { RouterLink } from 'vue-router';
+import gsap from 'gsap';
+import { ref } from 'vue';
 
-const isVisible = ref(false)
-const menu = ref(null)
+// menu is hidden by default
+const menuVisibility = ref(false);
 
-const toggleVisibility = () => {
-  if (isVisible.value) {
-    // Animate menu out
-    gsap.to(menu.value, {
-      opacity: 1,
-      y: -1000, // or any value that fits your design
-      duration: 1,
-      ease: 'power4.in'
-    })
+const toggleMenu = () => {
+  // clicking the menu toggle will toggle the menu visibility
+  menuVisibility.value = !menuVisibility.value;
+
+  if (menuVisibility.value) {
+    // if menu is visible, animate it in
+    gsap.fromTo('#menu-content',
+      { opacity: 0, y: -100 },
+      { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' }
+    );
   } else {
-    // Animate menu in
-    gsap.fromTo(menu.value, { opacity: 1, y: -1000 }, { opacity: 1, y: 2, duration: 1.5, ease: 'power4.out' })
+    // if menu is not visible, animate it out
+    gsap.fromTo('#menu-content',
+      { opacity: 1, y: 0 },
+      { opacity: 0, y: -100, duration: 1.2, ease: 'power4.in' }
+    );
   }
-  isVisible.value = !isVisible.value
-}
+};
 
-onMounted(() => {
-  // Initialize menu position if needed
-  gsap.set(menu.value, { opacity: 0, y: 0 })
-})
 </script>
 
-<style scoped>
-#nav {
-z-index: 999;
-}
-</style>
+<style scoped></style>
