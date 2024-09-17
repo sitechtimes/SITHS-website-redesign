@@ -6,9 +6,9 @@
     <div id="menu-content" class="absolute top-40 left-16 flex flex-col space-y-8 z-10">
       <RouterLink to="/" class="text-4xl text-white" @click="toggleMenu">Home</RouterLink>
       <RouterLink to="/bellschedule" class="text-4xl text-white" @click="toggleMenu">Bell Schedule</RouterLink>
+      <RouterLink to="/clubs" class="text-4xl text-white" @click="toggleMenu">Clubs and Activities</RouterLink>
     </div>
   </div>
-
   <!-- logo and search -->
   <div class="flex flex-row justify-between items-center p-4 text-white">
     <div @click="toggleMenu" class=" z-40">

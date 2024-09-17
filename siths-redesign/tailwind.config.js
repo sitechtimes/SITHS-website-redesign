@@ -5,13 +5,13 @@ export default {
     "./pages/**/*.{vue,js,ts,jsx,tsx,mdx}",
     "./components/**/*.{vue,js,ts,jsx,tsx,mdx}",
     "./src/**/*.{vue,js,ts,jsx,tsx,mdx}",
-    './studio/**/*.{vue,js}',
   ],
   theme: {
     extend: {
       colors:{
         "gold":"#C4B466",
         "gray":"#323232",
+        "light-gray": "#d1d1d1"
       },
       fontFamily: {
         "kumbh": ["Kumbh Sans", "sans-serif"],
