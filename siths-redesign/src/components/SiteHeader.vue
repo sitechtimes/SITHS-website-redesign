@@ -1,7 +1,7 @@
 <template>
   <!-- menu toggle-->
   <div
-    class="fixed inset-0 bg-[#1c1b1b] bg-opacity-90 z-50 flex items-center justify-center"
+    class="fixed inset-0 bg-[#1c1b1b] bg-opacity-100 z-50 flex items-center justify-center"
     :class="{ hidden: !menuVisibility }">
     <button @click="closeMenu" class="absolute top-4 right-4 text-gray-600 text-2xl px-2">
       &times;
