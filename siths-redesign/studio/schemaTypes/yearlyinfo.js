@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity';
 
 export const yearlyinfo = defineType({
   name: 'yearlyinfo',
-  title: 'Yearly Info Posts',
+  title: 'School Year Info',
   type: 'document',
   fields: [
     defineField({
@@ -23,7 +23,7 @@ export const yearlyinfo = defineType({
     defineField({
         name: 'image',
         title: 'Image',
-        type: 'string',
+        type: 'url',
       }),
   ],
 });
