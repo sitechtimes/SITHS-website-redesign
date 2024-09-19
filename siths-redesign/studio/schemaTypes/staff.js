@@ -22,8 +22,11 @@ export const staff = defineType({
     }),
     defineField({
       name: 'image',
-      title: 'Image',
+      title: 'Image (PNG or JPG only, please)',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: 'category',
