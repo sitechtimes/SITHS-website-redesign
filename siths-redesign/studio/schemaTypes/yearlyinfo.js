@@ -21,7 +21,7 @@ export const yearlyinfo = defineType({
         type: 'string',
       }),
     defineField({
-        name: 'img',
+        name: 'image',
         title: 'Image',
         type: 'string',
       }),
