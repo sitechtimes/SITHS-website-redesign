@@ -11,7 +11,7 @@
         <h4 class="font-bold py-2">{{ post.author }}</h4>
         <div class="flex flex-row">
           <p class="w-[45vw]">{{ post.description }}</p>
-          <img :src="post.image" alt="post image" class="h-72" />
+          <img :src="post.imageUrl" alt="post image" class="h-72" />
         </div>
       </div>
     </div>
@@ -26,7 +26,14 @@ const posts = ref([])
 
 //fetch yearlyinfo from Sanity CMS
 const fetchPosts = async () => {
-  const query = '*[_type == "yearlyinfo"]'
+  const query = `*[_type == "yearlyinfo"]{
+  _id,
+  PostTitle,
+  author,
+  date,
+  description,
+  "imageUrl": image.asset->url
+  }`
   try {
     const data = await sanityClient.fetch(query)
     if (data.length > 0) {
