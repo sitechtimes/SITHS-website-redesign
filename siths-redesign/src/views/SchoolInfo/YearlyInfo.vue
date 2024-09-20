@@ -1,5 +1,5 @@
 <template>
-    <h1 class="text-center">School Year Info</h1>
+    <h1 class="text-center">2024-2025 School Year Info</h1>
     <InfoDropdown/>
 </template>
 

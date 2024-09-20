@@ -16,6 +16,11 @@ export const yearlyinfo = defineType({
         type: 'string',
       }),
     defineField({
+        name: 'date',
+        title: 'Date',
+        type: 'string',
+      }),
+    defineField({
         name: 'description',
         title: 'Description',
         type: 'string',
