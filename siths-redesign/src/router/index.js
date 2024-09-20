@@ -16,7 +16,12 @@ const router = createRouter({
     {
       path: '/bellschedule',
       name: 'bellschedule',
-      component: () => import('../views/BellSchedule.vue')
+      component: () => import('../views/SchoolInfo/BellSchedule.vue')
+    },
+    {
+      path: '/yearlyinfo',
+      name: 'yearlyinfo',
+      component: () => import('../views/SchoolInfo/YearlyInfo.vue')
     },
     {
       path: '/staff',

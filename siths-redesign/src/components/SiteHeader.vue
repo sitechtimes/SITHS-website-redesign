@@ -12,6 +12,7 @@
       <RouterLink to="/bellschedule" class="text-4xl text-white" @click="toggleMenu">Bell Schedule</RouterLink>
       <RouterLink to="/staff" class="text-4xl text-white" @click="toggleMenu">Faculty and Staff</RouterLink>
       <RouterLink to="/clubs" class="text-4xl text-white" @click="toggleMenu">Clubs and Activities</RouterLink>
+      <RouterLink to="/yearlyinfo" class="text-4xl text-white" @click="toggleMenu">2024-2025 School Year Info</RouterLink>
     </div>
   </div>
   <!-- logo and search -->
