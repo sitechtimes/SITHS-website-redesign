@@ -28,7 +28,10 @@ export const yearlyinfo = defineType({
     defineField({
         name: 'image',
         title: 'Image',
-        type: 'url',
+        type: 'image',
+        options: {
+          hotspot: true,
+        }
       }),
   ],
 });
