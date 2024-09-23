@@ -1,19 +1,19 @@
 <template>
-    <div class="flex flex-col items-center justify-center py-12 bg-gold h-[35rem]">
-        <div class="flex flex-row w-full justify-center">
+    <div class="flex flex-col items-center justify-center lg:py-12 bg-gold lg:h-[35rem]">
+        <div class="flex flex-col lg:flex-row w-full justify-center">
             <!-- picture -->
-            <div class="w-1/2 flex items-center justify-center">
+            <div class="lg:w-1/2 flex items-center justify-center">
                 <div class="relative h-[35rem] w-full">
                     <img class="h-full w-full object-cover" src="/src/assets/imgs/staten-island-technical-high-school.jpg" alt="Staten Island Technical High School" />
                 </div>
             </div>
 
             <!-- carousel -->
-            <div class="relative w-1/2 flex flex-col justify-center items-center">
+            <div class="relative lg:w-1/2 py-8 flex flex-col justify-center items-center">
                 <div class="carousel w-full flex items-center justify-between">
                     <!-- slide 1 -->
                     <div id="slide1" class="carousel-item flex w-full items-center justify-center pb-4 relative flex-grow">
-                        <a href="#slide2" class="btn btn-circle text-gray text-xl mx-6">❮</a>
+                        <a href="#slide2" class="btn btn-circle text-gray text-xl lg:mx-6">❮</a>
                         <div class="flex flex-col w-2/3 h-2/3 space-y-4 text-center">
                             <h1 class="text-4xl font-semibold text-gray">Vision</h1>
                             <p class="text-gray text-xl">
@@ -25,12 +25,12 @@
                                 multicultural global society.
                             </p>
                         </div>
-                        <a href="#slide2" class="btn btn-circle text-gray text-xl mx-6">❯</a>
+                        <a href="#slide2" class="btn btn-circle text-gray text-xl lg:mx-6">❯</a>
                     </div>
 
                     <!-- slide 2 -->
                     <div id="slide2" class="carousel-item flex w-full items-center justify-center pb-4 relative flex-grow">
-                        <a href="#slide1" class="btn btn-circle text-gray text-xl mx-6">❮</a>
+                        <a href="#slide1" class="btn btn-circle text-gray text-xl lg:mx-6">❮</a>
                         <div class="flex flex-col w-2/3 h-2/3 space-y-4 text-center">
                             <h1 class="text-4xl font-semibold text-gray">Mission</h1>
                             <p class="text-gray text-xl">
@@ -43,7 +43,7 @@
                                 and empathy. (D31 Mission/Vision)
                             </p>
                         </div>
-                        <a href="#slide1" class="btn btn-circle text-gray text-xl mx-6">❯</a>
+                        <a href="#slide1" class="btn btn-circle text-gray text-xl lg:mx-6">❯</a>
                     </div>
                 </div>
             </div>
