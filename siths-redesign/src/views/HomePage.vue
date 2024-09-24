@@ -11,6 +11,7 @@
       <!-- header texts -->
       <div id="header-texts" class="text-left opacity-0">
         <h1 class="lg:text-6xl text-4xl mb-2">Welcome to</h1>
+        <!-- can be tighter if you want (remove leading-tight, make mb-4 -> lg:mb-4) -->
         <h1 class="lg:text-8xl text-6xl text-gold font-semibold mb-4 leading-tight">Staten Island</h1>
         <h1 class="lg:text-8xl text-6xl mb-4">Technical</h1>
         <h1 class="lg:text-8xl text-6xl mb-4 leading-tight">High School</h1>

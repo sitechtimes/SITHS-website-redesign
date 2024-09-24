@@ -1,32 +1,32 @@
 <template>
     <div class="flex flex-col items-center justify-center">
         <!-- iterate over each schedule and display it -->
-        <div v-for="(schedule, index) in schedules" :key="index" class="mb-4 flex flex-col justify-center items-center">
+        <div v-for="(schedule, index) in schedules" :key="index" class="mb-4 w-full flex flex-col justify-center items-center">
             <div
                 @click="toggleVisibility(index)"
-                class="bg-white text-gray text-2xl font-semibold w-[50vw] rounded-2xl py-2 px-6 flex items-center justify-between cursor-pointer">
+                class="bg-white text-gray text-2xl font-semibold w-4/5 lg:w-[50vw] rounded-2xl py-2 px-6 flex items-center justify-between cursor-pointer">
                 <span>{{ schedule.name }}</span>
                 <img class="w-4" src="../assets/icons/arrow.png" alt="Arrow icon">
             </div>
 
             <!-- table only shows if the index of the table is included in visibleSchedules array -->
-            <div v-if="visibleSchedules.includes(index)" class="mt-2 p-2 bg-base-100 rounded-box w-[50vw]">
+            <div v-if="visibleSchedules.includes(index)" class="mt-2 p-2 bg-base-100 rounded-box w-screen lg:w-[50vw]">
                 <div class="flex flex-col justify-center items-center">
-                    <table class="table">
+                    <table class="table w-fit lg:w-full">
                         <thead class="text-lg">
                             <tr>
-                                <th>Period</th>
-                                <th>Start Time</th>
-                                <th>End Time</th>
-                                <th>Length (Minutes)</th>
+                                <th class="px-2">Period</th>
+                                <th class="px-2">Start Time</th>
+                                <th class="px-2">End Time</th>
+                                <th class="px-2">Length<br class="lg:hidden"> (Minutes)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(period, index) in schedule.periods" :key="index">
-                                <td>{{ period.periodNumber }}</td>
-                                <td>{{ period.startTime }}</td>
-                                <td>{{ period.endTime }}</td>
-                                <td>{{ period.periodLength }}</td>
+                                <td class="px-4">{{ period.periodNumber }}</td>
+                                <td class="px-4">{{ period.startTime }}</td>
+                                <td class="px-4">{{ period.endTime }}</td>
+                                <td class="px-4">{{ period.periodLength }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -68,5 +68,3 @@ const toggleVisibility = (index) => {
 
 onMounted(fetchSchedules);
 </script>
-
-<style lang="css" scoped></style>
