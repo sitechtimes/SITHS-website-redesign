@@ -1,7 +1,6 @@
 <template>
-    <h1 class="text-center">2024-2025 School Year Info</h1>
-    <StaffProfile staff-name="Mark Erlenwein"/>
-    <InfoDropdown :posts="posts"/>
+    <StaffProfile staff-name="Thomas Terrusa"/>
+    <InfoDropdown :posts="TerrusaPosts"/>
 </template>
 
 <script setup>
@@ -9,9 +8,9 @@ import InfoDropdown from '@/components/InfoDropdown.vue';
 import StaffProfile from '@/components/StaffProfile.vue';
 
 import { ref, onMounted } from 'vue'
-import sanityClient from '@/client.js'
+import sanityClient from '@/client'
 
-const posts = ref([])
+const TerrusaPosts = ref([])
 
 //fetch yearlyinfo from Sanity CMS
 const fetchPosts = async () => {
@@ -27,7 +26,7 @@ const fetchPosts = async () => {
     const data = await sanityClient.fetch(query)
     if (data.length > 0) {
       //make sure we have data to display
-      posts.value = data
+      TerrusaPosts.value = data
       console.log('works')
     } else {
       console.log('No posts found')

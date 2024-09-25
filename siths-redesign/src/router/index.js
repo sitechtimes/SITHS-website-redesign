@@ -28,6 +28,16 @@ const router = createRouter({
       name: 'staff',
       component: () => import('../views/StaffPage.vue')
     },
+    {
+      path: '/erlenwein',
+      name: 'erlenwein',
+      component: () => import('../views/ErlenweinPage.vue')
+    },
+    {
+      path: '/terrusa',
+      name: 'terrusa',
+      component: () => import('../views/StudentLife/TerrusaPage.vue')
+    },
   ]
 })
 

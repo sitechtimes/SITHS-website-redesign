@@ -20,35 +20,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import sanityClient from '../client.js'
+defineProps({
+  posts: Array
+})
 
-const posts = ref([])
-
-//fetch yearlyinfo from Sanity CMS
-const fetchPosts = async () => {
-  const query = `*[_type == "yearlyinfo"]{
-  _id,
-  PostTitle,
-  author,
-  date,
-  description,
-  "imageUrl": image.asset->url
-  }`
-  try {
-    const data = await sanityClient.fetch(query)
-    if (data.length > 0) {
-      //make sure we have data to display
-      posts.value = data
-      console.log('works')
-    } else {
-      console.log('No posts found')
-    }
-  } catch (error) {
-    console.error('Error fetching posts:', error)
-  }
-}
-onMounted(fetchPosts)
 </script>
 
 <style lang="css" scoped></style>

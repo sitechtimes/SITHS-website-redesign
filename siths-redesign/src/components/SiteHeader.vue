@@ -8,11 +8,13 @@
     </button>
     <!-- nav links -->
     <div id="menu-content" class="absolute top-40 left-16 flex flex-col space-y-8 z-10">
-      <RouterLink to="/" class="text-4xl text-white" @click="toggleMenu">Home</RouterLink>
-      <RouterLink to="/bellschedule" class="text-4xl text-white" @click="toggleMenu">Bell Schedule</RouterLink>
-      <RouterLink to="/staff" class="text-4xl text-white" @click="toggleMenu">Faculty and Staff</RouterLink>
-      <RouterLink to="/clubs" class="text-4xl text-white" @click="toggleMenu">Clubs and Activities</RouterLink>
-      <RouterLink to="/yearlyinfo" class="text-4xl text-white" @click="toggleMenu">2024-2025 School Year Info</RouterLink>
+      <RouterLink to="/" class="text-2xl text-white" @click="toggleMenu">Home</RouterLink>
+      <RouterLink to="/bellschedule" class="text-2xl text-white" @click="toggleMenu">Bell Schedule</RouterLink>
+      <RouterLink to="/staff" class="text-2xl text-white" @click="toggleMenu">Faculty and Staff</RouterLink>
+      <RouterLink to="/clubs" class="text-2xl text-white" @click="toggleMenu">Clubs and Activities</RouterLink>
+      <RouterLink to="/yearlyinfo" class="text-2xl text-white" @click="toggleMenu">2024-2025 School Year Info</RouterLink>
+      <RouterLink to="/erlenwein" class="text-2xl text-white" @click="toggleMenu">Principal Erlenwein Announcements</RouterLink>
+      <RouterLink to="/terrusa" class="text-2xl text-white" @click="toggleMenu">Mr. Terrusa Activities Updates</RouterLink>
     </div>
   </div>
   <!-- logo and search -->
