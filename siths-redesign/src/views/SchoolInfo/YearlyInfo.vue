@@ -1,6 +1,6 @@
 <template>
     <h1 class="text-center">2024-2025 School Year Info</h1>
-    <StaffProfile/>
+    <StaffProfile staff-name="Mark Erlenwein"/>
     <InfoDropdown/>
 </template>
 
