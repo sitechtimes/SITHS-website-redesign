@@ -55,10 +55,7 @@
             <p class="text-lg">Donations</p>
         </div>
         <!-- right side -->
-        <div class="flex flex-col w-1/5">
-            <!-- placeholder -->
-            <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt orci ac urna
-                fermentum, nec facilisis magna iaculis. Proin vel lacinia turpis. Sed vehicula, odio et accumsan</p>
+        <div class="flex flex-col w-1/5 ">
             <!-- social media icons -->
             <div class="flex flex-col space-y-2 z-20">
                 <h2 class="text-xl font-bold">FOLLOW US</h2>
