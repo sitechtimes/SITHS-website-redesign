@@ -10,9 +10,10 @@
       <div class="collapse-content">
         <h4 class="font-bold py-2">{{ post.author }}</h4>
         <div class="flex flex-row">
-          <p class="w-[45vw]">{{ post.description }}</p>
-          <img :src="post.imageUrl" alt="post image" class="h-72" />
+          <p class="py-4">{{ post.description }}</p>
         </div>
+        <img :src="post.imageUrl" alt="post image" class="h-72" />
+
       </div>
     </div>
   </div>

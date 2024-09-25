@@ -21,6 +21,11 @@ export const staff = defineType({
       type: 'string',
     }),
     defineField({
+      name:'description',
+      title:"Description (only for Erlenwein/Terrusa profiles)",
+      type: 'string'
+    }),
+    defineField({
       name: 'image',
       title: 'Image (PNG or JPG only, please)',
       type: 'image',
