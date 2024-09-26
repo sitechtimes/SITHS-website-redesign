@@ -14,7 +14,7 @@ const TerrusaPosts = ref([])
 
 //fetch yearlyinfo from Sanity CMS
 const fetchPosts = async () => {
-  const query = `*[_type == "yearlyinfo"]{
+  const query = `*[_type == "terrusa"]{
   _id,
   PostTitle,
   author,

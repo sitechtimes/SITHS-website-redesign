@@ -14,7 +14,7 @@ const ErlenweinPosts = ref([])
 
 //fetch yearlyinfo from Sanity CMS
 const fetchPosts = async () => {
-  const query = `*[_type == "yearlyinfo"]{
+  const query = `*[_type == "erlenwein"]{
   _id,
   PostTitle,
   author,
@@ -28,6 +28,7 @@ const fetchPosts = async () => {
       //make sure we have data to display
       ErlenweinPosts.value = data
       console.log('works')
+      console.log(ErlenweinPosts.value[0].description)
     } else {
       console.log('No posts found')
     }
@@ -35,5 +36,6 @@ const fetchPosts = async () => {
     console.error('Error fetching posts:', error)
   }
 }
+
 onMounted(fetchPosts)
 </script>

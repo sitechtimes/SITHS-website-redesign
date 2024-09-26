@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity';
 
-export const yearlyinfo = defineType({
-  name: 'yearlyinfo',
-  title: 'School Year Info',
+export const terrusa = defineType({
+  name: 'terrusa',
+  title: "Terrusa Announcements",
   type: 'document',
   fields: [
     defineField({
