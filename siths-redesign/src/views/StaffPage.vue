@@ -31,40 +31,52 @@
                     </div>
                 </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import sanityClient from '../client.js';
+import SearchBar from '@/components/SearchBar.vue';
 
 const staff = ref([]);
 const categories = ref([
-    { name: 'Administrators', value: 'administrators' },
-    { name: 'Teachers', value: 'teachers' },
-    { name: 'Other Employees', value: 'otherEmployees' },
+  { name: 'Administrators', value: 'administrators' },
+  { name: 'Teachers', value: 'teachers' },
+  { name: 'Other Employees', value: 'otherEmployees' },
 ]);
 
-const fetchStaff = async () => {
-    const query = `*[_type == "staff"]{
-      _id,
-      name,
-      role,
-      email,
-      category,
-      "imageUrl": image.asset->url
-    }`;
+const searchValue = ref('');
 
-    staff.value = await sanityClient.fetch(query);
+const fetchStaff = async () => {
+  const query = `*[_type == "staff"]{
+     _id,
+     name,
+     role,
+     email,
+     category,
+     "imageUrl": image.asset->url
+  }`;
+  staff.value = await sanityClient.fetch(query);
 };
 
-function sortByCategory(category) {
-    return staff.value.filter((staffMember) => staffMember.category === category.value);
-}
+function filteredStaff(category) {
+    const search = searchValue.value.toLowerCase();
+    return staff.value
+      .filter((staffMember) => staffMember.category === category.value)
+      .filter((staffMember) => {
+        return (
+          staffMember.name.toLowerCase().includes(search) ||
+          staffMember.email.toLowerCase().includes(search) ||
+          staffMember.role.toLowerCase().includes(search)
+        );
+      });
+  }
 
 onMounted(fetchStaff);
 </script>
-
-<style scoped></style>
