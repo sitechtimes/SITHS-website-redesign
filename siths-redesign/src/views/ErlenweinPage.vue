@@ -3,7 +3,7 @@
     <InfoDropdown :posts="ErlenweinPosts"/>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import InfoDropdown from '@/components/InfoDropdown.vue';
 import StaffProfile from '@/components/StaffProfile.vue';
 
@@ -27,8 +27,6 @@ const fetchPosts = async () => {
     if (data.length > 0) {
       //make sure we have data to display
       ErlenweinPosts.value = data
-      console.log('works')
-      console.log(ErlenweinPosts.value[0].description)
     } else {
       console.log('No posts found')
     }

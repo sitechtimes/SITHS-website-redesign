@@ -12,7 +12,7 @@ import sanityClient from '@/client'
 
 const TerrusaPosts = ref([])
 
-//fetch yearlyinfo from Sanity CMS
+//fetch terrusa from Sanity CMS
 const fetchPosts = async () => {
   const query = `*[_type == "terrusa"]{
   _id,
@@ -27,7 +27,6 @@ const fetchPosts = async () => {
     if (data.length > 0) {
       //make sure we have data to display
       TerrusaPosts.value = data
-      console.log('works')
     } else {
       console.log('No posts found')
     }
@@ -36,5 +35,4 @@ const fetchPosts = async () => {
   }
 }
 onMounted(fetchPosts)
-
 </script>
