@@ -1,75 +1,73 @@
 <template>
-    <div class="flex flex-col justify-center items-center mt-6 space-y-8">
-        <h1 class="text-4xl font-semibold mb-8 mt-6">UPCOMING EVENTS</h1>
-        <div class="w-full flex flex-col lg:flex-row items-center justify-center lg:space-x-8">
-            <!-- event 1 -->
-            <div class="flex flex-col items-center justify-center h-36">
-                <div class="flex flex-col items-center">
-                    <p class="text-lg font-semibold underline mb-2">9/10/24</p>
-                    <div class="w-3/5 lg:w-32 text-center">
-                        <p class="text-lg">Faculty Picture Day & Underclassmen Pictures</p>
-                    </div>
-                </div>
-            </div>
-            <!-- vertical line -->
-            <div class="lg:flex items-center">
-                <div class="h-[1px] w-40 lg:w-[1px] lg:h-36 bg-gold"></div>
-            </div>
-            <!-- event 2 -->
-            <div class="flex flex-col items-center justify-center h-36">
-                <div class="flex flex-col items-center">
-                    <p class="text-lg font-semibold underline mb-2">9/12/24</p>
-                    <div class="w-3/5 lg:w-32 text-center">
-                        <p class="text-lg">Cheer Tryouts</p>
-                    </div>
-                </div>
-            </div>
-            <!-- vertical line -->
-            <div class="lg:flex items-center">
-                <div class="h-[1px] w-40 lg:w-[1px] lg:h-36 bg-gold"></div>
-            </div>
-            <!-- event 3 -->
-            <div class="flex flex-col items-center justify-center h-36">
-                <div class="flex flex-col items-center">
-                    <p class="text-lg font-semibold underline mb-2">9/15/24</p>
-                    <div class="w-3/5 lg:w-32 text-center">
-                        <p class="text-lg">11 Min Homeroom</p>
-                    </div>
-                </div>
-            </div>
-            <!-- vertical line -->
-            <div class="lg:flex items-center">
-                <div class="h-[1px] w-40 lg:w-[1px] lg:h-36 bg-gold"></div>
-            </div>
-            <!-- event 4 -->
-            <div class="flex flex-col items-center justify-center h-36">
-                <div class="flex flex-col items-center">
-                    <p class="text-lg font-semibold underline mb-2">9/18/24</p>
-                    <div class="w-3/5 lg:w-32 text-center">
-                        <p class="text-lg">Debate Team Info Meeting</p>
-                    </div>
-                </div>
-            </div>
-            <!-- vertical line -->
-            <div class="flex items-center">
-                <div class="h-[1px] w-40 lg:w-[1px] lg:h-36 bg-gold"></div>
-            </div>
-            <!-- event 5 -->
-            <div class="flex flex-col items-center justify-center h-36">
-                <div class="flex flex-col items-center">
-                    <p class="text-lg font-semibold underline mb-2">9/20/24</p>
-                    <div class="w-3/5 lg:w-32 text-center">
-                        <p class="text-lg">Tech Connects Meeting</p>
-                    </div>
-                </div>
-            </div>
+  <div class="mt-6 flex flex-col items-center justify-center space-y-8">
+    <h1 class="mb-8 mt-6 text-4xl font-semibold">UPCOMING EVENTS</h1>
+    <div class="flex w-full flex-col items-center justify-center lg:flex-row lg:space-x-8">
+      <!-- event 1 -->
+      <div class="flex h-36 flex-col items-center justify-center">
+        <div class="flex flex-col items-center">
+          <p class="mb-2 text-lg font-semibold underline">9/10/24</p>
+          <div class="w-3/5 text-center lg:w-32">
+            <p class="text-lg">Faculty Picture Day & Underclassmen Pictures</p>
+          </div>
         </div>
-        <button class="btn btn-link mt-8 text-lg">Show All Events</button>
+      </div>
+      <!-- vertical line -->
+      <div class="items-center lg:flex">
+        <div class="h-[1px] w-40 bg-gold lg:h-36 lg:w-[1px]"></div>
+      </div>
+      <!-- event 2 -->
+      <div class="flex h-36 flex-col items-center justify-center">
+        <div class="flex flex-col items-center">
+          <p class="mb-2 text-lg font-semibold underline">9/12/24</p>
+          <div class="w-3/5 text-center lg:w-32">
+            <p class="text-lg">Cheer Tryouts</p>
+          </div>
+        </div>
+      </div>
+      <!-- vertical line -->
+      <div class="items-center lg:flex">
+        <div class="h-[1px] w-40 bg-gold lg:h-36 lg:w-[1px]"></div>
+      </div>
+      <!-- event 3 -->
+      <div class="flex h-36 flex-col items-center justify-center">
+        <div class="flex flex-col items-center">
+          <p class="mb-2 text-lg font-semibold underline">9/15/24</p>
+          <div class="w-3/5 text-center lg:w-32">
+            <p class="text-lg">11 Min Homeroom</p>
+          </div>
+        </div>
+      </div>
+      <!-- vertical line -->
+      <div class="items-center lg:flex">
+        <div class="h-[1px] w-40 bg-gold lg:h-36 lg:w-[1px]"></div>
+      </div>
+      <!-- event 4 -->
+      <div class="flex h-36 flex-col items-center justify-center">
+        <div class="flex flex-col items-center">
+          <p class="mb-2 text-lg font-semibold underline">9/18/24</p>
+          <div class="w-3/5 text-center lg:w-32">
+            <p class="text-lg">Debate Team Info Meeting</p>
+          </div>
+        </div>
+      </div>
+      <!-- vertical line -->
+      <div class="flex items-center">
+        <div class="h-[1px] w-40 bg-gold lg:h-36 lg:w-[1px]"></div>
+      </div>
+      <!-- event 5 -->
+      <div class="flex h-36 flex-col items-center justify-center">
+        <div class="flex flex-col items-center">
+          <p class="mb-2 text-lg font-semibold underline">9/20/24</p>
+          <div class="w-3/5 text-center lg:w-32">
+            <p class="text-lg">Tech Connects Meeting</p>
+          </div>
+        </div>
+      </div>
     </div>
+    <button class="btn btn-link mt-8 text-lg">Show All Events</button>
+  </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
-<style scoped>
-</style>
+<style scoped></style>
