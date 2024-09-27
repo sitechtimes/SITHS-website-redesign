@@ -10,9 +10,9 @@
             </div>
             <!-- staff component -->
             <div class="flex flex-row flex-wrap gap-4 lg:gap-12 my-16 lg:mx-10 justify-between w-full lg:w-auto">
-                <div v-for="staffMember in sortByCategory(category)" :key="staffMember._id"
+                <div v-for="staffMember in filteredStaff(category)" :key="staffMember._id"
                     class="flex flex-row items-center p-2 gap-4 lg:gap-6">
-                    <div class="w-28 lg:w-28 lg:h-28">
+                    <div class="w-20 lg:w-28 lg:h-28">
                         <img :src="staffMember.imageUrl" alt="staff image"
                             class="w-full rounded-full object-cover outline outline-white outline-2" />
                     </div>
@@ -31,8 +31,8 @@
                     </div>
                 </div>
             </div>
-          </div>
         </div>
+    </div>
 </template>
 
 
@@ -43,15 +43,15 @@ import SearchBar from '@/components/SearchBar.vue';
 
 const staff = ref([]);
 const categories = ref([
-  { name: 'Administrators', value: 'administrators' },
-  { name: 'Teachers', value: 'teachers' },
-  { name: 'Other Employees', value: 'otherEmployees' },
+    { name: 'Administrators', value: 'administrators' },
+    { name: 'Teachers', value: 'teachers' },
+    { name: 'Other Employees', value: 'otherEmployees' },
 ]);
 
 const searchValue = ref('');
 
 const fetchStaff = async () => {
-  const query = `*[_type == "staff"]{
+    const query = `*[_type == "staff"]{
      _id,
      name,
      role,
@@ -59,21 +59,21 @@ const fetchStaff = async () => {
      category,
      "imageUrl": image.asset->url
   }`;
-  staff.value = await sanityClient.fetch(query);
+    staff.value = await sanityClient.fetch(query);
 };
 
 function filteredStaff(category) {
     const search = searchValue.value.toLowerCase();
     return staff.value
-      .filter((staffMember) => staffMember.category === category.value)
-      .filter((staffMember) => {
-        return (
-          staffMember.name.toLowerCase().includes(search) ||
-          staffMember.email.toLowerCase().includes(search) ||
-          staffMember.role.toLowerCase().includes(search)
-        );
-      });
-  }
+        .filter((staffMember) => staffMember.category === category.value)
+        .filter((staffMember) => {
+            return (
+                staffMember.name.toLowerCase().includes(search) ||
+                staffMember.email.toLowerCase().includes(search) ||
+                staffMember.role.toLowerCase().includes(search)
+            );
+        });
+}
 
 onMounted(fetchStaff);
 </script>
