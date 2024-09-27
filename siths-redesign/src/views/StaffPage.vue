@@ -1,27 +1,29 @@
 <template>
-    <div class="h-fit mx-10">
-        <h1 class="font-bold w-full flex items-center justify-center text-5xl my-10">Faculty and Staff</h1>
+    <div class="h-fit mx-4 lg:mx-10">
+        <h1 class="font-bold w-full flex items-center justify-center text-center text-5xl my-10">Faculty and Staff</h1>
         <div v-for="category in categories" :key="category.value" class="lg:mx-8">
             <div class="flex flex-row justify-center items-center">
-                <!-- category title and seperators -->
+                <!-- category title and separators -->
                 <div class="w-20 h-0.5 bg-white flex-grow"></div>
                 <h2 class="text-3xl font-bold mx-2">{{ category.name }}</h2>
                 <div class="w-20 h-0.5 bg-white flex-grow"></div>
             </div>
             <!-- staff component -->
-            <div class="flex flex-row flex-wrap lg:space-x-12 my-16 lg:mx-10 justify-between">
+            <div class="flex flex-row flex-wrap gap-4 lg:space-x-12 my-16 lg:mx-10 justify-between w-full">
                 <div v-for="staffMember in sortByCategory(category)" :key="staffMember._id"
-                    class="flex flex-row items-center p-2">
-                    <img :src="staffMember.imageUrl" alt=""
-                        class="w-20 h-20 lg:w-28 lg:h-28 rounded-full object-cover mr-6 outline outline-white outline-2" />
-                    <div class="flex flex-col justify-center gap-2">
+                    class="flex flex-row items-center p-2 gap-4 lg:gap-6 w-full">
+                    <div class="w-28 lg:w-28 lg:h-28">
+                        <img :src="staffMember.imageUrl" alt="staff image"
+                            class="w-full rounded-full object-cover outline outline-white outline-2" />
+                    </div>
+                    <div class="flex flex-col justify-center gap-1 lg:gap-2 w-full">
                         <h2 class="lg:text-2xl text-xl font-semibold">{{ staffMember.name }}</h2>
                         <p>{{ staffMember.role }}</p>
                         <div class="flex items-center">
-                            <img src="../assets/icons/email.png" alt="" class="w-5 mr-2">
+                            <img src="../assets/icons/email.png" alt="email icon" class="w-5 mr-2">
                             <span>
                                 <a :href="'mailto:' + staffMember.email"
-                                    class="text-white transition ease-in-out duration-300 hover:underline text-sm lg:text-lg">
+                                    class="block text-white transition ease-in-out duration-300 hover:underline break-words text-sm lg:text-lg">
                                     {{ staffMember.email }}
                                 </a>
                             </span>
@@ -32,6 +34,7 @@
         </div>
     </div>
 </template>
+
 
 <script setup>
 import { ref, onMounted } from 'vue';
