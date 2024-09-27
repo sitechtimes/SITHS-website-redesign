@@ -9,14 +9,14 @@
                 <div class="w-20 h-0.5 bg-white flex-grow"></div>
             </div>
             <!-- staff component -->
-            <div class="flex flex-row flex-wrap gap-4 lg:space-x-12 my-16 lg:mx-10 justify-between w-full">
+            <div class="flex flex-row flex-wrap gap-4 lg:gap-12 my-16 lg:mx-10 justify-between w-full lg:w-auto">
                 <div v-for="staffMember in sortByCategory(category)" :key="staffMember._id"
-                    class="flex flex-row items-center p-2 gap-4 lg:gap-6 w-full">
+                    class="flex flex-row items-center p-2 gap-4 lg:gap-6">
                     <div class="w-28 lg:w-28 lg:h-28">
                         <img :src="staffMember.imageUrl" alt="staff image"
                             class="w-full rounded-full object-cover outline outline-white outline-2" />
                     </div>
-                    <div class="flex flex-col justify-center gap-1 lg:gap-2 w-full">
+                    <div class="flex flex-col justify-center gap-1 lg:gap-2">
                         <h2 class="lg:text-2xl text-xl font-semibold">{{ staffMember.name }}</h2>
                         <p>{{ staffMember.role }}</p>
                         <div class="flex items-center">
