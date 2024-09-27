@@ -1,9 +1,9 @@
 <template>
-    <div class="relative w-full flex flex-row justify-between p-6 opacity-85 mt-20">
+    <div class="relative w-full grid grid-cols-2 lg:flex lg:flex-row justify-between gap-6 p-6 opacity-85 mt-20">
         <!-- background image -->
         <div class="absolute inset-0 bg-city-skyline opacity-5 z-0"></div>
         <!-- upper left hand corner -->
-        <div class="flex flex-col">
+        <div class="col-span-2 flex flex-col">
             <!-- school name -->
             <div class="flex flex-row items-center">
                 <img src="../assets/icons/siths-logo.png" alt="">
@@ -25,42 +25,42 @@
             </div>
         </div>
         <!-- about us navigation links -->
-        <div class="flex flex-col">
+        <div class="flex flex-col gap-1">
             <h2 class="text-lg font-bold">ABOUT US</h2>
-            <p class="text-lg">Mission</p>
-            <p class="text-lg">School Calendar</p>
-            <p class="text-lg">Faculty</p>
-            <p class="text-lg">History</p>
-            <p class="text-lg">School Profile</p>
-            <p class="text-lg">Principal Message</p>
+            <p class="text-md">Mission</p>
+            <p class="text-md">School Calendar</p>
+            <p class="text-md">Faculty</p>
+            <p class="text-md">History</p>
+            <p class="text-md">School Profile</p>
+            <p class="text-md">Principal Message</p>
         </div>
         <!-- academics navigation links -->
-        <div class="flex flex-col">
+        <div class="flex flex-col gap-1">
             <h2 class="text-lg font-bold">ACADEMICS</h2>
-            <p class="text-lg">Course Catalog</p>
-            <p class="text-lg">AP Courses</p>
-            <p class="text-lg">Bell Schedule</p>
-            <p class="text-lg">CTE</p>
-            <p class="text-lg">Summer Homework</p>
-            <p class="text-lg">Grading Policy</p>
+            <p class="text-md">Course Catalog</p>
+            <p class="text-md">AP Courses</p>
+            <p class="text-md">Bell Schedule</p>
+            <p class="text-md">CTE</p>
+            <p class="text-md">Summer Homework</p>
+            <p class="text-md">Grading Policy</p>
         </div>
         <!-- resources navigation links -->
-        <div class="flex flex-col">
+        <div class="flex flex-col gap-1">
             <h2 class="text-lg font-bold">RESOURCES</h2>
-            <p class="text-lg">PTA</p>
-            <p class="text-lg">Naviance</p>
-            <p class="text-lg">PSAL Forms</p>
-            <p class="text-lg">Absence Report</p>
-            <p class="text-lg">Contact us</p>
-            <p class="text-lg">Donations</p>
+            <p class="text-md">PTA</p>
+            <p class="text-md">Naviance</p>
+            <p class="text-md">PSAL Forms</p>
+            <p class="text-md">Absence Report</p>
+            <p class="text-md">Contact us</p>
+            <p class="text-md">Donations</p>
         </div>
         <!-- right side -->
-        <div class="flex flex-col w-1/5">
+        <div class="col-span-2 flex flex-col lg:w-1/5">
             <!-- placeholder -->
             <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt orci ac urna
                 fermentum, nec facilisis magna iaculis. Proin vel lacinia turpis. Sed vehicula, odio et accumsan</p>
             <!-- social media icons -->
-            <div class="flex flex-col space-y-2 z-20">
+            <div class="flex flex-col gap-2 z-20">
                 <h2 class="text-xl font-bold">FOLLOW US</h2>
                 <div class="flex flex-row items-center space-x-2">
                     <a href="https://www.facebook.com/SITechHS?ref=embed_page" target="_blank" rel="noopener noreferrer">
