@@ -109,13 +109,4 @@ onMounted(() => {
     opacity: 1
   })
 })
-r: 0.4
-  });
-
-  gsap.to("#right-side", {
-    duration: 2,
-    opacity: 1,
-  });
-
-});
 </script>
