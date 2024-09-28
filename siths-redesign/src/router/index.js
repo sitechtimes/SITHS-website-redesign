@@ -27,7 +27,7 @@ const router = createRouter({
       path: '/staff',
       name: 'staff',
       component: () => import('../views/StaffPage.vue')
-    },
+    }
   ]
 })
 
