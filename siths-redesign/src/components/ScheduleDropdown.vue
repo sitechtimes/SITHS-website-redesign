@@ -8,7 +8,7 @@
     >
       <div
         @click="toggleVisibility(index)"
-        class="flex w-4/5 cursor-pointer items-center justify-between rounded-2xl bg-white px-6 py-2 text-2xl font-semibold text-gray lg:w-1/2"
+        class="flex w-4/5 cursor-pointer items-center justify-between rounded-2xl bg-white px-6 py-2 text-2xl font-semibold text-gray md:w-2/3 lg:w-1/2"
       >
         <span>{{ schedule.name }}</span>
         <img class="w-4" src="../assets/icons/arrow.png" alt="Arrow icon" />
@@ -20,14 +20,14 @@
         class="mt-2 w-screen rounded-box bg-base-100 p-2 lg:w-1/2"
       >
         <div class="flex flex-col items-center justify-center">
-          <table class="table w-fit lg:w-full">
+          <table class="table w-fit md:w-2/3 lg:w-full">
             <thead class="text-lg">
               <tr>
                 <th class="px-2">Period</th>
                 <th class="px-2">Start Time</th>
                 <th class="px-2">End Time</th>
                 <th class="px-2">
-                  Length<br class="lg:hidden" />
+                  Length<br class="md:hidden lg:hidden" />
                   (Minutes)
                 </th>
               </tr>

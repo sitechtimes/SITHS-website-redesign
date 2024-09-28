@@ -19,7 +19,7 @@
           :key="staffMember._id"
           class="flex flex-row items-center gap-4 p-2 lg:gap-6"
         >
-          <div class="w-20 lg:h-28 lg:w-28">
+          <div class="w-20 md:w-24 lg:w-28">
             <img
               :src="staffMember.imageUrl"
               alt="staff image"
