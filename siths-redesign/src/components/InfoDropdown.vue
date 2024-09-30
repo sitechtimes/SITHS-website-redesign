@@ -7,7 +7,7 @@
     >
       <input type="checkbox" />
       <div class="collapse-title text-xl font-medium">{{ post.PostTitle }}</div>
-      <div class="collapse-content">
+      <div class="collapse-content flex flex-col justify-center">
         <h4 class="font-bold py-2">{{ post.author }}</h4>
         <div class="flex flex-row">
           <p class="py-4" v-html="blocksToText(post.description)"></p>
