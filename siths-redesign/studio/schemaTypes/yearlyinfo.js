@@ -51,7 +51,6 @@ export const yearlyinfo = defineType({
       name: 'image',
       title: 'Image',
       type: 'image',
-      description: 'Only use images that fit horizontal.',
       options: {
         hotspot: true,
       }
