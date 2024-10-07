@@ -1,25 +1,27 @@
 <template>
   <div class="flex flex-col items-center justify-center">
     <div v-for="(post, index) in posts" :key="index" class="m-8 w-[90vw] collapse collapse-plus bg-white text-black">
-      <input type="checkbox" />
+      <input type="checkbox" @click="getImageDimensions(post.imageUrl)"/>
       <div class="collapse-title text-xl font-medium">{{ post.PostTitle }}</div>
       <div class="collapse-content flex flex-col justify-center">
-        <h4 class="font-bold py-2">{{ post.author }}</h4>
-        <div class="flex flex-row">
-          <p class="py-4" v-html="blocksToText(post.description)"></p>
+        <!-- everything in the collapse -->
+        <div v-if="dimensions">
+          <div v-if="dimensions.width > dimensions.height" class="flex flex-col justify-center">
+            <div class="flex flex-col">
+              <h4 class="font-bold py-2">{{ post.author }}</h4>
+              <p class="py-4" v-html="blocksToText(post.description)"></p>
+            </div>
+            <img v-if="post.imageUrl" :src="post.imageUrl" alt="post image" class="h-72">
+          </div>
+          <div v-if="dimensions.width <= dimensions.height" class="flex flex-row justify-around">
+            <div class="flex flex-col">
+              <h4 class="font-bold py-2">{{ post.author }}</h4>
+              <p class="py-4 w-[70vw]" v-html="blocksToText(post.description)"></p>
+            </div>
+            <img v-if="post.imageUrl" :src="post.imageUrl" alt="post image" class="h-72 object-contain">
+          </div>
         </div>
         <div>
-          <button @click="getImageDimensions(post.imageUrl)">Get Dimensions</button>
-          <div v-if="dimensions">
-            <div v-if="dimensions.width > dimensions.height">
-              <p>Horizontal Image</p>
-              <img v-if="post.imageUrl" :src="post.imageUrl" alt="post image" class="h-72">
-            </div>
-            <div v-if="dimensions.width <= dimensions.height">
-              <p>Vertical/Square Image</p>
-              <img v-if="post.imageUrl" :src="post.imageUrl" alt="post image" class="h-72">
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -59,7 +61,7 @@ function blocksToText(blocks, opts = {}) {
       if (block._type !== 'block' || !block.children) {
         return options.nonTextBehavior === 'remove' ? '' : `[${block._type} block]`
       }
-      return block.children.map((child) => `<p>${child.text}</p><br/>`).join('')
+      return block.children.map((child) => `<p class="flex-grow">${child.text}</p><br/>`).join('')
     })
     .join('\n\n')
 }
