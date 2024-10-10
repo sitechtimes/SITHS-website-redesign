@@ -1,17 +1,17 @@
 <template>
   <div class="bg-transparent">
-    <main class="grid min-h-full place-items-center bg-transparent bg-white py-16">
-      <h1 class="text-4xl font-semibold text-black">404 Page not found</h1>
+    <main class="grid min-h-full place-items-center bg-transparent py-16">
+      <h1 class="text-4xl font-semibold text-white">404 Page not found</h1>
       <div class="text-center">
-        <h2 class="mt-4 text-xl font-bold tracking-tight text-black sm:text-3xl">Uh Oh.....</h2>
+        <h2 class="mt-4 mb-6 text-xl tracking-tight text-white sm:text-3xl">Uh Oh.....</h2>
         <div class="">
-          <img src="@/assets/imgs/404-image.png" alt="404 Image" class="h-[35vh]" />
-          <p class="text-black opacity-50">Drawing by Yifan Zhang '25</p>
+          <img src="@/assets/imgs/404-image.png" alt="404 Image" class="h-[35vh] bg-transparent" />
+          <p class="text-white opacity-50 text-md">Drawing by Yifan Zhang '25</p>
         </div>
       </div>
       <div class="text-center">
-        <p class="mt-6 text-xl leading-7 text-black py-5">
-          This Seagull Took a Wrong Turn—Let’s Find Your Way Back To The Island!
+        <p class="mt-6 text-xl leading-7 text-white py-5">
+          This seagull took a wrong turn—let's find your way back to the island!
         </p>
       </div>
       <RouterLink
