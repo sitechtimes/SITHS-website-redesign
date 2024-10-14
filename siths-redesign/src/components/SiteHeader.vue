@@ -1,44 +1,38 @@
 <template>
-  <!-- menu toggle-->
-  <div
-    class="fixed inset-0 z-50 flex items-center justify-center bg-[#1c1b1b] bg-opacity-100"
-    :class="{ hidden: !menuVisibility }"
-  >
-    <button @click="closeMenu" class="text-gray-600 absolute right-4 top-4 px-2 text-2xl">
-      &times;
-    </button>
-    <!-- nav links -->
-    <div
-      id="menu-content"
-      class="absolute left-8 top-40 z-10 flex flex-col space-y-4 lg:left-16 lg:space-y-8"
-    >
-      <RouterLink to="/" class="text-3xl text-white lg:text-4xl" @click="toggleMenu"
-        >Home</RouterLink
-      >
-      <RouterLink to="/bellschedule" class="text-3xl text-white lg:text-4xl" @click="toggleMenu"
-        >Bell Schedule</RouterLink
-      >
-      <RouterLink to="/staff" class="text-3xl text-white lg:text-4xl" @click="toggleMenu"
-        >Faculty and Staff</RouterLink
-      >
-      <RouterLink to="/clubs" class="text-3xl text-white lg:text-4xl" @click="toggleMenu"
-        >Clubs and Activities</RouterLink
-      >
+  <header>
+    <!-- menu toggle-->
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-[#1c1b1b] bg-opacity-100"
+      :class="{ hidden: !menuVisibility }">
+      <button @click="closeMenu" class="text-gray-600 absolute right-4 top-4 px-2 text-2xl">
+        &times;
+      </button>
+      <!-- nav links -->
+      <div id="menu-content" class="absolute left-8 top-40 z-10 flex flex-col space-y-4 lg:left-16 lg:space-y-8">
+        <RouterLink to="/" class="text-3xl text-white lg:text-4xl" @click="toggleMenu">Home</RouterLink>
+        <RouterLink to="/bellschedule" class="text-3xl text-white lg:text-4xl" @click="toggleMenu">Bell Schedule
+        </RouterLink>
+        <RouterLink to="/staff" class="text-3xl text-white lg:text-4xl" @click="toggleMenu">Faculty and Staff
+        </RouterLink>
+        <RouterLink to="/clubs" class="text-3xl text-white lg:text-4xl" @click="toggleMenu">Clubs and Activities
+        </RouterLink>
+      </div>
     </div>
-  </div>
-  <!-- logo and search -->
-  <div class="flex flex-row items-center justify-between p-4 text-white">
-    <div @click="toggleMenu" class="z-40">
-      <img src="../assets/icons/menu-bar.png" alt="Menu icon" class="h-8 w-8" />
+    <!-- logo and search -->
+    <div class="flex flex-row items-center justify-between p-4 text-white">
+      <div class="z-40 w-20">
+        <img @click="toggleMenu" src="../assets/icons/menu-bar.png" alt="Menu icon" class="h-8 w-8" />
+      </div>
+
+      <RouterLink to="/" class="text-3xl text-white flex flex-row items-center justify-center gap-2">
+        <img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo" />
+        SITECH
+      </RouterLink>
+
+      <div class="z-40 w-20 text-right">
+        <span>SEARCH</span>
+      </div>
     </div>
-    <div class="flex flex-row items-center justify-center space-x-4">
-      <RouterLink to="/" class="text-3xl text-white"
-        ><img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo"
-      /></RouterLink>
-      <RouterLink to="/" class="text-3xl text-white">SITECH</RouterLink>
-    </div>
-    <div class="z-40 p-4">SEARCH</div>
-  </div>
+  </header>
 </template>
 
 <script setup>

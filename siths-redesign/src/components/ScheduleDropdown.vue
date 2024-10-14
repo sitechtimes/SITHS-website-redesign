@@ -19,7 +19,7 @@
         v-if="visibleSchedules.includes(index)"
         class="mt-2 w-screen rounded-box bg-base-100 p-2 lg:w-1/2"
       >
-        <div class="flex flex-col items-center justify-center">
+        <div class="flex flex-col items-center justify-center ">
           <table class="table w-fit md:w-2/3 lg:w-full">
             <thead class="text-lg">
               <tr>

@@ -22,7 +22,7 @@
           <div class="w-20 md:w-24 lg:w-28">
             <img
               :src="staffMember.imageUrl"
-              alt="staff image"
+              :alt="staffMember.name + `'s photo`"
               class="w-full rounded-full object-cover outline outline-2 outline-white"
             />
           </div>
@@ -50,7 +50,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import sanityClient from '../client.js'
-import SearchBar from '@/components/SearchBar.vue'
+// import SearchBar from '@/components/SearchBar.vue'
 
 const staff = ref([])
 const categories = ref([

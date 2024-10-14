@@ -4,7 +4,7 @@
       <div v-if="staffMember.name === staffName" class="flex flex-row items-center">
         <img
           :src="staffMember.imageUrl"
-          alt=""
+          :alt="staffMember.name + `'s photo'`"
           class="mr-6 h-28 w-28 rounded-full object-cover outline outline-2 outline-white"
         />
         <div class="flex w-11/12 flex-col justify-center">

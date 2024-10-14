@@ -62,7 +62,7 @@
     <!-- right side -->
     <div class="flex flex-col lg:w-1/5">
       <!-- social media icons -->
-      <div class="z-20 flex flex-col gap-2">
+      <div class="flex flex-col gap-2">
         <h2 class="text-xl font-bold">FOLLOW US</h2>
         <div class="flex flex-row flex-wrap items-center gap-2">
           <a
@@ -71,7 +71,7 @@
             rel="noopener noreferrer"
           >
             <img
-              class="h-10 w-10 rounded-full bg-white p-2"
+              class="h-10 w-10 rounded-full bg-white p-2 object-none"
               src="../assets/icons/facebook.png"
               alt="Facebook"
             />
@@ -82,7 +82,7 @@
             rel="noopener noreferrer"
           >
             <img
-              class="h-10 w-10 rounded-full bg-white p-2"
+              class="h-10 w-10 rounded-full bg-white p-2 object-none"
               src="../assets/icons/instagram.png"
               alt="Instagram"
             />
@@ -93,7 +93,7 @@
             rel="noopener noreferrer"
           >
             <img
-              class="h-10 w-10 rounded-full bg-white p-2"
+              class="h-10 w-10 rounded-full bg-white p-2 object-none"
               src="../assets/icons/x-twitter.png"
               alt="Twitter"
             />
@@ -104,7 +104,7 @@
             rel="noopener noreferrer"
           >
             <img
-              class="h-10 w-10 rounded-full bg-white p-2"
+              class="h-10 w-10 rounded-full bg-white p-2 object-none"
               src="../assets/icons/linkedin.png"
               alt="LinkedIn"
             />
