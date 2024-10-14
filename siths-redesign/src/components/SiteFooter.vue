@@ -3,7 +3,7 @@
     class="relative mt-20 grid w-full grid-cols-2 justify-between gap-6 p-6 opacity-85 lg:flex lg:flex-row"
   >
     <!-- background image -->
-    <div class="absolute inset-0 z-0 opacity-5 lg:bg-city-skyline"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-5 bg-city-skyline bg-repeat-x bottom-0 bg-bottom"></div>
     <!-- upper left hand corner -->
     <div class="col-span-2 flex flex-col">
       <!-- school name -->

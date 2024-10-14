@@ -29,6 +29,7 @@
       </RouterLink>
 
       <div class="z-40 w-20 text-right">
+        <!-- TODO: someone make this a magnifying glass... -->
         <span>SEARCH</span>
       </div>
     </div>

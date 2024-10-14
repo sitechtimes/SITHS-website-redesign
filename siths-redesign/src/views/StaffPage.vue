@@ -4,7 +4,7 @@
       Faculty and Staff
     </h1>
     <div v-for="category in categories" :key="category.value" class="lg:mx-8">
-      <div class="flex flex-row items-center justify-center">
+      <div class="flex flex-row items-center justify-center text-center">
         <!-- category title and separators -->
         <div class="h-0.5 w-20 flex-grow bg-white"></div>
         <h2 class="mx-2 text-3xl font-bold">{{ category.name }}</h2>

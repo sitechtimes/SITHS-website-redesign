@@ -11,18 +11,19 @@
         class="flex w-4/5 cursor-pointer items-center justify-between rounded-2xl bg-white px-6 py-2 text-2xl font-semibold text-gray md:w-2/3 lg:w-1/2"
       >
         <span>{{ schedule.name }}</span>
+        <!-- TODO: rotate this arrow if dropped down -->
         <img class="w-4" src="../assets/icons/arrow.png" alt="Arrow icon" />
       </div>
 
       <!-- table only shows if the index of the table is included in visibleSchedules array -->
       <div
         v-if="visibleSchedules.includes(index)"
-        class="mt-2 w-screen rounded-box bg-base-100 p-2 lg:w-1/2"
+        class="mt-2 w-screen rounded-box p-2 lg:w-1/2"
       >
-        <div class="flex flex-col items-center justify-center ">
+        <div class="flex flex-col items-center justify-center">
           <table class="table w-fit md:w-2/3 lg:w-full">
             <thead class="text-lg">
-              <tr>
+              <tr class="text-white">
                 <th class="px-2">Period</th>
                 <th class="px-2">Start Time</th>
                 <th class="px-2">End Time</th>
