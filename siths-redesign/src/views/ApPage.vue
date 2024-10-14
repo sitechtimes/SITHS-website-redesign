@@ -8,27 +8,39 @@
 import SubpageAP from '../components/SubpageAP.vue'
 const ApPages = [
   {
-    name: 'AP English Courses',
+    name: 'Welcome',
     url: ''
   },
   {
-    name: 'AP Russian Courses',
+    name: 'Selection',
     url: ''
   },
   {
-    name: 'AP History Courses',
+    name: 'English',
     url: ''
   },
   {
-    name: 'AP Science Courses',
+    name: 'Russian',
     url: ''
   },
   {
-    name: 'AP Math Courses',
+    name: 'History',
     url: ''
   },
   {
-    name: 'AP Technology Courses',
+    name: 'Science',
+    url: ''
+  },
+  {
+    name: 'Math',
+    url: ''
+  },
+  {
+    name: 'Technology',
+    url: ''
+  },
+  {
+    name: 'Rubric',
     url: ''
   }
 ]

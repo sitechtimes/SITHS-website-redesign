@@ -24,8 +24,8 @@ const router = createRouter({
       component: () => import('../views/SchoolInfo/YearlyInfo.vue')
     },
     {
-      path: '/Apcourses',
-      name: 'Apcourses',
+      path: '/apcourses',
+      name: 'apcourses',
       component: () => import('../views/ApPage.vue') // This is only a placeholder for rn, will change it to reroute to each individual AP course page
     },
     {
