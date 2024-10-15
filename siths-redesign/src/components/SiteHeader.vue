@@ -1,9 +1,8 @@
 <template>
   <!-- menu toggle-->
-  <header>
-    class="fixed inset-0 bg-[#1c1b1b] bg-opacity-100 z-50 flex items-center justify-center"
-    :class="{ hidden: !menuVisibility }">
-    <button @click="closeMenu" class="absolute top-4 right-4 text-gray-600 text-2xl px-2">
+  <header v-show="menuVisibility"
+    class="fixed inset-0 bg-[#1c1b1b] bg-opacity-100 z-50 flex items-center justify-center">
+    <button @click="closeMenu" class="absolute top-4 left-4 text-gray-600 text-2xl px-2">
       &times;
     </button>
     <!-- nav links -->
@@ -12,27 +11,31 @@
       <RouterLink to="/bellschedule" class="text-2xl text-white" @click="toggleMenu">Bell Schedule</RouterLink>
       <RouterLink to="/staff" class="text-2xl text-white" @click="toggleMenu">Faculty and Staff</RouterLink>
       <RouterLink to="/clubs" class="text-2xl text-white" @click="toggleMenu">Clubs and Activities</RouterLink>
-      <RouterLink to="/yearlyinfo" class="text-2xl text-white" @click="toggleMenu">2024-2025 School Year Info</RouterLink>
-      <RouterLink to="/erlenwein" class="text-2xl text-white" @click="toggleMenu">Principal Erlenwein Announcements</RouterLink>
-      <RouterLink to="/terrusa" class="text-2xl text-white" @click="toggleMenu">Mr. Terrusa Activities Updates</RouterLink>
-    </div>
-    <!-- logo and search -->
-    <div class="flex flex-row items-center justify-between p-4 text-white">
-      <div class="z-40 w-20">
-        <img @click="toggleMenu" src="../assets/icons/menu-bar.png" alt="Menu icon" class="h-8 w-8" />
-      </div>
-
-      <RouterLink to="/" class="text-3xl text-white flex flex-row items-center justify-center gap-2">
-        <img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo" />
-        SITECH
+      <RouterLink to="/yearlyinfo" class="text-2xl text-white" @click="toggleMenu">2024-2025 School Year Info
       </RouterLink>
-
-      <div class="z-40 w-20 text-right">
-        <!-- TODO: someone make this a magnifying glass... -->
-        <span>SEARCH</span>
-      </div>
+      <RouterLink to="/erlenwein" class="text-2xl text-white" @click="toggleMenu">Principal Erlenwein Announcements
+      </RouterLink>
+      <RouterLink to="/terrusa" class="text-2xl text-white" @click="toggleMenu">Mr. Terrusa Activities Updates
+      </RouterLink>
     </div>
   </header>
+
+  <!-- logo and search -->
+  <div class="flex flex-row items-center justify-between p-4 text-white">
+    <div class="z-40 w-20">
+      <img @click="toggleMenu" src="../assets/icons/menu-bar.png" alt="Menu icon" class="h-8 w-8" />
+    </div>
+
+    <RouterLink to="/" class="text-3xl text-white flex flex-row items-center justify-center gap-2">
+      <img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo" />
+      SITECH
+    </RouterLink>
+
+    <div class="z-40 w-20 text-right">
+      <!-- TODO: someone make this a magnifying glass... -->
+      <span>SEARCH</span>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -40,7 +43,6 @@ import { RouterLink } from 'vue-router'
 import gsap from 'gsap'
 import { ref, onUnmounted } from 'vue'
 
-// menu is hidden by default
 const menuVisibility = ref(false)
 
 const toggleMenu = () => {
