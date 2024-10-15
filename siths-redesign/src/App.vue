@@ -1,7 +1,7 @@
 <template>
   <div>
     <SiteHeader />
-    <RouterView />
+    <RouterView class="min-h-screen"/>
     <SiteFooter />
   </div>
 </template>

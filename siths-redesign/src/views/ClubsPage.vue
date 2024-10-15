@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
     <SubpageMenu :page="clubsPages" />
   </div>
 </template>

@@ -2,7 +2,7 @@
     class="relative flex w-full flex-col items-center justify-center p-10 lg:h-screen lg:flex-row lg:p-0"
   >
     <!-- background gears -->
-    <div class="absolute inset-0 -z-10 h-full w-full">
+    <div class="absolute inset-0 -z-8 h-full w-full">
       <img
         id="left-gear"
         class="absolute bottom-0 left-0"
