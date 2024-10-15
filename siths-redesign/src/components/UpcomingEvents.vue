@@ -64,7 +64,9 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-link mt-8 text-lg text-white">Show All Events</button>
+    <RouterLink class="btn btn-link mt-8 text-lg" to="/calendar">
+      Show All Events
+    </RouterLink>
   </div>
 </template>
 

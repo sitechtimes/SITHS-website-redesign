@@ -17,6 +17,7 @@
       </RouterLink>
       <RouterLink to="/terrusa" class="text-2xl text-white" @click="toggleMenu">Mr. Terrusa Activities Updates
       </RouterLink>
+      <RouterLink to="/calendar" class="text-2xl text-white" @click="toggleMenu">School Calendar</RouterLink>
     </div>
   </header>
 

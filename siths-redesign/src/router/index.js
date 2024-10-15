@@ -43,6 +43,11 @@ const router = createRouter({
       name: 'terrusa',
       component: () => import('../views/StudentLife/TerrusaPage.vue')
     },
+    {
+      path: '/calendar',
+      name: 'calendar',
+      component: () => import('../views/SchoolInfo/SchoolCalendar.vue')
+    },
   ]
 })
 
