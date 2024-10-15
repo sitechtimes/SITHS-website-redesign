@@ -10,10 +10,10 @@
     <div class="flex flex-col justify-center items-start z-10">
       <!-- header texts -->
       <div id="header-texts" class="text-left opacity-0">
-        <h1 class="text-6xl mb-2">Welcome to</h1>
-        <h1 class="text-8xl text-gold font-semibold mb-4">Staten Island</h1>
-        <h1 class="text-8xl mb-4">Technical</h1>
-        <h1 class="text-8xl mb-4">High School</h1>
+        <h2 class="text-6xl text-gold font-semibold mb-2">Welcome to</h2>
+        <h2 class="text-8xl font-semibold mb-4">Staten Island</h2>
+        <h2 class="text-8xl font-semibold mb-4">Technical</h2>
+        <h2 class="text-8xl font-semibold mb-4">High School</h2>
         <div class="flex flex-row items-center">
           <img src="../assets/icons/location-pin.svg" alt="Location pin icon" />
           <p class="p-4 text-lg">485 Clawson St, Staten Island, NY 10306</p>

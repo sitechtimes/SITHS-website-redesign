@@ -1,4 +1,5 @@
 <template>
+  <h1 class="">Mr. Terrusa Announcements</h1>
     <StaffProfile staff-name="Thomas Terrusa"/>
     <InfoDropdown :posts="TerrusaPosts"/>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="h-fit mx-10">
-    <h1 class="font-bold w-full flex items-center justify-center text-5xl my-10">Faculty and Staff</h1>
+    <h1 class="">Faculty and Staff</h1>
     <div class="w-full flex flex-row justify-center">
     <SearchBar class="w-2/3 mb-8" type="text" v-model="searchValue" placeholder="Search Staff" />
 </div>

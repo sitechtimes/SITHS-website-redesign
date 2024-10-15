@@ -1,6 +1,6 @@
 <template>
     <div class="min-h-screen">
-        <h1 class="text-5xl text-center p-6">Bell Schedules</h1>
+        <h1 class="text-center p-6">Bell Schedules</h1>
         <ScheduleDropdown />
     </div>
 </template>
