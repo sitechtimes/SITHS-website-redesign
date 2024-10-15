@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import "main.css";
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'main.css';
 
 :root {
   /* fonts */
-  --font-main: "Kumbh Sans", sans-serif;
+  --font-main: 'Kumbh Sans', sans-serif;
   --weight: 500;
 
   /* colors */
@@ -62,7 +62,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -71,8 +71,8 @@ input[type="number"] {
   /* opacity: 0.6; */
 }
 
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
+input[type='date']::-webkit-inner-spin-button,
+input[type='date']::-webkit-calendar-picker-indicator {
   display: none;
   -webkit-appearance: none;
 }
@@ -92,6 +92,6 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-input[type="file"] {
+input[type='file'] {
   display: none;
 }

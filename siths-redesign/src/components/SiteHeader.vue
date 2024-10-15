@@ -1,6 +1,6 @@
 <template>
   <!-- menu toggle-->
-  <div
+  <header>
     class="fixed inset-0 bg-[#1c1b1b] bg-opacity-100 z-50 flex items-center justify-center"
     :class="{ hidden: !menuVisibility }">
     <button @click="closeMenu" class="absolute top-4 right-4 text-gray-600 text-2xl px-2">
@@ -16,20 +16,23 @@
       <RouterLink to="/erlenwein" class="text-2xl text-white" @click="toggleMenu">Principal Erlenwein Announcements</RouterLink>
       <RouterLink to="/terrusa" class="text-2xl text-white" @click="toggleMenu">Mr. Terrusa Activities Updates</RouterLink>
     </div>
-  </div>
-  <!-- logo and search -->
-  <div class="flex flex-row justify-between items-center p-4 text-white">
-    <div @click="toggleMenu" class="z-40">
-      <img src="../assets/icons/menu-bar.png" alt="Menu icon" class="w-8 h-8" />
+    <!-- logo and search -->
+    <div class="flex flex-row items-center justify-between p-4 text-white">
+      <div class="z-40 w-20">
+        <img @click="toggleMenu" src="../assets/icons/menu-bar.png" alt="Menu icon" class="h-8 w-8" />
+      </div>
+
+      <RouterLink to="/" class="text-3xl text-white flex flex-row items-center justify-center gap-2">
+        <img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo" />
+        SITECH
+      </RouterLink>
+
+      <div class="z-40 w-20 text-right">
+        <!-- TODO: someone make this a magnifying glass... -->
+        <span>SEARCH</span>
+      </div>
     </div>
-    <div class="flex flex-row justify-center items-center space-x-4">
-      <RouterLink to="/" class="text-3xl text-white"
-        ><img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo"
-      /></RouterLink>
-      <RouterLink to="/" class="text-3xl text-white">SITECH</RouterLink>
-    </div>
-    <div class="p-4 z-40">SEARCH</div>
-  </div>
+  </header>
 </template>
 
 <script setup>
