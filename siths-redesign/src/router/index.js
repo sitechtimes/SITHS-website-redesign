@@ -9,6 +9,11 @@ const router = createRouter({
       component: () => import('../views/HomePage.vue')
     },
     {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('../views/404.vue')
+    },
+    {
       path: '/clubs',
       name: 'clubs',
       component: () => import('../views/ClubsPage.vue')
@@ -27,7 +32,17 @@ const router = createRouter({
       path: '/staff',
       name: 'staff',
       component: () => import('../views/StaffPage.vue')
-    }
+    },
+    {
+      path: '/erlenwein',
+      name: 'erlenwein',
+      component: () => import('../views/ErlenweinPage.vue')
+    },
+    {
+      path: '/terrusa',
+      name: 'terrusa',
+      component: () => import('../views/StudentLife/TerrusaPage.vue')
+    },
   ]
 })
 

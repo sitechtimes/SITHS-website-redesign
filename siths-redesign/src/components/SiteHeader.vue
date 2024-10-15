@@ -1,21 +1,20 @@
 <template>
+  <!-- menu toggle-->
   <header>
-    <!-- menu toggle-->
-    <div class="fixed inset-0 z-50 flex items-center justify-center bg-[#1c1b1b] bg-opacity-100"
-      :class="{ hidden: !menuVisibility }">
-      <button @click="closeMenu" class="text-gray-600 absolute right-4 top-4 px-2 text-2xl">
-        &times;
-      </button>
-      <!-- nav links -->
-      <div id="menu-content" class="absolute left-8 top-40 z-10 flex flex-col space-y-4 lg:left-16 lg:space-y-8">
-        <RouterLink to="/" class="text-3xl text-white lg:text-4xl" @click="toggleMenu">Home</RouterLink>
-        <RouterLink to="/bellschedule" class="text-3xl text-white lg:text-4xl" @click="toggleMenu">Bell Schedule
-        </RouterLink>
-        <RouterLink to="/staff" class="text-3xl text-white lg:text-4xl" @click="toggleMenu">Faculty and Staff
-        </RouterLink>
-        <RouterLink to="/clubs" class="text-3xl text-white lg:text-4xl" @click="toggleMenu">Clubs and Activities
-        </RouterLink>
-      </div>
+    class="fixed inset-0 bg-[#1c1b1b] bg-opacity-100 z-50 flex items-center justify-center"
+    :class="{ hidden: !menuVisibility }">
+    <button @click="closeMenu" class="absolute top-4 right-4 text-gray-600 text-2xl px-2">
+      &times;
+    </button>
+    <!-- nav links -->
+    <div id="menu-content" class="absolute top-40 left-16 flex flex-col space-y-8 z-10">
+      <RouterLink to="/" class="text-2xl text-white" @click="toggleMenu">Home</RouterLink>
+      <RouterLink to="/bellschedule" class="text-2xl text-white" @click="toggleMenu">Bell Schedule</RouterLink>
+      <RouterLink to="/staff" class="text-2xl text-white" @click="toggleMenu">Faculty and Staff</RouterLink>
+      <RouterLink to="/clubs" class="text-2xl text-white" @click="toggleMenu">Clubs and Activities</RouterLink>
+      <RouterLink to="/yearlyinfo" class="text-2xl text-white" @click="toggleMenu">2024-2025 School Year Info</RouterLink>
+      <RouterLink to="/erlenwein" class="text-2xl text-white" @click="toggleMenu">Principal Erlenwein Announcements</RouterLink>
+      <RouterLink to="/terrusa" class="text-2xl text-white" @click="toggleMenu">Mr. Terrusa Activities Updates</RouterLink>
     </div>
     <!-- logo and search -->
     <div class="flex flex-row items-center justify-between p-4 text-white">
