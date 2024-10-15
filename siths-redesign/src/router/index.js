@@ -6,17 +6,17 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/HomePage.vue')
+      component: () => import('../../../siths-redesign-2/pages/HomePage.vue')
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
-      component: () => import('../views/404.vue')
+      component: () => import('../../../siths-redesign-2/pages/404.vue')
     },
     {
       path: '/clubs',
       name: 'clubs',
-      component: () => import('../views/ClubsPage.vue')
+      component: () => import('../../../siths-redesign-2/pages/ClubsPage.vue')
     },
     {
       path: '/bellschedule',
@@ -31,12 +31,12 @@ const router = createRouter({
     {
       path: '/staff',
       name: 'staff',
-      component: () => import('../views/StaffPage.vue')
+      component: () => import('../../../siths-redesign-2/pages/StaffPage.vue')
     },
     {
       path: '/erlenwein',
       name: 'erlenwein',
-      component: () => import('../views/ErlenweinPage.vue')
+      component: () => import('../../../siths-redesign-2/pages/ErlenweinPage.vue')
     },
     {
       path: '/terrusa',

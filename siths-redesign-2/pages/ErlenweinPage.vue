@@ -8,7 +8,7 @@ import InfoDropdown from '@/components/InfoDropdown.vue';
 import StaffProfile from '@/components/StaffProfile.vue';
 
 import { ref, onMounted } from 'vue'
-import sanityClient from '../client.js'
+import sanityClient from '../../siths-redesign/src/client.js'
 
 const ErlenweinPosts = ref([])
 

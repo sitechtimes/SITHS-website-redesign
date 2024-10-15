@@ -49,7 +49,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import sanityClient from '../client.js'
+import sanityClient from '../../siths-redesign/src/client.js'
 // import SearchBar from '@/components/SearchBar.vue'
 
 const staff = ref([])
