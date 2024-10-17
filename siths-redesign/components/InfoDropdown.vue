@@ -41,10 +41,7 @@
 
 <script setup>
 const props = defineProps({
-  posts: {
-    type: Array,
-    required: true
-  }
+  posts: Array
 })
 
 const dimensions = ref(null)
@@ -77,7 +74,4 @@ function blocksToText(blocks, opts = {}) {
     })
     .join('\n\n')
 }
-
 </script>
-
-<style lang="css" scoped></style>

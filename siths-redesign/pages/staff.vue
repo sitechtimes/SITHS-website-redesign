@@ -66,15 +66,15 @@ const fetchStaff = async () => {
      category,
      "imageUrl": image.asset->url
   }`
-  const { data, refresh } = useSanityQuery(query)
-  staff.value = await data
+  const { data } = await useSanityQuery(query)
+  staff.value = data.value
 }
 
 function filteredStaff(category) {
   const search = searchValue.value.toLowerCase()
   return staff.value
-    .filter((staffMember) => staffMember.category === category.value)
-    .filter((staffMember) => {
+    ?.filter((staffMember) => staffMember.category === category.value)
+    ?.filter((staffMember) => {
       return (
         staffMember.name.toLowerCase().includes(search) ||
         staffMember.email.toLowerCase().includes(search) ||
@@ -83,5 +83,5 @@ function filteredStaff(category) {
     })
 }
 
-onMounted(fetchStaff)
+await fetchStaff()
 </script>

@@ -49,24 +49,10 @@
 </template>
 
 <script setup>
-const schedules = ref([])
+const props = defineProps({
+  schedules: Array,
+})
 const visibleSchedules = ref([])
-
-//fetch schedules from Sanity CMS
-const fetchSchedules = async () => {
-  const query = '*[_type == "schedules"]'
-  try {
-    const { data, refresh } = useSanityQuery(query)
-    if (data.length > 0) {
-      //make sure we have data to display
-      schedules.value = await data
-    } else {
-      console.log('No schedules found')
-    }
-  } catch (error) {
-    console.error('Error fetching schedules:', error)
-  }
-}
 
 const toggleVisibility = (index) => {
   if (visibleSchedules.value.includes(index)) {
@@ -77,6 +63,4 @@ const toggleVisibility = (index) => {
     visibleSchedules.value.push(index)
   }
 }
-
-onMounted(fetchSchedules)
 </script>

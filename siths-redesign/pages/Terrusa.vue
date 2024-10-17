@@ -17,7 +17,7 @@ const fetchPosts = async () => {
   "imageUrl": image.asset->url
   }`
   try {
-    const { data, refresh } = useSanityQuery(query)
+    const { data, refresh } = await useSanityQuery(query)
     if (data.length > 0) {
       //make sure we have data to display
       TerrusaPosts.value = data
@@ -28,5 +28,5 @@ const fetchPosts = async () => {
     console.error('Error fetching posts:', error)
   }
 }
-onMounted(fetchPosts)
+await fetchPosts()
 </script>

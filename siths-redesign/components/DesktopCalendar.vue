@@ -55,10 +55,10 @@ const fetchEvents = async () => {
     event,
     description,
   }`;
-  const { data, refresh } = useSanityQuery(query)
-  events.value = await data
+  const { data, refresh } = await useSanityQuery(query)
+  events.value = data
 };
-fetchEvents();
+await fetchEvents();
 
 //matching events to calendar cell information
 const eventsOnDate = (dateInfo) => {

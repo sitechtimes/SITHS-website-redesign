@@ -28,13 +28,13 @@ const fetchStaff = async () => {
       category,
       "imageUrl": image.asset->url
     }`
-  const { data, refresh } = useSanityQuery(query)
-  staff.value = await data
+  const { data, refresh } = await useSanityQuery(query)
+  staff.value = data
 }
 
 defineProps({
   staffName: String
 })
 
-onMounted(fetchStaff)
+await fetchStaff()
 </script>
