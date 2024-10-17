@@ -15,8 +15,8 @@ export default defineNuxtConfig({
     },
     public: {
       sanity: {
-        projectId: 'ferer2d9',
-        dataset: 'production',
+        projectId: 'cb6mdrtg',
+        dataset: "website-data",
         useCdn: true,
       }
     },
