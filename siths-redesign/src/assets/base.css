@@ -55,7 +55,7 @@ textarea {
 
 /* text-5xl */
 /* all page headers */
-h1{
+h1 {
   font-size: 3rem;
   line-height: 1;
   font-weight: 600;
@@ -65,11 +65,30 @@ h1{
 }
 
 /* text-3xl */
-h2{
+/* subhead (ie: administrators, teachers on staff page) */
+h2 {
   font-size: 1.875rem;
   line-height: 2.25rem;
+  font-weight: 600;
 }
 
+/* text-2xl */
+/* component headings (ie: bell schedules) */
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+/* sub page menu */
+h4{
+
+}
+
+p{
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+}
 *:focus {
   outline: none;
 }

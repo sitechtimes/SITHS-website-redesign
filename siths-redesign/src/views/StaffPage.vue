@@ -7,7 +7,7 @@
     <div v-for="category in categories" :key="category.value" class="mx-8">
       <div v-if="searchValue === ''" class="flex flex-row justify-center items-center">
         <div class="w-20 h-0.5 bg-white flex-grow"></div>
-        <h2 class="text-3xl font-bold mx-2">{{ category.name }}</h2>
+        <h2 class="mx-4">{{ category.name }}</h2>
         <div class="w-20 h-0.5 bg-white flex-grow"></div>
       </div>
       <div class="flex flex-row flex-wrap space-x-12 my-16 mx-10 justify-between">

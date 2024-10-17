@@ -4,8 +4,8 @@
         <div v-for="(schedule, index) in schedules" :key="index" class="mb-4 flex flex-col justify-center items-center">
             <div
                 @click="toggleVisibility(index)"
-                class="bg-white text-gray text-2xl font-semibold w-[50vw] rounded-2xl py-2 px-6 flex items-center justify-between cursor-pointer">
-                <span>{{ schedule.name }}</span>
+                class="bg-white text-gray w-[50vw] rounded-2xl py-2 px-6 flex items-center justify-between cursor-pointer">
+                <h3>{{ schedule.name }}</h3>
                 <img class="w-4" src="../assets/icons/arrow.png" alt="Arrow icon">
             </div>
 

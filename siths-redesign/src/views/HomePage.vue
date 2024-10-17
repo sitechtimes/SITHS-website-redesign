@@ -10,7 +10,7 @@
     <div class="flex flex-col justify-center items-start z-10">
       <!-- header texts -->
       <div id="header-texts" class="text-left opacity-0">
-        <h2 class="text-6xl text-gold font-semibold mb-2">Welcome to</h2>
+        <h2 class="text-6xl text-gold mb-2">Welcome to</h2>
         <h2 class="text-8xl font-semibold mb-4">Staten Island</h2>
         <h2 class="text-8xl font-semibold mb-4">Technical</h2>
         <h2 class="text-8xl font-semibold mb-4">High School</h2>
