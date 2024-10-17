@@ -64,12 +64,8 @@
         </div>
       </div>
     </div>
-    <RouterLink class="btn btn-link mt-8 text-lg" to="/calendar">
+    <NuxtLink class="btn btn-link mt-8 text-lg" to="/calendar">
       Show All Events
-    </RouterLink>
+    </NuxtLink>
   </div>
 </template>
-
-<script setup></script>
-
-<style scoped></style>

@@ -4,9 +4,3 @@
     <ScheduleDropdown />
   </div>
 </template>
-
-<script setup>
-import ScheduleDropdown from '@/components/ScheduleDropdown.vue'
-</script>
-
-<style lang="css" scoped></style>

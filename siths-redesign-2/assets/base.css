@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import 'main.css';
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
 
 :root {
   /* fonts */
   --font-main: 'Kumbh Sans', sans-serif;
+  --font-serif: 'Playfair', serif;
   --weight: 500;
 
   /* colors */
-  --bg-color: #323232;
-  --text-color: #fff;
+  --bg-color: #fff;
+  --text-color: #37394f;
 
   font-synthesis: none;
   scroll-behavior: smooth;
@@ -25,6 +26,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 body {

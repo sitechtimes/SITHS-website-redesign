@@ -6,7 +6,7 @@
         <div class="relative h-[35rem] w-full">
           <img
             class="h-full w-full object-cover"
-            src="/src/assets/imgs/staten-island-technical-high-school.jpg"
+            src="../assets/imgs/staten-island-technical-high-school.jpg"
             alt="Staten Island Technical High School"
           />
         </div>

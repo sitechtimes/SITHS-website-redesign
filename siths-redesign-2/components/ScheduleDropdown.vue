@@ -49,9 +49,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import sanityClient from '../client.js'
-
 const schedules = ref([])
 const visibleSchedules = ref([])
 
@@ -59,10 +56,10 @@ const visibleSchedules = ref([])
 const fetchSchedules = async () => {
   const query = '*[_type == "schedules"]'
   try {
-    const data = await sanityClient.fetch(query)
+    const { data, refresh } = useSanityQuery(query)
     if (data.length > 0) {
       //make sure we have data to display
-      schedules.value = data
+      schedules.value = await data
     } else {
       console.log('No schedules found')
     }

@@ -4,12 +4,6 @@
 </template>
 
 <script setup>
-import InfoDropdown from '@/components/InfoDropdown.vue';
-import StaffProfile from '@/components/StaffProfile.vue';
-
-import { ref, onMounted } from 'vue'
-import sanityClient from '@/client'
-
 const TerrusaPosts = ref([])
 
 //fetch terrusa from Sanity CMS
@@ -23,7 +17,7 @@ const fetchPosts = async () => {
   "imageUrl": image.asset->url
   }`
   try {
-    const data = await sanityClient.fetch(query)
+    const { data, refresh } = useSanityQuery(query)
     if (data.length > 0) {
       //make sure we have data to display
       TerrusaPosts.value = data

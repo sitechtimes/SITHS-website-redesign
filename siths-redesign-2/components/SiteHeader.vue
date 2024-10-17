@@ -7,17 +7,17 @@
     </button>
     <!-- nav links -->
     <div id="menu-content" class="absolute top-40 left-16 flex flex-col space-y-8 z-10">
-      <RouterLink to="/" class="text-2xl text-white" @click="toggleMenu">Home</RouterLink>
-      <RouterLink to="/bellschedule" class="text-2xl text-white" @click="toggleMenu">Bell Schedule</RouterLink>
-      <RouterLink to="/staff" class="text-2xl text-white" @click="toggleMenu">Faculty and Staff</RouterLink>
-      <RouterLink to="/clubs" class="text-2xl text-white" @click="toggleMenu">Clubs and Activities</RouterLink>
-      <RouterLink to="/yearlyinfo" class="text-2xl text-white" @click="toggleMenu">2024-2025 School Year Info
-      </RouterLink>
-      <RouterLink to="/erlenwein" class="text-2xl text-white" @click="toggleMenu">Principal Erlenwein Announcements
-      </RouterLink>
-      <RouterLink to="/terrusa" class="text-2xl text-white" @click="toggleMenu">Mr. Terrusa Activities Updates
-      </RouterLink>
-      <RouterLink to="/calendar" class="text-2xl text-white" @click="toggleMenu">School Calendar</RouterLink>
+      <NuxtLink to="/" class="text-2xl text-white" @click="toggleMenu">Home</NuxtLink>
+      <NuxtLink to="/bellschedule" class="text-2xl text-white" @click="toggleMenu">Bell Schedule</NuxtLink>
+      <NuxtLink to="/staff" class="text-2xl text-white" @click="toggleMenu">Faculty and Staff</NuxtLink>
+      <NuxtLink to="/clubs" class="text-2xl text-white" @click="toggleMenu">Clubs and Activities</NuxtLink>
+      <NuxtLink to="/yearlyinfo" class="text-2xl text-white" @click="toggleMenu">2024-2025 School Year Info
+      </NuxtLink>
+      <NuxtLink to="/erlenwein" class="text-2xl text-white" @click="toggleMenu">Principal Erlenwein Announcements
+      </NuxtLink>
+      <NuxtLink to="/terrusa" class="text-2xl text-white" @click="toggleMenu">Mr. Terrusa Activities Updates
+      </NuxtLink>
+      <NuxtLink to="/calendar" class="text-2xl text-white" @click="toggleMenu">School Calendar</NuxtLink>
     </div>
   </header>
 
@@ -27,10 +27,10 @@
       <img @click="toggleMenu" src="../assets/icons/menu-bar.png" alt="Menu icon" class="h-8 w-8" />
     </div>
 
-    <RouterLink to="/" class="text-3xl text-white flex flex-row items-center justify-center gap-2">
+    <NuxtLink to="/" class="text-3xl text-white flex flex-row items-center justify-center gap-2">
       <img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo" />
       SITECH
-    </RouterLink>
+    </NuxtLink>
 
     <div class="z-40 w-20 text-right">
       <!-- TODO: someone make this a magnifying glass... -->
@@ -40,9 +40,7 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import gsap from 'gsap'
-import { ref, onUnmounted } from 'vue'
 
 const menuVisibility = ref(false)
 
@@ -80,5 +78,3 @@ onUnmounted(() => {
   document.documentElement.style.overflow = ''
 })
 </script>
-
-<style scoped></style>

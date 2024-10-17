@@ -48,10 +48,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import sanityClient from '../../siths-redesign/src/client.js'
-// import SearchBar from '@/components/SearchBar.vue'
-
 const staff = ref([])
 const categories = ref([
   { name: 'Administrators', value: 'administrators' },
@@ -70,7 +66,8 @@ const fetchStaff = async () => {
      category,
      "imageUrl": image.asset->url
   }`
-  staff.value = await sanityClient.fetch(query)
+  const { data, refresh } = useSanityQuery(query)
+  staff.value = await data
 }
 
 function filteredStaff(category) {

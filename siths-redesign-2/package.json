@@ -1,22 +1,26 @@
 {
-  "name": "siths-redesign",
-  "version": "0.0.0",
+  "name": "nuxt-app",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "format": "prettier --write ."
   },
   "dependencies": {
+    "@nuxtjs/sanity": "^1.12.2",
     "@sanity/client": "^6.21.3",
     "gsap": "^3.12.5",
-    "vue": "^3.4.29",
+    "nuxt": "^3.12.3",
+    "sanity": "^3.60.0",
+    "vue": "latest",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.1",
     "@rushstack/eslint-patch": "^1.8.0",
     "@vitejs/plugin-vue": "^5.1.3",
     "@vue/eslint-config-prettier": "^9.0.0",

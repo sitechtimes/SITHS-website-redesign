@@ -74,9 +74,6 @@
 </template>
 
 <script setup>
-import MissionStatement from '@/components/MissionStatement.vue'
-import UpcomingEvents from '@/components/UpcomingEvents.vue'
-import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 
 onMounted(() => {

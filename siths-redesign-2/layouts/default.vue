@@ -1,6 +1,6 @@
 <template>
     <div class="flex h-[100dvh] flex-col">
-        <SiteHeader class="mt-auto" />
+        <SiteHeader />
         <slot />
         <SiteFooter />
     </div>

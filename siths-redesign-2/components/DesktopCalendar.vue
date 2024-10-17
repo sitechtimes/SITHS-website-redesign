@@ -43,10 +43,6 @@
 </template>
 
 <script setup>
-import { reactive, onMounted, ref } from "vue";
-import sanityClient from '../client.js';
-import CalendarModal from "./CalendarModal.vue";
-
 const events = ref([]);
 const eventDetails = ref(null);
 const show = ref(false);  //control modal visibility
@@ -59,7 +55,8 @@ const fetchEvents = async () => {
     event,
     description,
   }`;
-  events.value = await sanityClient.fetch(query);
+  const { data, refresh } = useSanityQuery(query)
+  events.value = await data
 };
 fetchEvents();
 

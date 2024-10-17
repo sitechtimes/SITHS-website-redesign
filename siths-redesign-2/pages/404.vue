@@ -14,15 +14,11 @@
           This seagull took a wrong turn—let's find your way back to the island!
         </p>
       </div>
-      <RouterLink
+      <NuxtLink
         to="/"
         class="rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-[#c2b669] shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-700"
-        >Return to the island</RouterLink
+        >Return to the island</NuxtLink
       >
     </main>
   </div>
 </template>
-
-<script setup lang="ts">
-import { RouterLink } from 'vue-router'
-</script>
