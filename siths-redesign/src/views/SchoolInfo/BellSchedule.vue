@@ -6,11 +6,7 @@
 </template>
 
 <script setup>
-import ScheduleDropdown from '@/components/ScheduleDropdown.vue';
-
-
+import ScheduleDropdown from '@/components/ScheduleDropdown.vue'
 </script>
 
-<style lang="css" scoped>
-
-</style>
+<style lang="css" scoped></style>

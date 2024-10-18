@@ -9,6 +9,11 @@ const router = createRouter({
       component: () => import('../views/HomePage.vue')
     },
     {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('../views/404.vue')
+    },
+    {
       path: '/clubs',
       name: 'clubs',
       component: () => import('../views/ClubsPage.vue')
@@ -29,11 +34,6 @@ const router = createRouter({
       component: () => import('../views/StaffPage.vue')
     },
     {
-      path: '/:pathMatch(.*)*',
-      name: 'NotFound',
-      component: () => import('../views/404.vue')
-    },
-    {
       path: '/erlenwein',
       name: 'erlenwein',
       component: () => import('../views/ErlenweinPage.vue')
@@ -42,6 +42,11 @@ const router = createRouter({
       path: '/terrusa',
       name: 'terrusa',
       component: () => import('../views/StudentLife/TerrusaPage.vue')
+    },
+    {
+      path: '/calendar',
+      name: 'calendar',
+      component: () => import('../views/SchoolInfo/SchoolCalendar.vue')
     },
   ]
 })

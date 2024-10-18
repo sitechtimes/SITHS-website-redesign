@@ -5,7 +5,7 @@
           <h4 class="text-gray">{{subpage.name}}</h4>
         </router-link>
     </div>
-</div>
+  </div>
 </template>
 
 <script setup>
