@@ -2,7 +2,7 @@
   <!-- menu toggle-->
   <header v-show="menuVisibility"
     class="fixed inset-0 bg-[#1c1b1b] bg-opacity-100 z-50 flex items-center justify-center">
-    <button @click="closeMenu" class="absolute top-4 left-4 text-gray-600 text-2xl px-2">
+    <button @click="closeMenu" class="absolute top-4 left-4 text-gray-600 text-2xl px-2 hover:cursor-pointer">
       &times;
     </button>
     <!-- nav links -->
@@ -23,7 +23,7 @@
 
   <!-- logo and search -->
   <div class="flex flex-row items-center justify-between p-4 text-white">
-    <div class="z-40 w-20">
+    <div class="z-40 w-20 hover:cursor-pointer">
       <img @click="toggleMenu" src="../assets/icons/menu-bar.png" alt="Menu icon" class="h-8 w-8" />
     </div>
 

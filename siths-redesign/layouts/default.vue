@@ -1,5 +1,5 @@
 <template>
-    <div class="flex h-[100dvh] flex-col">
+    <div class="flex flex-col">
         <SiteHeader />
         <slot />
         <SiteFooter />

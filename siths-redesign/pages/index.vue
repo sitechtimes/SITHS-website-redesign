@@ -1,20 +1,9 @@
-<template>  <div
-    class="relative flex w-full flex-col items-center justify-center p-10 lg:h-screen lg:flex-row lg:p-0"
-  >
+<template>
+  <div class="relative flex w-full flex-col items-center justify-center p-10 lg:h-screen lg:flex-row lg:p-0">
     <!-- background gears -->
     <div class="absolute inset-0 pointer-events-none h-full w-full">
-      <img
-        id="left-gear"
-        class="absolute bottom-0 left-0"
-        src="../assets/imgs/left-gear.svg"
-        alt=""
-      />
-      <img
-        id="right-gear"
-        class="absolute bottom-0 right-0"
-        src="../assets/imgs/right-gear.svg"
-        alt=""
-      />
+      <img id="left-gear" class="absolute bottom-0 left-0" src="../assets/imgs/left-gear.svg" alt="" />
+      <img id="right-gear" class="absolute bottom-0 right-0" src="../assets/imgs/right-gear.svg" alt="" />
     </div>
 
     <!-- left side -->
