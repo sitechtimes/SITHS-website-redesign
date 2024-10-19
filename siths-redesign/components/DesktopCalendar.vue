@@ -43,22 +43,10 @@
 </template>
 
 <script setup>
-const events = ref([]);
+const websiteData = useWebsiteDataStore()
+const events = ref(websiteData.events)
 const eventDetails = ref(null);
 const show = ref(false);  //control modal visibility
-
-//fetch events from Sanity
-const fetchEvents = async () => {
-  const query = `*[_type == "calendar"]{
-    _id,
-    date,
-    event,
-    description,
-  }`;
-  const { data, refresh } = await useSanityQuery(query)
-  events.value = data
-};
-await fetchEvents();
 
 //matching events to calendar cell information
 const eventsOnDate = (dateInfo) => {
@@ -71,7 +59,7 @@ const eventsOnDate = (dateInfo) => {
     //compare the event date to the date of the current calendar cell
     const isMatch = (
       parseInt(eventYear) === dateInfo.year &&
-      parseInt(eventMonth) === dateInfo.month + 1 && 
+      parseInt(eventMonth) - 1 === dateInfo.month &&
       parseInt(eventDay) === dateInfo.todaysDate
     );
     return isMatch;
@@ -95,7 +83,10 @@ const months = [
 ];
 
 onMounted(() => {
-  renderCalendar();
+  watch(() => websiteData.fetchLoading, () => {
+    events.value = websiteData.events;
+    renderCalendar();
+  }, {immediate: true});
 });
 
 let todaysDate = new Date();

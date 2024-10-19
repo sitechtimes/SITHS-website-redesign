@@ -3,10 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
   css: ['~/assets/main.css'],
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/sanity'
-  ],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sanity', "@pinia/nuxt"],
   runtimeConfig: {
     sanity: {
       projectId: "cb6mdrtg",

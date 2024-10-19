@@ -1,32 +1,8 @@
 <template>
-    <StaffProfile staff-name="Thomas Terrusa"/>
-    <InfoDropdown :posts="TerrusaPosts"/>
+  <StaffProfile staff-name="Thomas Terrusa" />
+  <InfoDropdown :posts="websiteData.terrusaPosts" />
 </template>
 
 <script setup>
-const TerrusaPosts = ref([])
-
-//fetch terrusa from Sanity CMS
-const fetchPosts = async () => {
-  const query = `*[_type == "terrusa"]{
-  _id,
-  PostTitle,
-  author,
-  date,
-  description,
-  "imageUrl": image.asset->url
-  }`
-  try {
-    const { data, refresh } = await useSanityQuery(query)
-    if (data.length > 0) {
-      //make sure we have data to display
-      TerrusaPosts.value = data
-    } else {
-      console.log('No posts found')
-    }
-  } catch (error) {
-    console.error('Error fetching posts:', error)
-  }
-}
-await fetchPosts()
+const websiteData = useWebsiteDataStore()
 </script>

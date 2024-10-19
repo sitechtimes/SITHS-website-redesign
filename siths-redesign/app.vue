@@ -17,3 +17,7 @@
     </NuxtLayout>
   </div>
 </template>
+
+<script setup>
+useWebsiteDataStore()
+</script>
