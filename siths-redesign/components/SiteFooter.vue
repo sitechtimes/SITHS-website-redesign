@@ -1,5 +1,5 @@
 <template>
-  <div
+  <footer
     class="relative mt-20 grid w-full grid-cols-2 justify-between gap-6 p-6 opacity-85 lg:flex lg:flex-row"
   >
     <!-- background image -->
@@ -8,7 +8,7 @@
     <div class="col-span-2 flex flex-col">
       <!-- school name -->
       <div class="flex flex-row items-center">
-        <img src="../assets/icons/siths-logo.png" alt="" />
+        <img src="../assets/icons/siths-logo.png" alt=""  aria-hidden="true" />
         <h1 class="p-4 text-xl">
           Staten Island <br />
           Technical High School
@@ -112,5 +112,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 </template>

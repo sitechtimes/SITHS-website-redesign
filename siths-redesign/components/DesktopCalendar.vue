@@ -27,23 +27,16 @@
         <tbody>
           <!-- height of 1px is for the table cell's height 100% to work?? -->
           <tr v-for="i in 5" :key="i" class="h-[1px]">
-            <td
-              v-for="date in calendarData.dateInfo.slice((i - 1) * 7, i * 7)"
-              :key="date.id"
-              class="overflow-y-auto overflow-x-clip break-words border-2 border-zinc-400"
-              style="height: inherit"
-              :aria-label="`${months[date.month]} ${date.todaysDate}, ${date.year}`"
-            >
+            <td v-for="date in calendarData.dateInfo.slice((i - 1) * 7, i * 7)" :key="date.id"
+              class="overflow-y-auto overflow-x-clip break-words border-2 border-zinc-400" style="height: inherit"
+              :aria-label="`${months[date.month]} ${date.todaysDate}, ${date.year}`">
               <div class="h-full min-h-20">
                 <span :class="{ 'text-slate-300': date.type !== 'current' }">{{
                   date.todaysDate
                 }}</span>
                 <div v-for="event in eventsOnDate(date)" :key="event._id">
-                  <p
-                    @click="toggleDetails(event)"
-                    class="bg-gold text-gray"
-                    :class="`mb-1 w-full cursor-pointer truncate rounded-md p-1.5 text-center font-bold transition duration-500 hover:opacity-80 hover:shadow-md`"
-                  >
+                  <p @click="toggleDetails(event)" class="bg-gold text-gray"
+                    :class="`mb-1 w-full cursor-pointer truncate rounded-md p-1.5 text-center font-bold transition duration-500 hover:opacity-80 hover:shadow-md`">
                     {{ event.event }}
                   </p>
                 </div>
@@ -178,4 +171,3 @@ const changeMonth = (next) => {
 }
 </script>
 
-<style scoped></style>

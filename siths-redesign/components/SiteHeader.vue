@@ -1,6 +1,7 @@
 <template>
+  <header>
   <!-- menu toggle-->
-  <header v-show="menuVisibility"
+  <div v-show="menuVisibility"
     class="fixed inset-0 bg-[#1c1b1b] bg-opacity-100 z-50 flex items-center justify-center">
     <button @click="closeMenu" class="absolute top-4 left-4 text-gray-600 text-2xl px-2 hover:cursor-pointer">
       &times;
@@ -8,10 +9,10 @@
     <!-- nav links -->
     <div id="menu-content" class="absolute top-40 left-16 flex flex-col space-y-8 z-10">
       <NuxtLink to="/" class="text-2xl text-white" @click="toggleMenu">Home</NuxtLink>
-      <NuxtLink to="/bellschedule" class="text-2xl text-white" @click="toggleMenu">Bell Schedule</NuxtLink>
+      <NuxtLink to="/schedules" class="text-2xl text-white" @click="toggleMenu">Bell Schedule</NuxtLink>
       <NuxtLink to="/staff" class="text-2xl text-white" @click="toggleMenu">Faculty and Staff</NuxtLink>
       <NuxtLink to="/clubs" class="text-2xl text-white" @click="toggleMenu">Clubs and Activities</NuxtLink>
-      <NuxtLink to="/yearlyinfo" class="text-2xl text-white" @click="toggleMenu">2024-2025 School Year Info
+      <NuxtLink to="/yearly-info" class="text-2xl text-white" @click="toggleMenu">2024-2025 School Year Info
       </NuxtLink>
       <NuxtLink to="/erlenwein" class="text-2xl text-white" @click="toggleMenu">Principal Erlenwein Announcements
       </NuxtLink>
@@ -19,7 +20,7 @@
       </NuxtLink>
       <NuxtLink to="/calendar" class="text-2xl text-white" @click="toggleMenu">School Calendar</NuxtLink>
     </div>
-  </header>
+  </div>
 
   <!-- logo and search -->
   <div class="flex flex-row items-center justify-between p-4 text-white">
@@ -37,6 +38,7 @@
       <span>SEARCH</span>
     </div>
   </div>
+  </header>
 </template>
 
 <script setup>
