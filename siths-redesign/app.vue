@@ -13,7 +13,7 @@
   <div>
     <NuxtLayout>
       <NuxtLoadingIndicator />
-      <NuxtPage />
+      <NuxtPage class="md:my-6 lg:my-8" />
     </NuxtLayout>
   </div>
 </template>

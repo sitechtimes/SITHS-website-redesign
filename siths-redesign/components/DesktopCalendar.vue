@@ -1,7 +1,7 @@
 <template>
-  <div class="" v-if="calendarData.dateInfo.length > 0">
-    <div class="mb-12 flex flex-row">
-      <table class="calendar w-full max-w-[900px] table-fixed">
+  <div class="mb-12" v-if="calendarData.dateInfo.length > 0">
+    <div class="flex flex-row justify-center">
+      <table class="calendar w-5/6 lg:w-full max-w-[900px] table-fixed">
         <caption class="pb-2 text-3xl font-bold">
           <div class="flex justify-center">
             <span class="arrow cursor-pointer select-none" id="prev" @click="changeMonth(-1)">

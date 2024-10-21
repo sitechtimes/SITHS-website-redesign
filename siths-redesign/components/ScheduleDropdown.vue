@@ -8,7 +8,7 @@
     >
       <div
         @click="toggleVisibility(index)"
-        class="flex w-4/5 cursor-pointer items-center justify-between rounded-2xl bg-white px-6 py-2 text-2xl font-semibold text-gray md:w-2/3 lg:w-1/2"
+        class="flex w-4/5 cursor-pointer items-center justify-between rounded-2xl bg-white px-6 py-2 text-xl font-semibold text-gray md:w-2/3 md:text-2xl lg:w-1/2"
       >
         <span>{{ schedule.name }}</span>
         <!-- TODO: rotate this arrow if dropped down -->
@@ -35,10 +35,10 @@
             </thead>
             <tbody>
               <tr v-for="(period, index) in schedule.periods" :key="index">
-                <td class="px-4">{{ period.periodNumber }}</td>
-                <td class="px-4">{{ period.startTime }}</td>
-                <td class="px-4">{{ period.endTime }}</td>
-                <td class="px-4">{{ period.periodLength }}</td>
+                <td class="px-3">{{ period.periodNumber }}</td>
+                <td class="px-3">{{ period.startTime }}</td>
+                <td class="px-3">{{ period.endTime }}</td>
+                <td class="px-3">{{ period.periodLength }}</td>
               </tr>
             </tbody>
           </table>

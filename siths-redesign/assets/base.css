@@ -27,7 +27,7 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
   word-wrap: break-word;
-  word-break: break-all;
+  word-break: normal;
 }
 
 body {

@@ -13,7 +13,7 @@
       </div>
 
       <!-- carousel -->
-      <div class="relative flex flex-col items-center justify-center py-8 lg:w-1/2">
+      <div class="relative flex flex-col items-center justify-center py-8 h-screen lg:w-1/2">
         <div class="carousel flex w-full items-center justify-between">
           <!-- slide 1 -->
           <div
