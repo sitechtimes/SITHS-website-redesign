@@ -55,7 +55,6 @@ const getImageDimensions = (url) => {
 
   image.onerror = () => {
     dimensions.value = null // Handle error if the image fails to load
-    console.log('Failed to load image. Please check the URL. Or post has no image.')
   }
 
   image.src = url

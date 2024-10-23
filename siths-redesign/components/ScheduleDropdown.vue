@@ -28,7 +28,7 @@
                 <th class="px-2">Start Time</th>
                 <th class="px-2">End Time</th>
                 <th class="px-2">
-                  Length<br class="md:hidden lg:hidden" />
+                  Length<br class="md:hidden" />
                   (Minutes)
                 </th>
               </tr>
