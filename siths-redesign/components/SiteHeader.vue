@@ -7,7 +7,7 @@
       &times;
     </button>
     <!-- nav links -->
-    <div id="menu-content" class="absolute top-40 left-16 flex flex-col space-y-8 z-10">
+    <div id="menu-content" class="absolute top-20 left-16 flex flex-col space-y-8 z-10">
       <NuxtLink to="/" class="text-2xl text-white" @click="toggleMenu">Home</NuxtLink>
       <NuxtLink to="/schedules" class="text-2xl text-white" @click="toggleMenu">Bell Schedule</NuxtLink>
       <NuxtLink to="/staff" class="text-2xl text-white" @click="toggleMenu">Faculty and Staff</NuxtLink>
