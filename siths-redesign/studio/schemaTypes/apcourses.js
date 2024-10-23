@@ -7,32 +7,37 @@ export const courses = defineType({
   fields: [
     defineField({
       name: 'name',
-      title: 'Course Name',
+      title: 'Course Subject',
+      type: 'array',
+    }),
+    defineField({
+      name: 'card',
+      title: 'Course Card',
       type: 'array',
       of: [
         {
           type: 'object',
           fields: [
             defineField({
-              name: 'periodNumber',
-              title: 'Period Number',
-              type: 'number',
+              name: 'courseName',
+              title: 'Course Name',
+              type: 'string',
             }),
             defineField({
-              name: 'grade',
-              title: 'Student Grade',
+              name: 'courseGrade',
+              title: 'Course Grade',
               type: 'number',
             }),
             defineField({
               name: 'description',
-              title: 'Course Description',
+              title: 'Curse Description',
               type: 'string',
             }),
           ],
         },
       ],
       options: {
-        layout: 'table',
+        layout: 'card',
       },
     }),
   ],

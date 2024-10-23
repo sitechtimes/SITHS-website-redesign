@@ -6,8 +6,7 @@
 
 <script setup>
 import SubpageAP from '../components/SubpageAP.vue'
-import { ref, onMounted } from 'vue';
-import sanityClient from '../client.js';
+;
 
 const ApPages = [
   {

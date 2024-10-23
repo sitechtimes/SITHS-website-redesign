@@ -11,20 +11,37 @@
           >
         </div>
       </div>
-      <div class="p-7 rounded-md text-black bg-white w-[50%] m-8">
-        <h2 class="font-bold text-4xl">AP English Language and Composition</h2>
-        <h3 class="my-4 text-2xl">Taken 11th Grade</h3>
-        <p class="text-lg w-[75%]">
-          COURSE SELECTION BASED ON FOLLOWING: CLASS AVERAGES – 90% (Cumulative English Average)
-          TEACHER RECOMMENDATION – 10% 
-        </p>
-        <button class="text-white text-xl rounded-xl bg-gray w-[25%]">Description</button>
-      </div>
+      <ApCard />
     </div>
   </div>
 </template>
 
 <script setup>
+import ApCard from './ApCard.vue'
+import { ref, onMounted } from 'vue'
+import sanityClient from '../client.js'
+
+const schedules = ref([])
+const fetchCourses = async () => {
+  const query = `*[_type == "courses"]{
+  _id,
+  ,
+  description,
+  }`
+  try {
+    const data = await sanityClient.fetch(query)
+    if (data.length > 0) {
+      schedules.value = data
+      console.log('works')
+    } else {
+      console.log('No course found')
+    }
+  } catch (error) {
+    console.error('Error fetching course:', error)
+  }
+}
+
+onMounted(fetchCourses)
 defineProps({
   page: Array
 })
