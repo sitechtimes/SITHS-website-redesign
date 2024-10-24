@@ -51,6 +51,7 @@
                 communication, creativity, and critical thinking skills. We strive to instill in our
                 students a sense of wonder, curiosity, and a growth mindset to meaningfully
                 contribute to and shape a society that values equity, excellence, and empathy. (D31
+                Mission/Vision)
               </p>
             </div>
             <a href="#slide1" class="btn btn-circle text-xl lg:mx-6">❯</a>
