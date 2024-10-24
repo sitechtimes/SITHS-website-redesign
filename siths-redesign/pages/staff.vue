@@ -39,7 +39,6 @@
 
 <script setup>
 const websiteData = useWebsiteDataStore()
-const staff = ref(websiteData.staff)
 
 const categories = ref([
   { name: 'Administrators', value: 'administrators' },
@@ -51,7 +50,7 @@ const searchValue = ref('')
 
 function filteredStaff(category) {
   const search = searchValue.value.toLowerCase()
-  return staff.value
+  return websiteData.staff
     ?.filter((staffMember) => staffMember.category === category.value)
     ?.filter((staffMember) => {
       return (

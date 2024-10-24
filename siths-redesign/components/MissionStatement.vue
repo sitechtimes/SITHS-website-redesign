@@ -18,10 +18,10 @@
           <!-- slide 1 -->
           <div
             id="slide1"
-            class="carousel-item relative flex w-full flex-grow items-center justify-center pb-4"
+            class="carousel-item relative flex w-full min-h-full flex-grow items-center justify-center pb-4"
           >
-            <a href="#slide2" class="btn btn-circle text-xl text-gray lg:mx-6">❮</a>
-            <div class="flex h-2/3 w-2/3 flex-col space-y-4 text-center">
+            <a href="#slide2" class="btn btn-circle text-xl lg:mx-6">❮</a>
+            <div class="flex mx-2 h-2/3 w-2/3 flex-col space-y-4 text-center">
               <h1 class="text-4xl font-semibold text-gray">Vision</h1>
               <p class="text-xl text-gray">
                 Staten Island Technical High School places a high priority on academics and
@@ -32,16 +32,16 @@
                 potential and succeed in a multicultural global society.
               </p>
             </div>
-            <a href="#slide2" class="btn btn-circle text-xl text-gray lg:mx-6">❯</a>
+            <a href="#slide2" class="btn btn-circle text-xl lg:mx-6">❯</a>
           </div>
 
           <!-- slide 2 -->
           <div
             id="slide2"
-            class="carousel-item relative flex w-full flex-grow items-center justify-center pb-4"
+            class="carousel-item relative flex w-full min-h-full flex-grow items-center justify-center pb-4"
           >
-            <a href="#slide1" class="btn btn-circle text-xl text-gray lg:mx-6">❮</a>
-            <div class="flex h-2/3 w-2/3 flex-col space-y-4 text-center">
+            <a href="#slide1" class="btn btn-circle text-xl lg:mx-6">❮</a>
+            <div class="flex mx-2 h-2/3 w-2/3 flex-col space-y-4 text-center">
               <h1 class="text-4xl font-semibold text-gray">Mission</h1>
               <p class="text-xl text-gray">
                 The SITHS community fosters the development of well-rounded, passionate life-long
@@ -54,7 +54,7 @@
                 Mission/Vision)
               </p>
             </div>
-            <a href="#slide1" class="btn btn-circle text-xl text-gray lg:mx-6">❯</a>
+            <a href="#slide1" class="btn btn-circle text-xl lg:mx-6">❯</a>
           </div>
         </div>
       </div>

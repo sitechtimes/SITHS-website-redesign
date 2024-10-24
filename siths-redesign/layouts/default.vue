@@ -1,7 +1,9 @@
 <template>
-    <div class="flex flex-col">
-        <SiteHeader />
-        <slot />
-        <SiteFooter />
+    <div class="flex min-h-[100dvh] flex-col">
+        <Body class="flex-1">
+            <SiteHeader/>
+            <slot />
+        </Body>
+        <SiteFooter class="mt-auto" />
     </div>
 </template>
