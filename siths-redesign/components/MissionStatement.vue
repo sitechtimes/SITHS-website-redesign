@@ -20,7 +20,7 @@
             id="slide1"
             class="carousel-item relative flex w-full min-h-full flex-grow items-center justify-center pb-4"
           >
-            <a href="#slide2" class="btn btn-circle text-xl text-gray lg:mx-6">❮</a>
+            <a href="#slide2" class="btn btn-circle text-xl lg:mx-6">❮</a>
             <div class="flex mx-2 h-2/3 w-2/3 flex-col space-y-4 text-center">
               <h1 class="text-4xl font-semibold text-gray">Vision</h1>
               <p class="text-xl text-gray">
@@ -32,7 +32,7 @@
                 potential and succeed in a multicultural global society.
               </p>
             </div>
-            <a href="#slide2" class="btn btn-circle text-xl text-gray lg:mx-6">❯</a>
+            <a href="#slide2" class="btn btn-circle text-xl lg:mx-6">❯</a>
           </div>
 
           <!-- slide 2 -->
@@ -40,7 +40,7 @@
             id="slide2"
             class="carousel-item relative flex w-full min-h-full flex-grow items-center justify-center pb-4"
           >
-            <a href="#slide1" class="btn btn-circle text-xl text-gray lg:mx-6">❮</a>
+            <a href="#slide1" class="btn btn-circle text-xl lg:mx-6">❮</a>
             <div class="flex mx-2 h-2/3 w-2/3 flex-col space-y-4 text-center">
               <h1 class="text-4xl font-semibold text-gray">Mission</h1>
               <p class="text-xl text-gray">
@@ -51,10 +51,9 @@
                 communication, creativity, and critical thinking skills. We strive to instill in our
                 students a sense of wonder, curiosity, and a growth mindset to meaningfully
                 contribute to and shape a society that values equity, excellence, and empathy. (D31
-                Mission/Vision)
               </p>
             </div>
-            <a href="#slide1" class="btn btn-circle text-xl text-gray lg:mx-6">❯</a>
+            <a href="#slide1" class="btn btn-circle text-xl lg:mx-6">❯</a>
           </div>
         </div>
       </div>
