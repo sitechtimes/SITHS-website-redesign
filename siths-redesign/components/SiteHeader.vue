@@ -19,6 +19,7 @@
       <NuxtLink to="/terrusa" class="text-2xl text-white" @click="toggleMenu">Mr. Terrusa Activities Updates
       </NuxtLink>
       <NuxtLink to="/calendar" class="text-2xl text-white" @click="toggleMenu">School Calendar</NuxtLink>
+      <NuxtLink to="/resources" class="text-2xl text-white" @click="toggleMenu">Resources</NuxtLink>
     </div>
   </div>
 
