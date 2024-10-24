@@ -2,3 +2,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
+
+@layer base{
+    /* all page headers */
+    h1{
+        @apply p-6 text-center text-5xl font-semibold;
+    }
+    /* subheaders */
+    h2{
+        @apply text-2xl
+    }
+}

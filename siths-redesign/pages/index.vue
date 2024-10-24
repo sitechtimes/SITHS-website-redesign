@@ -9,16 +9,13 @@
     </div>
 
     <!-- left side -->
-    <div class="z-10 flex w-full flex-col items-start justify-center lg:w-auto">
+    <div class="z-10 flex w-1/2 flex-col items-start justify-center lg:w-auto">
       <!-- header texts -->
-      <div id="header-texts" class="text-left opacity-0">
-        <h1 class="mb-2 text-4xl lg:text-6xl">Welcome to</h1>
-        <!-- can be tighter if you want (remove leading-tight, make mb-4 -> lg:mb-4) -->
-        <h1 class="mb-4 text-6xl font-semibold leading-tight text-gold lg:text-8xl">
-          Staten Island
+      <div id="header-texts" class="opacity-0">
+        <h1 class="p-0 text-left text-gold lg:text-6xl">Welcome to</h1>
+        <h1 class="p-0 pb-4 font-medium text-left leading-tight lg:text-8xl">
+          Staten Island<br>Technical<br>High School
         </h1>
-        <h1 class="mb-4 text-6xl lg:text-8xl">Technical</h1>
-        <h1 class="mb-4 text-6xl leading-tight lg:text-8xl">High School</h1>
         <a href="https://www.google.com/maps/place/Staten+Island+Technical+High+School/@40.5670098,-74.1177962,16.33z/data=!4m6!3m5!1s0x89c24950fa5d25c1:0x546d9c89d8bf0373!8m2!3d40.5679227!4d-74.1170347!16zL20vMDZtdGYz?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D"
           class="flex flex-row items-center" target="_blank" rel="noopener noreferrer">
           <img src="../assets/icons/location-pin.svg"

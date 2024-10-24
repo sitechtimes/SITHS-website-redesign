@@ -1,6 +1,6 @@
 <template>
   <div class="mx-4 h-fit lg:mx-10">
-    <h1 class="p-6 text-center text-5xl font-semibold mb-4">
+    <h1 class="mb-8">
       Faculty and Staff
     </h1>
     <div v-for="category in categories" :key="category.value" class="lg:mx-8">
