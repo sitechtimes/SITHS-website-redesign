@@ -5,8 +5,8 @@
       <div class="collapse-title text-xl font-medium">{{ post.PostTitle }}</div>
       <div class="collapse-content flex flex-col justify-center">
         <!-- everything in the collapse -->
-        <div v-if="dimensions">
-          <div v-if="dimensions.width > dimensions.height" class="flex flex-col items-center md:items-start justify-center">
+        <div v-if="dimensions" class="w-full">
+          <div v-if="dimensions.width > dimensions.height" class="flex flex-col w-full items-center md:items-start justify-center">
             <!-- image horizontal -->
             <div class="flex flex-col w-full">
               <h4 class="font-bold py-2">{{ post.author }}</h4>
@@ -14,14 +14,14 @@
             </div>
             <img v-if="post.imageUrl" :src="post.imageUrl" alt="post image" class="md:w-4/5 lg:w-3/5">
           </div>
-          <div v-if="dimensions.width <= dimensions.height" class="flex flex-col md:flex-row items-center md:items-start justify-around">
+          <div v-if="dimensions.width <= dimensions.height" class="flex flex-col w-full md:flex-row items-center md:items-start justify-around">
             <!-- image vertical/square -->
-            <div class="flex flex-col h-full">
+            <div class="flex flex-col h-full w-full md:w-2/3">
               <h4 class="font-bold py-2">{{ post.author }}</h4>
               <p class="py-4" v-html="blocksToText(post.description)"></p>
             </div>
-            <div class="flex flex-row justify-center items-center w-3/4">
-              <img v-if="post.imageUrl" :src="post.imageUrl" alt="post image" class="w-1/2 max-w-80">
+            <div class="flex flex-row justify-center items-center w-full md:w-1/3">
+              <img v-if="post.imageUrl" :src="post.imageUrl" alt="post image" class="w-3/4 max-w-60">
             </div>
           </div>
         </div>
