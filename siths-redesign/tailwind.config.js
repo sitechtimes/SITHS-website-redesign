@@ -18,13 +18,9 @@ export default {
         "playfair": ["Playfair", "serif"]
       },
       backgroundImage: {
-        "city-skyline" : "url('./imgs/cityskyline.png')",
-        "left-gear": "url('./imgs/left-gear.svg')",
-        "right-gear": "url('./imgs/right-gear.svg')",
+        "city-skyline" : "url('/assets/imgs/cityskyline.png')", // Using the url function
       }
     },
-    
   },
-  plugins: [require('daisyui'),],
+  plugins: [require('daisyui')],
 }
-
