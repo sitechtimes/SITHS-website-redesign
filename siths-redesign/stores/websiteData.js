@@ -7,6 +7,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const schedules = ref([])
   const staff = ref([])
   const events = ref([])
+  const course = ref([]) // New courses ref
 
   async function fetchAllData() {
     fetchLoading.value = true
@@ -27,6 +28,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         description,
         "imageUrl": image.asset->url
       },
+      "courses": *[_type == "courses"],
       "terrusa": *[_type == "terrusa"]{
         _id,
         PostTitle,
