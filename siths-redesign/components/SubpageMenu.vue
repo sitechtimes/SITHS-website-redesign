@@ -1,11 +1,9 @@
 <template>
-  <div class="m-8 w-fit rounded-md bg-white py-2">
+  <div class="m-8 w-fit rounded-md bg-white">
     <div v-for="subpage in page" class="py-2">
-      <NuxtLink
-        to="/"
-        class="text-md m-2 rounded-md p-2 text-black transition duration-300 ease-in-out hover:bg-light-gray"
-        >{{ subpage.name }}</NuxtLink
-      >
+      <NuxtLink to="/" class="transition duration-300 ease-in-out hover:bg-light-gray">
+        <h4>{{ subpage.name }}</h4>
+      </NuxtLink>
     </div>
   </div>
 </template>

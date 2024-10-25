@@ -7,10 +7,21 @@
 @layer base{
     /* all page headers */
     h1{
-        @apply p-6 text-center text-5xl font-semibold;
+        @apply text-5xl font-semibold text-center p-6 ;
     }
-    /* subheaders */
+    /* subheaders (ie: staff page*/
     h2{
-        @apply text-2xl
+        @apply text-3xl font-bold mx-2 
+    }
+    /* component headers (ie: dropdown */
+    h3{
+        @apply text-2xl font-semibold text-gray
+    }
+    /* component subheaders (ie: staff profile) */
+    h4{
+        @apply text-xl font-semibold text-gray lg:text-2xl
+    }
+    p{
+
     }
 }

@@ -7,7 +7,7 @@
       <div class="flex flex-row items-center justify-center text-center">
         <!-- category title and separators -->
         <div class="h-0.5 w-20 flex-grow bg-white"></div>
-        <h2 class="mx-2 text-3xl font-bold">{{ category.name }}</h2>
+        <h2 class="">{{ category.name }}</h2>
         <div class="h-0.5 w-20 flex-grow bg-white"></div>
       </div>
       <!-- staff component -->
@@ -19,7 +19,7 @@
               class="w-full rounded-full object-cover outline outline-2 outline-white" />
           </div>
           <div class="flex flex-col justify-center gap-1 lg:gap-2">
-            <h2 class="text-xl font-semibold lg:text-2xl">{{ staffMember.name }}</h2>
+            <h4>{{ staffMember.name }}</h4>
             <p>{{ staffMember.role }}</p>
             <div class="flex items-center">
               <img src="../assets/icons/email.png" alt="email icon" class="mr-2 w-5" />
