@@ -52,8 +52,10 @@ const menuVisibility = ref(false)
 const router = useRouter()
 
 router.afterEach(() => {
-  toggleMenu()
-})
+  if (menuVisibility.value) {
+    toggleMenu();
+  }
+});
 
 const navLinks = [
   {
@@ -75,6 +77,7 @@ const navLinks = [
     category: "Student",
     links: [
       { name: "Principal Erlwenwein's Announcements", path: "/erlenwein" },
+      { name: "Resources", path: "/resources" },
     ]
   },
   {
