@@ -7,6 +7,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const schedules = ref([])
   const staff = ref([])
   const events = ref([])
+  const resources = ref([])
 
   async function fetchAllData() {
     fetchLoading.value = true
@@ -50,6 +51,13 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         event,
         description,
       },
+        "resources": *[_type == "resources"]{
+        _id,
+        name,
+        resource,
+        description,
+        link,
+      },
     }`
 
     try {
@@ -61,6 +69,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       schedules.value = data.value.schedules
       staff.value = data.value.staff
       events.value = data.value.events
+      resources.value = data.value.resources
 
       fetchLoading.value = false
     } catch (error) {
@@ -73,5 +82,5 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     await fetchAllData()
   })
 
-  return { posts, erlenweinPosts, terrusaPosts, schedules, staff, events, fetchLoading }
+  return { posts, erlenweinPosts, terrusaPosts, schedules, staff, events, resources, fetchLoading }
 })
