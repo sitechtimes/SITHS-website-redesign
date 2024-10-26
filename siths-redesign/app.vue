@@ -10,6 +10,7 @@
     <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <Link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet" />
   </Head>
+
   <div>
     <NuxtLayout>
       <NuxtLoadingIndicator />
