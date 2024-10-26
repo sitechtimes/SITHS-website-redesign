@@ -43,6 +43,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         role,
         email,
         category,
+        description,
         "imageUrl": image.asset->url
       },
       "events": *[_type == "calendar"]{
