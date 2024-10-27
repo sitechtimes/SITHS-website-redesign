@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="flex flex-col items-center">
     <h1 class="font-extrabold py-2">AP ENGLISH COURSES</h1>
     <div class="flex flex-row w-full">
@@ -45,4 +45,4 @@ onMounted(fetchCourses)
 defineProps({
   page: Array
 })
-</script>
+</script> -->

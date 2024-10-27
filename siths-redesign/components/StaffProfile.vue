@@ -26,7 +26,6 @@ const fetchStaff = async () => {
       role,
       description,
       category,
-      "imageUrl": image.asset->url
     }`
   const { data, refresh } = await useSanityQuery(query)
   staff.value = data

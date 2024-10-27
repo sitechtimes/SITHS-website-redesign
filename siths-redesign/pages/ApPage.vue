@@ -1,12 +1,11 @@
 <template>
   <div>
-    <SubpageAP :page="ApPages" />
+    <ApCard :page="ApPages" />
   </div>
 </template>
 
 <script setup>
-import SubpageAP from '../components/SubpageAP.vue'
-;
+import ApCard from '../components/ApCard.vue'
 
 const ApPages = [
   {
