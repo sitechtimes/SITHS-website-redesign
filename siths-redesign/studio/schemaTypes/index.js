@@ -4,6 +4,7 @@ import {staff} from './staff'
 import {yearlyinfo} from './yearlyinfo'
 import {erlenwein} from './erlenwein'
 import {terrusa} from './terrusa'
+import {courses} from './apcourses'
 
 import {defineType} from 'sanity'
 
@@ -34,4 +35,5 @@ export const schemaTypes = [
   terrusa,
   timeValueType,
   yearlyinfo,
+  courses,
 ]

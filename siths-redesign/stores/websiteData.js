@@ -28,7 +28,12 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         description,
         "imageUrl": image.asset->url
       },
-      "courses": *[_type == "courses"],
+      "courses": *[_type == "courses"]{
+        _id,
+        name, 
+        grade, 
+        description,
+      },
       "terrusa": *[_type == "terrusa"]{
         _id,
         PostTitle,
