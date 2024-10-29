@@ -2,7 +2,9 @@
   <div class="flex flex-col items-center justify-center">
     <div v-for="(post, index) in posts" :key="index" class="m-8 w-[90vw] collapse collapse-plus bg-white text-black">
       <input type="checkbox" @click="getImageDimensions(post.imageUrl)">
-      <div class="collapse-title text-xl font-medium">{{ post.PostTitle }}</div>
+      <div class="collapse-title text-xl font-medium">
+        <h3>{{ post.PostTitle }}</h3>
+      </div>
       <div class="collapse-content flex flex-col justify-center">
         <!-- everything in the collapse -->
         <div v-if="dimensions">

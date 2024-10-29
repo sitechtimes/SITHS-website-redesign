@@ -19,7 +19,7 @@
     }
     /* component subheaders (ie: staff profile) */
     h4{
-        @apply text-xl font-semibold text-gray lg:text-2xl
+        @apply text-xl font-semibold text-gray
     }
     p{
         @apply text-lg
