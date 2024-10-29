@@ -11,16 +11,16 @@
           >
         </div>
       </div>
-      <!-- <div v-for="APcourse in courses" :key="APcourse._id" class="mb-4 flex w-[50%] flex-row">
-        <div class="m-8 rounded-md bg-white p-7 text-black">
-          <h2 class="text-4xl font-bold">{{ APcourse.name }}</h2>
-          <h3 class="my-4 text-2xl">{{ APcourse.grade }}</h3>
-          <p class="w-[75%] text-lg">
-            {{ APcourse.description }}
-          </p>
-        </div>
-      </div> -->
+      <!-- <div v-for="APcourse in courses" :key="APcourse._id" class="mb-4 flex w-[50%] flex-row"> -->
+      <div class="m-8 rounded-md bg-white p-7 text-black">
+        <h2 class="text-4xl font-bold">{{ APcourse.name }}</h2>
+        <h3 class="my-4 text-2xl">{{ APcourse.grade }}</h3>
+        <p class="w-[75%] text-lg">
+          {{ APcourse.description }}
+        </p>
+      </div>
     </div>
+    <!-- </div> -->
   </div>
 </template>
 <script setup>
