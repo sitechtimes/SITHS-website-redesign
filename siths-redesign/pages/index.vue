@@ -29,21 +29,21 @@
         <div id="stats-container" class="my-6 flex flex-row items-start justify-between lg:pr-10">
           <div class="items-left mr-8 flex flex-col">
             <h2 class="text-lg font-semibold lg:text-2xl">Founded <br />In</h2>
-            <p class="font-playfair text-xl font-semibold lg:text-3xl">1988</p>
+            <p class="font-playfair font-semibold lg:text-3xl">1988</p>
           </div>
           <div class="items-left mr-8 flex flex-col">
             <h2 class="text-lg font-semibold lg:text-2xl">
               PSAL <br />
               Teams
             </h2>
-            <p class="font-playfair text-xl font-semibold lg:text-3xl">32</p>
+            <p class="font-playfair font-semibold lg:text-3xl">32</p>
           </div>
           <div class="items-left flex flex-col">
             <h2 class="text-lg font-semibold lg:text-2xl">
               Clubs <br />
               and Activities
             </h2>
-            <p class="font-playfair text-xl font-semibold lg:text-3xl">92</p>
+            <p class="font-playfair font-semibold lg:text-3xl">92</p>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
     <!-- right side -->
     <div class="z-10 flex h-fit w-screen flex-col justify-center px-10 lg:h-full lg:w-1/3 lg:p-10">
       <!-- filler -->
-      <p id="right-side" class="text-lg leading-relaxed">
+      <p id="right-side" class="leading-relaxed">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt orci ac urna
         fermentum, nec facilisis magna iaculis. Proin vel lacinia turpis. Sed vehicula, odio et
         accumsan consectetur, orci urna fringilla mi, sit amet malesuada erat lacus nec mi. Vivamus

@@ -22,8 +22,8 @@
           >
             <a href="#slide2" class="btn btn-circle text-xl text-gray lg:mx-6">❮</a>
             <div class="flex h-2/3 w-2/3 flex-col space-y-4 text-center">
-              <h1 class="text-4xl font-semibold text-gray">Vision</h1>
-              <p class="text-xl text-gray">
+              <h1 class="text-gray">Vision</h1>
+              <p class="text-gray">
                 Staten Island Technical High School places a high priority on academics and
                 developing exemplary character, scholarship, service, leadership, and citizenship,
                 while cultivating innovation through the development of 21st Century Global Skills.

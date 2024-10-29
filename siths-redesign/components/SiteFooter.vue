@@ -9,7 +9,7 @@
       <!-- school name -->
       <div class="flex flex-row items-center">
         <img src="../assets/icons/siths-logo.png" alt=""  aria-hidden="true" />
-        <h1 class="p-4 text-xl">
+        <h1 class="p-4 text-left text-xl">
           Staten Island <br />
           Technical High School
         </h1>
