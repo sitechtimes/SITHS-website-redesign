@@ -1,7 +1,7 @@
 <template>
   <div class="mt-6 flex flex-col items-center justify-center space-y-8">
     <h1 class="mb-8 mt-6 text-4xl font-semibold">UPCOMING EVENTS</h1>
-    <div class="flex w-full flex-col gap-8 md:gap-4 items-center justify-center lg:flex-row lg:space-x-8">
+    <div class="flex w-full flex-col gap-8 md:gap-4 items-center justify-center lg:flex-row lg:space-x-4">
       <!-- event 1 -->
       <div class="flex flex-col items-center justify-center">
         <div class="flex flex-col items-center">
