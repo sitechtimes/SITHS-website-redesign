@@ -7,7 +7,7 @@
       <div id="menu-content" class="absolute top-20 left-16 flex flex-col space-y-8 z-10">
         <nav>
           <div v-for="(category, index) in navLinks" :key="index" class="mb-4">
-            <h3 class="text-xl font-bold mb-2 underline">{{ category.category }}</h3>
+            <h3 class="mb-2 underline text-white">{{ category.category }}</h3>
             <ul class="space-y-2">
               <li v-for="(link, idx) in category.links" :key="idx">
                 <NuxtLink :to="link.path" class="text-xl font-semibold hover:text-gold transition-all duration-300">

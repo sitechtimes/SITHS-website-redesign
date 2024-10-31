@@ -10,7 +10,7 @@
         @click="toggleVisibility(index)"
         class="flex w-4/5 cursor-pointer items-center justify-between rounded-2xl bg-white px-6 py-2 text-xl font-semibold text-gray md:w-2/3 md:text-2xl lg:w-1/2"
       >
-        <span>{{ schedule.name }}</span>
+        <h3>{{ schedule.name }}</h3>
         <!-- TODO: rotate this arrow if dropped down -->
         <img class="w-4" src="../assets/icons/arrow.png" alt="Arrow icon" />
       </div>
