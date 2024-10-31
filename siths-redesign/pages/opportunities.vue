@@ -2,22 +2,28 @@
     <div>
         <h1>Special Opportunities</h1>
       <SubpageMenu :page="clubsPages" />
+      <SpecialOpp :type="Internships"/>
     </div>
   </template>
   
   <script setup>
   import SubpageMenu from '../components/SubpageMenu.vue'
+  import SpecialOpp from '../components/SpecialOpp.vue';
   const clubsPages = [
     {
-      name: '2023-2024 Club Information',
+      name: 'Internships',
       url: ''
     },
     {
-      name: 'National Honor Society',
+      name: 'Scholarships',
       url: ''
     },
     {
-      name: 'Special Opportunities',
+      name: 'Volunteer',
+      url: ''
+    },
+    {
+      name: 'Career & Technical Education (CTE)',
       url: ''
     }
   ]
