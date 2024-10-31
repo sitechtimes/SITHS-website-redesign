@@ -5,9 +5,9 @@
       <!-- event 1 -->
       <div class="flex flex-col items-center justify-center">
         <div class="flex flex-col items-center">
-          <p class="mb-2 text-lg font-semibold underline">9/10/24</p>
+          <p class="mb-2 font-semibold underline">9/10/24</p>
           <div class="w-3/5 md:w-full text-center lg:w-32">
-            <p class="text-lg">Faculty Picture Day & Underclassmen Pictures</p>
+            <p>Faculty Picture Day & Underclassmen Pictures</p>
           </div>
         </div>
       </div>
@@ -18,9 +18,9 @@
       <!-- event 2 -->
       <div class="flex flex-col items-center justify-center">
         <div class="flex flex-col items-center">
-          <p class="mb-2 text-lg font-semibold underline">9/12/24</p>
+          <p class="mb-2 font-semibold underline">9/12/24</p>
           <div class="w-3/5 md:w-full text-center lg:w-32">
-            <p class="text-lg">Cheer Tryouts</p>
+            <p>Cheer Tryouts</p>
           </div>
         </div>
       </div>
@@ -31,9 +31,9 @@
       <!-- event 3 -->
       <div class="flex flex-col items-center justify-center">
         <div class="flex flex-col items-center">
-          <p class="mb-2 text-lg font-semibold underline">9/15/24</p>
+          <p class="mb-2 font-semibold underline">9/15/24</p>
           <div class="w-3/5 md:w-full text-center lg:w-32">
-            <p class="text-lg">11 Min Homeroom</p>
+            <p>11 Min Homeroom</p>
           </div>
         </div>
       </div>
@@ -44,9 +44,9 @@
       <!-- event 4 -->
       <div class="flex flex-col items-center justify-center">
         <div class="flex flex-col items-center">
-          <p class="mb-2 text-lg font-semibold underline">9/18/24</p>
+          <p class="mb-2 font-semibold underline">9/18/24</p>
           <div class="w-3/5 md:w-full text-center lg:w-32">
-            <p class="text-lg">Debate Team Info Meeting</p>
+            <p>Debate Team Info Meeting</p>
           </div>
         </div>
       </div>
@@ -57,9 +57,9 @@
       <!-- event 5 -->
       <div class="flex flex-col items-center justify-center">
         <div class="flex flex-col items-center">
-          <p class="mb-2 text-lg font-semibold underline">9/20/24</p>
+          <p class="mb-2 font-semibold underline">9/20/24</p>
           <div class="w-3/5 md:w-full text-center lg:w-32">
-            <p class="text-lg">Tech Connects Meeting</p>
+            <p>Tech Connects Meeting</p>
           </div>
         </div>
       </div>

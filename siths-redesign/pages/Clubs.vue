@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Clubs and Activities</h1>
     <SubpageMenu :page="clubsPages" />
   </div>
 </template>

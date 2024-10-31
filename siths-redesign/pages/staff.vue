@@ -1,13 +1,13 @@
 <template>
   <div class="mx-4 h-fit lg:mx-10">
-    <h1 class="my-10 flex w-full items-center justify-center text-center text-5xl font-bold">
+    <h1 class="mb-8">
       Faculty and Staff
     </h1>
     <div v-for="category in categories" :key="category.value" class="lg:mx-8">
       <div class="flex flex-row items-center justify-center text-center">
         <!-- category title and separators -->
         <div class="h-0.5 w-20 flex-grow bg-white"></div>
-        <h2 class="mx-2 text-3xl font-bold">{{ category.name }}</h2>
+        <h2 class="px-4">{{ category.name }}</h2>
         <div class="h-0.5 w-20 flex-grow bg-white"></div>
       </div>
       <!-- staff component -->
@@ -19,7 +19,7 @@
               class="w-full rounded-full object-cover outline outline-2 outline-white" />
           </div>
           <div class="flex flex-col justify-center gap-1 lg:gap-2">
-            <h2 class="text-xl font-semibold">{{ staffMember.name }}</h2>
+            <h3 class="text-white">{{ staffMember.name }}</h3>
             <p>{{ staffMember.role }}</p>
             <div class="flex items-center">
               <img src="../assets/icons/email.png" alt="email icon" class="mr-2 w-5" />
