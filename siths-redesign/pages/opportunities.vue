@@ -23,7 +23,10 @@ const clubsPages = [
   },
   {
     name: 'Volunteer'
-  }
+  },
+  {
+    name: 'Initiatives'
+  },
 ]
 const selectedChoice = ref('Internships'); 
 console.log(websiteData.opportunities)
