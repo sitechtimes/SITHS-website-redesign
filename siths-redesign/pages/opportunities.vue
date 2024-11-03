@@ -1,30 +1,34 @@
 <template>
-    <div>
-        <h1>Special Opportunities</h1>
-      <SubpageMenu :page="clubsPages" />
-      <SpecialOpp :type="Internships"/>
+  <div>
+    <h1>Special Opportunities</h1>
+    <div class="flex flex-row items-start">
+      <SubpageMenu :page="clubsPages" v-model="selectedChoice"/>
+      <SpecialOpp :type="selectedChoice" :resources="websiteData.opportunities.filter((el)=> el.opptype == selectedChoice)" />
     </div>
-  </template>
-  
-  <script setup>
-  import SubpageMenu from '../components/SubpageMenu.vue'
-  import SpecialOpp from '../components/SpecialOpp.vue';
-  const clubsPages = [
-    {
-      name: 'Internships',
-      url: ''
-    },
-    {
-      name: 'Scholarships',
-      url: ''
-    },
-    {
-      name: 'Volunteer',
-      url: ''
-    },
-    {
-      name: 'Career & Technical Education (CTE)',
-      url: ''
-    }
-  ]
-  </script>
+  </div>
+</template>
+
+<script setup>
+import SubpageMenu from '../components/SubpageMenu.vue'
+import SpecialOpp from '../components/SpecialOpp.vue';
+import { ref } from 'vue';
+
+const websiteData = useWebsiteDataStore()
+const clubsPages = [
+  {
+    name: 'Internships'
+  },
+  {
+    name: 'Scholarships'
+  },
+  {
+    name: 'Volunteer'
+  },
+  {
+    name: 'Career & Technical Education (CTE)'
+  }
+]
+const selectedChoice = ref('Internships'); 
+console.log(websiteData.opportunities)
+
+</script>

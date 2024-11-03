@@ -1,7 +1,7 @@
 <template>
     <div v-for="(resource, index) in sortedResources" :key="index"
         class="flex flex-col w-full m-2 bg-gray border border-white border-opacity-25 rounded-lg p-8 transition-all duration-300 hover:scale-[1.03]">
-        <h2 class="font-bold pb-3 text-xl">{{ resource.name }}</h2>
+        <h3 class="pb-3 font-bold">{{ resource.name }}</h3>
         <p class="text-pretty pb-3 text-lg">{{ resource.description }}</p>
         <a :href="resource.link" class="underline text-lg transition-colors duration-300 hover:text-gold">Link to
             resource</a>

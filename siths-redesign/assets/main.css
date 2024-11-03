@@ -15,11 +15,11 @@
     }
     /* component headers (ie: dropdown */
     h3{
-        @apply text-2xl font-semibold text-gray
+        @apply text-2xl font-semibold
     }
     /* component subheaders (ie: staff profile) */
     h4{
-        @apply text-xl font-semibold text-gray
+        @apply text-xl font-semibold
     }
     p{
         @apply text-lg

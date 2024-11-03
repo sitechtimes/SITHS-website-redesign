@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>Clubs and Activities</h1>
-    <SubpageMenu :page="clubsPages" />
+    <SubpageMenu :page="clubsPages" v-model="selectedChoice"/>
+    {{ selectedChoice }}
   </div>
 </template>
 
@@ -21,4 +22,5 @@ const clubsPages = [
     url: ''
   }
 ]
+const selectedChoice = ref(''); 
 </script>

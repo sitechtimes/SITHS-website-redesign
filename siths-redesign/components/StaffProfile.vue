@@ -6,7 +6,7 @@
           class="mr-6 w-28 rounded-full object-cover outline outline-2 outline-white" />
         <div class="flex w-11/12 flex-col justify-center">
           <h2 class="mb-2 text-2xl font-semibold">{{ staffMember.name }}</h2>
-          <h3 class="mb-2 text-white">{{ staffMember.role }}</h3>
+          <h4 class="mb-2 text-white">{{ staffMember.role }}</h4>
           <p class="flex items-center text-white">
             {{ staffMember.description }}
           </p>
