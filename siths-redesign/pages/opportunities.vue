@@ -23,9 +23,6 @@ const clubsPages = [
   },
   {
     name: 'Volunteer'
-  },
-  {
-    name: 'Career & Technical Education (CTE)'
   }
 ]
 const selectedChoice = ref('Internships'); 

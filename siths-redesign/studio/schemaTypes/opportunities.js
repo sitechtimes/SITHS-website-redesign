@@ -19,7 +19,6 @@ export const opportunities = defineType({
           {title: 'Internships', value: 'Internships'},
           {title: 'Scholarships', value: 'Scholarships'},
           {title: 'Volunteer', value: 'Volunteer'},
-          {title: 'Career & Technical Education', value: 'Career & Technical Education'}
         ], // <-- predefined values
         layout: 'radio' // <-- defaults to 'dropdown'
       }

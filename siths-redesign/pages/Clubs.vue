@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Clubs and Activities</h1>
+    <h1>Clubs Information</h1>
     <SubpageMenu :page="clubsPages" v-model="selectedChoice"/>
     {{ selectedChoice }}
   </div>
