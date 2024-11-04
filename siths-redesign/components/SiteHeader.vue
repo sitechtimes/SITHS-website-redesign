@@ -4,7 +4,7 @@
     <div v-show="menuVisibility"
       class="fixed inset-0 bg-[#1c1b1b] bg-opacity-100 z-50 flex items-center justify-center">
       <!-- nav links -->
-      <div id="menu-content" class="absolute top-40 left-16 flex flex-col space-y-8 z-10">
+      <div id="menu-content" class="absolute top-20 left-16 flex flex-col space-y-8 z-10">
         <nav>
           <div v-for="(category, index) in navLinks" :key="index" class="mb-4">
             <h3 class="mb-2 underline text-white">{{ category.category }}</h3>
@@ -84,6 +84,7 @@ const navLinks = [
     category: "Clubs and Activities ",
     links: [
       { name: "Club Information", path: "/clubs" },
+      { name: "Special Opportunities", path: "/opportunities"}
     ]
   }
 ];

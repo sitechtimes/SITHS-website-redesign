@@ -4,8 +4,8 @@ import {staff} from './staff'
 import {yearlyinfo} from './yearlyinfo'
 import {erlenwein} from './erlenwein'
 import {terrusa} from './terrusa'
-import { resources } from './resources'
-
+import {resources} from './resources'
+import {opportunities} from './opportunities'
 import { defineType } from 'sanity'
 
 
@@ -28,4 +28,4 @@ export const timeValueType = defineType({
     return times
   }
   
-export const schemaTypes = [calendar, erlenwein, schedules, staff, terrusa, timeValueType, yearlyinfo, resources]
+export const schemaTypes = [calendar, erlenwein, schedules, staff, terrusa, timeValueType, yearlyinfo, resources, opportunities]
