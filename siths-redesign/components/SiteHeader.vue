@@ -84,6 +84,7 @@ const navLinks = [
     category: "Clubs and Activities ",
     links: [
       { name: "Club Information", path: "/clubs" },
+      { name: "Career and Technical Education", path: "/cte"}
     ]
   }
 ];
