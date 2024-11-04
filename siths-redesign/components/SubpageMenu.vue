@@ -1,6 +1,6 @@
 <template>
   <div class="m-4 p-1 w-1/6 rounded-md">
-    <div v-for="subpage in page" class="text-md text-white p-2 border-t border-white transition duration-300 ease-in-out hover:text-gold">
+    <div v-for="subpage in page" class="text-md text-white p-2 border-b border-white transition duration-300 ease-in-out hover:text-gold">
       <button @click="selectChoice(subpage.name)" class="text-left">
         {{ subpage.name }}</button>
     </div>
