@@ -1,11 +1,12 @@
 <template>
-  <div>
-    <ApCard :page="ApPages" />
-  </div>
+  <ApCard :page="ApPages" />
+  <ApCard :courses="websiteData.courses" />
 </template>
 
 <script setup>
 import ApCard from '../components/ApCard.vue'
+
+const websiteData = useWebsiteDataStore()
 
 const ApPages = [
   {
