@@ -28,7 +28,5 @@ const clubsPages = [
     name: 'Initiatives'
   },
 ]
-const selectedChoice = ref('Internships'); 
-console.log(websiteData.opportunities)
-
+const selectedChoice = ref('Internships'); // default selected value
 </script>
