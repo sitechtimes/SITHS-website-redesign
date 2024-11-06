@@ -64,6 +64,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       staff.value = data.value.staff
       events.value = data.value.events
       courses.value = data.value.courses
+      console.log(courses.value)
 
       fetchLoading.value = false
     } catch (error) {

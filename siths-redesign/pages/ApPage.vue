@@ -1,6 +1,5 @@
 <template>
-  <ApCard :page="ApPages" />
-  <ApCard :courses="websiteData.courses" />
+  <ApCard :page="ApPages" :courses="websiteData.courses" />
 </template>
 
 <script setup>
@@ -9,41 +8,34 @@ import ApCard from '../components/ApCard.vue'
 const websiteData = useWebsiteDataStore()
 
 const ApPages = [
+  // {
+  //   name: 'Welcome'
+  // },
+  // {
+  //   name: 'Selection'
+  // },
   {
-    name: 'Welcome',
-    url: ''
+    name: 'AP English'
+    // selectedPage: 'AP English'
   },
   {
-    name: 'Selection',
-    url: ''
+    name: 'AP Russian'
   },
   {
-    name: 'English',
-    url: ''
+    name: 'AP History'
   },
   {
-    name: 'Russian',
-    url: ''
+    name: 'AP Science'
   },
   {
-    name: 'History',
-    url: ''
+    name: 'AP Math'
   },
   {
-    name: 'Science',
-    url: ''
-  },
-  {
-    name: 'Math',
-    url: ''
-  },
-  {
-    name: 'Technology',
-    url: ''
-  },
-  {
-    name: 'Rubric',
-    url: ''
+    name: 'AP Technology'
   }
+  // {
+  //   name: 'Rubric',
+  //   url: ''
+  // }
 ]
 </script>
