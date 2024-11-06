@@ -1,7 +1,8 @@
 <template>
-  <div class="flex flex-col items-center justify-center">
-    <div v-for="(post, index) in posts" :key="index" class="m-8 w-[90vw] collapse collapse-plus bg-white text-black">
-      <input type="checkbox" @click="getImageDimensions(post.imageUrl)">
+  <div class="flex flex-col items-center justify-center lg:mx-16">
+    <div v-for="(post, index) in posts" :key="index" class="my-2 collapse collapse-plus bg-white text-black">
+      <input v-if="index == 0" type="checkbox" class="peer" checked @click="getImageDimensions(post.imageUrl)"/>
+      <input v-else type="checkbox" class="peer" @click="getImageDimensions(post.imageUrl)"/>
       <div class="collapse-title text-xl font-medium">
         <h3>{{ post.PostTitle }}</h3>
       </div>
