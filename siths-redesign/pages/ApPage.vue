@@ -6,6 +6,7 @@
 import ApCard from '../components/ApCard.vue'
 
 const websiteData = useWebsiteDataStore()
+console.log(websiteData.courses.name)
 
 const ApPages = [
   // {

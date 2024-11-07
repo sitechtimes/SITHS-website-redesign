@@ -15,13 +15,13 @@
       <div
         v-for="(course, index) in courses"
         :key="index"
-        v-if="selectedPage === course.name"
-        class="mb-4 flex w-full flex-col items-center justify-center"
+        class="mb-4 flex w-full flex-col items-center justify-center text-black"
       >
+        <span>{{ course.name }}</span>
         <div
           v-for="(card, index) in course.cards"
           :key="index"
-          class="text-blac m-8 rounded-md bg-white p-7 text-black"
+          class="text-blac m-8 rounded-md bg-white p-7"
         >
           <h2 class="text-4xl font-bold">{{ card.courseName }}</h2>
           <h3 class="my-4 text-2xl">{{ card.courseGrade }}</h3>
