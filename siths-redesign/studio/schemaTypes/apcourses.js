@@ -26,7 +26,7 @@ export const courses = defineType({
             defineField({
               name: 'courseGrade',
               title: 'Course Grade',
-              type: 'number',
+              type: 'string',
             }),
             defineField({
               name: 'description',
