@@ -6,8 +6,8 @@
       <!-- nav links -->
       <div id="menu-content" class="absolute top-10 space-y-8 z-10 w-full">
         <nav class="flex flex-row flex-wrap p-8">
-          <div v-for="(category, index) in navLinks" :key="index" class="px-4 py-8 w-1/4 border-r-[1px] border-gray">
-            <h3 class="mb-2 font-bold font-ebgaramond text-white border-b-[1px] border-gold">{{ category.category }}</h3>
+          <div v-for="(category, index) in navLinks" :key="index" class="px-4 py-8 w-1/4">
+            <h3 class="mb-2 font-bold font-kumhb text-white border-b-[1px] border-gold">{{ category.category }}</h3>
             <ul class="space-y-2">
               <li v-for="(link, idx) in category.links" :key="idx" class="">
                 <NuxtLink :to="link.path" class="text-md font-normal hover:text-gold transition-all duration-300">
@@ -32,7 +32,7 @@
           class="w-full h-1 transition-all bg-gold duration-500"></div>
       </div>
 
-      <NuxtLink to="/" class="text-3xl font-ebgaramond text-white flex flex-row items-center justify-center gap-2">
+      <NuxtLink to="/" class="text-3xl text-white flex flex-row items-center justify-center gap-2">
         <img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo" />
         SITHS
       </NuxtLink>

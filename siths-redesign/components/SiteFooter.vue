@@ -63,7 +63,7 @@
     <div class="flex flex-col lg:w-1/5">
       <!-- social media icons -->
       <div class="flex flex-col gap-2">
-        <h2 class="text-2xl font-bold font-ebgaramond">Follow Us</h2>
+        <h2 class="text-2xl font-bold">Follow Us</h2>
         <div class="flex flex-row flex-wrap items-center gap-2">
           <a
             href="https://www.facebook.com/SITechHS?ref=embed_page"
