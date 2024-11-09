@@ -69,8 +69,15 @@ const navLinks = [
     links: [
       { name: "Bell Schedule", path: "/schedules" },
       { name: "Faculty and Staff", path: "/staff" },
+      { name: "School Calendar", path: "/calendar" },
       { name: "School Year Information", path: "/yearly-info" },
       { name: "Mr. Terrusa's Activity Updates", path: "/terrusa" },
+      { name: "Tech Times", path: "/" },
+      { name: "Communications", path: "/" },
+      { name: "Directions", path: "/" },
+      { name: "Special Ed/Instructional Support Services", path: "/" },
+      { name: "School Leadership Team", path: "/" },
+      { name: "School Policies", path: "/" },
     ]
   },
   {
@@ -91,23 +98,25 @@ const navLinks = [
   {
     category: "Teacher and Staff Resources",
     links: [
-      { name: "Club Information", path: "/clubs" },
-      { name: "Career and Technical Education", path: "/cte"},
-      { name: "Special Opportunities", path: "/opportunities"}
+      { name: "Supplies Request Form", path: "/" },
+      { name: "MakerSpace", path: "/"},
+      { name: "Technology Support", path: "/"},
+      { name: "Professional Development Support", path: "/"}
     ]
   },
   {
     category: "Alumni",
     links: [
-      { name: "Club Information", path: "/clubs" },
-      { name: "Special Opportunities", path: "/opportunities"}
+      { name: "Donations", path: "/" },
+      { name: "News", path: "/"},
+      { name: "Opportunities", path: "/"},
+      { name: "Transcript Request", path: "/"}
     ]
   },
   {
     category: "Contact Us",
     links: [
-      { name: "Club Information", path: "/clubs" },
-      { name: "Special Opportunities", path: "/opportunities"}
+      { name: "Directory", path: "/" },
     ]
   }
 ];
