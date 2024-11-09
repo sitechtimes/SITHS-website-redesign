@@ -15,7 +15,7 @@ export default {
       },
       fontFamily: {
         "kumbh": ["Kumbh Sans", "sans-serif"],
-        "playfair": ["Playfair", "serif"]
+        "ebgaramond": ["EB Garamond", "serif"]
       },
       backgroundImage: {
         "city-skyline" : "url('/assets/imgs/cityskyline.png')",

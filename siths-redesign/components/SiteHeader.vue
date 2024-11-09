@@ -2,15 +2,15 @@
   <header>
     <!-- menu toggle -->
     <div v-show="menuVisibility"
-      class="fixed inset-0 bg-[#1c1b1b] bg-opacity-100 z-50 flex items-center justify-center">
+      class="fixed overflow-y-scroll inset-0 bg-[#1c1b1b] bg-opacity-100 z-50">
       <!-- nav links -->
-      <div id="menu-content" class="absolute top-20 left-16 flex flex-col space-y-8 z-10">
-        <nav>
-          <div v-for="(category, index) in navLinks" :key="index" class="mb-4">
-            <h3 class="mb-2 underline text-white">{{ category.category }}</h3>
+      <div id="menu-content" class="absolute top-10 space-y-8 z-10 w-full">
+        <nav class="flex flex-row flex-wrap p-8">
+          <div v-for="(category, index) in navLinks" :key="index" class="px-4 py-8 w-1/4 border-r-[1px] border-gold">
+            <h3 class="mb-2 font-bold font-ebgaramond text-white border-b-[1px] border-gray">{{ category.category }}</h3>
             <ul class="space-y-2">
-              <li v-for="(link, idx) in category.links" :key="idx">
-                <NuxtLink :to="link.path" class="text-xl font-semibold hover:text-gold transition-all duration-300">
+              <li v-for="(link, idx) in category.links" :key="idx" class="">
+                <NuxtLink :to="link.path" class="text-md font-normal hover:text-gold transition-all duration-300">
                   {{ link.name }}
                 </NuxtLink>
               </li>
@@ -32,9 +32,9 @@
           class="w-full h-1 transition-all bg-gold duration-500"></div>
       </div>
 
-      <NuxtLink to="/" class="text-3xl text-white flex flex-row items-center justify-center gap-2">
+      <NuxtLink to="/" class="text-3xl font-ebgaramond text-white flex flex-row items-center justify-center gap-2">
         <img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo" />
-        SITECH
+        SITHS
       </NuxtLink>
 
       <div class="z-40 w-20">
@@ -81,7 +81,23 @@ const navLinks = [
     ]
   },
   {
-    category: "Clubs and Activities ",
+    category: "Clubs and Activities",
+    links: [
+      { name: "Club Information", path: "/clubs" },
+      { name: "Career and Technical Education", path: "/cte"},
+      { name: "Special Opportunities", path: "/opportunities"}
+    ]
+  },
+  {
+    category: "Clubs and Activities",
+    links: [
+      { name: "Club Information", path: "/clubs" },
+      { name: "Career and Technical Education", path: "/cte"},
+      { name: "Special Opportunities", path: "/opportunities"}
+    ]
+  },
+  {
+    category: "Clubs and Activities",
     links: [
       { name: "Club Information", path: "/clubs" },
       { name: "Special Opportunities", path: "/opportunities"}

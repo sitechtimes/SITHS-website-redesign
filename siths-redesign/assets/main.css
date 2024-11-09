@@ -7,7 +7,7 @@
 @layer base{
     /* all page headers */
     h1{
-        @apply text-5xl font-semibold text-center p-6;
+        @apply text-5xl font-ebgaramond font-semibold text-center p-6;
     }
     /* subheaders (ie: staff page*/
     h2{
