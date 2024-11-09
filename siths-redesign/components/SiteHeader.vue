@@ -6,8 +6,8 @@
       <!-- nav links -->
       <div id="menu-content" class="absolute top-10 space-y-8 z-10 w-full">
         <nav class="flex flex-row flex-wrap p-8">
-          <div v-for="(category, index) in navLinks" :key="index" class="px-4 py-8 w-1/4 border-r-[1px] border-gold">
-            <h3 class="mb-2 font-bold font-ebgaramond text-white border-b-[1px] border-gray">{{ category.category }}</h3>
+          <div v-for="(category, index) in navLinks" :key="index" class="px-4 py-8 w-1/4 border-r-[1px] border-gray">
+            <h3 class="mb-2 font-bold font-ebgaramond text-white border-b-[1px] border-gold">{{ category.category }}</h3>
             <ul class="space-y-2">
               <li v-for="(link, idx) in category.links" :key="idx" class="">
                 <NuxtLink :to="link.path" class="text-md font-normal hover:text-gold transition-all duration-300">
@@ -89,7 +89,7 @@ const navLinks = [
     ]
   },
   {
-    category: "Clubs and Activities",
+    category: "Teacher and Staff Resources",
     links: [
       { name: "Club Information", path: "/clubs" },
       { name: "Career and Technical Education", path: "/cte"},
@@ -97,7 +97,14 @@ const navLinks = [
     ]
   },
   {
-    category: "Clubs and Activities",
+    category: "Alumni",
+    links: [
+      { name: "Club Information", path: "/clubs" },
+      { name: "Special Opportunities", path: "/opportunities"}
+    ]
+  },
+  {
+    category: "Contact Us",
     links: [
       { name: "Club Information", path: "/clubs" },
       { name: "Special Opportunities", path: "/opportunities"}
