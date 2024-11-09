@@ -9,7 +9,7 @@
           <div v-for="(category, index) in navLinks" :key="index" class="px-4 py-8 w-1/4">
             <h3 class="mb-2 font-bold font-kumhb text-white border-b-[1px] border-gold">{{ category.category }}</h3>
             <ul class="space-y-2">
-              <li v-for="(link, idx) in category.links" :key="idx" class="">
+                <li v-for="(link, idx) in category.links.sort((a, b) => a.name.localeCompare(b.name))" :key="idx" class="">
                 <NuxtLink :to="link.path" class="text-md font-normal hover:text-gold transition-all duration-300">
                   {{ link.name }}
                 </NuxtLink>
