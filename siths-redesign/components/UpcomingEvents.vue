@@ -1,67 +1,21 @@
 <template>
   <div class="mt-6 flex flex-col items-center justify-center space-y-8">
-    <h1 class="mb-8 mt-6 text-4xl font-semibold">UPCOMING EVENTS</h1>
-    <div class="flex w-full flex-col gap-8 md:gap-4 items-center justify-center lg:flex-row lg:space-x-4">
-      <!-- event 1 -->
-      <div class="flex flex-col items-center justify-center">
+    <h1 class="my-4 text-4xl font-semibold">UPCOMING EVENTS</h1>
+    <div class="flex w-full flex-col items-center justify-center lg:flex-row">
+      <!-- latest 5 events -->
+      <div v-for="(event, index) in latestEvents" :key="index" class="flex flex-row items-center justify-center">
         <div class="flex flex-col items-center">
-          <p class="mb-2 font-semibold underline">9/10/24</p>
+          <p class="mb-2 font-semibold underline underline-offset-2">{{ event.formattedDate }}</p>
           <div class="w-3/5 md:w-full text-center lg:w-32">
-            <p>Faculty Picture Day & Underclassmen Pictures</p>
+            <p>{{ event.event }}</p>
+            <p class="opacity-80 text-sm truncate">{{ event.description }}</p>
           </div>
         </div>
-      </div>
-      <!-- vertical line -->
-      <div class="items-center lg:flex">
-        <div class="h-[1px] w-40 bg-gold lg lg:w-[1px] lg:h-36"></div>
-      </div>
-      <!-- event 2 -->
-      <div class="flex flex-col items-center justify-center">
-        <div class="flex flex-col items-center">
-          <p class="mb-2 font-semibold underline">9/12/24</p>
-          <div class="w-3/5 md:w-full text-center lg:w-32">
-            <p>Cheer Tryouts</p>
-          </div>
-        </div>
-      </div>
-      <!-- vertical line -->
-      <div class="items-center lg:flex">
-        <div class="h-[1px] w-40 bg-gold lg lg:w-[1px] lg:h-36"></div>
-      </div>
-      <!-- event 3 -->
-      <div class="flex flex-col items-center justify-center">
-        <div class="flex flex-col items-center">
-          <p class="mb-2 font-semibold underline">9/15/24</p>
-          <div class="w-3/5 md:w-full text-center lg:w-32">
-            <p>11 Min Homeroom</p>
-          </div>
-        </div>
-      </div>
-      <!-- vertical line -->
-      <div class="items-center lg:flex">
-        <div class="h-[1px] w-40 bg-gold lg lg:w-[1px] lg:h-36"></div>
-      </div>
-      <!-- event 4 -->
-      <div class="flex flex-col items-center justify-center">
-        <div class="flex flex-col items-center">
-          <p class="mb-2 font-semibold underline">9/18/24</p>
-          <div class="w-3/5 md:w-full text-center lg:w-32">
-            <p>Debate Team Info Meeting</p>
-          </div>
-        </div>
-      </div>
-      <!-- vertical line -->
-      <div class="flex items-center">
-        <div class="h-[1px] w-40 bg-gold lg lg:w-[1px] lg:h-36"></div>
-      </div>
-      <!-- event 5 -->
-      <div class="flex flex-col items-center justify-center">
-        <div class="flex flex-col items-center">
-          <p class="mb-2 font-semibold underline">9/20/24</p>
-          <div class="w-3/5 md:w-full text-center lg:w-32">
-            <p>Tech Connects Meeting</p>
-          </div>
-        </div>
+        <!-- vertical line between each event, except for last event -->
+        <div
+          v-if="index < latestEvents.length - 1"
+          class="flex h-24 w-[1px] bg-gold mx-4"
+        ></div>
       </div>
     </div>
     <NuxtLink class="btn btn-link mt-8 text-lg" to="/calendar">
@@ -69,3 +23,23 @@
     </NuxtLink>
   </div>
 </template>
+
+<script setup>
+const websiteData = useWebsiteDataStore()
+const events = ref(websiteData.events)
+
+const latestEvents = computed(() => {
+  //latest 5 events in ascending order
+  return events.value.slice(0, 5).reverse().map(event => {
+    const formattedDate = new Date(event.date).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+    return {
+      ...event,
+      formattedDate
+    }
+  })
+})
+</script>
