@@ -7,9 +7,9 @@
     <!-- upper left hand corner -->
     <div class="col-span-2 flex flex-col">
       <!-- school name -->
-      <div class="flex flex-row items-center">
+      <div class="flex flex-row">
         <img src="../assets/icons/siths-logo.png" alt=""  aria-hidden="true" />
-        <h1 class="p-4 text-left text-xl">
+        <h1 class="p-4 text-left text-2xl">
           Staten Island <br />
           Technical High School
         </h1>
@@ -31,7 +31,7 @@
     </div>
     <!-- about us navigation links -->
     <div class="flex flex-col gap-1">
-      <h2 class="text-lg font-bold">ABOUT US</h2>
+      <h2 class="text-xl font-bold">ABOUT US</h2>
       <p class="text-md">Mission</p>
       <p class="text-md">School Calendar</p>
       <p class="text-md">Faculty</p>
@@ -41,7 +41,7 @@
     </div>
     <!-- academics navigation links -->
     <div class="flex flex-col gap-1">
-      <h2 class="text-lg font-bold">ACADEMICS</h2>
+      <h2 class="text-xl font-bold">ACADEMICS</h2>
       <p class="text-md">Course Catalog</p>
       <p class="text-md">AP Courses</p>
       <p class="text-md">Bell Schedule</p>
@@ -51,7 +51,7 @@
     </div>
     <!-- resources navigation links -->
     <div class="flex flex-col gap-1">
-      <h2 class="text-lg font-bold">RESOURCES</h2>
+      <h2 class="text-xl font-bold">RESOURCES</h2>
       <p class="text-md">PTA</p>
       <p class="text-md">Naviance</p>
       <p class="text-md">PSAL Forms</p>
@@ -63,7 +63,7 @@
     <div class="flex flex-col lg:w-1/5">
       <!-- social media icons -->
       <div class="flex flex-col gap-2">
-        <h2 class="text-xl font-bold">FOLLOW US</h2>
+        <h2 class="text-2xl font-bold">Follow Us</h2>
         <div class="flex flex-row flex-wrap items-center gap-2">
           <a
             href="https://www.facebook.com/SITechHS?ref=embed_page"

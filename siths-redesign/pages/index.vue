@@ -29,21 +29,21 @@
         <div id="stats-container" class="my-6 flex flex-row items-start justify-between lg:pr-10">
           <div class="items-left mr-8 flex flex-col">
             <h2 class="text-lg font-semibold lg:text-2xl">Founded <br />In</h2>
-            <p class="font-playfair font-semibold lg:text-3xl">1988</p>
+            <p class="font-ebgaramond font-semibold lg:text-3xl">1988</p>
           </div>
           <div class="items-left mr-8 flex flex-col">
             <h2 class="text-lg font-semibold lg:text-2xl">
               PSAL <br />
               Teams
             </h2>
-            <p class="font-playfair font-semibold lg:text-3xl">32</p>
+            <p class="font-ebgaramond font-semibold lg:text-3xl">32</p>
           </div>
           <div class="items-left flex flex-col">
             <h2 class="text-lg font-semibold lg:text-2xl">
               Clubs <br />
               and Activities
             </h2>
-            <p class="font-playfair font-semibold lg:text-3xl">92</p>
+            <p class="font-ebgaramond font-semibold lg:text-3xl">92</p>
           </div>
         </div>
       </div>
