@@ -21,7 +21,7 @@
     </div>
 
     <!-- menu, logo, and search -->
-    <div class="flex flex-row items-center justify-between p-4 text-white">
+    <div class="flex flex-row items-center justify-between p-2 text-white w-screen">
       <!-- menu icon -->
       <div class="z-50 w-8 h-5 flex flex-col justify-between items-center cursor-pointer" @click="toggleMenu">
         <div :class="menuVisibility ? 'rotate-45 translate-y-2' : ''"
