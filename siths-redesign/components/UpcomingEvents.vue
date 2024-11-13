@@ -1,6 +1,6 @@
 <template>
   <div class="mt-6 flex flex-col items-center justify-center space-y-8">
-    <h1 class="my-4 text-4xl font-semibold">UPCOMING EVENTS</h1>
+    <h2 class="my-4 text-4xl font-semibold">UPCOMING EVENTS</h2>
     <div class="flex w-full flex-col items-center justify-center lg:flex-row">
       <!-- latest 5 events -->
       <div
@@ -19,7 +19,8 @@
         <div v-if="index < latestEvents.length - 1" class="mx-4 flex h-24 w-[1px] bg-gold"></div>
       </div>
     </div>
-    <NuxtLink class="btn btn-link mt-8 text-lg text-gold" to="/calendar">
+    <NuxtLink class="font-bold mt-8 text-lg text-gold bg-left-bottom bg-gradient-to-r from-gold to-gold bg-[length:0%_2px] bg-no-repeat transition-all duration-500 ease-out hover:bg-[length:100%_2px]" 
+    to="/calendar">
       Show All Events
     </NuxtLink>
   </div>
