@@ -1,7 +1,7 @@
 <template>
-  <div class="" v-if="calendarData.dateInfo.length > 0">
-    <div class="mb-12 flex flex-row">
-      <table class="calendar w-full max-w-[900px] table-fixed">
+  <div class="mb-12" v-if="calendarData.dateInfo.length > 0">
+    <div class="flex flex-row justify-center">
+      <table class="calendar w-full md:w-5/6 lg:w-full max-w-[900px] table-fixed">
         <caption class="pb-2 text-3xl font-bold">
           <div class="flex justify-center">
             <span class="arrow cursor-pointer select-none" id="prev" @click="changeMonth(-1)">
@@ -30,8 +30,8 @@
             <td v-for="date in calendarData.dateInfo.slice((i - 1) * 7, i * 7)" :key="date.id"
               class="overflow-y-auto overflow-x-clip break-words border-2 border-zinc-400" style="height: inherit"
               :aria-label="`${months[date.month]} ${date.todaysDate}, ${date.year}`">
-              <div class="h-full min-h-20">
-                <span :class="{ 'text-slate-300': date.type !== 'current' }">{{
+              <div class="h-full min-h-20 p-0.5 md:p-1">
+                <span :class="{ 'text-stone-400': date.type !== 'current' }">{{
                   date.todaysDate
                 }}</span>
                 <div v-for="event in eventsOnDate(date)" :key="event._id">

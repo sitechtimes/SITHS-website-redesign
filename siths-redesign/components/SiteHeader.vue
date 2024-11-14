@@ -1,50 +1,125 @@
 <template>
   <header>
-  <!-- menu toggle-->
-  <div v-show="menuVisibility"
-    class="fixed inset-0 bg-[#1c1b1b] bg-opacity-100 z-50 flex items-center justify-center">
-    <button @click="closeMenu" class="absolute top-4 left-4 text-gray-600 text-2xl px-2 hover:cursor-pointer">
-      &times;
-    </button>
-    <!-- nav links -->
-    <div id="menu-content" class="absolute top-40 left-16 flex flex-col space-y-8 z-10">
-      <NuxtLink to="/" class="text-2xl text-white" @click="toggleMenu">Home</NuxtLink>
-      <NuxtLink to="/schedules" class="text-2xl text-white" @click="toggleMenu">Bell Schedule</NuxtLink>
-      <NuxtLink to="/staff" class="text-2xl text-white" @click="toggleMenu">Faculty and Staff</NuxtLink>
-      <NuxtLink to="/clubs" class="text-2xl text-white" @click="toggleMenu">Clubs and Activities</NuxtLink>
-      <NuxtLink to="/yearly-info" class="text-2xl text-white" @click="toggleMenu">2024-2025 School Year Info
-      </NuxtLink>
-      <NuxtLink to="/erlenwein" class="text-2xl text-white" @click="toggleMenu">Principal Erlenwein Announcements
-      </NuxtLink>
-      <NuxtLink to="/terrusa" class="text-2xl text-white" @click="toggleMenu">Mr. Terrusa Activities Updates
-      </NuxtLink>
-      <NuxtLink to="/calendar" class="text-2xl text-white" @click="toggleMenu">School Calendar</NuxtLink>
-    </div>
-  </div>
-
-  <!-- logo and search -->
-  <div class="flex flex-row items-center justify-between p-4 text-white">
-    <div class="z-40 w-20 hover:cursor-pointer">
-      <img @click="toggleMenu" src="../assets/icons/menu-bar.png" alt="Menu icon" class="h-8 w-8" />
+    <!-- menu toggle -->
+    <div v-show="menuVisibility"
+      class="fixed overflow-y-scroll inset-0 bg-[#1c1b1b] bg-opacity-100 z-50">
+      <!-- nav links -->
+      <div id="menu-content" class="absolute top-10 space-y-8 z-10 w-full">
+        <nav class="flex flex-row flex-wrap p-8">
+          <div v-for="(category, index) in navLinks" :key="index" class="px-4 py-8 w-1/4">
+            <h3 class="mb-2 font-bold font-kumhb text-white border-b-[1px] border-gold">{{ category.category }}</h3>
+            <ul class="space-y-2">
+                <li v-for="(link, idx) in category.links.sort((a, b) => a.name.localeCompare(b.name))" :key="idx" class="">
+                <NuxtLink :to="link.path" class="text-md font-normal hover:text-gold transition-all duration-300">
+                  {{ link.name }}
+                </NuxtLink>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
 
-    <NuxtLink to="/" class="text-3xl text-white flex flex-row items-center justify-center gap-2">
-      <img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo" />
-      SITECH
-    </NuxtLink>
+    <!-- menu, logo, and search -->
+    <div class="flex flex-row items-center justify-between p-4 text-white">
+      <!-- menu icon -->
+      <div class="z-50 w-8 h-5 flex flex-col justify-between items-center cursor-pointer" @click="toggleMenu">
+        <div :class="menuVisibility ? 'rotate-45 translate-y-2' : ''"
+          class="w-full h-1 transition-all bg-gold duration-500"></div>
+        <div :class="menuVisibility ? 'opacity-0' : ''" class="w-full h-1 transition-all duration-500 bg-gold">
+        </div>
+        <div :class="menuVisibility ? '-rotate-45 -translate-y-2' : ''"
+          class="w-full h-1 transition-all bg-gold duration-500"></div>
+      </div>
 
-    <div class="z-40 w-20 text-right">
-      <!-- TODO: someone make this a magnifying glass... -->
-      <span>SEARCH</span>
+      <NuxtLink to="/" class="text-3xl text-white flex flex-row items-center justify-center gap-2">
+        <img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo" />
+        SITHS
+      </NuxtLink>
+
+      <div class="z-40 w-20">
+        <button> <img src="/assets/icons/search.svg" alt="Search website"></button>
+      </div>
     </div>
-  </div>
   </header>
 </template>
+
 
 <script setup>
 import gsap from 'gsap'
 
 const menuVisibility = ref(false)
+const router = useRouter()
+
+router.afterEach(() => {
+  if (menuVisibility.value) {
+    toggleMenu();
+  }
+});
+
+const navLinks = [
+  {
+    category: "Main",
+    links: [
+      { name: "Home", path: "/" },
+    ]
+  },
+  {
+    category: "School Information",
+    links: [
+      { name: "Bell Schedule", path: "/schedules" },
+      { name: "Faculty and Staff", path: "/staff" },
+      { name: "School Calendar", path: "/calendar" },
+      { name: "School Year Information", path: "/yearly-info" },
+      { name: "Mr. Terrusa's Activity Updates", path: "/terrusa" },
+      { name: "Tech Times", path: "/" },
+      { name: "Communications", path: "/" },
+      { name: "Directions", path: "/" },
+      { name: "Special Ed/Instructional Support Services", path: "/" },
+      { name: "School Leadership Team", path: "/" },
+      { name: "School Policies", path: "/" },
+    ]
+  },
+  {
+    category: "Student",
+    links: [
+      { name: "Principal Erlwenwein's Announcements", path: "/erlenwein" },
+      { name: "Resources", path: "/resources" },
+    ]
+  },
+  {
+    category: "Clubs and Activities",
+    links: [
+      { name: "Club Information", path: "/clubs" },
+      { name: "Career and Technical Education", path: "/cte"},
+      { name: "Special Opportunities", path: "/opportunities"}
+    ]
+  },
+  {
+    category: "Teacher and Staff Resources",
+    links: [
+      { name: "Supplies Request Form", path: "/" },
+      { name: "MakerSpace", path: "/"},
+      { name: "Technology Support", path: "/"},
+      { name: "Professional Development Support", path: "/"}
+    ]
+  },
+  {
+    category: "Alumni",
+    links: [
+      { name: "Donations", path: "/" },
+      { name: "News", path: "/"},
+      { name: "Opportunities", path: "/"},
+      { name: "Transcript Request", path: "/"}
+    ]
+  },
+  {
+    category: "Contact Us",
+    links: [
+      { name: "Directory", path: "/" },
+    ]
+  }
+];
 
 const toggleMenu = () => {
   // clicking the menu toggle will toggle the menu visibility and set overflow to prevent scrolling
@@ -69,14 +144,4 @@ const toggleMenu = () => {
   }
 }
 
-const closeMenu = () => {
-  menuVisibility.value = false
-  document.body.style.overflow = ''
-  document.documentElement.style.overflow = ''
-}
-
-onUnmounted(() => {
-  document.body.style.overflow = ''
-  document.documentElement.style.overflow = ''
-})
 </script>
