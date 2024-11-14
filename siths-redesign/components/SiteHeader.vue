@@ -85,6 +85,7 @@ const navLinks = [
     links: [
       { name: "Principal Erlwenwein's Announcements", path: "/erlenwein" },
       { name: "Resources", path: "/resources" },
+      { name: "Summer Homework", path: "/summer-homework" },
     ]
   },
   {
