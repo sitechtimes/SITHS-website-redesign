@@ -1,7 +1,7 @@
 <template>
   <div v-if="show"
     class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 duration-300 transition-all ease-in-out">
-    <div class="bg-gray border-white border border-1 rounded-lg p-6 w-[25rem] max-w-full mx-4">
+    <div class="bg-gray border-gold border border-1 rounded-lg p-6 w-[25rem] max-w-full mx-4">
       <div class="text-center mb-4">
         <h3 class="text-white font-semibold">{{ eventDetails.event }}</h3>
         <p class="text-sm">{{ formattedDate }}</p>
