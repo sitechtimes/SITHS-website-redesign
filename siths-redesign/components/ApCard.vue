@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center">
-    <h1 class="py-2 text-2xl font-extrabold">{{ currentCourseTitle }} Courses</h1>
+    <h1 class="py-2 text-2xl font-extrabold">{{ currentCourseTitle }}</h1>
     <div class="flex w-screen flex-row justify-center">
       <div class="static m-8 h-[25rem] w-[15%] rounded-md bg-white">
         <div v-for="(APpage, index) in page" :key="index">
@@ -36,7 +36,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-const selectedPage = ref('')
+const selectedPage = ref('AP English')
 const props = defineProps({
   page: Array,
   courses: Array
@@ -47,6 +47,6 @@ const filteredCourses = computed(() => {
 })
 
 const currentCourseTitle = computed(() => {
-  return selectedPage.value || 'AP Courses'
+  return selectedPage.value
 })
 </script>

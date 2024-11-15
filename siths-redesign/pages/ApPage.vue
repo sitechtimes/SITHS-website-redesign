@@ -9,15 +9,8 @@ const websiteData = useWebsiteDataStore()
 console.log(websiteData.courses.name)
 
 const ApPages = [
-  // {
-  //   name: 'Welcome'
-  // },
-  // {
-  //   name: 'Selection'
-  // },
   {
     name: 'AP English'
-    // selectedPage: 'AP English'
   },
   {
     name: 'AP Russian'
@@ -34,9 +27,5 @@ const ApPages = [
   {
     name: 'AP Technology'
   }
-  // {
-  //   name: 'Rubric',
-  //   url: ''
-  // }
 ]
 </script>
