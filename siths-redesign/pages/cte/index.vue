@@ -2,7 +2,7 @@
   <div>
     <h1>Career and Technical Education</h1>
     <div class="flex flex-row">
-      <SubpageMenu :page="ctePages" v-model="selectedChoice" />
+      <SubpageMenu :pages="cteLinks"/>
       <div class="w-5/6 p-8">
         <p>The Pre-Engineering Career & Technical Education (CTE) program at
           Staten Island Technical High School is consistent with the school’s
@@ -51,34 +51,27 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import SubpageMenu from '~/components/SubpageMenu.vue';
-const ctePages = [
+const cteLinks = [
   {
     name: 'About',
+    path: '/cte'
   },
   {
-    name: 'CDC in the News',
+    name: "CDC in the News",
+    path: "/cte/cdc",
   },
   {
-    name: 'MakerSpace',
+    name: "Makerspace",
+    path: "/cte/makerspace",
   },
   {
-    name: 'Certifications',
+    name: "Certifications", 
+    path: "/cte/certifications",
   },
   {
-    name: 'Partnerships',
+    name: "Partnerships", 
+    path: "/cte/partnerships",
   }
-]
-
-const selectedChoice = ref('');
-
-const modifyUrl = ((url) => {
-  let endpoint = url;
-  endpoint = endpoint.replace('oembed', 'iframe');
-  endpoint = endpoint.replace('url', 'src');
-  endpoint = endpoint.replace('watch?v=', 'embed/');
-  endpoint = endpoint.replace('oembed', 'iframe');
-  return endpoint;
-})
+];
 </script>
