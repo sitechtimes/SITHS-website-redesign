@@ -13,12 +13,12 @@
         </div>
       </div>
       <div
-        v-for="(course, index) in filteredCourses"
+        v-for="(subject, index) in filteredSubjects"
         :key="index"
         class="mb-4 flex w-[50%] flex-col items-center justify-center text-black"
       >
         <div
-          v-for="(card, index) in course.cards"
+          v-for="(card, index) in subject.cards"
           :key="index"
           class="text-blac m-8 rounded-md bg-white p-7"
         >
@@ -39,11 +39,11 @@ import { ref, computed } from 'vue'
 const selectedPage = ref('AP English')
 const props = defineProps({
   page: Array,
-  courses: Array
+  subjects: Array
 })
 
-const filteredCourses = computed(() => {
-  return props.courses.filter((course) => course.name === selectedPage.value)
+const filteredSubjects = computed(() => {
+  return props.subjects.filter((subject) => subject.name === selectedPage.value)
 })
 
 const currentCourseTitle = computed(() => {

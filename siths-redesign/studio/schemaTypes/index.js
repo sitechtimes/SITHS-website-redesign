@@ -4,12 +4,11 @@ import {staff} from './staff'
 import {yearlyinfo} from './yearlyinfo'
 import {erlenwein} from './erlenwein'
 import {terrusa} from './terrusa'
-import {courses} from './apcourses'
+import {subjects} from './apcourses'
 import {defineType} from 'sanity'
 import {resources} from './resources'
 import {opportunities} from './opportunities'
-import { defineType } from 'sanity'
-
+import {defineType} from 'sanity'
 
 export const timeValueType = defineType({
   name: 'timeValue',
@@ -38,7 +37,7 @@ export const schemaTypes = [
   terrusa,
   timeValueType,
   yearlyinfo,
-  courses,
+  subjects,
   resources,
   opportunities,
 ]

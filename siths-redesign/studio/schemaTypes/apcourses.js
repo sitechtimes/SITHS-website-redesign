@@ -1,7 +1,7 @@
 import {defineField, defineType} from 'sanity'
 
-export const courses = defineType({
-  name: 'courses',
+export const subjects = defineType({
+  name: 'subjects',
   title: 'AP Courses',
   type: 'document',
   fields: [
