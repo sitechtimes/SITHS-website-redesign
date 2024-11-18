@@ -1,5 +1,5 @@
 <template>
-  <div class="m-4 p-1 w-1/6 rounded-md">
+  <div class="m-4 w-1/6 rounded-md p-1">
     <ul>
         <li v-for="subpage in pages" class="p-2 border-b border-white">
           <NuxtLink v-if="subpage.name === active" class="text-md text-gold" :to=subpage.path>{{ subpage.name }}</NuxtLink>
