@@ -1,10 +1,10 @@
 <template>
   <div class="flex flex-col items-center justify-center my-8 lg:mx-16">
-    <div v-for="(post, index) in posts" :key="index" class="my-2 collapse rounded-lg collapse-arrow border-[1px] border-gold text-white">
+    <div v-for="(post, index) in posts" :key="index" class="my-2 collapse rounded-lg collapse-arrow bg-white border-gold text-black">
       <input v-if="index == 0" name="collapse" type="radio" class="peer" checked/>
       <input v-else name="collapse" type="radio" class="peer"/>
       <div class="collapse-title text-xl font-medium">
-        <h3 class="font-semibold">{{ post.PostTitle }}</h3>
+        <h3 class="font-semibold text-black">{{ post.PostTitle }}</h3>
       </div>
       <div class="collapse-content flex flex-col justify-center">
         <div class="mx-1 mb-4 border-t-[1px] border-gold"/>
@@ -14,7 +14,7 @@
             class="flex flex-col w-full items-center md:items-start justify-center">
             <!-- image horizontal -->
             <div class="flex flex-col w-full">
-              <p class="" v-html="blocksToText(post.description)"></p>
+              <p v-html="blocksToText(post.description)"></p>
             </div>
             <img v-if="post.imageUrl" :src="post.imageUrl" alt="post image" class="md:w-4/5 lg:w-3/5">
           </div>

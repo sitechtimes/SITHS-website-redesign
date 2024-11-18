@@ -3,14 +3,12 @@
     <div class="flex flex-row">
         <SubpageMenu :pages="cteLinks" :active="'CDC in the News'"/>
         <div class="m-2 mx-4 w-5/6">
-            <DaisyUICollapse/>
         </div>
     </div>
 </template>
 
 <script setup>
 import SubpageMenu from '~/components/SubpageMenu.vue';
-import DaisyUICollapse from '~/components/DaisyUICollapse.vue';
 const cteLinks = [
     {
         name: 'About',
