@@ -1,8 +1,11 @@
 <template>
     <h1>Special Opportunities</h1>
     <div class="flex flex-row items-start">
-        <SubpageMenu :pages="clubLinks" />
-        <SpecialOpp type="Scholarships" :resources="websiteData.opportunities.filter((el) => el.opptype == 'Scholarships')" />
+        <SubpageMenu :pages="clubLinks" :active="'Scholarships'" />
+        <div class="m-2 mx-4 w-5/6">
+            <SpecialOpp type="Scholarships"
+                :resources="websiteData.opportunities.filter((el) => el.opptype == 'Scholarships')" />
+        </div>
     </div>
 </template>
 

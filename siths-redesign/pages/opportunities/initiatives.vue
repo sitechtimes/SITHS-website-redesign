@@ -1,9 +1,11 @@
 <template>
-    <h1>Special Opportunities</h1>
-    <div class="flex flex-row items-start">
-        <SubpageMenu :pages="clubLinks" />
-        <SpecialOpp type="Initatives" :resources="websiteData.opportunities.filter((el)=>el.opptype == 'Initiatives')"/>
-    </div>    
+  <h1>Special Opportunities</h1>
+  <div class="flex flex-row items-start">
+    <SubpageMenu :pages="clubLinks" :active="'Initiatives'" />
+    <div class="m-2 mx-4 w-5/6">
+      <SpecialOpp type="Initatives" :resources="websiteData.opportunities.filter((el) => el.opptype == 'Initiatives')" />
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -26,11 +28,11 @@ const clubLinks = [
     path: "/opportunities/scholarships",
   },
   {
-    name: "Volunteer", 
+    name: "Volunteer",
     path: "/opportunities/volunteer",
   },
   {
-    name: "Initiatives", 
+    name: "Initiatives",
     path: "/opportunities/initiatives",
   }
 ];

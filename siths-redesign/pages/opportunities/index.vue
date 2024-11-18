@@ -2,8 +2,10 @@
   <div>
     <h1>Special Opportunities</h1>
     <div class="flex flex-row">
-      <SubpageMenu :pages="clubLinks" class=""/>
-      learn all about staten island tech's special cte program
+      <SubpageMenu :pages="clubLinks" :active="'About'" />
+      <div class="m-2 mx-4 w-5/6">
+        learn all about staten island tech's special cte program
+      </div>
     </div>
   </div>
 </template>
@@ -24,11 +26,11 @@ const clubLinks = [
     path: "/opportunities/scholarships",
   },
   {
-    name: "Volunteer", 
+    name: "Volunteer",
     path: "/opportunities/volunteer",
   },
   {
-    name: "Initiatives", 
+    name: "Initiatives",
     path: "/opportunities/initiatives",
   }
 ];
