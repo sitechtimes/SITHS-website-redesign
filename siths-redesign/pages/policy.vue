@@ -1,19 +1,27 @@
-<template></template>
+<template>
+  <SchoolPolicy :page="schoolPolicies" :subjects="websiteData.policys" />
+</template>
 <script setup>
 const websiteData = useWebsiteDataStore()
-const clubsPages = [
+const schoolPolicies = [
   {
-    name: 'Internships'
+    name: 'Science Lab Policy'
   },
   {
-    name: 'Scholarships'
+    name: 'Nut-Free Zone Policy'
   },
   {
-    name: 'Volunteer'
+    name: 'Academic Honesty Policy'
   },
   {
-    name: 'Initiatives'
+    name: 'Cafeteria Policy'
   },
+  {
+    name: 'Student Dress Code'
+  },
+  {
+    name: 'Cutting Classes'
+  }
 ]
-console.log(websiteData.)
+console.log(websiteData.policys)
 </script>
