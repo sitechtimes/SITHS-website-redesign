@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity';
 
-export const cdcnews = defineType({
-  name: 'cdcnews',
-  title: "CDC News",
+export const partnerships = defineType({
+  name: 'partnerships',
+  title: "Partnerships",
   type: 'document',
   fields: [
     defineField({
