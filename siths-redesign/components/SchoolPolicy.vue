@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col items-center">
-    <div class="flex w-screen flex-row justify-center">
+  <div class="flex flex-col">
+    <div class="flex w-[90%] flex-row justify-end">
       <div class="static m-8 h-[25rem] w-[15%] rounded-md bg-white">
         <div v-for="(schoolpolicies, index) in page" :key="index">
           <button

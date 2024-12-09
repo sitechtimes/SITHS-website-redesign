@@ -1,5 +1,5 @@
 <template>
-  <SchoolPolicy :page="schoolPolicies" :subjects="websiteData.policys" />
+  <SchoolPolicy :page="schoolPolicies" :subjects="websiteData.policies" />
 </template>
 <script setup>
 const websiteData = useWebsiteDataStore()
@@ -23,5 +23,5 @@ const schoolPolicies = [
     name: 'Cutting Classes'
   }
 ]
-console.log(websiteData.policys)
+console.log(websiteData.policies)
 </script>
