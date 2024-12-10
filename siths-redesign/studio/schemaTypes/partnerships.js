@@ -7,17 +7,7 @@ export const partnerships = defineType({
   fields: [
     defineField({
       name: 'PostTitle',
-      title: 'Post Title',
-      type: 'string',
-    }),
-    defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'string',
-    }),
-    defineField({
-      name: 'date',
-      title: 'Date',
+      title: 'Partnership Name',
       type: 'string',
     }),
     defineField({
