@@ -7,7 +7,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const schedules = ref([])
   const staff = ref([])
   const events = ref([])
-  const courses = ref([])
+  const subjects = ref([])
   const resources = ref([])
   const opportunities = ref([])
 

@@ -8,7 +8,6 @@ import {subjects} from './apcourses'
 import {defineType} from 'sanity'
 import {resources} from './resources'
 import {opportunities} from './opportunities'
-import {defineType} from 'sanity'
 
 export const timeValueType = defineType({
   name: 'timeValue',
