@@ -7,6 +7,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const schedules = ref([])
   const staff = ref([])
   const events = ref([])
+  const policies = ref([])
   const subjects = ref([])
   const resources = ref([])
   const opportunities = ref([])
@@ -31,6 +32,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         "imageUrl": image.asset->url
       },
       "subjects": *[_type == "subjects"],
+      "policies": *[_type == "policies"],
       "terrusa": *[_type == "terrusa"]{
         _id,
         PostTitle,
@@ -81,6 +83,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       schedules.value = data.value.schedules
       staff.value = data.value.staff
       events.value = data.value.events
+      policies.value = data.value.policies
       subjects.value = data.value.subjects
       resources.value = data.value.resources
       opportunities.value = data.value.opportunities
@@ -103,6 +106,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     schedules,
     staff,
     events,
+    policies,
     resources,
     subjects,
     opportunities,
