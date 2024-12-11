@@ -14,7 +14,7 @@
             class="flex flex-col w-full items-center md:items-start justify-center">
             <!-- image horizontal -->
             <div class="flex flex-col w-full">
-              <p v-html="blocksToText(post.description)"></p>
+              <p v-html="convertToText(post.description)"></p>
             </div>
             <img v-if="post.imageUrl" :src="post.imageUrl" alt="post image" class="md:w-4/5 lg:w-3/5">
           </div>

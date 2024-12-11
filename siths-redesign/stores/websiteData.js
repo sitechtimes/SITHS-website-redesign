@@ -73,7 +73,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       _id,
       name,
       description,
-      link,
+      image,
     },
     }`
 
@@ -101,5 +101,5 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     await fetchAllData()
   })
 
-  return { posts, erlenweinPosts, terrusaPosts, schedules, staff, events, resources, opportunities, partnerships , fetchLoading }
+  return { posts, erlenweinPosts, terrusaPosts, schedules, staff, events, resources, opportunities, partnerships, fetchLoading }
 })

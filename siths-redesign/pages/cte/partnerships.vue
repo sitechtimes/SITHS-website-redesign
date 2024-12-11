@@ -3,7 +3,6 @@
     <div class="flex flex-row">
         <SubpageMenu :pages="cteLinks" :active="'Partnerships'" />
         <div class="m-2 mx-4 w-5/6">
-            <h3>Learn about SITHS Partnerships!</h3>
             <PartnerDetails type="Partnerships" :resources="websiteData.partnerships"/>
         </div>
     </div>

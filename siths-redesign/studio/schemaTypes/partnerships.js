@@ -6,7 +6,7 @@ export const partnerships = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'PostTitle',
+      name: 'name',
       title: 'Partnership Name',
       type: 'string',
     }),
