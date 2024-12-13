@@ -2,10 +2,10 @@
     <h1>Career and Technical Education</h1>
     <div class="flex flex-row">
         <SubpageMenu :pages="cteLinks" :active="'Certifications'" />
-        <div class="mx-4 w-5/6">
+        <div class="w-5/6">
             <h2 class="mb-8">Autodesk</h2>
             <div class="mb-12">
-                <h3>AutoCAD Certification Exam</h3>
+                <h3 class="text-xl">AutoCAD Certification Exam</h3>
                 <p class="pt-2">To measure student performance in our CTE AutoCAD class, students are given projects
                     which align with
                     the AutoCAD Certification Exam.
@@ -18,7 +18,7 @@
                 </p>
             </div>
             <div class="mb-12">
-                <h3>Inventor Certification Exam</h3>
+                <h3 class="text-xl">Inventor Certification Exam</h3>
                 <p class="pt-2">Autodesk Inventor is a 3D mechanical solid modeling design software developed by
                     Autodesk to create 3D digital prototypes. It is used for 3D mechanical design, design communication,
                     tooling creation and product simulation. Students have the opportunity to take this certification
@@ -27,7 +27,7 @@
                 </p>
             </div>
             <div class="mb-12">
-                <h3>Revit Certification Exam</h3>
+                <h3 class="text-xl">Revit Certification Exam</h3>
                 <p class="pt-2">Autodesk Revit is a building information modeling software for architects, structural
                     engineers, MEP engineers, designers and contractors. Our students can take the test to get certified
                     in this software, and then move on to work at engineering or architectural firms where they will be
