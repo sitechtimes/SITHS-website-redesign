@@ -19,9 +19,22 @@ export const policies = defineType({
           type: 'object',
           fields: [
             defineField({
+              name: 'title',
+              title: 'Section Title',
+              type: 'string',
+            }),
+            defineField({
               name: 'description',
               title: 'Description',
               type: 'string',
+            }),
+            defineField({
+              name: 'image',
+              title: 'Image (PNG or JPG only, please)',
+              type: 'image',
+              options: {
+                hotspot: true,
+              },
             }),
           ],
         },

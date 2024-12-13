@@ -3,29 +3,29 @@
 </template>
 
 <script setup>
-import SchooolPolicy from '../components/SchoolPolicy.vue'
+import SchoolPolicy from '../components/SchoolPolicy.vue'
 
 const websiteData = useWebsiteDataStore()
 console.log(websiteData.policies.name)
 
 const apcourses = [
   {
-    name: 'AP English'
+    name: 'Cutting Classes'
   },
   {
-    name: 'AP Russian'
+    name: 'Student Dress Code'
   },
   {
-    name: 'AP History'
+    name: 'Cafeteria Policy'
   },
   {
-    name: 'AP Science'
+    name: 'Nut-Free Zone Policy'
   },
   {
-    name: 'AP Math'
+    name: 'Academic Honesty Policy'
   },
   {
-    name: 'AP Technology'
+    name: 'Science Lab Policy'
   }
 ]
 </script>
