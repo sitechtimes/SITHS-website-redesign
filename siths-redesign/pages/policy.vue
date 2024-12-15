@@ -1,11 +1,22 @@
 <template>
-  <SchoolPolicy :page="schoolPolicies" :subjects="websiteData.policies" />
+  <SchoolPolicy :page="apcourses" :policies="websiteData.policies" />
 </template>
+
 <script setup>
+import SchoolPolicy from '../components/SchoolPolicy.vue'
+
 const websiteData = useWebsiteDataStore()
-const schoolPolicies = [
+console.log(websiteData.policies.name)
+
+const apcourses = [
   {
-    name: 'Science Lab Policy'
+    name: 'Cutting Classes'
+  },
+  {
+    name: 'Student Dress Code'
+  },
+  {
+    name: 'Cafeteria Policy'
   },
   {
     name: 'Nut-Free Zone Policy'
@@ -14,14 +25,7 @@ const schoolPolicies = [
     name: 'Academic Honesty Policy'
   },
   {
-    name: 'Cafeteria Policy'
-  },
-  {
-    name: 'Student Dress Code'
-  },
-  {
-    name: 'Cutting Classes'
+    name: 'Science Lab Policy'
   }
 ]
-console.log(websiteData.policies)
 </script>
