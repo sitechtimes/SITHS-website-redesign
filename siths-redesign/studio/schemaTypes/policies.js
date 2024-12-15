@@ -36,6 +36,23 @@ export const policies = defineType({
                 hotspot: true,
               },
             }),
+            defineField({
+              name: 'note',
+              title: 'Notes',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    defineField({
+                      name: 'sectionNote',
+                      title: 'Notes Description',
+                      type: 'string',
+                    })
+                  ],
+                },
+              ],
+            }),
           ],
         },
       ],

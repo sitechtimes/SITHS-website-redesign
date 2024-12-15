@@ -1,5 +1,5 @@
 <template>
-  <SchoolPolicy :page="apcourses" :policies="websiteData.policies" />
+  <SchoolPolicy :page="schoolpolicies" :policies="websiteData.policies" />
 </template>
 
 <script setup>
@@ -8,7 +8,7 @@ import SchoolPolicy from '../components/SchoolPolicy.vue'
 const websiteData = useWebsiteDataStore()
 console.log(websiteData.policies.name)
 
-const apcourses = [
+const schoolpolicies = [
   {
     name: 'Cutting Classes'
   },
