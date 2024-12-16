@@ -1,9 +1,9 @@
 <template>
   <div>
     <h1>Career and Technical Education</h1>
-    <div class="flex flex-row">
-      <SubpageMenu :pages="cteLinks" :active="'About'" />
-      <div class="w-5/6">
+    <div class="static flex flex-col justify-center items-center">
+      <SubpageMenu :pages="cteLinks" :active="'About'" class="absolute left-8 top-40"/>
+      <div class="w-1/2">
         <p>The Pre-Engineering Career & Technical Education (CTE) program at
           Staten Island Technical High School is consistent with the school’s
           original mission statement: to produce well-rounded graduates equipped
@@ -43,7 +43,7 @@
           benefit them for the rest of their lives. The map below highlights the locations and businesses that have
           participated in our WBL program in recent years.
         </p>
-        <div class="my-8">
+        <div class="w-100% flex justify-center items-center my-8">
           <iframe src="https://www.google.com/maps/d/embed?mid=1-ZpN5SkxzYEz-CmUPdfs_mgLxYUQaBxH&ehbc=2E312F"
             width="640" height="480"></iframe>
         </div>
