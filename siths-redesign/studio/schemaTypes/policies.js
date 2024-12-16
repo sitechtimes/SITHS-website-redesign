@@ -19,7 +19,7 @@ export const policies = defineType({
           type: 'object',
           fields: [
             defineField({
-              name: 'title',
+              name: 'policyTitle',
               title: 'Section Title',
               type: 'string',
             }),
@@ -48,7 +48,7 @@ export const policies = defineType({
                       name: 'sectionNote',
                       title: 'Notes Description',
                       type: 'string',
-                    })
+                    }),
                   ],
                 },
               ],
