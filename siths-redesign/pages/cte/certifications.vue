@@ -6,7 +6,7 @@
             <h2 class="mb-8">Autodesk</h2>
             <div class="w-1/2">
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold border-b-[2px] border-gold">AutoCAD Certification Exam</h3>
+                    <h3 class="text-2xl font-semibold border-b-[2px] border-gold">AutoCAD Certification Exam</h3>
                     <p class="pt-2">To measure student performance in our CTE AutoCAD class, students are given projects
                         which align with
                         the AutoCAD Certification Exam.
@@ -20,7 +20,7 @@
                     </p>
                 </div>
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold border-b-[2px] border-gold">Inventor Certification Exam</h3>
+                    <h3 class="text-2xl font-semibold border-b-[2px] border-gold">Inventor Certification Exam</h3>
                     <p class="pt-2">Autodesk Inventor is a 3D mechanical solid modeling design software developed by
                         Autodesk to create 3D digital prototypes. It is used for 3D mechanical design, design
                         communication,
@@ -32,7 +32,7 @@
                     </p>
                 </div>
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold border-b-[2px] border-gold">Revit Certification Exam</h3>
+                    <h3 class="text-2xl font-semibold border-b-[2px] border-gold">Revit Certification Exam</h3>
                     <p class="pt-2">Autodesk Revit is a building information modeling software for architects,
                         structural
                         engineers, MEP engineers, designers and contractors. Our students can take the test to get
@@ -43,7 +43,7 @@
                     </p>
                 </div>
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold border-b-[2px] border-gold">CompTIA A+ Certification Exam</h3>
+                    <h3 class="text-2xl font-semibold border-b-[2px] border-gold">CompTIA A+ Certification Exam</h3>
                     <p class="pt-2">This certification exam covers PC hardware, mobile device hardware, networking and
                         troubleshooting hardware and network connectivity issues. CompTIA A+ covers installing and
                         configuring operating systems including Windows, iOS, Android, Apple OS X, and Linux. It also

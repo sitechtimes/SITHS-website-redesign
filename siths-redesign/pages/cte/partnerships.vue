@@ -1,10 +1,13 @@
 <template>
     <h1>Career and Technical Education</h1>
-    <div class="flex flex-row">
-        <SubpageMenu :pages="cteLinks" :active="'Partnerships'" />
-        <div class="w-5/6">
+    <div class="static flex flex-col justify-center items-center">
+        <SubpageMenu :pages="cteLinks" :active="'Partnerships'" class="absolute left-8 top-40" />
+        <div class="flex items-center justify-center flex-col w-5/6">
             <h2 class="mb-8">Partnerships</h2>
-            <PartnerDetails type="Partnerships" :resources="websiteData.partnerships"/>
+            <div class="w-1/2">
+                <PartnerDetails type="Partnerships" :resources="websiteData.partnerships" />
+
+            </div>
         </div>
     </div>
 </template>
