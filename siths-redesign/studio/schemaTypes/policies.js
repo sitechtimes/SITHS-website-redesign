@@ -30,11 +30,8 @@ export const policies = defineType({
             }),
             defineField({
               name: 'image',
-              title: 'Image (PNG or JPG only, please)',
-              type: 'image',
-              options: {
-                hotspot: true,
-              },
+              title: 'Image Link',
+              type: 'string',
             }),
             defineField({
               name: 'note',

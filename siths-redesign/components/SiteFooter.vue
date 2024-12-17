@@ -3,12 +3,14 @@
     class="relative mt-20 grid w-full grid-cols-2 justify-between gap-6 p-6 opacity-85 lg:flex lg:flex-row"
   >
     <!-- background image -->
-    <div class="absolute inset-0 pointer-events-none opacity-5 bg-city-skyline bg-repeat-x bottom-0 bg-bottom"></div>
+    <div
+      class="pointer-events-none absolute inset-0 bottom-0 bg-city-skyline bg-bottom bg-repeat-x opacity-5"
+    ></div>
     <!-- upper left hand corner -->
     <div class="col-span-2 flex flex-col">
       <!-- school name -->
       <div class="flex flex-row">
-        <img src="../assets/icons/siths-logo.png" alt=""  aria-hidden="true" />
+        <img src="../assets/icons/siths-logo.png" alt="" aria-hidden="true" />
         <h1 class="p-4 text-left text-2xl">
           Staten Island <br />
           Technical High School
@@ -71,7 +73,7 @@
             rel="noopener noreferrer"
           >
             <img
-              class="h-10 w-10 rounded-full bg-white p-2 object-none"
+              class="h-10 w-10 rounded-full bg-white object-none p-2"
               src="../assets/icons/facebook.png"
               alt="Facebook"
             />
@@ -82,7 +84,7 @@
             rel="noopener noreferrer"
           >
             <img
-              class="h-10 w-10 rounded-full bg-white p-2 object-none"
+              class="h-10 w-10 rounded-full bg-white object-none p-2"
               src="../assets/icons/instagram.png"
               alt="Instagram"
             />
@@ -93,7 +95,7 @@
             rel="noopener noreferrer"
           >
             <img
-              class="h-10 w-10 rounded-full bg-white p-2 object-none"
+              class="h-10 w-10 rounded-full bg-white object-none p-2"
               src="../assets/icons/x-twitter.png"
               alt="Twitter"
             />
@@ -104,7 +106,7 @@
             rel="noopener noreferrer"
           >
             <img
-              class="h-10 w-10 rounded-full bg-white p-2 object-none"
+              class="h-10 w-10 rounded-full bg-white object-none p-2"
               src="../assets/icons/linkedin.png"
               alt="LinkedIn"
             />
