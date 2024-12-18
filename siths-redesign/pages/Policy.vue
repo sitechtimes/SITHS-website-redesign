@@ -6,9 +6,12 @@
 import SchoolPolicy from '../components/SchoolPolicy.vue'
 
 const websiteData = useWebsiteDataStore()
+const cards = useWebsiteDataStore.cards
+
 websiteData.policies.forEach((policy) => {
   console.log(policy.cards)
 })
+
 const schoolpolicies = [
   {
     name: 'Cutting Classes'
