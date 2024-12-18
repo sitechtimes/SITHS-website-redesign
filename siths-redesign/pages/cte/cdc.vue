@@ -1,8 +1,12 @@
 <template>
     <h1>Career and Technical Education</h1>
-    <div class="flex flex-row">
-        <SubpageMenu :pages="cteLinks" :active="'CDC in the News'"/>
-        <div class="w-5/6">
+    <div class="static flex flex-col justify-center items-center">
+        <SubpageMenu :pages="cteLinks" :active="'CDC in the News'" class="absolute left-8 top-40"/>
+        <div class="flex items-center justify-center flex-col w-5/6">
+            <h2 class="mb-8">CDC in the News</h2>
+            <div class="w-1/2">
+            </div>
+
         </div>
     </div>
 </template>

@@ -6,7 +6,6 @@
             <h2 class="mb-8">Partnerships</h2>
             <div class="w-1/2">
                 <PartnerDetails type="Partnerships" :resources="websiteData.partnerships" />
-
             </div>
         </div>
     </div>

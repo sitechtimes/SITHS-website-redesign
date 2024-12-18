@@ -1,9 +1,9 @@
 <template>
     <div>
-      <div class="grid grid-cols-1 gap-12 m-2">
-        <div v-for="item in resources" class="w-7/8 rounded-md border-[1px] border-white p-8 hover:border-gold transition-all duration-300">
-          <h4 class=" font-bold pb-2">{{ item.name }}</h4>
-          <p v-html="convertToText(item.description)"></p>
+      <div class="grid grid-cols-1 gap-4 m-2">
+        <div v-for="item in resources" class="mb-12 group">
+          <h3 class="text-2xl font-semibold border-b-[2px] border-gold transition-all duration-500">{{item.name}}</h3>
+          <p v-html="convertToText(item.description)" class="pt-2 brightness-75 group-hover:brightness-100 transition-all duration-300"></p>
         </div>
       </div>
   
