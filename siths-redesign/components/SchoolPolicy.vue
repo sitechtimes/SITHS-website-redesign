@@ -25,9 +25,9 @@
           <h2 class="text-3xl font-bold">{{ card.policyTitle }}</h2>
           <h3 class="my-4 text-[1.2rem]">{{ card.description }}</h3>
           <img class="w-[75%]" :src="card.image" />
-          <div v-for="(note, index) in policy.cards.notes" :key="index">
-            <p class="text-4xl font-bold">
-              {{ note.description }}, {{ console.log(note.description) }}
+          <div v-for="(note, index) in card.notes" :key="index">
+            <p class="text-4xl font-bold text-white">
+              {{ note.description }}
             </p>
           </div>
         </div>
@@ -38,8 +38,6 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-
-
 
 const selectedPage = ref('Cutting Classes')
 const props = defineProps({
