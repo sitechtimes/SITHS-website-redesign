@@ -1,21 +1,23 @@
 <template>
-    <div>
-      <div class="grid grid-cols-1 gap-4 m-2">
-        <div v-for="item in resources" class="mb-12 group">
-          <h3 class="text-2xl font-semibold border-b-[2px] border-gold transition-all duration-500">{{item.name}}</h3>
-          <p v-html="convertToText(item.description)" class="pt-2 brightness-75 group-hover:brightness-100 transition-all duration-300"></p>
-        </div>
+  <div>
+    <div class="grid grid-cols-1 gap-4 m-2">
+      <div v-for="item in resources" class="mb-12 group">
+        <h3 class="text-2xl font-semibold border-b-[2px] border-gold transition-all duration-500">{{ item.name }}</h3>
+        <p v-if="isBlock" v-html="convertToText(item.description)" class="pt-2 brightness-75 transition-all duration-300"></p>
+        <p v-if="!isBlock" class="pt-2 brightness-75 transition-all duration-300">{{ item.description }}</p>
       </div>
-  
     </div>
-  </template>
-  
-  <script setup>
-  defineProps({
-    resources: Array
-  })
 
-  const convertToText = (data) => {
+  </div>
+</template>
+
+<script setup>
+defineProps({
+  resources: Array,
+  isBlock: Boolean
+})
+
+const convertToText = (data) => {
   let output = []
 
   data.forEach(block => {
@@ -30,6 +32,7 @@
         if (marks.includes('strong')) {
           text = `<span class="font-bold">${text}</span>`
         }
+
         // Italics (em)
         if (marks.includes('em')) {
           text = `<span class="italic">${text}</span>`
@@ -58,4 +61,4 @@
   return output.join('<br/><br/>')
 }
 
-  </script>
+</script>

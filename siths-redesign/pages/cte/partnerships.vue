@@ -5,7 +5,7 @@
         <div class="flex items-center justify-center flex-col w-5/6">
             <h2 class="mb-8">Partnerships</h2>
             <div class="w-1/2">
-                <PartnerDetails type="Partnerships" :resources="websiteData.partnerships" />
+                <InfoDisplay type="Partnerships" :resources="websiteData.partnerships" :isBlock="true"/>
             </div>
         </div>
     </div>
