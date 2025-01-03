@@ -62,6 +62,7 @@ const navLinks = [
     category: "Main",
     links: [
       { name: "Home", path: "/" },
+      { name: "School History", path: "/history"}
     ]
   },
   {
