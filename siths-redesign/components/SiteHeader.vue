@@ -1,20 +1,31 @@
 <template>
   <header>
     <!-- menu toggle -->
-    <div v-show="menuVisibility"
-      class="fixed overflow-y-scroll inset-0 bg-[#1c1b1b] bg-opacity-100 z-50">
+    <div v-show="menuVisibility" class="fixed overflow-y-scroll inset-0 bg-[#1c1b1b] bg-opacity-100 z-50">
       <!-- nav links -->
       <div id="menu-content" class="absolute top-10 space-y-8 z-10 w-full">
-        <nav class="flex flex-row flex-wrap p-8">
-          <div v-for="(category, index) in navLinks" :key="index" class="px-4 py-8 w-1/4">
-            <h3 class="mb-2 font-bold font-kumhb text-white border-b-[1px] border-gold">{{ category.category }}</h3>
+        <nav class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-8">
+          <div v-for="(category, index) in navLinks" :key="index" class="px-4 md:py-8">
+            <h3 class="hidden md:block mb-2 font-bold font-kumhb text-white border-b-[1px] border-gold">{{ category.category }}</h3>
             <ul class="space-y-2">
-                <li v-for="(link, idx) in category.links.sort((a, b) => a.name.localeCompare(b.name))" :key="idx" class="">
-                <NuxtLink :to="link.path" class="text-md font-normal hover:text-gold transition-all duration-300">
-                  {{ link.name }}
-                </NuxtLink>
+              <li v-for="(link, idx) in category.links.sort((a, b) => a.name.localeCompare(b.name))" :key="idx">
+                <NuxtLink :to="link.path" class="hidden md:block text-md font-normal hover:text-gold transition-all duration-300">
+                      {{ link.name }}
+                    </NuxtLink>
               </li>
             </ul>
+
+            <div class="md:hidden my-2 collapse collapse-plus bg-white text-black">
+                  <input type="checkbox" class="peer" />
+                  <div class="collapse-title text-xl font-medium">
+                    <h3>{{ category.category }}</h3>
+                  </div>
+                  <div class="collapse-content flex flex-col justify-center">
+                    <NuxtLink v-for="(link, idx) in category.links.sort((a, b) => a.name.localeCompare(b.name))" :key="idx" :to="link.path" class="text-md font-normal hover:text-gold transition-all duration-300">
+                      {{ link.name }}
+                    </NuxtLink>
+                  </div>
+                </div>
           </div>
         </nav>
       </div>
@@ -91,26 +102,26 @@ const navLinks = [
     category: "Clubs and Activities",
     links: [
       { name: "Club Information", path: "/clubs" },
-      { name: "Career and Technical Education", path: "/cte"},
-      { name: "Special Opportunities", path: "/opportunities"}
+      { name: "Career and Technical Education", path: "/cte" },
+      { name: "Special Opportunities", path: "/opportunities" }
     ]
   },
   {
     category: "Teacher and Staff Resources",
     links: [
       { name: "Supplies Request Form", path: "/" },
-      { name: "MakerSpace", path: "/"},
-      { name: "Technology Support", path: "/"},
-      { name: "Professional Development Support", path: "/"}
+      { name: "MakerSpace", path: "/" },
+      { name: "Technology Support", path: "/" },
+      { name: "Professional Development Support", path: "/" }
     ]
   },
   {
     category: "Alumni",
     links: [
       { name: "Donations", path: "/" },
-      { name: "News", path: "/"},
-      { name: "Opportunities", path: "/"},
-      { name: "Transcript Request", path: "/"}
+      { name: "News", path: "/" },
+      { name: "Opportunities", path: "/" },
+      { name: "Transcript Request", path: "/" }
     ]
   },
   {

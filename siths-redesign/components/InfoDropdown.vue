@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center lg:mx-16">
+  <div class="flex flex-col items-center justify-center mx-2 md:mx-4 lg:mx-16">
     <div v-for="(post, index) in posts" :key="index" class="my-2 collapse collapse-plus bg-white text-black">
       <input v-if="index == 0" type="checkbox" class="peer" checked @click="getImageDimensions(post.imageUrl)"/>
       <input v-else type="checkbox" class="peer" @click="getImageDimensions(post.imageUrl)"/>
