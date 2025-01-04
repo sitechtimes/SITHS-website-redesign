@@ -35,7 +35,7 @@
                   date.todaysDate
                 }}</span>
                 <div v-for="event in eventsOnDate(date)" :key="event._id">
-                  <p @click="toggleDetails(event)" class="bg-gold text-gray"
+                  <p @click="toggleDetails(event)" class="bg-gold text-gray text-sm"
                     :class="`mb-1 w-full cursor-pointer truncate rounded-md p-1.5 text-center font-bold transition duration-500 hover:opacity-80 hover:shadow-md`">
                     {{ event.event }}
                   </p>
@@ -45,7 +45,7 @@
           </tr>
         </tbody>
       </table>
-      <CalendarModal :show="show" :eventDetails="eventDetails" />
+      <CalendarModal :show="show" :eventDetails="eventDetails"  @close="toggleDetails(event)" />
     </div>
   </div>
 </template>
