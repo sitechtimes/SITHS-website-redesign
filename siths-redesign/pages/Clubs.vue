@@ -11,14 +11,17 @@ import SubpageMenu from '../components/SubpageMenu.vue'
 const clubsPages = [
   {
     name: '2023-2024 Club Information',
+    value: '2023-2024 Club Information',
     url: ''
   },
   {
     name: 'National Honor Society',
+    value: 'National Honor Society',
     url: ''
   },
   {
     name: 'Special Opportunities',
+    value: 'Special Opportunities',
     url: ''
   }
 ]

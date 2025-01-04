@@ -59,6 +59,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         resource,
         description,
         link,
+        category,
       },
         "opportunities": *[_type == "opportunities"]{
         _id,
