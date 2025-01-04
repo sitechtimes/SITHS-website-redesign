@@ -4,28 +4,34 @@
     <div v-show="menuVisibility" class="fixed overflow-y-scroll inset-0 bg-[#1c1b1b] bg-opacity-100 z-50">
       <!-- nav links -->
       <div id="menu-content" class="absolute top-10 space-y-8 z-10 w-full">
-        <nav class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-8">
+        <nav class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-8">
           <div v-for="(category, index) in navLinks" :key="index" class="px-4 md:py-8">
-            <h3 class="hidden md:block mb-2 font-bold font-kumhb text-white border-b-[1px] border-gold">{{ category.category }}</h3>
-            <ul class="space-y-2">
-              <li v-for="(link, idx) in category.links.sort((a, b) => a.name.localeCompare(b.name))" :key="idx">
-                <NuxtLink :to="link.path" class="hidden md:block text-md font-normal hover:text-gold transition-all duration-300">
-                      {{ link.name }}
-                    </NuxtLink>
-              </li>
-            </ul>
+            <div class="hidden md:block">
+              <h3 class="mb-2 font-bold font-kumhb text-white border-b-[1px] border-gold">{{
+                category.category }}</h3>
+              <ul class="space-y-2">
+                <li v-for="(link, idx) in category.links.sort((a, b) => a.name.localeCompare(b.name))" :key="idx">
+                  <NuxtLink :to="link.path" class="text-md font-normal hover:text-gold transition-all duration-300">
+                    {{ link.name }}
+                  </NuxtLink>
+                </li>
+              </ul>
+            </div>
+
+            <div v-if="index < navLinks.length && index > 0" class="md:hidden h-[1px] w-full my-1 bg-gold"></div>
 
             <div class="md:hidden my-2 collapse collapse-plus bg-white text-black">
-                  <input type="checkbox" class="peer" />
-                  <div class="collapse-title text-xl font-medium">
-                    <h3>{{ category.category }}</h3>
-                  </div>
-                  <div class="collapse-content flex flex-col justify-center">
-                    <NuxtLink v-for="(link, idx) in category.links.sort((a, b) => a.name.localeCompare(b.name))" :key="idx" :to="link.path" class="text-md font-normal hover:text-gold transition-all duration-300">
-                      {{ link.name }}
-                    </NuxtLink>
-                  </div>
-                </div>
+              <input type="checkbox" class="peer" />
+              <div class="collapse-title text-xl font-medium">
+                <h3>{{ category.category }}</h3>
+              </div>
+              <div class="collapse-content flex flex-col justify-center">
+                <NuxtLink v-for="(link, idx) in category.links.sort((a, b) => a.name.localeCompare(b.name))" :key="idx"
+                  :to="link.path" class="text-md font-normal hover:text-gold border-t-2 border-slate-200 py-1">
+                  {{ link.name }}
+                </NuxtLink>
+              </div>
+            </div>
           </div>
         </nav>
       </div>

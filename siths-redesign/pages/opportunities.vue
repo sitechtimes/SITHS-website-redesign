@@ -29,6 +29,5 @@ const clubsPages = [
   },
 ]
 const selectedChoice = ref('Internships'); 
-console.log(websiteData.opportunities)
 
 </script>
