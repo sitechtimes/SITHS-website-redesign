@@ -1,30 +1,31 @@
 <template>
-  <div>
-    <h1>Career and Technical Education</h1>
-    <div class="static flex flex-col justify-center items-center">
-      <SubpageMenu :pages="cteLinks" :active="'About'" class="absolute left-8 top-40"/>
-      <div class="w-1/2">
-        <p>The Pre-Engineering Career & Technical Education (CTE) program at
+  <div class="px-4 md:px-8">
+    <h1 class="text-2xl md:text-3xl lg:text-4xl text-center mb-4">Career and Technical Education</h1>
+    <div class="flex flex-col md:flex-row justify-center items-start">
+      <SubpageMenu :pages="cteLinks" :active="'About'" class="w-full md:w-auto mb-4 md:mb-0 md:mr-8" />
+      <div class="w-full md:w-3/4 lg:w-1/2">
+        <p class="text-sm md:text-base mb-4">The Pre-Engineering Career & Technical Education (CTE) program at
           Staten Island Technical High School is consistent with the school’s
           original mission statement: to produce well-rounded graduates equipped
           with college and career readiness and skills. These programs provide a
           robust STEM curriculum with many opportunities and resources for
           students to engage in.
         </p>
-        <div class="w-100% flex justify-center items-center p-4">
-          <iframe width="448" height="252" src="https://www.youtube.com/embed/z-l2snD7PAU"
+        <div class="flex justify-center items-center p-4">
+          <iframe class="w-full max-w-[400px] h-[225px] md:h-[252px]" src="https://www.youtube.com/embed/z-l2snD7PAU"
             title="Staten Island Technical High School Open House 2021 - Technology Department" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <h2 class="py-4">Work-Based Learning</h2>
-        <p>Work-based learning (WBL) is the “umbrella” term used to identify activities that engage employers and
+        <h2 class="text-xl md:text-2xl py-4">Work-Based Learning</h2>
+        <p class="text-sm md:text-base mb-4">Work-based learning (WBL) is the “umbrella” term used to identify activities that engage
+          employers and
           schools in providing structured learning experiences for students. Our WBL program is a school-business
           partnership program that provides high school students, age 14 and above, the opportunity to obtain on-site,
           career exploration and development experiences. The focus of the program is to give students meaningful,
           hands-on, career exploration opportunities.
         </p><br>
-        <p>
+        <p class="text-sm md:text-base mb-4">
           The philosophy behind Staten Island Technical High School’s program is to move our students’ education into
           the 21st Century and better assist our students with their future career plans. We believe in steady and
           consistent integration of this information and experience throughout the students' four years at Staten Island
@@ -34,7 +35,7 @@
           and 12th grades, students do intense Career Preparation by working both paid and unpaid internships in the
           fields of their interest to become fully equipped with the skills needed to succeed.
         </p><br>
-        <p>
+        <p class="text-sm md:text-base mb-4">
           Participating in the program helps bring our students to a higher level academically, professionally, and
           personally. Students are able to experience job shadowing experiences and career days, and come in contact
           with positive adult role models who can help demonstrate, instill, and reinforce important behaviors such as a
@@ -43,9 +44,8 @@
           benefit them for the rest of their lives. The map below highlights the locations and businesses that have
           participated in our WBL program in recent years.
         </p>
-        <div class="w-100% flex justify-center items-center my-8">
-          <iframe src="https://www.google.com/maps/d/embed?mid=1-ZpN5SkxzYEz-CmUPdfs_mgLxYUQaBxH&ehbc=2E312F"
-            width="640" height="480"></iframe>
+        <div class="flex justify-center items-center my-8">
+          <iframe class="w-full max-w-[640px] h-[300px] md:h-[480px]" src="https://www.google.com/maps/d/embed?mid=1-ZpN5SkxzYEz-CmUPdfs_mgLxYUQaBxH&ehbc=2E312F"></iframe>
         </div>
       </div>
     </div>
@@ -55,7 +55,6 @@
 </template>
 
 <script setup>
-import SubpageMenu from '~/components/SubpageMenu.vue';
 const cteLinks = [
   {
     name: 'About',

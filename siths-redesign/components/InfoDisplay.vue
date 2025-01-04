@@ -3,10 +3,10 @@
     <div class="grid grid-cols-1 gap-4 m-2">
       <div v-for="item in resources" class="mb-12 group">
         <a :href="item.url" target="_blank">
-          <h3 class="flex justify-between items-center text-2xl font-semibold border-b-[2px] border-gold pr-4">{{ item.name
+          <h3 class="flex justify-between items-center text-2xl font-semibold border-b-[2px] border-gold pr-4">{{
+            item.name
             }}
-            <img class="inline h-5 w-5"
-              src="../assets/icons/xlink.svg" alt="">
+            <img class="inline h-5 w-5" src="../assets/icons/xlink.svg" alt="">
           </h3>
         </a>
         <p v-if="isBlock" v-html="convertToText(item.description)"
@@ -14,7 +14,6 @@
         <p v-if="!isBlock" class="pt-2 brightness-75 transition-all duration-300">{{ item.description }}</p>
       </div>
     </div>
-
   </div>
 </template>
 
