@@ -1,6 +1,6 @@
 <template>
     <h1 class="p-6 text-center text-5xl font-semibold">School History</h1>
-    <div class="flex justify-center items-center flex-col px-32 py-4 ">
+    <div class="flex justify-center items-center flex-col px-48 py-4 ">
         <div class="grid grid-cols-1 gap-8">
             <p>
                 Staten Island Technical High School is a New York City public high school established in 1988. Its
