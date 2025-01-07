@@ -6,12 +6,12 @@
           <h3 class="flex justify-between items-center text-2xl font-semibold border-b-[2px] border-gold pr-4">{{
             item.name
             }}
-            <img class="inline h-5 w-5" src="../assets/icons/xlink.svg" alt="">
+            <img class="inline h-5 w-5" src="../assets/icons/xlink.svg" alt="external link">
           </h3>
         </a>
         <p v-if="isBlock" v-html="convertToText(item.description)"
-          class="pt-2 brightness-75 transition-all duration-300"></p>
-        <p v-if="!isBlock" class="pt-2 brightness-75 transition-all duration-300">{{ item.description }}</p>
+          class="pt-2 transition-all duration-300"></p>
+        <p v-if="!isBlock" class="pt-2 transition-all duration-300">{{ item.description }}</p>
       </div>
     </div>
   </div>

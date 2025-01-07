@@ -12,7 +12,6 @@
 </template>
 
 <script setup>
-import SubpageMenu from '~/components/SubpageMenu.vue';
 const cteLinks = [
     {
         name: 'About',
