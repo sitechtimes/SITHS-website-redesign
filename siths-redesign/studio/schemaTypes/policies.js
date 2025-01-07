@@ -34,7 +34,7 @@ export const policies = defineType({
               type: 'string',
             }),
             defineField({
-              name: 'note',
+              name: 'notes',
               title: 'Notes',
               type: 'array',
               of: [
