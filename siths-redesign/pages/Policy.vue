@@ -3,15 +3,15 @@
 </template>
 
 <script setup>
-import SchoolPolicy from '../components/SchoolPolicy.vue'
 
 const websiteData = useWebsiteDataStore()
 // const cards = useWebsiteDataStore.cards
+console.log(websiteData.policies.name)
 
 websiteData.policies.forEach((policy) => {
   console.log(policy.cards)
   policy.cards.forEach((card) => {
-    console.log(card.note)
+    console.log(card.notes.sectionNote)
   })
 })
 

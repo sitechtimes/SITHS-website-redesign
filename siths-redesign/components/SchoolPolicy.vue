@@ -20,15 +20,13 @@
         <div
           v-for="(card, index) in policy.cards"
           :key="index"
-          class="text-blac m-8 rounded-md p-7 text-white"
+          class="text-black m-8 rounded-md p-7 text-white"
         >
           <h2 class="text-3xl font-bold">{{ card.policyTitle }}</h2>
           <h3 class="my-4 text-[1.2rem]">{{ card.description }}</h3>
           <img class="w-[75%]" :src="card.image" />
           <div v-for="(note, index) in card.notes" :key="index">
-            <p class="text-4xl font-bold text-white">
-              {{ note.description }}
-            </p>
+            <p class="text-4xl font-bold text-white">{{ note.sectionNote}}</p> 
           </div>
         </div>
       </div>
