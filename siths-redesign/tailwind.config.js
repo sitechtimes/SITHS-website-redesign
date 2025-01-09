@@ -19,6 +19,7 @@ export default {
       },
       backgroundImage: {
         "city-skyline" : "url('/assets/imgs/cityskyline.png')",
+        "tech" : "url('/assets/imgs/tech-history.jpg')"
       }
     },
   },
