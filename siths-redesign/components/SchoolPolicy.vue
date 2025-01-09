@@ -17,24 +17,23 @@
         :key="index"
         class="flex w-[75%] flex-col text-black"
       >
-        <div
+    <div>
+      <div
           v-for="(card, index) in policy.cards"
           :key="index"
           class=" m-8 rounded-md p-7 text-white"
-        >
-          <h2 class="text-3xl font-bold">{{ card.policyTitle }}</h2>
-          <h3 class="my-4 text-[1.2rem]">{{ card.description }}</h3>
-          <img class="w-[75%]" :src="card.image" />
-          <div
-          v-for="(notes, index) in card"
-          :key="index"
-          >
-          <p class="text-3xl font-bold text-white">{{ notes }}</p>
-    </div>
-        </div>
+        >      <h2 class="text-3xl font-bold">{{ card.policyTitle }}</h2>
+      <h3 class="my-4 text-[1.2rem]">{{ card.description }}</h3>
+      <img class="w-[75%]" :src="card.image" />
+      <p class="text-3xl font-bold text-white">{{ card.notes }}</p>
+      <div v-for="(note, noteIndex) in card.notes" :key="noteIndex">
+        <p class="text-3xl font-bold text-white">{{ note }}</p>
       </div>
     </div>
   </div>
+        </div>
+      </div>
+    </div>
 </template>
 
 <script setup>

@@ -8,9 +8,11 @@ import SchoolPolicy from '../components/SchoolPolicy.vue'
 const websiteData = useWebsiteDataStore()
 
 websiteData.policies.forEach((policy) => {
-  console.log(policy.cards.notes)
-
-  })
+  // policy.cards.forEach((card) => {
+  //   console.log(card.notes);
+  // });
+    console.log(policy.cards)
+});
 
 
 const schoolpolicies = [
