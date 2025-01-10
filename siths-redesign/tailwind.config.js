@@ -10,6 +10,7 @@ export default {
     extend: {
       colors:{
         "gold":"#C4B466",
+        "dark-gold": "#4E4A38",
         "gray":"#323232",
         "light-gray": "#d1d1d1"
       },
@@ -19,7 +20,7 @@ export default {
       },
       backgroundImage: {
         "city-skyline" : "url('/assets/imgs/cityskyline.png')",
-        "tech" : "url('/assets/imgs/tech-history.jpg')"
+        "siths-building" : "url('/assets/imgs/siths-building.png')"
       }
     },
   },
