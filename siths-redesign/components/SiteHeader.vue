@@ -95,15 +95,6 @@ const navLinks = [
     ]
   },
   {
-    category: "Teacher and Staff Resources",
-    links: [
-      { name: "Supplies Request Form", path: "/" },
-      { name: "MakerSpace", path: "/"},
-      { name: "Technology Support", path: "/"},
-      { name: "Professional Development Support", path: "/"}
-    ]
-  },
-  {
     category: "Alumni",
     links: [
       { name: "Donations", path: "/" },
