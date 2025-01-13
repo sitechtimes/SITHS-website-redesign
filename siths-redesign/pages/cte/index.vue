@@ -1,9 +1,9 @@
 <template>
-    <h1 class="text-2xl md:text-3xl lg:text-4xl text-center mb-4">Career and Technical Education</h1>
+    <h1 class="text-2xl md:text-3xl lg:text-4xl text-center md:mb-4">Career and Technical Education</h1>
     <div class="flex flex-col md:flex-row justify-center items-start px-4">
-      <SubpageMenu :pages="cteLinks" :active="'About'" class="absolute left-8 top-40" />
+      <SubpageMenu :pages="cteLinks" :active="'About'" class="block mb-4 lg:absolute left-8 top-40" />
       <div class="flex items-center justify-center flex-col w-full md:w-5/6">
-        <div class="w-full md:w-3/4 lg:w-1/2">
+        <div class="w-full md:w-3/4 lg:w-3/5">
           <p class="text-sm md:text-base mb-4">The Pre-Engineering Career & Technical Education (CTE) program at
             Staten Island Technical High School is consistent with the school’s
             original mission statement: to produce well-rounded graduates equipped
