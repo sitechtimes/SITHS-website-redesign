@@ -62,9 +62,9 @@
     </div>
   </div>
 
-  <MissionStatement />
+  <MissionStatement class="mx-12 rounded-lg"/>
   <UpcomingEvents />
-  <SchoolHistory/>
+  <SchoolHistory class="mx-12 rounded-lg"/>
 </template>
 
 <script setup>

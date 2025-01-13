@@ -5,7 +5,7 @@
       <div class="flex items-center justify-center lg:w-2/5 xl:w-1/2">
         <div class="relative h-[35rem] w-full">
           <img
-            class="h-full w-full object-cover"
+            class="h-full w-full object-cover rounded-lg"
             src="../assets/imgs/staten-island-technical-high-school.jpg"
             alt="Staten Island Technical High School"
           />
