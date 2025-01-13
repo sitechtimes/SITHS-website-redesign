@@ -59,7 +59,7 @@
       <p class="text-md">Donations</p>
     </div>
     <!-- right side -->
-    <div class="flex flex-col lg:w-1/5">
+    <div class="flex flex-col lg:w-fit">
       <!-- social media icons -->
       <div class="flex flex-col gap-2">
         <h2 class="text-2xl font-bold">Follow Us</h2>

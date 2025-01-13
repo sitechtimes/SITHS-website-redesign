@@ -93,7 +93,6 @@ const navLinks = [
       { name: "Communications", path: "/" },
       { name: "Directions", path: "/" },
       { name: "Special Ed/Instructional Support Services", path: "/" },
-      { name: "School Leadership Team", path: "/" },
       { name: "School Policies", path: "/" },
     ]
   },
@@ -110,15 +109,6 @@ const navLinks = [
       { name: "Club Information", path: "/clubs" },
       { name: "Career and Technical Education", path: "/cte" },
       { name: "Special Opportunities", path: "/opportunities" }
-    ]
-  },
-  {
-    category: "Teacher and Staff Resources",
-    links: [
-      { name: "Supplies Request Form", path: "/" },
-      { name: "MakerSpace", path: "/" },
-      { name: "Technology Support", path: "/" },
-      { name: "Professional Development Support", path: "/" }
     ]
   },
   {
