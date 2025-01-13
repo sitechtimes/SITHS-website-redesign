@@ -1,20 +1,18 @@
 <template>
-  <h1>Special Opportunities</h1>
-  <div class="flex flex-row items-start">
-    <SubpageMenu :pages="clubLinks" :active="'Volunteer'" />
-    <div class="m-2 mx-4 w-5/6">
-      <SpecialOpp type="Volunteer" :resources="websiteData.opportunities.filter((el) => el.opptype == 'Volunteer')" />
+  <h1 class="text-2xl md:text-3xl lg:text-4xl text-center mb-4">Special Opportunities</h1>
+    <div class="flex flex-col md:flex-row justify-center items-start px-4">
+        <SubpageMenu :pages="subpageLinks" :active="'Volunteer'" class="w-full md:w-auto mb-4 md:mb-0 md:mr-8" />
+        <div class="flex items-center justify-center flex-col w-full md:w-5/6">
+            <SpecialOpp type="Volunteer"
+                :resources="websiteData.opportunities.filter((el) => el.opptype == 'Volunteer')" />
+        </div>
     </div>
-  </div>
 </template>
 
 <script setup>
-import SpecialOpp from '~/components/SpecialOpp.vue';
-import SubpageMenu from '../components/SubpageMenu.vue'
-
 const websiteData = useWebsiteDataStore()
 
-const clubLinks = [
+const subpageLinks = [
   {
     name: 'About',
     path: '/opportunities'

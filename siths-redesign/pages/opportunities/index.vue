@@ -1,18 +1,15 @@
 <template>
-  <div>
-    <h1>Special Opportunities</h1>
-    <div class="flex flex-row">
-      <SubpageMenu :pages="clubLinks" :active="'About'" />
-      <div class="m-2 mx-4 w-5/6">
-        learn all about staten island tech's special cte program
-      </div>
+  <h1 class="text-2xl md:text-3xl lg:text-4xl text-center mb-4">Special Opportunities</h1>
+  <div class="flex flex-col md:flex-row justify-center items-start px-4">
+    <SubpageMenu :pages="subpageLinks" :active="'About'" class="w-full md:w-auto mb-4 md:mb-0 md:mr-8" />
+    <div class="flex items-start justify-center flex-col w-full md:w-5/6">
+      <p>Learn all about SITHS' CTE programs!</p>
     </div>
   </div>
 </template>
 
 <script setup>
-import SubpageMenu from '../components/SubpageMenu.vue'
-const clubLinks = [
+const subpageLinks = [
   {
     name: 'About',
     path: '/opportunities'

@@ -1,16 +1,17 @@
 <template>
-  <h1>Special Opportunities</h1>
-  <div class="flex flex-row items-start">
-    <SubpageMenu :pages="clubLinks" :active="'Internships'" />
-    <div class="m-2 mx-4 w-5/6">
-      <div>
-        <h2 class="py-4">Internship Documents</h2>
+  <h1 class="text-2xl md:text-3xl lg:text-4xl text-center mb-4">Special Opportunities</h1>
+  <div class="flex flex-col md:flex-row justify-center items-start px-4">
+    <SubpageMenu :pages="subpageLinks" :active="'Internships'" class="w-full md:w-auto mb-4 md:mb-0 md:mr-8" />
+    <div class="flex items-center justify-center flex-col w-full md:w-5/6">
+      <!-- documents div -->
+      <div class="items-start text-left w-full">
+        <h2 class="py-4 text-left">Internship Documents</h2>
         <p>Use the forms below to apply for various job and internship opportunities, and return to the appropriate
           personnel.
         </p>
-        <!-- accordion for docs -->
-
+        <!-- TODO: add documents -->
       </div>
+      <!-- opportunities div -->
       <SpecialOpp type="Internships"
         :resources="websiteData.opportunities.filter((el) => el.opptype == 'Internships')" />
     </div>
@@ -18,12 +19,9 @@
 </template>
 
 <script setup>
-import SpecialOpp from '~/components/SpecialOpp.vue';
-import SubpageMenu from '../components/SubpageMenu.vue'
-
 const websiteData = useWebsiteDataStore()
 
-const clubLinks = [
+const subpageLinks = [
   {
     name: 'About',
     path: '/opportunities'
