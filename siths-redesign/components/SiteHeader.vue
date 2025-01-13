@@ -76,7 +76,6 @@ const navLinks = [
       { name: "Communications", path: "/" },
       { name: "Directions", path: "/" },
       { name: "Special Ed/Instructional Support Services", path: "/" },
-      { name: "School Leadership Team", path: "/" },
       { name: "School Policies", path: "/" },
     ]
   },

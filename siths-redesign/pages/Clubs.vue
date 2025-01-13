@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import SubpageMenu from '../components/SubpageMenu.vue'
+import { ref } from 'vue';
 const clubsPages = [
   {
     name: '2023-2024 Club Information',

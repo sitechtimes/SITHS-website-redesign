@@ -1,5 +1,5 @@
 <template>
-  <div class="m-2 mx-4 w-5/6">
+  <div>
     <h2 class="py-4">{{ type }}</h2>
     <div class="grid grid-cols-3 gap-4 py-2">
       <div v-for="item in resources" class="w-7/8 rounded-md border-[1px] border-white p-8 hover:border-gold transition-all duration-300">
