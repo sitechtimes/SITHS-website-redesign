@@ -4,19 +4,19 @@
         <div class="flex flex-row justify-center space-x-6 mb-6">
             <div class="flex-row w-full flex justify-center gap-4">
                 <label class="cursor-pointer relative text-xl"
-                    :class="{ 'underline underline-offset-2 font-bold transiiton-all duration-300': selectedChoice === 'student,staff' }">
+                    :class="{ 'underline underline-offset-2 font-bold transition-all duration-300': selectedChoice === 'student,staff' }">
                     <input type="radio" v-model="selectedChoice" value="student,staff" class="hidden" />
                     <p>All Resources</p>
                 </label>
 
                 <label class="cursor-pointer relative text-xl"
-                    :class="{ 'underline underline-offset-2 font-bold transiiton-all duration-300': selectedChoice === 'student' }">
+                    :class="{ 'underline underline-offset-2 font-bold transition-all duration-300': selectedChoice === 'student' }">
                     <input type="radio" v-model="selectedChoice" value="student" class="hidden" />
                     <p>Student Resources</p>
                 </label>
 
                 <label class="cursor-pointer relative text-xl"
-                    :class="{ 'underline underline-offset-2 font-bold transiiton-all duration-300': selectedChoice === 'staff' }">
+                    :class="{ 'underline underline-offset-2 font-bold transition-all duration-300': selectedChoice === 'staff' }">
                     <input type="radio" v-model="selectedChoice" value="staff" class="hidden" />
                     <p>Staff Resources</p>
                 </label>
