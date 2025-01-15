@@ -65,6 +65,7 @@
   <MissionStatement class="mx-12 rounded-lg"/>
   <UpcomingEvents />
   <SchoolHistory class="mx-12 rounded-lg"/>
+  <MediaPreview class="mx-12"/>
 </template>
 
 <script setup>
