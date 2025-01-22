@@ -72,7 +72,7 @@
           >
             <img
               class="h-10 w-10 rounded-full bg-white p-2 object-none"
-              src="../assets/icons/facebook.png"
+              src="../assets/icons/facebook-black.png"
               alt="Facebook"
             />
           </a>
@@ -83,7 +83,7 @@
           >
             <img
               class="h-10 w-10 rounded-full bg-white p-2 object-none"
-              src="../assets/icons/instagram.png"
+              src="../assets/icons/instagram-black.png"
               alt="Instagram"
             />
           </a>
@@ -94,7 +94,7 @@
           >
             <img
               class="h-10 w-10 rounded-full bg-white p-2 object-none"
-              src="../assets/icons/x-twitter.png"
+              src="../assets/icons/x-twitter-black.png"
               alt="Twitter"
             />
           </a>

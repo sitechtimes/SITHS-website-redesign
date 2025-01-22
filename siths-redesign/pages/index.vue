@@ -9,7 +9,7 @@
     </div>
 
     <!-- left side -->
-    <div class="z-10 flex w-1/2 flex-col items-start justify-center lg:w-auto">
+    <div class="z-10 flex md:w-1/2 flex-col items-start justify-center lg:w-auto">
       <!-- header texts -->
       <div id="header-texts" class="opacity-0">
         <h1 class="p-0 text-left text-gold lg:text-6xl">Welcome to</h1>

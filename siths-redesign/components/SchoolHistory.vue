@@ -2,7 +2,7 @@
     <div class="bg-gold brightness-60 my-8 flex flex-row">
         <div class="bg-siths-building w-1/3 flex justify-start bg-opacity-60 py-4">
             <h2
-                class="flex justify-start text-5xl text-black flex-col px-4 m-6 ml-8 border-l-[3px] border-black leading-snug">
+                class="flex justify-start text-5xl text-black/80 flex-col px-4 m-6 ml-8 border-l-[3px] border-black leading-snug">
                 SCHOOL<br />HISTORY</h2>
         </div>
         <div class="flex flex-col bg-gold w-2/3 m-16">

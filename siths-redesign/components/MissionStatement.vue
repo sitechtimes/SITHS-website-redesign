@@ -22,7 +22,7 @@
           >
             <a href="#slide2" class="btn btn-circle text-xl lg:mx-6">❮</a>
             <div class="flex mx-2 h-2/3 w-2/3 flex-col space-y-4 text-center">
-              <h1 class="text-4xl font-semibold text-gray">Vision</h1>
+              <h1 class="text-4xl font-semibold text-gray">VISION</h1>
               <p class="text-xl text-gray">
                 Staten Island Technical High School places a high priority on academics and
                 developing exemplary character, scholarship, service, leadership, and citizenship,
@@ -42,7 +42,7 @@
           >
             <a href="#slide1" class="btn btn-circle text-xl lg:mx-6">❮</a>
             <div class="flex mx-2 h-2/3 w-2/3 flex-col space-y-4 text-center">
-              <h1 class="text-4xl font-semibold text-gray">Mission</h1>
+              <h1 class="text-4xl font-semibold text-gray">MISSION</h1>
               <p class="text-xl text-gray">
                 The SITHS community fosters the development of well-rounded, passionate life-long
                 learners through rigorous, engaging academics and participation in student
