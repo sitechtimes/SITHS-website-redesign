@@ -1,3 +1,5 @@
+import { directLinks } from "~/studio/schemaTypes/directLinks"
+
 export const useWebsiteDataStore = defineStore('websiteData', () => {
   const fetchLoading = ref(false)
 
@@ -11,6 +13,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const opportunities = ref([])
   const summerHomework = ref([])
   const partnerships = ref([])
+  const directLinks = ref([])
 
   async function fetchAllData() {
     fetchLoading.value = true
@@ -86,6 +89,13 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       description,
       image,
     },
+      "directLinks": *[_type == "directLinks"]{
+      _id,
+      schoolInformation,
+      student,
+      clubsActivities,
+      alumni,
+    },
     }`
 
     try {
@@ -101,6 +111,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       opportunities.value = data.value.opportunities
       summerHomework.value = data.value.summerHomework
       partnerships.value = data.value.partnerships
+      directLinks.value = data.value.directLinks
 
       fetchLoading.value = false
     } catch (error) {
@@ -113,5 +124,5 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     await fetchAllData()
   })
 
-  return { posts, erlenweinPosts, terrusaPosts, schedules, staff, events, resources, opportunities, fetchLoading, summerHomework, partnerships }
+  return { posts, erlenweinPosts, terrusaPosts, schedules, staff, events, resources, opportunities, fetchLoading, summerHomework, partnerships, directLinks }
 })

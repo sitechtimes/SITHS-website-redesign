@@ -50,6 +50,8 @@ import gsap from 'gsap'
 
 const menuVisibility = ref(false)
 const router = useRouter()
+const websiteData = useWebsiteDataStore()
+console.log(websiteData.directLinks)
 
 router.afterEach(() => {
   if (menuVisibility.value) {
