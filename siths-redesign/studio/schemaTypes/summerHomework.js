@@ -19,26 +19,22 @@ export const summerHomework = defineType({
     defineField({
       name: 'ninth',
       title: '9th Grade Summer Homework',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'url',
     }),
     defineField({
       name: 'tenth',
       title: '10th Grade Summer Homework',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'url',
     }),
     defineField({
       name: 'eleventh',
       title: '11th Grade Summer Homework',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'url',
     }),
     defineField({
       name: 'twelfth',
       title: '12th Grade Summer Homework',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'url',
     }),
   ],
   //restricts the user's actions on Sanity document; Singleton page
