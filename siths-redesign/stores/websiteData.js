@@ -1,22 +1,22 @@
-import { directLinks } from "~/studio/schemaTypes/directLinks"
+import { directLinks } from "~/studio/schemaTypes/directLinks";
 
-export const useWebsiteDataStore = defineStore('websiteData', () => {
-  const fetchLoading = ref(false)
+export const useWebsiteDataStore = defineStore("websiteData", () => {
+  const fetchLoading = ref(false);
 
-  const posts = ref([])
-  const erlenweinPosts = ref([])
-  const terrusaPosts = ref([])
-  const schedules = ref([])
-  const staff = ref([])
-  const events = ref([])
-  const resources = ref([])
-  const opportunities = ref([])
-  const summerHomework = ref([])
-  const partnerships = ref([])
-  const directLinks = ref([])
+  const posts = ref([]);
+  const erlenweinPosts = ref([]);
+  const terrusaPosts = ref([]);
+  const schedules = ref([]);
+  const staff = ref([]);
+  const events = ref([]);
+  const resources = ref([]);
+  const opportunities = ref([]);
+  const summerHomework = ref([]);
+  const partnerships = ref([]);
+  const directLinks = ref([]);
 
   async function fetchAllData() {
-    fetchLoading.value = true
+    fetchLoading.value = true;
     const query = `{
       "yearlyinfo": *[_type == "yearlyinfo"]{
         _id,
@@ -58,7 +58,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         event,
         description,
       },
-        "resources": *[_type == "resources"]{
+      "resources": *[_type == "resources"]{
         _id,
         name,
         resource,
@@ -66,7 +66,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         link,
         category,
       },
-        "opportunities": *[_type == "opportunities"]{
+      "opportunities": *[_type == "opportunities"]{
         _id,
         name,
         opptype,
@@ -74,7 +74,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         description,
         link,
       },
-        "summerHomework": *[_type == "summerHomework"]{
+      "summerHomework": *[_type == "summerHomework"]{
         _id,
         title,
         homePage,
@@ -84,45 +84,72 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         twelfth,
       },
       "partnerships": *[_type == "partnerships"]{
-      _id,
-      name,
-      description,
-      image,
-    },
+        _id,
+        name,
+        description,
+        image,
+      },
       "directLinks": *[_type == "directLinks"]{
-      _id,
-      schoolInformation,
-      student,
-      clubsActivities,
-      alumni,
-    },
-    }`
+        _id,
+        title,
+        schoolInformation[]{
+          title,
+          link
+        },
+        student[]{
+          title,
+          link
+        },
+        clubsActivities[]{
+          title,
+          link
+        },
+        alumni[]{
+          title,
+          link
+        },
+      }
+    }`;
 
     try {
-      const { data } = await useSanityQuery(query)
+      const { data } = await useSanityQuery(query);
 
-      posts.value = data.value.yearlyinfo
-      erlenweinPosts.value = data.value.erlenwein
-      terrusaPosts.value = data.value.terrusa
-      schedules.value = data.value.schedules
-      staff.value = data.value.staff
-      events.value = data.value.events
-      resources.value = data.value.resources
-      opportunities.value = data.value.opportunities
-      summerHomework.value = data.value.summerHomework
-      partnerships.value = data.value.partnerships
-      directLinks.value = data.value.directLinks
+      directLinks.value = data.value.directLinks;
+      posts.value = data.value.yearlyinfo;
+      erlenweinPosts.value = data.value.erlenwein;
+      terrusaPosts.value = data.value.terrusa;
+      schedules.value = data.value.schedules;
+      staff.value = data.value.staff;
+      events.value = data.value.events;
+      resources.value = data.value.resources;
+      opportunities.value = data.value.opportunities;
+      summerHomework.value = data.value.summerHomework;
+      partnerships.value = data.value.partnerships;
 
-      fetchLoading.value = false
+      fetchLoading.value = false;
     } catch (error) {
-      console.error('Error fetching posts:', error)
+      console.error("Error fetching posts:", error);
     }
   }
 
   onMounted(async () => {
-    await nextTick()
-    await fetchAllData()
-  })
+    await nextTick();
+    await fetchAllData();
+  });
 
-  return { posts, erlenweinPosts, terrusaPosts, schedules, staff, events, resources, opportunities, fetchLoading, summerHomework, partnerships, directLinks }
-})
+  return {
+    directLinks,
+    erlenweinPosts,
+    events,
+    fetchAllData,
+    fetchLoading,
+    opportunities,
+    partnerships,
+    posts,
+    resources,
+    schedules,
+    staff,
+    summerHomework,
+    terrusaPosts,
+  };
+});

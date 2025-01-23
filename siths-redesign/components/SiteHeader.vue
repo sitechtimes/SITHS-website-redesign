@@ -49,8 +49,10 @@
 import gsap from 'gsap'
 
 const menuVisibility = ref(false)
+
 const router = useRouter()
-const websiteData = useWebsiteDataStore()
+const websiteData = useWebsiteDataStore();
+
 console.log(websiteData.directLinks)
 
 router.afterEach(() => {
@@ -62,12 +64,14 @@ router.afterEach(() => {
 const navLinks = [
   {
     category: "Main",
+    categoryValue: "main",
     links: [
       { name: "Home", path: "/" },
     ]
   },
   {
     category: "School Information",
+    categoryValue: "schoolinformation",
     links: [
       { name: "Bell Schedule", path: "/schedules" },
       { name: "Faculty and Staff", path: "/staff" },
@@ -83,6 +87,7 @@ const navLinks = [
   },
   {
     category: "Student",
+    categoryValue: "student",
     links: [
       { name: "Principal Erlwenwein's Announcements", path: "/erlenwein" },
       { name: "Resources", path: "/resources" },
@@ -91,6 +96,7 @@ const navLinks = [
   },
   {
     category: "Clubs and Activities",
+    categoryValue: "clubsActivities",
     links: [
       { name: "Club Information", path: "/clubs" },
       { name: "Career and Technical Education", path: "/cte"},
@@ -99,6 +105,7 @@ const navLinks = [
   },
   {
     category: "Alumni",
+    categoryValue: "alumni",
     links: [
       { name: "Donations", path: "/" },
       { name: "News", path: "/"},
@@ -108,6 +115,7 @@ const navLinks = [
   },
   {
     category: "Contact Us",
+    categoryValue: "contactUs",
     links: [
       { name: "Directory", path: "/" },
     ]
