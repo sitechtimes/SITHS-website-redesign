@@ -1,4 +1,3 @@
-import { defineType } from 'sanity'
 import { calendar } from './calendar'
 import { schedules } from './schedules'
 import { staff } from './staff'
@@ -7,6 +6,8 @@ import { erlenwein } from './erlenwein'
 import { terrusa } from './terrusa'
 import { resources } from './resources'
 import { opportunities } from './opportunities'
+import { partnerships } from './partnerships'
+import { defineType } from 'sanity'
 import { summerHomework } from './summerHomework'
 
 
@@ -29,4 +30,4 @@ export function ALLOWED_TIMES() {
   return times
 }
 
-export const schemaTypes = [calendar, erlenwein, schedules, staff, terrusa, timeValueType, yearlyinfo, resources, opportunities, summerHomework]
+export const schemaTypes = [calendar, erlenwein, schedules, staff, terrusa, timeValueType, yearlyinfo, resources, opportunities, summerHomework, partnerships]
