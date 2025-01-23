@@ -18,22 +18,22 @@ export const summerHomework = defineType({
     }),
     defineField({
       name: 'ninth',
-      title: '9th Grade Summer Homework',
+      title: '9th Grade Summer Homework (URL only)',
       type: 'url',
     }),
     defineField({
       name: 'tenth',
-      title: '10th Grade Summer Homework',
+      title: '10th Grade Summer Homework (URL only)',
       type: 'url',
     }),
     defineField({
       name: 'eleventh',
-      title: '11th Grade Summer Homework',
+      title: '11th Grade Summer Homework (URL only)',
       type: 'url',
     }),
     defineField({
       name: 'twelfth',
-      title: '12th Grade Summer Homework',
+      title: '12th Grade Summer Homework (URL only)',
       type: 'url',
     }),
   ],
