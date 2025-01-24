@@ -3,9 +3,9 @@
     <div class="flex w-full flex-col justify-center lg:flex-row">
       <!-- picture -->
       <div class="flex items-center justify-center lg:w-2/5 xl:w-1/2">
-        <div class="relative h-[35rem] w-full">
+        <div class="relative md:h-[35rem] w-full">
           <img
-            class="h-full w-full object-cover rounded-lg"
+            class="h-[15rem] md:h-full md:w-full object-cover rounded-lg opacity-45"
             src="../assets/imgs/staten-island-technical-high-school.jpg"
             alt="Staten Island Technical High School"
           />
@@ -13,7 +13,7 @@
       </div>
 
       <!-- carousel -->
-      <div class="relative flex flex-col items-center justify-center py-8 lg:w-3/5 xl:1/3">
+      <div class="relative flex flex-col items-center justify-center py-2 md:py-8 lg:w-3/5 xl:1/3">
         <div class="carousel flex w-full items-center justify-between">
           <!-- slide 1 -->
           <div

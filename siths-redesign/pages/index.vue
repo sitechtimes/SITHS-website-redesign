@@ -62,10 +62,10 @@
     </div>
   </div>
 
-  <MissionStatement class="mx-12 rounded-lg"/>
+  <MissionStatement class="mx-6 md:mx-12 rounded-lg"/>
   <UpcomingEvents />
-  <SchoolHistory class="mx-12 rounded-lg"/>
-  <MediaPreview class="mx-12"/>
+  <SchoolHistory class="mx-6 md:mx-12 rounded-lg"/>
+  <MediaPreview class="mx-6 md:mx-12"/>
 </template>
 
 <script setup>
