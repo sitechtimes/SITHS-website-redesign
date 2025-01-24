@@ -41,7 +41,6 @@ export const erlenwein = defineType({
                         // Only allow these decorators
                         decorators: [
                             { title: 'Strong', value: 'strong'},
-                            { title: 'Emphasis', value: 'em'}
                         ]
                     }
                 }

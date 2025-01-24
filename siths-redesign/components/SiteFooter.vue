@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="relative mt-20 grid w-full grid-cols-2 justify-between gap-6 p-6 opacity-85 lg:flex lg:flex-row"
+    class="relative mt-28 grid w-full grid-cols-2 justify-between gap-6 p-6 opacity-85 lg:flex lg:flex-row"
   >
     <!-- background image -->
     <div class="absolute inset-0 pointer-events-none opacity-5 bg-city-skyline bg-repeat-x bottom-0 bg-bottom"></div>
@@ -60,7 +60,7 @@
       <p class="text-md">Donations</p>
     </div>
     <!-- right side -->
-    <div class="flex flex-col lg:w-1/5">
+    <div class="flex flex-col lg:w-fit">
       <!-- social media icons -->
       <div class="flex flex-col gap-2">
         <h2 class="text-2xl font-bold">Follow Us</h2>

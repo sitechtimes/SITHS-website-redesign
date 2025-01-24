@@ -20,5 +20,18 @@ export const resources = defineType({
       title: 'Link to resource',
       type: 'string',
     }),
+    defineField({
+      name: 'category',
+      title: 'Category',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Student Resources', value: 'student' },
+          { title: 'Staff Resources', value: 'staff' },
+        ],
+        layout: 'checkbox',
+      },
+    }),
   ],
 });
