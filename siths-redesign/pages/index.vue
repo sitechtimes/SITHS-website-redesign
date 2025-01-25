@@ -52,13 +52,14 @@
     <!-- right side -->
     <div class="z-10 flex h-fit w-screen flex-col justify-center px-10 lg:h-full lg:w-1/3 lg:p-10">
       <!-- filler -->
-      <p id="right-side" class="leading-relaxed">
+      <!-- <p id="right-side" class="leading-relaxed">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt orci ac urna
         fermentum, nec facilisis magna iaculis. Proin vel lacinia turpis. Sed vehicula, odio et
         accumsan consectetur, orci urna fringilla mi, sit amet malesuada erat lacus nec mi. Vivamus
         aliquam libero sit amet lacus vehicula, ac viverra dolor fringilla. Fusce aliquam massa nec
         turpis condimentum venenatis.
-      </p>
+      </p> -->
+      <VideoGears id="right-side" />
     </div>
   </div>
 
