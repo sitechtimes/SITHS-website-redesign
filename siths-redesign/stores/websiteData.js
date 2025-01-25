@@ -92,6 +92,10 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
       "directLinks": *[_type == "directLinks"]{
         _id,
         title,
+        main[]{
+          title,
+          link
+        },
         schoolInformation[]{
           title,
           link
@@ -105,6 +109,10 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
           link
         },
         alumni[]{
+          title,
+          link
+        },
+        contactUs[]{
           title,
           link
         },

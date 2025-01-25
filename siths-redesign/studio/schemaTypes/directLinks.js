@@ -22,6 +22,30 @@ export const directLinks = defineType({
       ],
     }),
     defineField({
+      name: 'main',
+      title: 'Main',
+      type: 'array',
+      of: [
+        defineType({
+          name: 'linkComponent',
+          title: 'Link Component',
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+            }),
+            defineField({
+              name: 'link',
+              title: 'Link',
+              type: 'url',
+            }),
+          ],
+        }),
+      ],
+    }),
+    defineField({
       name: 'schoolInformation',
       title: 'School Information',
       type: 'array',
@@ -96,6 +120,30 @@ export const directLinks = defineType({
     defineField({
       name: 'alumni',
       title: 'Alumni',
+      type: 'array',
+      of: [
+        defineType({
+          name: 'linkComponent',
+          title: 'Link Component',
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+            }),
+            defineField({
+              name: 'link',
+              title: 'Link',
+              type: 'url',
+            }),
+          ],
+        }),
+      ],
+    }),
+    defineField({
+      name: 'contactUs',
+      title: 'Contact Us',
       type: 'array',
       of: [
         defineType({
