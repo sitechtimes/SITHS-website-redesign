@@ -24,47 +24,45 @@ defineProps({
 })
 
 const convertToText = (data) => {
-  let output = []
+  let output = [];
 
-  data.forEach(block => {
-    let blockText = ''
+  data.forEach((block) => {
+    let blockText = "";
 
-    if (block._type === 'block') {
-      block.children?.forEach(child => {
-        let text = child.text || ''
-        const marks = child.marks || []
+    if (block._type === "block") {
+      block.children?.forEach((child) => {
+        let text = child.text || "";
+        const marks = child.marks || [];
 
         // Bold (strong)
-        if (marks.includes('strong')) {
-          text = `<span class="font-bold">${text}</span>`
+        if (marks.includes("strong")) {
+          text = `<span class="font-bold">${text}</span>`;
         }
 
         // Italics (em)
-        if (marks.includes('em')) {
-          text = `<span class="italic">${text}</span>`
+        if (marks.includes("em")) {
+          text = `<span class="italic">${text}</span>`;
         }
 
         // Hyperlink
-        marks.forEach(mark => {
-          if (mark === 'c107c4332c3c' || mark === '20b78802cef3') {
-            const linkDef = block.markDefs?.find(def => def._key === mark)
-            if (linkDef && linkDef.href) {
-              const url = linkDef.href
-              text = `<a href="${url}" target="_blank" class="underline">${text}</a>`
-            }
+        marks.forEach((mark) => {
+          const linkDef = block.markDefs?.find((def) => def._key === mark);
+          if (linkDef && linkDef.href) {
+            const url = linkDef.href;
+            text = `<a href="${url}" target="_blank" class="underline">${text}</a>`;
           }
-        })
+        });
 
         // Append the processed text for this child
-        blockText += text
-      })
+        blockText += text;
+      });
     }
 
     // Add the block text to output array
-    output.push(blockText.trim())
-  })
+    output.push(blockText.trim());
+  });
 
-  return output.join('<br/><br/>')
-}
+  return output.join("<br/><br/>");
+};
 
 </script>
