@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen w-full px-10 flex flex-col">
+    <div class="min-h-screen w-full px-10 flex flex-col justify-center">
         <h1 class="p-6 text-center text-5xl font-semibold">Resources</h1>
         <div class="flex flex-row justify-center space-x-6 mb-6">
             <div class="flex-row w-full flex justify-between">
