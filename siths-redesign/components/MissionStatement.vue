@@ -1,11 +1,11 @@
 <template>
-  <div class="flex flex-col items-center justify-center bg-gold lg:h-[35rem] lg:py-12">
+  <div class="flex flex-col items-center justify-center bg-gold lg:h-[28rem] lg:py-12">
     <div class="flex w-full flex-col justify-center lg:flex-row">
       <!-- picture -->
       <div class="flex items-center justify-center lg:w-2/5 xl:w-1/2">
-        <div class="relative md:h-[35rem] w-full">
+        <div class="relative md:h-[28rem] w-full">
           <img
-            class="h-[15rem] md:h-full md:w-full object-cover rounded-lg opacity-45"
+            class="h-[15rem] md:h-full md:w-full object-cover rounded-lg"
             src="../assets/imgs/staten-island-technical-high-school.jpg"
             alt="Staten Island Technical High School"
           />
