@@ -2,7 +2,7 @@
   <header>
     <!-- menu toggle -->
     <div v-show="menuVisibility"
-      class="fixed overflow-y-scroll inset-0 bg-[#1c1b1b] bg-opacity-100 z-50">
+      class="fixed overflow-y-scroll inset-0 bg-black bg-opacity-100 z-50">
       <!-- nav links -->
       <div id="menu-content" class="absolute top-10 space-y-8 z-10 w-full">
         <nav class="flex flex-row flex-wrap p-8">

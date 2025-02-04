@@ -11,7 +11,8 @@ export default {
       colors:{
         "gold":"#C4B466",
         "gray":"#323232",
-        "light-gray": "#d1d1d1"
+        "light-gray": "#d1d1d1",
+        "black" : "#1c1b1b" //dark gray
       },
       fontFamily: {
         "kumbh": ["Kumbh Sans", "sans-serif"],
