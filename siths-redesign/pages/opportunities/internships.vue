@@ -9,7 +9,6 @@
         <p>Use the forms below to apply for various job and internship opportunities, and return to the appropriate
           personnel.
         </p>
-        <!-- TODO: add documents -->
       </div>
       <!-- opportunities div -->
       <SpecialOpp type="Internships"
