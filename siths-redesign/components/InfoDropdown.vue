@@ -32,7 +32,7 @@
         <!-- if there is no image in the post -->
         <div v-else>
           <div class="flex flex-col">
-            <p class="" v-html="convertToText(post.description)"></p>
+            <p v-html="convertToText(post.description)"></p>
           </div>
         </div>
         <div>

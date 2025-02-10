@@ -5,19 +5,14 @@
     <div class="grid grid-cols-3 gap-4 py-2">
       <div v-for="item in resources"
         class="w-7/8 rounded-md border-[1px] border-white p-8 hover:border-gold transition-all duration-300"
-        @click="itemClicked">
+        @click="itemClicked(item)">
         <div>
           <h4 class="pb-2">{{ item.name }}</h4>
           <p class="text-sm">{{ item.note }}</p>
         </div>
-        <!-- pop-up -->
-        <div v-if="itemClicked" class="bg-white w-[50vh] text-white">
-          <h3>{{ item.name }}</h3>
-          <p>{{ item.description }}</p>
-        </div>
       </div>
-
     </div>
+    <PopUp v-if="itemClicked" :title="chosenItem.name" :description="chosenItem.description"/>
 
   </div>
 </template>
@@ -28,6 +23,10 @@ defineProps({
   resources: Array
 })
 
-const itemClicked = ref(false)
+let chosenItem = ref({})
+
+const itemClicked = ((item)=>{
+   chosenItem.value = item 
+})
 
 </script>
