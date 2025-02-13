@@ -1,19 +1,36 @@
 <template>
-  <div class="absolute inset-0 flex items-center justify-center">
-    <div class="flex flex-col items-center justify-center bg-white bg-opacity-30 text-black">
-      <h2>{{ item.name }}</h2>
-      <p>{{ item.description }}</p>
+  <div class="absolute">
+    <div class="flex flex-col bg-white/80 backdrop-blur-sm text-black p-12 rounded-md w-2/3">
+      <button @click="emit('closeEvent')" class="absolute w-8 h-8 self-end cursor-pointer">
+        <img src="../assets/icons/x.png" alt="x"
+          @click="selected = false">
+      </button>
+      <h2 class="pb-6">{{ item.name }}</h2>
+      {{ item.description }}
+      <p v-html="PortableTextSerializer(item.description)"></p>
     </div>
   </div>
 </template>
 
 <script setup>
-import { UrlInput } from 'sanity';
+import { defineEmits } from 'vue';
+
+const emit = defineEmits(['closeEvent']);
 
 defineProps({
   item: Object
 })
 
+const PortableTextSerializer = ((PortableText) => {
+  let output = []
+  PortableText.forEach((el) => {
+    el.children.forEach((el) => {
+      output.push(el.text)
+    })
+    return output
+  })
+
+})
 // const convertToText = (data) => {
 //   let output = [];
 
