@@ -10,6 +10,8 @@ import { partnerships } from './partnerships'
 import { defineType } from 'sanity'
 import { summerHomework } from './summerHomework'
 import { directLinks } from './directLinks'
+import { internDocs } from './internDocs'
+
 
 export const timeValueType = defineType({
   name: 'timeValue',
@@ -30,4 +32,4 @@ export function ALLOWED_TIMES() {
   return times
 }
 
-export const schemaTypes = [calendar, erlenwein, schedules, staff, terrusa, timeValueType, yearlyinfo, resources, opportunities, summerHomework, partnerships, directLinks]
+export const schemaTypes = [calendar, erlenwein, schedules, staff, terrusa, timeValueType, yearlyinfo, resources, opportunities, summerHomework, partnerships, directLinks, internDocs]

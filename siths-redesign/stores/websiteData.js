@@ -14,6 +14,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
   const summerHomework = ref([]);
   const partnerships = ref([]);
   const directLinks = ref([]);
+  const internDocs = ref([]);
 
   async function fetchAllData() {
     fetchLoading.value = true;
@@ -116,7 +117,12 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
           title,
           link
         },
-      }
+      },
+            "partnerships": *[_type == "partnerships"]{
+        _id,
+        name,
+        description,
+      },
     }`;
 
     try {
