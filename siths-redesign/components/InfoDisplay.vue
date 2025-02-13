@@ -18,6 +18,8 @@
 </template>
 
 <script setup>
+import { PortableText } from '@portabletext/vue';
+
 defineProps({
   resources: Array,
   isBlock: Boolean

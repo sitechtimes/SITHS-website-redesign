@@ -5,7 +5,8 @@
       <SubpageMenu :pages="subpageLinks" :active="'Home'" class="absolute left-8 top-40" />
       <div class="flex items-center justify-center flex-col w-full md:w-5/6">
         <div class="w-full md:w-3/4 lg:w-1/2">
-          <p v-html="convertToText(websiteData.summerHomework[0]?.homePage || [])"></p>
+          <PortableText :value="websiteData.summerHomework[0]?.homePage || []"/>
+          <!-- <p v-html="convertToText(websiteData.summerHomework[0]?.homePage || [])"></p> -->
         </div>
       </div>
     </div>
@@ -16,6 +17,8 @@
 </template>
 
 <script setup>
+import { PortableText } from '@portabletext/vue';
+
 const websiteData = useWebsiteDataStore()
 
 const subpageLinks = computed(() => [
@@ -40,49 +43,49 @@ const subpageLinks = computed(() => [
   }
 ])
 
-const convertToText = (data) => {
-  let output = [];
+// const convertToText = (data) => {
+//   let output = [];
 
-  data.forEach((block) => {
-    let blockText = "";
+//   data.forEach((block) => {
+//     let blockText = "";
 
-    if (block._type === "block") {
-      block.children?.forEach((child) => {
-        let text = child.text || "";
-        const marks = child.marks || [];
+//     if (block._type === "block") {
+//       block.children?.forEach((child) => {
+//         let text = child.text || "";
+//         const marks = child.marks || [];
 
-        // Bold (strong)
-        if (marks.includes("strong")) {
-          text = `<span class="font-bold">${text}</span>`;
-        }
+//         // Bold (strong)
+//         if (marks.includes("strong")) {
+//           text = `<span class="font-bold">${text}</span>`;
+//         }
 
-        // Italics (em)
-        if (marks.includes("em")) {
-          text = `<span class="italic">${text}</span>`;
-        }
+//         // Italics (em)
+//         if (marks.includes("em")) {
+//           text = `<span class="italic">${text}</span>`;
+//         }
 
-        if (marks.includes("bullet")) {
-          text = `<span class="list-disc">${text}</span>`;
-        }
+//         if (marks.includes("bullet")) {
+//           text = `<span class="list-disc">${text}</span>`;
+//         }
 
-        // Hyperlink
-        marks.forEach((mark) => {
-          const linkDef = block.markDefs?.find((def) => def._key === mark);
-          if (linkDef && linkDef.href) {
-            const url = linkDef.href;
-            text = `<a href="${url}" target="_blank" class="underline text-blue-400">${text}</a>`;
-          }
-        });
+//         // Hyperlink
+//         marks.forEach((mark) => {
+//           const linkDef = block.markDefs?.find((def) => def._key === mark);
+//           if (linkDef && linkDef.href) {
+//             const url = linkDef.href;
+//             text = `<a href="${url}" target="_blank" class="underline text-blue-400">${text}</a>`;
+//           }
+//         });
 
-        // Append the processed text for this child
-        blockText += text;
-      });
-    }
+//         // Append the processed text for this child
+//         blockText += text;
+//       });
+//     }
 
-    // Add the block text to output array
-    output.push(blockText.trim());
-  });
+//     // Add the block text to output array
+//     output.push(blockText.trim());
+//   });
 
-  return output.join("<br/>");
-};
+//   return output.join("<br/>");
+// };
 </script>
