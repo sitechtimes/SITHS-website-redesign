@@ -1,4 +1,3 @@
-<!-- component for the cards with pop-up -->
 <template>
   <div>
     <h2 class="py-4">{{ type }}</h2>

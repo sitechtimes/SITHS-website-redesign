@@ -9,8 +9,7 @@
             <img class="inline h-5 w-5" src="../assets/icons/xlink.svg" alt="external link">
           </h3>
         </a>
-        <p v-if="isBlock" v-html="convertToText(item.description)"
-          class="pt-2 transition-all duration-300"></p>
+        <PortableText v-if="isBlock" :value="item.description" :components="myPortableTextComponents" />
         <p v-if="!isBlock" class="pt-2 transition-all duration-300">{{ item.description }}</p>
       </div>
     </div>
@@ -25,46 +24,30 @@ defineProps({
   isBlock: Boolean
 })
 
-const convertToText = (data) => {
-  let output = [];
+const myPortableTextComponents = {
+  types: {
+    image: ({ value }) => h('img', { src: value.imageUrl }),
+    callToAction: ({ value, isInline }, { slots }) =>
+      isInline
+        ? h('a', { href: value.url }, value.text)
+        : h('div', { class: 'callToAction' }, value.text),
+  },
 
-  data.forEach((block) => {
-    let blockText = "";
+  list: {
+    // Ex. 1: customizing common list types
+    bullet: (_, { slots }) => h('li', { class: 'list-disc list-inside' }, slots.default?.()),
+    number: (_, { slots }) => h('ol', { class: 'list-decimal list-inside' }, slots.default?.()),
 
-    if (block._type === "block") {
-      block.children?.forEach((child) => {
-        let text = child.text || "";
-        const marks = child.marks || [];
+    // Ex. 2: rendering custom lists
+    checkmarks: (_, { slots }) => h('ol', { class: 'm-auto text-lg' }, slots.default?.()),
+  },
 
-        // Bold (strong)
-        if (marks.includes("strong")) {
-          text = `<span class="font-bold">${text}</span>`;
-        }
-
-        // Italics (em)
-        if (marks.includes("em")) {
-          text = `<span class="italic">${text}</span>`;
-        }
-
-        // Hyperlink
-        marks.forEach((mark) => {
-          const linkDef = block.markDefs?.find((def) => def._key === mark);
-          if (linkDef && linkDef.href) {
-            const url = linkDef.href;
-            text = `<a href="${url}" target="_blank" class="underline">${text}</a>`;
-          }
-        });
-
-        // Append the processed text for this child
-        blockText += text;
-      });
-    }
-
-    // Add the block text to output array
-    output.push(blockText.trim());
-  });
-
-  return output.join("<br/><br/>");
+  marks: {
+    em: (_, { slots }) => h('em', { class: 'text-red-600 font-semibold' }, slots.default?.()),
+    link: ({ value }, { slots }) => {
+      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
+      return h('a', { class: 'text-gray underline font-semibold', href: value.href, rel }, slots.default?.());
+    },
+  },
 };
-
 </script>
