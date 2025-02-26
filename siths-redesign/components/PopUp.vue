@@ -1,6 +1,6 @@
 <template>
   <div class="absolute">
-    <div class="flex flex-col bg-white/80 backdrop-blur-sm text-black p-12 rounded-md w-2/3">
+    <div class="flex flex-col bg-stone-200 text-black p-12 rounded-md w-2/3 z-20">
       <button @click="emit('closeEvent')" class="absolute w-8 h-8 self-end cursor-pointer">
         <img src="../assets/icons/x.png" alt="x" @click="selected = false">
       </button>
@@ -30,8 +30,8 @@ const myPortableTextComponents = {
 
   list: {
     // Ex. 1: customizing common list types
-    bullet: (_, { slots }) => h('li', { class: 'li list-disc' }, slots.default?.()),
-    number: (_, { slots }) => h('ol', { class: 'list-decimal' }, slots.default?.()),
+    bullet: (_, { slots }) => h('li', { class: 'list-disc list-inside' }, slots.default?.()),
+    number: (_, { slots }) => h('ol', { class: 'list-decimal list-inside' }, slots.default?.()),
 
     // Ex. 2: rendering custom lists
     checkmarks: (_, { slots }) => h('ol', { class: 'm-auto text-lg' }, slots.default?.()),
