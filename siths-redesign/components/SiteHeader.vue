@@ -109,7 +109,8 @@ const navLinks = [
     links: [
       { name: "Club Information", path: "/clubs", directLink: false },
       { name: "Career and Technical Education", path: "/cte", directLink: false },
-      { name: "Special Opportunities", path: "/opportunities", directLink: false }
+      { name: "Special Opportunities", path: "/opportunities", directLink: false },
+      { name: "Athletics", path: "/athletics", directLink: false }
     ]
   },
   {
