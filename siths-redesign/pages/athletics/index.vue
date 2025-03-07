@@ -3,12 +3,15 @@
   <div class="flex flex-col md:flex-row justify-center items-start px-4">
     <SubpageMenu :pages="subpageLinks" :active="'About'" class="w-full md:w-auto mb-4 md:mb-0 md:mr-8" />
     <div class="flex items-start justify-center flex-col w-full md:w-5/6">
-      <p>McKee - Staten Island Tech PSAL</p>
+      <h3>McKee - Staten Island Tech Public Schools Athletics League</h3>
+      <p>Home of the Seagulls</p>
+      <!-- psal director message -->
     </div>
   </div>
 </template>
 
 <script setup>
+
 const subpageLinks = [
     {
         name: 'About',
