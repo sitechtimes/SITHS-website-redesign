@@ -70,31 +70,7 @@
 
     <!-- right side -->
     <!-- <div class="z-10 flex h-fit w-screen flex-col justify-center px-10 lg:h-full lg:w-1/3 lg:p-10"> -->
-    <div class="px-10 lg:h-full lg:w-1/3 lg:p-10">
-      <img
-        id="med-gear"
-        class="left-798px absolute bottom-auto w-[200px]"
-        src="../assets/imgs/video-gear.svg"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        id="small-gear"
-        class="absolute bottom-auto left-[80rem] w-[280px]"
-        src="../assets/imgs/video-gear.svg"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        id="large-gear"
-        class="absolute bottom-auto left-[60rem] w-[360px]"
-        src="../assets/imgs/video-gear.svg"
-        alt=""
-        aria-hidden="true"
-      />
-      <!-- filler -->
-      <!-- <p id="right-side" class="leading-relaxed"></p> -->
-    </div>
+    <VideoGears />
   </div>
 
   <MissionStatement />
