@@ -4,11 +4,10 @@
       <div class="relative left-[9.4rem] top-[6.3rem] z-0 h-64 w-64 overflow-hidden rounded-full">
         <iframe
           class="absolute inset-0 h-full w-full"
-          id="inlineFrameExample"
-          title="Inline Frame Example"
+          id="video-displayed"
           width="300"
           height="200"
-          src="https://www.youtube.com/embed/u8l1VSEzhEA?loop=1&playlist=u8l1VSEzhEA&autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0"
+          src="https://www.youtube.com/embed/u8l1VSEzhEA?loop=1&playlist=u8l1VSEzhEA&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0"
         >
         </iframe>
       </div>
@@ -26,11 +25,10 @@
       >
         <iframe
           class="absolute inset-0 h-full w-full"
-          id="inlineFrameExample"
-          title="Inline Frame Example"
+          id="video-displayed"
           width="300"
           height="200"
-          src="https://www.youtube.com/embed/3KePcASD0NQ?loop=1&playlist=3KePcASD0NQ&autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0"
+          src="https://www.youtube.com/embed/3KePcASD0NQ?loop=1&playlist=3KePcASD0NQ&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0"
         >
           <!-- src="https://www.youtube.com/embed/<VIDEO ID>?loop=1&playlist=<VIDEO ID>&autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0" ask the user to plug in the link, then get the video id from the last part of their youtube link ("https://www.youtube.com/watch?v=<THIS PART IS THE VIDEO ID>")-->
         </iframe>
@@ -49,11 +47,10 @@
       >
         <iframe
           class="absolute inset-0 h-full w-full"
-          id="inlineFrameExample"
-          title="Inline Frame Example"
+          id="video-displayed"
           width="300"
           height="200"
-          src="https://www.youtube.com/embed/f7oXhDatwtY?loop=1&playlist=f7oXhDatwtY&autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0"
+          src="https://www.youtube.com/embed/f7oXhDatwtY?loop=1&playlist=f7oXhDatwtY&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0"
         >
           <!-- src="https://www.youtube.com/embed/<VIDEO ID>?loop=1&playlist=<VIDEO ID>&autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0" ask the user to plug in the link, then get the video id from the last part of their youtube link ("https://www.youtube.com/watch?v=<THIS PART IS THE VIDEO ID>")-->
         </iframe>

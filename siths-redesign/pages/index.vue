@@ -1,6 +1,5 @@
 <template>
   <div class="z-20 px-10 lg:h-full lg:w-1/3 lg:p-10"><FullVideo /></div>
-
   <div
     class="relative flex w-full flex-col items-center justify-center p-10 lg:h-screen lg:flex-row lg:p-0"
   >
