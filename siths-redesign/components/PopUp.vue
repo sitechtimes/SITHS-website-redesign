@@ -1,8 +1,8 @@
 <template>
   <div class="absolute">
-    <div class="flex flex-col bg-stone-200 text-black p-12 rounded-md w-2/3 z-20">
-      <button @click="emit('closeEvent')" class="absolute w-8 h-8 self-end cursor-pointer">
-        <img src="../assets/icons/x.png" alt="x" @click="selected = false">
+    <div class="z-20 flex w-2/3 flex-col rounded-md bg-stone-200 p-12 text-black">
+      <button @click="emit('closeEvent')" class="absolute h-8 w-8 cursor-pointer self-end">
+        <img src="../assets/icons/x.png" alt="x" @click="selected = false" />
       </button>
       <h2 class="pb-6">{{ item.name }}</h2>
       <PortableText :value="item.description" :components="myPortableTextComponents" />
@@ -11,9 +11,9 @@
 </template>
 
 <script setup>
-import { PortableText } from '@portabletext/vue';
+import { PortableText } from '@portabletext/vue'
 
-const emit = defineEmits(['closeEvent']);
+const emit = defineEmits(['closeEvent'])
 
 defineProps({
   item: Object
@@ -25,7 +25,7 @@ const myPortableTextComponents = {
     callToAction: ({ value, isInline }, { slots }) =>
       isInline
         ? h('a', { href: value.url }, value.text)
-        : h('div', { class: 'callToAction' }, value.text),
+        : h('div', { class: 'callToAction' }, value.text)
   },
 
   list: {
@@ -34,17 +34,19 @@ const myPortableTextComponents = {
     number: (_, { slots }) => h('ol', { class: 'list-decimal list-inside' }, slots.default?.()),
 
     // Ex. 2: rendering custom lists
-    checkmarks: (_, { slots }) => h('ol', { class: 'm-auto text-lg' }, slots.default?.()),
+    checkmarks: (_, { slots }) => h('ol', { class: 'm-auto text-lg' }, slots.default?.())
   },
 
   marks: {
     em: (_, { slots }) => h('em', { class: 'text-red-600 font-semibold' }, slots.default?.()),
     link: ({ value }, { slots }) => {
-      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
-      return h('a', { class: 'text-gray underline font-semibold', href: value.href, rel }, slots.default?.());
-    },
-  },
-};
-
-
+      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
+      return h(
+        'a',
+        { class: 'text-gray underline font-semibold', href: value.href, rel },
+        slots.default?.()
+      )
+    }
+  }
+}
 </script>

@@ -13,7 +13,7 @@
       </div>
       <img
         id="large-gear"
-        class="absolute bottom-auto top-[6.6rem] z-10 w-[350px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110 md:left-[67rem]"
+        class="absolute bottom-auto top-[6.6rem] z-10 w-[350px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 md:left-[67rem]"
         src="../assets/imgs/lg-gear.svg"
         alt=""
         aria-hidden="true"
@@ -35,7 +35,7 @@
       </div>
       <img
         id="med-gear"
-        class="absolute bottom-auto left-[83.5rem] top-[20rem] z-10 w-[280px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+        class="absolute bottom-auto left-[83.5rem] top-[20rem] z-10 w-[280px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
         src="../assets/imgs/med-gear.svg"
         alt=""
         aria-hidden="true"

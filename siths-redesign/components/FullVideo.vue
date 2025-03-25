@@ -7,6 +7,7 @@
         id="x-symbol"
         class="z-50 w-[35px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
         src="../assets/imgs/x-symbol.svg"
+        @click="selected = false"
         alt="exit symbol"
         aria-hidden="true"
       />
@@ -24,4 +25,6 @@
   </div>
 </template>
 
-<script></script>
+<script>
+const selected = ref(true)
+</script>
