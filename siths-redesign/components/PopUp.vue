@@ -1,8 +1,8 @@
 <template>
   <div class="absolute">
     <div class="z-20 flex w-2/3 flex-col rounded-md bg-stone-200 p-12 text-black">
-      <button @click="emit('closeEvent')" class="absolute h-8 w-8 cursor-pointer self-end">
-        <img src="../assets/icons/x.png" alt="x" @click="selected = false" />
+      <button @click="selected = false" class="absolute h-8 w-8 cursor-pointer self-end">
+        <img src="../assets/icons/x.png" alt="x" />
       </button>
       <h2 class="pb-6">{{ item.name }}</h2>
       <PortableText :value="item.description" :components="myPortableTextComponents" />
@@ -12,8 +12,6 @@
 
 <script setup>
 import { PortableText } from '@portabletext/vue'
-
-const emit = defineEmits(['closeEvent'])
 
 defineProps({
   item: Object

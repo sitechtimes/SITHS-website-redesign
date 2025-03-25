@@ -7,7 +7,7 @@
         id="x-symbol"
         class="z-50 w-[35px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
         src="../assets/imgs/x-symbol.svg"
-        @click="selected = false"
+        @click="videoOpen = false"
         alt="exit symbol"
         aria-hidden="true"
       />
@@ -26,5 +26,5 @@
 </template>
 
 <script>
-const selected = ref(true)
+const videoOpen = ref(true)
 </script>

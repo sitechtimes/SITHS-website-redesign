@@ -1,7 +1,4 @@
 <template>
-  <div>
-    <FullVideo v-if="selected" />
-  </div>
   <div
     class="relative flex w-full flex-col items-center justify-center p-10 lg:h-screen lg:flex-row lg:p-0"
   >
