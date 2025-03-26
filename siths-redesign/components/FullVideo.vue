@@ -25,6 +25,4 @@
   </div>
 </template>
 
-<script>
-const videoOpen = ref(true)
-</script>
+<script></script>

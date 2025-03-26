@@ -1,7 +1,8 @@
 <template>
-  <div class="z-20">
-    <FullVideo v-if="videoOpen" />
+  <div v-if="videoOpen" class="z-20">
+    <FullVideo />
   </div>
+  <button @click="videoOpen = !videoOpen">tcmmwtkms</button>
   <div class="px-10 lg:h-full lg:w-1/3 lg:p-10">
     <div id="LGearParent">
       <div class="relative left-[9.4rem] top-[6.3rem] z-0 h-64 w-64 overflow-hidden rounded-full">
@@ -72,5 +73,6 @@
 </template>
 
 <script>
+const videoOpen = ref(true)
 function selectItem(video) {}
 </script>
