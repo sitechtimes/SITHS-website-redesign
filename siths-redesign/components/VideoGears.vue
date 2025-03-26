@@ -56,7 +56,6 @@
           height="200"
           src="https://www.youtube.com/embed/f7oXhDatwtY?loop=1&playlist=f7oXhDatwtY&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0"
         >
-          <!-- src="https://www.youtube.com/embed/<VIDEO ID>?loop=1&playlist=<VIDEO ID>&autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0" ask the user to plug in the link, then get the video id from the last part of their youtube link ("https://www.youtube.com/watch?v=<THIS PART IS THE VIDEO ID>")-->
         </iframe>
       </div>
       <img
@@ -67,12 +66,10 @@
         aria-hidden="true"
       />
     </div>
-    <!-- filler -->
-    <!-- <p id="right-side" class="leading-relaxed"></p> -->
   </div>
 </template>
 
 <script>
-const videoOpen = ref(true)
+const videoOpen = ref(false)
 function selectItem(video) {}
 </script>
