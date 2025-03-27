@@ -68,9 +68,9 @@
       </div>
     </div>
 
-    <!-- right side -->
-    <!-- <div class="z-10 flex h-fit w-screen flex-col justify-center px-10 lg:h-full lg:w-1/3 lg:p-10"> -->
-    <VideoGears />
+    <div class="z-10 justify-center lg:h-full lg:w-1/3 lg:p-10">
+      <VideoGears />
+    </div>
   </div>
 
   <MissionStatement />
