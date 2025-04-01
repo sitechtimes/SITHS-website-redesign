@@ -5,7 +5,7 @@
     </div>
 
     <div class="lg:h-full lg:w-1/3 lg:p-10">
-      <div id="LGearParent" class="relative left-[9.4rem] top-[6.3rem] mx-auto w-[350px]">
+      <div id="LGearParent" class="absolute top-[6.6rem] mx-auto w-[350px] md:left-[67rem]">
         <div class="absolute inset-0 flex items-center justify-center">
           <iframe class="h-[230px] w-[230px] rounded-full" :src="getVideoUrl(link1)"> </iframe>
         </div>
@@ -18,8 +18,8 @@
         />
       </div>
 
-      <div id="MGearParent" class="relative left-[23rem] top-[2rem] mx-auto w-[290px]">
-        <div class="absolute inset-0 flex items-center justify-center">
+      <div id="MGearParent" class="absolute left-[83.5rem] top-[20rem] mx-auto w-[290px]">
+        <div class="absolute inset-0 bottom-[1rem] right-[1rem] flex items-center justify-center">
           <iframe class="h-[190px] w-[190px] rounded-full" :src="getVideoUrl(link2)"> </iframe>
         </div>
         <img
@@ -30,8 +30,8 @@
           @click="selectItem(link2)"
         />
       </div>
-      <div id="SGearParent" class="relative left-[17rem] top-[4rem] mx-auto w-[300px]">
-        <div class="absolute inset-0 flex items-center justify-center">
+      <div id="SGearParent" class="absolute left-[73rem] top-[29rem] mx-auto w-[300px]">
+        <div class="absolute inset-0 right-[1.5rem] flex items-center justify-center">
           <iframe class="h-[140px] w-[140px] rounded-full" :src="getVideoUrl(link3)"> </iframe>
         </div>
         <img
