@@ -19,7 +19,7 @@
         </div>
         <img
           id="large-gear"
-          class="relative z-10 w-[350px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+          class="relative z-10 w-[350px] rotate-[2deg] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
           src="../assets/imgs/lg-gear.svg"
           alt=""
           @click="selectItem(link1)"
@@ -61,7 +61,7 @@
         </div>
         <img
           id="small-gear"
-          class="relative z-10 w-[300px] rotate-[-36.34deg] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+          class="relative z-10 w-[300px] rotate-[-33.34deg] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
           src="../assets/imgs/sml-gear.svg"
           alt=""
           @click="selectItem(link3)"
