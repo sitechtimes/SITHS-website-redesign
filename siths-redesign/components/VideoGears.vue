@@ -1,11 +1,9 @@
 <template>
   <div>
-    <!-- Full Video Player -->
     <div v-if="videoOpen" class="fixed bottom-0 left-0 right-0 top-0 z-20 bg-black bg-opacity-50">
       <FullVideo :videoSource="selectedVideo" @close="closeVideo" />
     </div>
 
-    <!-- Video Gears -->
     <div class="lg:h-full lg:w-1/3 lg:p-10">
       <div id="LGearParent" class="absolute top-[6.6rem] mx-auto w-[350px] md:left-[67rem]">
         <div class="absolute inset-0 flex items-center justify-center">
@@ -76,7 +74,8 @@
 <script>
 import { ref } from 'vue'
 import FullVideo from './FullVideo.vue'
-
+//:posts="websiteData.video" hopefully this is a peice of the puzzle to connect sanity to vue
+//
 export default {
   components: {
     FullVideo
