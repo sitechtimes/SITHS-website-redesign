@@ -72,18 +72,20 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useWebsiteDataStore } from '~/stores/websiteData'
 import FullVideo from './FullVideo.vue'
-//:posts="websiteData.video" hopefully this is a peice of the puzzle to connect sanity to vue
-//
+
 export default {
   components: {
     FullVideo
   },
   setup() {
-    const link1 = 'https://example.com/video.mp4'
-    const link2 = '3KePcASD0NQ'
-    const link3 = 'u8l1VSEzhEA'
+    const websiteData = useWebsiteDataStore()
+    const link1 = computed(() => websiteData.videos[0]?.Llink || '')
+    const link2 = computed(() => websiteData.videos[0]?.Mlink || '')
+    const link3 = computed(() => websiteData.videos[0]?.Slink || '')
+    console.log(link1, link2, link3)
     const videoOpen = ref(false)
     const selectedVideo = ref('')
 
@@ -97,12 +99,15 @@ export default {
     }
 
     const isYouTube = (videoId) => {
-      return typeof videoId === 'string' && videoId.length === 11 // yt vid ids are 11 characters
+      return typeof videoId === 'string' && videoId.includes('youtube.com') // Detect YouTube URLs
     }
 
     const getVideoUrl = (videoId) => {
       if (isYouTube(videoId)) {
-        return `https://www.youtube.com/embed/${videoId}?loop=1&playlist=${videoId}&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0`
+        return (
+          videoId.replace('watch?v=', 'embed/') +
+          '?loop=1&playlist&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0'
+        )
       }
       return videoId
     }
