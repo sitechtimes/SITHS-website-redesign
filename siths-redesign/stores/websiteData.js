@@ -116,14 +116,14 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
         contactUs[]{
           title,
           link
-        },
+        }
+      },
       "athletics": *[_type == "athletics"]{
         _id,
         name,
         description,
-        image,
+        contacts,
       },
-      }
     }`;
 
     try {
@@ -167,6 +167,6 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
     staff,
     summerHomework,
     terrusaPosts,
-    athletics
+    athletics,
   };
 });
