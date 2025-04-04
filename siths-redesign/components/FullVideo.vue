@@ -4,28 +4,26 @@
   >
     <button
       @click="close"
-      class="absolute right-[1rem] top-[1rem] rounded-full bg-black p-4 text-white"
+      class="absolute right-[1rem] top-[1rem] z-50 rounded-full bg-black p-4 text-white"
     >
       <img
         id="x-symbol"
-        class="z-50 w-[35px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+        class="w-[35px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
         src="../assets/imgs/x-symbol.svg"
         alt="exit symbol"
         aria-hidden="true"
       />
     </button>
 
-    <!-- YouTube Video -->
     <iframe
       v-if="isYouTube(videoSource)"
       class="h-full w-full"
-      :src="`https://www.youtube.com/embed/${videoSource}?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0`"
+      :src="getYouTubeEmbedUrl(videoSource)"
       frameborder="0"
       allow="autoplay; encrypted-media"
       allowfullscreen
     ></iframe>
 
-    <!-- MP4 Video -->
     <video v-else class="h-full w-full" autoplay controls>
       <source :src="videoSource" type="video/mp4" />
     </video>
@@ -41,8 +39,20 @@ export default {
     close() {
       this.$emit('close')
     },
-    isYouTube(videoId) {
-      return typeof videoId === 'string' && videoId.length === 11
+    isYouTube(url) {
+      return typeof url === 'string' && (url.includes('youtube.com') || url.includes('youtu.be'))
+    },
+    getYouTubeVideoId(url) {
+      const match = url.match(
+        /(?:https?:\/\/(?:www\.)?youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+      )
+      return match ? match[1] : null
+    },
+    getYouTubeEmbedUrl(url) {
+      const videoId = this.getYouTubeVideoId(url)
+      return videoId
+        ? `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&playlist=${videoId}&loop=1`
+        : ''
     }
   }
 }

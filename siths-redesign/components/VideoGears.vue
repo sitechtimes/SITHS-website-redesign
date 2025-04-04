@@ -85,7 +85,6 @@ export default {
     const link1 = computed(() => websiteData.videos[0]?.Llink || '')
     const link2 = computed(() => websiteData.videos[0]?.Mlink || '')
     const link3 = computed(() => websiteData.videos[0]?.Slink || '')
-    console.log(link1, link2, link3)
     const videoOpen = ref(false)
     const selectedVideo = ref('')
 
