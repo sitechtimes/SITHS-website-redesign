@@ -145,9 +145,9 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       summerHomework.value = data.value.summerHomework
       partnerships.value = data.value.partnerships
       videos.value = data.value.video.map((v) => ({
-        Slink: v.SvideoFileUrl || sanitizeVideoLink(v.SvideoUrl) || '',
-        Mlink: v.MvideoFileUrl || sanitizeVideoLink(v.MvideoUrl) || '',
-        Llink: v.LvideoFileUrl || sanitizeVideoLink(v.LvideoUrl) || ''
+        Slink: v.SvideoFileUrl || v.SvideoUrl || '',
+        Mlink: v.MvideoFileUrl || v.MvideoUrl || '',
+        Llink: v.LvideoFileUrl || v.LvideoUrl || ''
       }))
 
       fetchLoading.value = false
