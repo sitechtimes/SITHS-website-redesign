@@ -9,13 +9,19 @@
         <div class="absolute inset-0 flex items-center justify-center">
           <iframe
             v-if="isYouTube(link1)"
-            class="h-[230px] w-[230px] rounded-full"
-            :src="`https://www.youtube.com/embed/${getYouTubeId(link1)}?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0`"
+            class="h-[230px] h-full max-h-full w-[230px] w-full rounded-full object-contain"
+            :src="`https://www.youtube.com/embed/${getYouTubeId(link1)}?autoplay=0&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0`"
             frameborder="0"
-            allow="autoplay; encrypted-media"
             allowfullscreen
           ></iframe>
-          <video v-else class="h-[230px] w-[230px] rounded-full" autoplay controls muted>
+          <video
+            preload="metadata"
+            v-else
+            class="h-[230px] w-[230px] rounded-full"
+            autoplay
+            controls
+            muted
+          >
             <source :src="link1" type="video/mp4" />
           </video>
         </div>
@@ -33,12 +39,18 @@
           <iframe
             v-if="isYouTube(link2)"
             class="h-[190px] w-[190px] rounded-full"
-            :src="`https://www.youtube.com/embed/${getYouTubeId(link2)}?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0`"
+            :src="`https://www.youtube.com/embed/${getYouTubeId(link2)}?autoplay=0&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0`"
             frameborder="0"
-            allow="autoplay; encrypted-media"
             allowfullscreen
           ></iframe>
-          <video v-else class="h-[190px] w-[190px] rounded-full" autoplay controls muted>
+          <video
+            preload="metadata"
+            v-else
+            class="h-[190px] w-[190px] rounded-full"
+            autoplay
+            controls
+            muted
+          >
             <source :src="link2" type="video/mp4" />
           </video>
         </div>
@@ -56,12 +68,18 @@
           <iframe
             v-if="isYouTube(link3)"
             class="h-[140px] w-[140px] rounded-full"
-            :src="`https://www.youtube.com/embed/${getYouTubeId(link3)}?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0`"
+            :src="`https://www.youtube.com/embed/${getYouTubeId(link3)}?autoplay=0&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0`"
             frameborder="0"
-            allow="autoplay; encrypted-media"
             allowfullscreen
           ></iframe>
-          <video v-else class="h-[140px] w-[140px] rounded-full" autoplay controls muted>
+          <video
+            preload="metadata"
+            v-else
+            class="h-[140px] w-[140px] rounded-full"
+            autoplay
+            controls
+            muted
+          >
             <source :src="link3" type="video/mp4" />
           </video>
         </div>
