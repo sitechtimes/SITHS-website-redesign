@@ -3,7 +3,6 @@
   <div class="flex flex-col md:flex-row justify-center items-start px-4">
     <SubpageMenu :pages="subpageLinks" :active="'Contacts'" class="absolute top-48 left-8 w-full md:w-auto mb-4 md:mb-0 md:mr-8" />
     <div class="w-full md:w-5/6">
-      <contactCard title="Spring Sports" :contacts="websiteData.athletics[0].contacts.filter((el)=> el.season == 'Spring')"/>
       <contactCard title="All (A-Z)" :contacts="websiteData.athletics[0].contacts"/>
     </div>
 

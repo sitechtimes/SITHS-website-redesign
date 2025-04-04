@@ -2,8 +2,8 @@
 <template>
     <div class="mb-20">
         <h3>{{ title }}</h3>
-        <div class="flex items-start justify-center flex-col overflow-x-scroll">
-            <div class="flex flex-nowrap">
+        <div class="flex items-start justify-center flex-row">
+            <div class="">
                 <div v-for="contact in contacts" class="relative bg-white/20 rounded-lg p-6 m-4 ml-0 w-96">
                     <div class="py-2">
                         <h4 class="my-1">{{ contact.sport }}</h4>
