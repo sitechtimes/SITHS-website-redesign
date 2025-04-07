@@ -7,27 +7,21 @@
     <div class="lg:h-full lg:w-1/3 lg:p-10">
       <div id="LGearParent" class="absolute top-[6.6rem] mx-auto w-[350px] md:left-[67rem]">
         <div class="absolute inset-0 flex items-center justify-center">
-          <iframe
+          <img :src="`${thumbnail1}`" alt="Large Gear Thumbnail" />
+          <!-- <iframe
             v-if="isYouTube(link1)"
             class="h-[230px] h-full max-h-full w-[230px] w-full rounded-full object-contain"
             :src="`https://www.youtube.com/embed/${getYouTubeId(link1)}?autoplay=0&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0`"
             frameborder="0"
             allowfullscreen
           ></iframe>
-          <video
-            preload="metadata"
-            v-else
-            class="h-[230px] w-[230px] rounded-full"
-            autoplay
-            controls
-            muted
-          >
+          <video preload="metadata" v-else class="h-[230px] w-[230px] rounded-full" controls muted>
             <source :src="link1" type="video/mp4" />
-          </video>
+          </video> -->
         </div>
         <img
           id="large-gear"
-          class="relative z-10 w-[350px] rotate-[2deg] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+          class="relative z-10 w-[350px] rotate-[2deg] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
           src="../assets/imgs/lg-gear.svg"
           alt=""
           @click="selectItem(link1)"
@@ -43,14 +37,7 @@
             frameborder="0"
             allowfullscreen
           ></iframe>
-          <video
-            preload="metadata"
-            v-else
-            class="h-[190px] w-[190px] rounded-full"
-            autoplay
-            controls
-            muted
-          >
+          <video preload="metadata" v-else class="h-[190px] w-[190px] rounded-full" controls muted>
             <source :src="link2" type="video/mp4" />
           </video>
         </div>
@@ -72,14 +59,7 @@
             frameborder="0"
             allowfullscreen
           ></iframe>
-          <video
-            preload="metadata"
-            v-else
-            class="h-[140px] w-[140px] rounded-full"
-            autoplay
-            controls
-            muted
-          >
+          <video preload="metadata" v-else class="h-[140px] w-[140px] rounded-full" controls muted>
             <source :src="link3" type="video/mp4" />
           </video>
         </div>
@@ -109,6 +89,9 @@ export default {
     const link1 = computed(() => websiteData.videos[0]?.Llink || '')
     const link2 = computed(() => websiteData.videos[0]?.Mlink || '')
     const link3 = computed(() => websiteData.videos[0]?.Slink || '')
+    const thumbnail1 = computed(() => websiteData.videos[0]?.Sthumbnail || '')
+    const thumbnail2 = computed(() => websiteData.videos[0]?.Mthumbnail || '')
+    const thumbnail3 = computed(() => websiteData.videos[0]?.Sthumbnail || '')
     const videoOpen = ref(false)
     const selectedVideo = ref('')
 
@@ -131,6 +114,9 @@ export default {
     }
 
     return {
+      thumbnail1,
+      thumbnail2,
+      thumbnail3,
       link1,
       link2,
       link3,

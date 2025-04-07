@@ -123,10 +123,13 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         title,
         "SvideoFileUrl": SvideoFile.asset->url,
         "SvideoUrl": SyoutubeUrl,
+        "SthumbnailUrl": Sthumbnail.asset->url
         "MvideoFileUrl": MvideoFile.asset->url,
         "MvideoUrl": MyoutubeUrl,
+        "MthumbnailUrl": Mthumbnail.asset->url
         "LvideoFileUrl": LvideoFile.asset->url,
         "LvideoUrl": LyoutubeUrl,
+        "LthumbnailUrl": Lthumbnail.asset->url
       },
     }`
 
@@ -147,7 +150,10 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       videos.value = data.value.video.map((v) => ({
         Slink: v.SvideoFileUrl || v.SvideoUrl || '',
         Mlink: v.MvideoFileUrl || v.MvideoUrl || '',
-        Llink: v.LvideoFileUrl || v.LvideoUrl || ''
+        Llink: v.LvideoFileUrl || v.LvideoUrl || '',
+        Sthumbnail: v.SthumbnailUrl?.asset?.url || '',
+        Mthumbnail: v.MthumbnailUrl?.asset?.url || '',
+        Lthumbnail: v.LthumbnailUrl?.asset?.url || ''
       }))
 
       fetchLoading.value = false

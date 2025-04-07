@@ -11,6 +11,14 @@ export const video = defineType({
       type: 'string',
     },
     {
+      name: 'Sthumbnail',
+      title: 'Small Gear Thumbnail',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: 'SvideoFile',
       title: 'Small Gear MP4 File',
       type: 'file',
@@ -36,6 +44,15 @@ export const video = defineType({
           }
           return true
         }),
+    },
+
+    {
+      name: 'Mthumbnail',
+      title: 'Medium Gear Thumbnail',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: 'MvideoFile',
@@ -63,6 +80,14 @@ export const video = defineType({
           }
           return true
         }),
+    },
+    {
+      name: 'Lthumbnail',
+      title: 'Large Gear Thumbnail',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: 'LvideoFile',
