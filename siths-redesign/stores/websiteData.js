@@ -119,18 +119,18 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         },
       },
       "video": *[_type == "video"]{
-        _id,
+         _id,
         title,
         "SvideoFileUrl": SvideoFile.asset->url,
         "SvideoUrl": SyoutubeUrl,
-        "SthumbnailUrl": Sthumbnail.asset->url
+        "SthumbnailUrl": Sthumbnail.asset->url,
         "MvideoFileUrl": MvideoFile.asset->url,
         "MvideoUrl": MyoutubeUrl,
-        "MthumbnailUrl": Mthumbnail.asset->url
+        "MthumbnailUrl": Mthumbnail.asset->url,
         "LvideoFileUrl": LvideoFile.asset->url,
         "LvideoUrl": LyoutubeUrl,
         "LthumbnailUrl": Lthumbnail.asset->url
-      },
+      },  
     }`
 
     try {
@@ -147,16 +147,15 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       opportunities.value = data.value.opportunities
       summerHomework.value = data.value.summerHomework
       partnerships.value = data.value.partnerships
-      videos.value = data.value.video.map((v) => ({
+      ;(videos.value = data.value.video.map((v) => ({
         Slink: v.SvideoFileUrl || v.SvideoUrl || '',
         Mlink: v.MvideoFileUrl || v.MvideoUrl || '',
         Llink: v.LvideoFileUrl || v.LvideoUrl || '',
-        Sthumbnail: v.SthumbnailUrl?.asset?.url || '',
-        Mthumbnail: v.MthumbnailUrl?.asset?.url || '',
-        Lthumbnail: v.LthumbnailUrl?.asset?.url || ''
-      }))
-
-      fetchLoading.value = false
+        Sthumbnail: v.SthumbnailUrl || '',
+        Mthumbnail: v.MthumbnailUrl || '',
+        Lthumbnail: v.LthumbnailUrl || ''
+      }))),
+        (fetchLoading.value = false)
     } catch (error) {
       console.error('Error fetching posts:', error)
     }
