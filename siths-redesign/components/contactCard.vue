@@ -1,26 +1,27 @@
 <!-- for athletics only -->
 <template>
-    <div class="mb-20">
+    <div class="flex flex-col justify-center w-2/3">
         <h3>{{ title }}</h3>
-        <div class="flex items-start justify-center flex-row">
-            <div class="">
-                <div v-for="contact in contacts" class="relative bg-white/20 rounded-lg p-6 m-4 ml-0 w-96">
-                    <div class="py-2">
-                        <h4 class="my-1">{{ contact.sport }}</h4>
-                        <p v-for="item in contact.type"
-                            class="inline bg-black/45 rounded-md px-2 py-1 my-2 text-gold text-sm">{{
-                                item.toUpperCase() }}</p>
-                    </div>
-                    <p class="absolute top-1 right-1 bg-black/45 rounded-md px-2 p-1 text-md text-gold"> {{
-                        contact.season.toUpperCase() }}
+        <div v-for="contact in contacts" class="relative bg-white/20 rounded-lg p-6 m-4 ml-0">
+            <p class="absolute top-1 right-1 bg-black/45 rounded-md px-2 p-1 text-md text-gold">
+                {{ contact.season.toUpperCase() }}
+            </p>
+            <div class="flex flex-row items-center">
+                <div class="w-1/3 ">
+                    <h4 class="my-1">{{ contact.sport }}</h4>
+                    <p v-for="item in contact.type"
+                        class="inline bg-black/45 rounded-md px-2 py-1 my-2 text-gold text-sm">
+                        {{ item.toUpperCase() }}</p>
+                </div>
+                <div class="w-1/3 my-1">
+                    <p>
+                        {{ contact.coach }}
                     </p>
-                    <div class="">
-                        <p>
-                            {{ contact.coach }}
-                            <br>
-                            {{ contact.email }}
-                        </p>
-                    </div>
+                </div>
+                <div class="w-1/3 my-1">
+                    <p>
+                        {{ contact.email }}
+                    </p>
                 </div>
             </div>
         </div>
