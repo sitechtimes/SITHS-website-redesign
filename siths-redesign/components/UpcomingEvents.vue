@@ -19,8 +19,9 @@
         <span v-if="index < latestEvents.length - 1" class="inline my-4 md:mx-4 h-[1px] w-24 md:h-24 md:w-[1px] bg-gold"></span>
       </div>
     </div>
-    <NuxtLink class="font-bold mt-8 text-lg text-gold bg-left-bottom bg-gradient-to-r from-gold to-gold bg-[length:0%_2px] bg-no-repeat transition-all duration-500 ease-out hover:bg-[length:100%_2px]" 
-    to="/calendar">
+    <NuxtLink
+      class="font-bold mt-8 text-lg text-gold bg-left-bottom bg-gradient-to-r from-gold to-gold bg-[length:0%_2px] bg-no-repeat transition-all duration-500 ease-out hover:bg-[length:100%_2px]"
+      to="/calendar">
       Show All Events
     </NuxtLink>
   </div>
