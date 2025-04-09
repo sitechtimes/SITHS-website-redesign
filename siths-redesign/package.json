@@ -18,6 +18,8 @@
     "gsap": "^3.12.5",
     "nuxt": "^3.12.3",
     "pinia": "^2.2.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "rxjs": "npm:@esm-bundle/rxjs@^7.8.1",
     "sanity": "^3.60.0",
     "vue": "latest",
