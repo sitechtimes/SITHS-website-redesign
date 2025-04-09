@@ -1,11 +1,11 @@
 <template>
   <h1 class="text-2xl md:text-3xl lg:text-4xl text-center mb-4">Contacts</h1>
   <div class="flex flex-col md:flex-row justify-center items-start px-4">
-    <SubpageMenu :pages="subpageLinks" :active="'Contacts'" class="absolute top-48 left-8 w-full md:w-auto mb-4 md:mb-0 md:mr-8" />
-    <div class="w-full flex justify-center md:w-5/6">
-      <contactCard title="All (A-Z)" :contacts="websiteData.athletics[0].contacts"/>
+    <SubpageMenu :pages="subpageLinks" :active="'Contacts'" class="absolute top-48 left-8 mb-4 md:mb-0 md:mr-8" />
+    <div class="flex flex-col justify-center items-center w-1/2">
+      <input type="text" placeholder="Search" v-model="searchTerm" class="mb-6 p-2 rounded-md w-2/3">
+      <contactCard v-for="item in websiteData.athletics" title="All (A-Z)" :contacts="item.contacts"/>
     </div>
-
   </div>
 </template>
 
@@ -18,13 +18,10 @@ const subpageLinks = [
     path: '/athletics'
   },
   {
-    name: "Athletic News",
-    path: "/athletics/news",
-  },
-  {
     name: "Contacts",
     path: "/athletics/contacts",
   }
 ];
+
 
 </script>=
