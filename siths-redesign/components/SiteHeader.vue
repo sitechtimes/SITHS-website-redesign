@@ -77,7 +77,7 @@ const navLinks = [
     category: "Main",
     categoryValue: "main",
     links: [
-      { name: "Home", path: "/", directLink: false },
+      { name: "Home", path: "/" },
     ]
   },
   {

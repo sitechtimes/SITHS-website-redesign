@@ -3,7 +3,11 @@
     <h2 class="my-4 text-4xl font-semibold">UPCOMING EVENTS</h2>
     <div class="flex w-full flex-col items-center justify-center lg:flex-row">
       <!-- latest 5 events -->
-      <div v-for="(event, index) in latestEvents" :key="index" class="flex flex-col lg:flex-row items-center justify-center">
+      <div
+        v-for="(event, index) in latestEvents"
+        :key="index"
+        class="flex flex-col md:flex-row items-center justify-center"
+      >
         <div class="flex flex-col items-center">
           <p class="mb-2 font-semibold underline underline-offset-2">{{ event.formattedDate }}</p>
           <div class="w-3/5 text-center md:w-full lg:w-32">
@@ -11,11 +15,8 @@
             <p class="truncate text-sm opacity-80">{{ event.description }}</p>
           </div>
         </div>
-        <!-- vertical line between each event, except for last event -->
-        <div v-if="index < latestEvents.length - 1" class="hidden lg:flex mx-4  h-24 w-[1px] bg-gold"></div>
-
-        <!-- horizontal line between each event, except for last event -->
-        <div v-if="index < latestEvents.length - 1" class="my-4 flex lg:hidden w-24 h-[1px] bg-gold"></div>
+        <!-- vert/horz line between each event, except for last event -->
+        <span v-if="index < latestEvents.length - 1" class="inline my-4 md:mx-4 h-[1px] w-24 md:h-24 md:w-[1px] bg-gold"></span>
       </div>
     </div>
     <NuxtLink
