@@ -3,10 +3,10 @@
     <div class="grid grid-cols-1 gap-4 m-2">
       <div v-for="item in resources" class="mb-12 group">
         <a :href="item.url" target="_blank">
-          <h3 class="flex justify-between items-center text-2xl font-semibold border-b-[2px] border-gold pr-4">{{
+          <h3 class="flex justify-between items-center text-2xl font-semibold border-b-[2px] border-gold pr-4 py-2">{{
             item.name
             }}
-            <img class="inline h-5 w-5" src="../assets/icons/xlink.svg" alt="external link">
+            <img class="inline invert h-8" src="../assets/icons/xlink.png" alt="external link">
           </h3>
         </a>
         <PortableText v-if="isBlock" :value="item.description" :components="myPortableTextComponents" />
