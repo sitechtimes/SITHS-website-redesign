@@ -1,21 +1,21 @@
 <template>
-  <h1 class="text-2xl md:text-3xl lg:text-4xl text-center mb-4">Special Opportunities</h1>
-  <div class="flex flex-col md:flex-row justify-center items-start px-4">
-    <SubpageMenu :pages="subpageLinks" :active="'Internships'" class="w-full md:w-auto mb-4 md:mb-0 md:mr-8" />
-    <div class="flex items-center justify-center flex-col w-full md:w-5/6">
-      <!-- documents div -->
-      <div class="items-start text-left w-full">
-        <h2 class="py-4 text-left">Internship Documents</h2>
-        <p>Use the forms below to apply for various job and internship opportunities, and return to the appropriate
-          personnel.
-        </p>
-        <!-- TODO: add documents -->
+  <div class="no-scroll">
+    <h1 class="text-2xl md:text-3xl lg:text-4xl text-center mb-4">Special Opportunities</h1>
+    <div class="flex flex-col md:flex-row justify-center items-start px-4">
+      <SubpageMenu :pages="subpageLinks" :active="'Internships'" class="w-full md:w-auto mb-4 md:mb-0 md:mr-8" />
+      <div class="flex items-center justify-center flex-col w-full md:w-5/6">
+        <div class="items-start text-left w-full">
+          <h2 class="py-4 text-left">Internship Documents</h2>
+          <p>Use the forms below to apply for various job and internship opportunities, and return to the appropriate
+            personnel.
+          </p>
+        </div>
+        <SpecialOpp type="Internships"
+          :resources="websiteData.opportunities.filter((el) => el.opptype == 'Internships')" />
       </div>
-      <!-- opportunities div -->
-      <SpecialOpp type="Internships"
-        :resources="websiteData.opportunities.filter((el) => el.opptype == 'Internships')" />
     </div>
   </div>
+
 </template>
 
 <script setup>
@@ -43,4 +43,5 @@ const subpageLinks = [
     path: "/opportunities/initiatives",
   }
 ];
+
 </script>

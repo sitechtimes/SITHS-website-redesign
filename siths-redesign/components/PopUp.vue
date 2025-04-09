@@ -1,17 +1,11 @@
 <template>
-  <div>
-    <div class="grid grid-cols-1 gap-4 m-2">
-      <div v-for="item in resources" class="mb-12 group">
-        <a :href="item.url" target="_blank">
-          <h3 class="flex justify-between items-center text-2xl font-semibold border-b-[2px] border-gold pr-4 py-2">{{
-            item.name
-            }}
-            <img class="inline invert h-8" src="../assets/icons/xlink.png" alt="external link">
-          </h3>
-        </a>
-        <PortableText v-if="isBlock" :value="item.description" :components="myPortableTextComponents" />
-        <p v-if="!isBlock" class="pt-2 transition-all duration-300">{{ item.description }}</p>
-      </div>
+  <div class="absolute">
+    <div class="flex flex-col bg-stone-200 text-black p-12 rounded-md w-2/3 z-20">
+      <button @click="emit('closeEvent')" class="absolute w-8 h-8 self-end cursor-pointer">
+        <img src="../assets/icons/x.png" alt="x" @click="selected = false">
+      </button>
+      <h2 class="pb-6">{{ item.name }}</h2>
+      <PortableText :value="item.description" :components="myPortableTextComponents" />
     </div>
   </div>
 </template>
@@ -19,9 +13,10 @@
 <script setup>
 import { PortableText } from '@portabletext/vue';
 
+const emit = defineEmits(['closeEvent']);
+
 defineProps({
-  resources: Array,
-  isBlock: Boolean
+  item: Object
 })
 
 const myPortableTextComponents = {
@@ -50,4 +45,6 @@ const myPortableTextComponents = {
     },
   },
 };
+
+
 </script>
