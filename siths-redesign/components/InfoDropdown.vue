@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col items-center justify-center my-8 lg:mx-16">
     <div v-for="(post, index) in posts" :key="index" class="my-2 collapse rounded-lg collapse-arrow bg-white border-gold text-black">
-      <input v-if="index == 0" name="collapse" type="radio" class="peer" checked/>
-      <input v-else name="collapse" type="radio" class="peer"/>
+      <input v-if="index == 0" type="checkbox" class="peer" checked @click="getImageDimensions(post.imageUrl)"/>
+      <input v-else type="checkbox" class="peer" @click="getImageDimensions(post.imageUrl)"/>
       <div class="collapse-title text-xl font-medium">
         <h3 class="font-semibold text-black">{{ post.PostTitle }}</h3>
       </div>

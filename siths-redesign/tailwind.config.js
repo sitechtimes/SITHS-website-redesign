@@ -10,8 +10,10 @@ export default {
     extend: {
       colors:{
         "gold":"#C4B466",
+        "dark-gold": "#4E4A38",
         "gray":"#323232",
-        "light-gray": "#d1d1d1"
+        "light-gray": "#d1d1d1",
+        "black" : "#1c1b1b" //dark gray
       },
       fontFamily: {
         "kumbh": ["Kumbh Sans", "sans-serif"],
@@ -19,6 +21,7 @@ export default {
       },
       backgroundImage: {
         "city-skyline" : "url('/assets/imgs/cityskyline.png')",
+        "siths-building" : "url('/assets/imgs/siths-building.png')"
       }
     },
   },

@@ -6,7 +6,7 @@
       <div
         v-for="(event, index) in latestEvents"
         :key="index"
-        class="flex flex-row items-center justify-center"
+        class="flex flex-col md:flex-row items-center justify-center"
       >
         <div class="flex flex-col items-center">
           <p class="mb-2 font-semibold underline underline-offset-2">{{ event.formattedDate }}</p>
@@ -15,12 +15,13 @@
             <p class="truncate text-sm opacity-80">{{ event.description }}</p>
           </div>
         </div>
-        <!-- vertical line between each event, except for last event -->
-        <div v-if="index < latestEvents.length - 1" class="mx-4 flex h-24 w-[1px] bg-gold"></div>
+        <!-- vert/horz line between each event, except for last event -->
+        <span v-if="index < latestEvents.length - 1" class="inline my-4 md:mx-4 h-[1px] w-24 md:h-24 md:w-[1px] bg-gold"></span>
       </div>
     </div>
-    <NuxtLink class="font-bold mt-8 text-lg text-gold bg-left-bottom bg-gradient-to-r from-gold to-gold bg-[length:0%_2px] bg-no-repeat transition-all duration-500 ease-out hover:bg-[length:100%_2px]" 
-    to="/calendar">
+    <NuxtLink
+      class="font-bold mt-8 text-lg text-gold bg-left-bottom bg-gradient-to-r from-gold to-gold bg-[length:0%_2px] bg-no-repeat transition-all duration-500 ease-out hover:bg-[length:100%_2px]"
+      to="/calendar">
       Show All Events
     </NuxtLink>
   </div>
