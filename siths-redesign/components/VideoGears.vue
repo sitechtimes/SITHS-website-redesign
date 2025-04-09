@@ -5,11 +5,11 @@
     </div>
 
     <div class="lg:h-full lg:w-1/3 lg:p-10">
-      <div id="LGearParent" class="absolute top-[6.6rem] mx-auto w-[350px] md:left-[67rem]">
+      <div id="LGearParent" class="absolute top-[6.6rem] w-[330px] md:left-[67rem]">
         <div class="absolute inset-0 flex items-center justify-center">
           <img
             :src="`${thumbnail1}`"
-            class="h-[200px] max-h-full w-[200px] rounded-full object-contain"
+            class="h-[220px] max-h-full w-[220px] rounded-full object-contain"
             alt="Large Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
           />
@@ -33,9 +33,10 @@
         />
       </div>
 
-      <div id="MGearParent" class="absolute left-[83.5rem] top-[20rem] mx-auto w-[290px]">
+      <div id="MGearParent" class="absolute left-[83.5rem] top-[20rem] mx-auto w-[270px]">
         <div class="absolute inset-0 bottom-[1rem] right-[1rem] flex items-center justify-center">
           <img
+            class="h-[180px] max-h-full rounded-full object-contain"
             :src="`${thumbnail2}`"
             alt="Medium Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
@@ -60,9 +61,10 @@
         />
       </div>
 
-      <div id="SGearParent" class="absolute left-[73rem] top-[29rem] mx-auto w-[300px]">
+      <div id="SGearParent" class="absolute left-[72.8rem] top-[28.2rem] mx-auto w-[300px]">
         <div class="absolute inset-0 right-[1.5rem] flex items-center justify-center">
           <img
+            class="max-h-full w-[150px] rounded-full"
             :src="thumbnail3"
             alt="Large Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
