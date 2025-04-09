@@ -61,7 +61,10 @@
         />
       </div>
 
-      <div id="SGearParent" class="absolute left-[72.8rem] top-[28.2rem] mx-auto w-[300px]">
+      <div
+        id="SGearParent"
+        class="absolute mx-auto lg:left-[72.8rem] lg:top-[28.2rem] lg:w-[300px]"
+      >
         <div class="absolute inset-0 right-[1.5rem] flex items-center justify-center">
           <img
             class="max-h-full w-[150px] rounded-full"

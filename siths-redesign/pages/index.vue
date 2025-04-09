@@ -21,7 +21,7 @@
     </div>
 
     <!-- left side -->
-    <div class="z-10 flex md:w-1/2 flex-col items-start justify-center lg:w-auto">
+    <div class="z-10 flex flex-col items-start justify-center md:w-1/2 lg:w-auto">
       <!-- header texts -->
       <div id="header-texts" class="opacity-0">
         <h1 class="p-0 text-left text-gold lg:text-6xl">Welcome to</h1>
@@ -68,20 +68,20 @@
       </div>
     </div>
 
-    <div class="z-10 justify-center lg:h-full lg:w-1/3 lg:p-10">
+    <div class="z-10 justify-center md:h-1/3 md:w-full md:p-10 lg:h-full lg:w-1/3 lg:p-10">
       <VideoGears />
     </div>
   </div>
 
-  <MissionStatement class="mx-6 md:mx-12 rounded-lg"/>
+  <MissionStatement class="mx-6 rounded-lg md:mx-12" />
   <UpcomingEvents />
-  <SchoolHistory class="mx-6 md:mx-12 rounded-lg"/>
-  <MediaPreview class="mx-6 md:mx-12"/>
+  <SchoolHistory class="mx-6 rounded-lg md:mx-12" />
+  <MediaPreview class="mx-6 md:mx-12" />
 </template>
 
 <script setup>
 import { gsap } from 'gsap'
-import SchoolHistory from '~/components/SchoolHistory.vue';
+import SchoolHistory from '~/components/SchoolHistory.vue'
 
 onMounted(() => {
   gsap.to('#header-texts', {
