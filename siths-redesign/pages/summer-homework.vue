@@ -4,7 +4,7 @@
     <div class="flex flex-col md:flex-row justify-center items-start px-4">
       <div class="flex items-center justify-center flex-col w-full md:w-5/6">
         <div class="w-full md:w-3/4 lg:w-1/2">
-          <p v-html="convertToText(websiteData.summerHomework[0]?.homePage || [])"></p>
+          <PortableText :value="websiteData.summerHomework[0]?.homePage"/>
           <!-- links for each grade's homework -->
           <div class="my-8 space-y-4 w-1/2">
             <a v-for="(link, grade) in gradeLinks" :key="grade" :href="link" target="_blank" class="block">
@@ -25,9 +25,9 @@
 </template>
 
 <script setup>
+import { PortableText } from '@portabletext/vue';
 
 const websiteData = useWebsiteDataStore()
-
 
 const gradeLinks = computed(() => {
   const homework = websiteData.summerHomework[0]
@@ -38,50 +38,4 @@ const gradeLinks = computed(() => {
     'Twelfth': homework?.twelfth || ''
   }
 })
-
-const convertToText = (data) => {
-  let output = [];
-
-  data.forEach((block) => {
-    let blockText = "";
-
-    if (block._type === "block") {
-      block.children?.forEach((child) => {
-        let text = child.text || "";
-        const marks = child.marks || [];
-
-        // Bold (strong)
-        if (marks.includes("strong")) {
-          text = `<span class="font-bold">${text}</span>`;
-        }
-
-        // Italics (em)
-        if (marks.includes("em")) {
-          text = `<span class="italic">${text}</span>`;
-        }
-
-        if (marks.includes("bullet")) {
-          text = `<span class="list-disc">${text}</span>`;
-        }
-
-        // Hyperlinks
-        marks.forEach((mark) => {
-          const linkDef = block.markDefs?.find((def) => def._key === mark);
-          if (linkDef && linkDef.href) {
-            const url = linkDef.href;
-            text = `<a href="${url}" target="_blank" class="underline text-blue-400">${text}</a>`;
-          }
-        });
-
-        // Append the processed text for this child
-        blockText += text;
-      });
-    }
-
-    // Add the block text to output array
-    output.push(blockText.trim());
-  });
-
-  return output.join("<br/>");
-};
 </script>
