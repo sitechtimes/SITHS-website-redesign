@@ -26,7 +26,7 @@
         </div>
         <img
           id="large-gear"
-          class="relative z-10 w-[350px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+          class="animate-spin-slow relative z-10 w-[350px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
           src="../assets/imgs/lg-gear.svg"
           alt=""
           @click="selectItem(link1)"
@@ -54,20 +54,17 @@
         </div>
         <img
           id="med-gear"
-          class="relative z-10 w-[290px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+          class="animate-spin-slower relative z-10 w-[290px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
           src="../assets/imgs/med-gear.svg"
           alt=""
           @click="selectItem(link2)"
         />
       </div>
 
-      <div
-        id="SGearParent"
-        class="absolute mx-auto lg:left-[72.8rem] lg:top-[28.2rem] lg:w-[300px]"
-      >
+      <div id="SGearParent" class="absolute mx-auto lg:left-[72rem] lg:top-[28rem] lg:w-[200px]">
         <div class="absolute inset-0 right-[1.5rem] flex items-center justify-center">
           <img
-            class="max-h-full w-[150px] rounded-full"
+            class="max-h-full w-[130px] rounded-full"
             :src="thumbnail3"
             alt="Large Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
@@ -86,7 +83,7 @@
         </div>
         <img
           id="small-gear"
-          class="relative z-10 w-[300px] rotate-[-33.34deg] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+          class="animate-spin-slow relative z-10 w-[200px] cursor-pointer"
           src="../assets/imgs/sml-gear.svg"
           alt=""
           @click="selectItem(link3)"

@@ -68,7 +68,7 @@
       </div>
     </div>
 
-    <div class="z-10 justify-center md:h-1/3 md:w-full md:p-10 lg:h-full lg:w-1/3 lg:p-10">
+    <div class="md: z-10 justify-center md:h-1/3 lg:h-full lg:w-1/3 lg:p-10">
       <VideoGears />
     </div>
   </div>
