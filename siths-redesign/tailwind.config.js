@@ -16,6 +16,7 @@ export default {
         black: '#1c1b1b' //dark gray
       },
       animation: {
+        'spin-med': 'spin 9.8s linear infinite',
         'spin-slow': 'spin 9.9s linear infinite',
         'spin-slower': 'spin-reverse 10s linear infinite'
       },

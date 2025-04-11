@@ -26,7 +26,7 @@
         </div>
         <img
           id="large-gear"
-          class="animate-spin-slow relative z-10 w-[350px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+          class="relative z-10 w-[350px] animate-spin-slow cursor-pointer"
           src="../assets/imgs/lg-gear.svg"
           alt=""
           @click="selectItem(link1)"
@@ -54,7 +54,7 @@
         </div>
         <img
           id="med-gear"
-          class="animate-spin-slower relative z-10 w-[290px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+          class="relative z-10 w-[290px] animate-spin-slower cursor-pointer transition-transform duration-300"
           src="../assets/imgs/med-gear.svg"
           alt=""
           @click="selectItem(link2)"
@@ -62,7 +62,7 @@
       </div>
 
       <div id="SGearParent" class="absolute mx-auto lg:left-[72rem] lg:top-[28rem] lg:w-[200px]">
-        <div class="absolute inset-0 right-[1.5rem] flex items-center justify-center">
+        <div class="absolute inset-0 flex items-center justify-center">
           <img
             class="max-h-full w-[130px] rounded-full"
             :src="thumbnail3"
@@ -83,7 +83,7 @@
         </div>
         <img
           id="small-gear"
-          class="animate-spin-slow relative z-10 w-[200px] cursor-pointer"
+          class="animate-spin-med relative z-10 w-[200px] cursor-pointer"
           src="../assets/imgs/sml-gear.svg"
           alt=""
           @click="selectItem(link3)"
