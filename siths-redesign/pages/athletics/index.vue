@@ -13,8 +13,7 @@
           :components="myPortableTextComponents" />
       </div>
     </div>
-    <img class="absolute bottom-12 -right-10 md:top-40 md:right-28 brightness-125 h-1/2 z-0" src="@/assets/imgs/baller.png" alt="">
-    <img class="absolute -bottom-48 md:bottom-36 md:left-40 brightness-125 h-1/3 z-0" src="@/assets/imgs/ballerina.png" alt="">
+    <img class="absolute bottom-12 md:left-auto top-80 h-2/3 lg:top-60 lg:h-1/2 max-h-[800px] z-0 brightness-0" src="@/assets/imgs/background-athletes.png" alt="">
 
   </div>
 
