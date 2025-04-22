@@ -31,21 +31,20 @@
     <!-- about us navigation links -->
     <div class="flex flex-col gap-1">
       <h2 class="text-xl font-bold">ABOUT US</h2>
-      <p class="text-md">Mission</p>
-      <p class="text-md">School Calendar</p>
-      <p class="text-md">Faculty</p>
-      <p class="text-md">History</p>
-      <p class="text-md">School Profile</p>
-      <p class="text-md">Principal Message</p>
+      <NuxtLink to="/">Home</NuxtLink>
+      <NuxtLink to="/calendar">School Calendar</NuxtLink>
+      <NuxtLink to="/staff">Faculty</NuxtLink>
+      <NuxtLink to="/history">History</NuxtLink>
+      <NuxtLink to="/erlenwein">Principal Message</NuxtLink>
     </div>
     <!-- academics navigation links -->
     <div class="flex flex-col gap-1">
       <h2 class="text-xl font-bold">ACADEMICS</h2>
       <p class="text-md">Course Catalog</p>
-      <p class="text-md">AP Courses</p>
-      <p class="text-md">Bell Schedule</p>
-      <p class="text-md">CTE</p>
-      <p class="text-md">Summer Homework</p>
+      <NuxtLink to="/">AP Courses</NuxtLink>
+      <NuxtLink to="/schedules">Bell Schedule</NuxtLink>
+      <NuxtLink to="/cte">CTE</NuxtLink>
+      <NuxtLink to="/summer-homework">Summer Homework</NuxtLink>
       <p class="text-md">Grading Policy</p>
     </div>
     <!-- resources navigation links -->
@@ -74,7 +73,7 @@
           </a>
           <a href="https://x.com/SITech_HS?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Escreen-name%3ASITech_HS%7Ctwcon%5Es1"
             target="_blank" rel="noopener noreferrer">
-            <img class="h-10 w-10 rounded-full bg-white p-2 object-none" src="../assets/icons/x-twitter.png"
+            <img class="h-10 w-10 rounded-full bg-white p-2 object-none" src="../assets/icons/x-twitter-black.png"
               alt="Twitter" />
           </a>
           <a href="https://www.linkedin.com/school/staten-island-tech-high-school/" target="_blank"
