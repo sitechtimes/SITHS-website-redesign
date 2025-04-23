@@ -89,10 +89,10 @@ const navLinks = [
       { name: "School Calendar", path: "/calendar", directLink: false },
       { name: "School Year Information", path: "/yearly-info", directLink: false },
       { name: "Mr. Terrusa's Activity Updates", path: "/terrusa", directLink: false },
-      { name: "Communications", path: "/", directLink: false },
-      { name: "Directions", path: "/", directLink: false },
-      { name: "Special Ed/Instructional Support Services", path: "/", directLink: false },
-      { name: "School Policies", path: "/", directLink: false },
+      // { name: "Communications", path: "/", directLink: false },
+      // { name: "Directions", path: "/", directLink: false },
+      // { name: "Special Ed/Instructional Support Services", path: "/", directLink: false },
+      // { name: "School Policies", path: "/", directLink: false },
     ]
   },
   {
@@ -108,7 +108,7 @@ const navLinks = [
     category: "Clubs and Activities",
     categoryValue: "clubsActivities",
     links: [
-      { name: "Club Information", path: "/clubs", directLink: false },
+      // { name: "Club Information", path: "/clubs", directLink: false },
       { name: "Career and Technical Education", path: "/cte", directLink: false },
       { name: "Special Opportunities", path: "/opportunities", directLink: false },
       { name: "Athletics", path: "/athletics", directLink: false }

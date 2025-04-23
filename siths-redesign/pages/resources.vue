@@ -1,6 +1,6 @@
 <template>
     <div class="min-h-screen w-full px-4 md:px-10 flex flex-col">
-        <h1 class="p-6 text-center text-5xl font-semibold">Resources</h1>
+        <h1 class="p-6 text-center text-4xl font-semibold">Resources</h1>
         <div class="flex flex-row justify-center space-x-4 md:mb-6">
             <div class="flex-col md:flex-row w-full flex justify-between">
                 <div class="bg-black p-2 rounded-3xl">
