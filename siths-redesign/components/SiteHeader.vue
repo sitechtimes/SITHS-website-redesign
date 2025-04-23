@@ -128,7 +128,7 @@ const navLinks = [
     category: "Contact Us",
     categoryValue: "contactUs",
     links: [
-      { name: "Directory", path: "/", directLink: false },
+      { name: "Directory", path: "/directory", directLink: false },
     ]
   }
 ];
