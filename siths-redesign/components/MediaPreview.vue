@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col items-center justify-center md:p-8">
-        <h2 class="my-4 text-4xl font-semibold">NEWS AND ANNOUNCEMENTS</h2>
+        <h2 class="my-4 text-3xl lg:text-4xl font-semibold">NEWS AND ANNOUNCEMENTS</h2>
         <div class="flex flex-col md:flex-row md:p-12 justify-center items-center">
             <div class="md:w-1/2 m-4 flex flex-col">
                 <img src="../assets/imgs/early-bird.png" alt="The Early Bird" class="rounded-lg">

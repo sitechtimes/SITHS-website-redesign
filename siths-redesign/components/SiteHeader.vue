@@ -49,7 +49,7 @@
       </NuxtLink>
 
       <!-- search icon -->
-      <div class="z-40 w-20">
+      <div class="z-40 w-fit p-4">
         <button> <img src="/assets/icons/search.svg" alt="Search website"></button>
       </div>
     </div>

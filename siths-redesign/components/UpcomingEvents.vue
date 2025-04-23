@@ -1,6 +1,6 @@
 <template>
   <div class="mt-6 flex flex-col items-center justify-center space-y-8">
-    <h2 class="my-4 text-4xl font-semibold">UPCOMING EVENTS</h2>
+    <h2 class="my-2 text-3xl lg:text-4xl font-semibold">UPCOMING EVENTS</h2>
     <div class="flex w-full flex-col items-center justify-center lg:flex-row">
       <!-- latest 5 events -->
       <div
