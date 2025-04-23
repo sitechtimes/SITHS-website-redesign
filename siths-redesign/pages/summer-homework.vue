@@ -3,7 +3,7 @@
     <h1 class="text-2xl md:text-3xl lg:text-4xl text-center mb-4" v-html="websiteData.summerHomework[0]?.title"></h1>
     <div class="flex flex-col md:flex-row justify-center items-start px-4">
       <div class="flex items-center justify-center flex-col w-full md:w-5/6">
-        <div class="w-full md:w-3/4 lg:w-1/2">
+        <div class="w-4/5">
           <PortableText :value="websiteData.summerHomework[0]?.homePage" :components="myPortableTextComponents"/>
           <!-- links for each grade's homework -->
           <div class="my-8 space-y-4 w-1/2">
