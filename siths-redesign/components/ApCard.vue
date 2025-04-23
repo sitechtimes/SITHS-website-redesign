@@ -1,5 +1,6 @@
 <template>
-  <div class="flex flex-col items-center">
+  <div class="mx-8 flex w-2/3 rounded-md bg-white p-10 text-black">AP COMPUTER SCIENCE</div>
+  <!-- <div class="flex flex-col items-center">
     <h1 class="py-2 text-2xl font-extrabold">{{ currentCourseTitle }} Courses</h1>
     <div class="flex w-screen flex-row justify-center">
       <div class="static m-8 h-[25rem] w-[15%] rounded-md bg-white">
@@ -30,23 +31,23 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+// import { ref, computed } from 'vue'
 
-const selectedPage = ref('')
-const props = defineProps({
-  page: Array,
-  courses: Array
-})
+// const selectedPage = ref('')
+// const props = defineProps({
+//   page: Array,
+//   courses: Array
+// })
 
-const filteredCourses = computed(() => {
-  return props.courses.filter((course) => course.name === selectedPage.value)
-})
+// const filteredCourses = computed(() => {
+//   return props.courses.filter((course) => course.name === selectedPage.value)
+// })
 
-const currentCourseTitle = computed(() => {
-  return selectedPage.value || 'AP Courses'
-})
+// const currentCourseTitle = computed(() => {
+//   return selectedPage.value || 'AP Courses'
+// })
 </script>
