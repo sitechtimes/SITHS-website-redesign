@@ -22,8 +22,7 @@
                 <div class="">
                     <h3 class="text-xl py-4">For more information, check out...</h3>
                     <p class="p-2 border-t-[1.5px] border-white hover:bg-white/20 transition duration-450"><img
-                            src="../assets/icons/x-white.png" alt="Instagram Logo" class="inline h-4 px-4 ml-1">Twitter
-                        (X)</p>
+                            src="../assets/icons/x-white.png" alt="Instagram Logo" class="inline h-4 px-4 ml-1">X (Previously Twitter)</p>
                     <p class="p-2 border-t-[1.5px] border-white hover:bg-white/20 transition duration-450"><img
                             src="../assets/icons/instagram-white.png" alt="Instagram Logo"
                             class="inline h-6 px-4">Instagram</p>
