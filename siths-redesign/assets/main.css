@@ -4,24 +4,24 @@
 @tailwind utilities;
 @tailwind variants;
 
-@layer base{
-    /* all page headers */
-    h1{
-        @apply text-5xl font-kumbh font-semibold text-center p-6
-    }
-    /* subheaders (ie: staff page*/
-    h2{
-        @apply text-3xl font-bold 
-    }
-    /* component headers (ie: dropdown */
-    h3{
-        @apply text-2xl font-semibold
-    }
-    /* component subheaders (ie: staff profile) */
-    h4{
-        @apply text-xl font-semibold
-    }
-    p{
-        @apply text-lg
-    }
+@layer base {
+  h1 {
+    @apply text-5xl font-kumbh font-semibold text-center p-6;
+  }
+
+  h2 {
+    @apply text-3xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl font-semibold;
+  }
+
+  p {
+    @apply text-lg;
+  }
 }
