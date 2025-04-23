@@ -21,7 +21,7 @@
                 <a v-else :href="link.path" target="_blank"
                   class="text-md font-normal hover:text-gold transition-all duration-300 flex flex-row items-center">
                   {{ link.name }}
-                  <img class="inline h-3.5 w-3.5 ml-2" src="../assets/icons/xlink.svg" alt="Navigation leads to external site">
+                  <img class="inline h-5 w-5 ml-2 invert" src="../assets/icons/xlink.png" alt="Navigation leads to external site">
                 </a>
               </li>
             </ul>

@@ -10,7 +10,7 @@
             <a v-for="(link, grade) in gradeLinks" :key="grade" :href="link" target="_blank" class="block">
               <div class="flex justify-between items-center text-xl font-semibold border-b-2 border-gold">
                 {{ grade }} Grade Homework
-                <img class="inline h-5 w-5 mr-1" src="../assets/icons/xlink.svg" alt="external link">
+                <img class="inline h-6 mr-1 invert" src="../assets/icons/xlink.png" alt="external link">
               </div>
             </a>
           </div>
