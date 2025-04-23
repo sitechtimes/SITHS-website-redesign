@@ -65,16 +65,16 @@
         <h2 class="text-2xl font-bold">Follow Us</h2>
         <div class="flex flex-row flex-wrap items-center gap-2">
           <a href="https://www.facebook.com/SITechHS?ref=embed_page" target="_blank" rel="noopener noreferrer">
-            <img class="h-10 w-10 rounded-full bg-white p-2 object-none" src="../assets/icons/facebook.png"
+            <img class="h-10 w-10 rounded-full bg-white p-2 object-none" src="../assets/icons/facebook-black.png"
               alt="Facebook" />
           </a>
           <a href="https://www.instagram.com/_sammytheseagull/" target="_blank" rel="noopener noreferrer">
-            <img class="h-10 w-10 rounded-full bg-white p-2 object-none" src="../assets/icons/instagram.png"
+            <img class="h-10 w-10 rounded-full bg-white p-2 object-none" src="../assets/icons/instagram-black.png"
               alt="Instagram" />
           </a>
           <a href="https://x.com/SITech_HS?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Escreen-name%3ASITech_HS%7Ctwcon%5Es1"
             target="_blank" rel="noopener noreferrer">
-            <img class="h-10 w-10 rounded-full bg-white p-2 object-none" src="../assets/icons/x-twitter.png"
+            <img class="h-10 w-10 rounded-full bg-white p-2 object-none" src="../assets/icons/x-twitter-black.png"
               alt="Twitter" />
           </a>
           <a href="https://www.linkedin.com/school/staten-island-tech-high-school/" target="_blank"
