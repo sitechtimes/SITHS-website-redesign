@@ -11,7 +11,7 @@
                         <a href="https://www.youtube.com/playlist?list=PLXdwySAEBRBWocKBDaEE7HCw3rb3EvpeU">
                             The Early Bird - Daily News Updates
                         </a>
-                        <img src="../assets/icons/xlink.svg" alt="external link icon" class="inline h-6">
+                        <img src="../assets/icons/xlink.png" alt="external link icon" class="inline h-6 invert">
                     </h3>
                     <p> View the latest episode of the Early Bird, featuring the Staten Island Technical
                         High
