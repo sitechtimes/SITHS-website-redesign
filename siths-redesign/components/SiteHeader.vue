@@ -21,7 +21,7 @@
                 <a v-else :href="link.path" target="_blank"
                   class="text-md font-normal hover:text-gold transition-all duration-300 flex flex-row items-center">
                   {{ link.name }}
-                  <img class="inline h-3.5 w-3.5 ml-2" src="../assets/icons/xlink.svg" alt="Navigation leads to external site">
+                  <img class="inline h-3.5 w-3.5 ml-2 invert" src="../assets/icons/xlink.png" alt="Navigation leads to external site">
                 </a>
               </li>
             </ul>
@@ -89,10 +89,10 @@ const navLinks = [
       { name: "School Calendar", path: "/calendar", directLink: false },
       { name: "School Year Information", path: "/yearly-info", directLink: false },
       { name: "Mr. Terrusa's Activity Updates", path: "/terrusa", directLink: false },
-      { name: "Communications", path: "/", directLink: false },
-      { name: "Directions", path: "/", directLink: false },
-      { name: "Special Ed/Instructional Support Services", path: "/", directLink: false },
-      { name: "School Policies", path: "/", directLink: false },
+      // { name: "Communications", path: "/", directLink: false },
+      // { name: "Directions", path: "/", directLink: false },
+      // { name: "Special Ed/Instructional Support Services", path: "/", directLink: false },
+      // { name: "School Policies", path: "/", directLink: false },
     ]
   },
   {
@@ -108,7 +108,7 @@ const navLinks = [
     category: "Clubs and Activities",
     categoryValue: "clubsActivities",
     links: [
-      { name: "Club Information", path: "/clubs", directLink: false },
+      // { name: "Club Information", path: "/clubs", directLink: false },
       { name: "Career and Technical Education", path: "/cte", directLink: false },
       { name: "Special Opportunities", path: "/opportunities", directLink: false },
       { name: "Athletics", path: "/athletics", directLink: false }
