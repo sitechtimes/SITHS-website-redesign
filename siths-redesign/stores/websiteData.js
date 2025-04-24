@@ -1,23 +1,24 @@
-import { directLinks } from "~/studio/schemaTypes/directLinks";
+import { directLinks } from '~/studio/schemaTypes/directLinks'
+import { graphClient } from '~/lib/graphClient'
 
-export const useWebsiteDataStore = defineStore("websiteData", () => {
-  const fetchLoading = ref(false);
+export const useWebsiteDataStore = defineStore('websiteData', () => {
+  const fetchLoading = ref(false)
 
-  const posts = ref([]);
-  const erlenweinPosts = ref([]);
-  const terrusaPosts = ref([]);
-  const schedules = ref([]);
-  const staff = ref([]);
-  const events = ref([]);
-  const resources = ref([]);
-  const opportunities = ref([]);
-  const summerHomework = ref([]);
-  const partnerships = ref([]);
-  const directLinks = ref([]);
-  const athletics = ref([]);
+  const posts = ref([])
+  const erlenweinPosts = ref([])
+  const terrusaPosts = ref([])
+  const schedules = ref([])
+  const staff = ref([])
+  const events = ref([])
+  const resources = ref([])
+  const opportunities = ref([])
+  const summerHomework = ref([])
+  const partnerships = ref([])
+  const directLinks = ref([])
+  const athletics = ref([])
 
   async function fetchAllData() {
-    fetchLoading.value = true;
+    fetchLoading.value = true
     const query = `{
       "yearlyinfo": *[_type == "yearlyinfo"]{
         _id,
@@ -124,34 +125,39 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
         description,
         contacts,
       },
-    }`;
+    }`
 
     try {
-      const { data } = await useSanityQuery(query);
+      const { data } = await useSanityQuery(query)
 
-      directLinks.value = data.value.directLinks;
-      posts.value = data.value.yearlyinfo;
-      erlenweinPosts.value = data.value.erlenwein;
-      terrusaPosts.value = data.value.terrusa;
-      schedules.value = data.value.schedules;
-      staff.value = data.value.staff;
-      events.value = data.value.events;
-      resources.value = data.value.resources;
-      opportunities.value = data.value.opportunities;
-      summerHomework.value = data.value.summerHomework;
-      partnerships.value = data.value.partnerships;
+      directLinks.value = data.value.directLinks
+      posts.value = data.value.yearlyinfo
+      erlenweinPosts.value = data.value.erlenwein
+      terrusaPosts.value = data.value.terrusa
+      schedules.value = data.value.schedules
+      staff.value = data.value.staff
+      //events.value = data.value.events;
+      resources.value = data.value.resources
+      opportunities.value = data.value.opportunities
+      summerHomework.value = data.value.summerHomework
+      partnerships.value = data.value.partnerships
       athletics.value = data.value.athletics
 
-      fetchLoading.value = false;
+      events.value = await graphClient
+        .api('/users/calendar-bot@yourdomain.com/calendar/events') //replace with erlenweins email
+        .header('Prefer', 'outlook.timezone="Eastern Standard Time"')
+        .select('subject,body,bodyPreview,organizer,attendees,start,end,location') //check with bridget to make sure all fields are included
+        .get()
+      fetchLoading.value = false
     } catch (error) {
-      console.error("Error fetching posts:", error);
+      console.error('Error fetching posts:', error)
     }
   }
 
   onMounted(async () => {
-    await nextTick();
-    await fetchAllData();
-  });
+    await nextTick()
+    await fetchAllData()
+  })
 
   return {
     directLinks,
@@ -167,6 +173,6 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
     staff,
     summerHomework,
     terrusaPosts,
-    athletics,
-  };
-});
+    athletics
+  }
+})

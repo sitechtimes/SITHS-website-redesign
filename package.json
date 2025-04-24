@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@microsoft/microsoft-graph-client": "^3.0.7"
+  },
+  "devDependencies": {
+    "@microsoft/microsoft-graph-types": "^2.40.0"
+  }
+}

@@ -18,5 +18,9 @@ export default defineNuxtConfig({
         useCdn: true,
       }
     },
+    // Azure credentials for Microsoft Graph API
+    clientId: process.env.NUXT_CLIENT_ID,
+    tenantId: process.env.NUXT_TENANT_ID,
+    clientSecret: process.env.NUXT_CLIENT_SECRET,
   },
 });
