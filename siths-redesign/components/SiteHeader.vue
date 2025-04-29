@@ -102,6 +102,7 @@ const navLinks = [
       { name: "Principal Erlwenwein's Announcements", path: "/erlenwein", directLink: false },
       { name: "Resources", path: "/resources", directLink: false },
       { name: "Summer Homework", path: "/summer-homework", directLink: false },
+      { name: "National Honor Society", path:"/nhs", directLink: false },
     ]
   },
   {
