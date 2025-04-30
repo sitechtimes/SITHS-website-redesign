@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const apCourses = defineType({
   name: 'apCourses',
-  title: 'AP',
+  title: 'AP Courses',
   type: 'document',
   fields: [
     defineField({
@@ -11,24 +11,61 @@ export const apCourses = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'explanation',
-      title: 'Explanation',
+      name: 'courses',
+      title: 'Courses',
       type: 'array',
       of: [
         {
-          type: 'block',
-          styles: [
-            {title: 'Normal', value: 'normal'},
-            {title: 'H1', value: 'h1'},
-            {title: 'H2', value: 'h2'},
-            {title: 'H3', value: 'h3'},
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'name',
+              title: 'Course Name',
+              type: 'string',
+            }),
+
+            defineField({
+              name: 'Grades',
+              title: 'Grades Taken',
+              type: 'string',
+              type: 'array',
+              of: [
+                {
+                  type: 'string',
+                },
+              ],
+              options: {
+                list: [
+                  {title: '9th', value: 'freshman'},
+                  {title: '10th', value: 'sophomore'},
+                  {title: '11th', value: 'junior'},
+                  {title: '12th', value: 'senior'},
+                ],
+                layout: 'grid',
+              },
+            }),
+            defineField({
+              name: 'description',
+              title: 'Description Link',
+              type: 'url',
+            }),
+            defineField({
+              name: 'BasedOn',
+              title: 'Selection Basis',
+              type: 'array',
+              of: [
+                {
+                  type: 'block',
+                  marks: {},
+                },
+              ],
+            }),
           ],
-          lists: [{title: 'Numbered', value: 'number'}],
-          marks: {
-            decorators: [{title: 'Strong', value: 'strong'}],
-          },
         },
       ],
+      options: {
+        layout: 'table',
+      },
     }),
     defineField({
       name: 'subnote',
@@ -43,11 +80,6 @@ export const apCourses = defineType({
           },
         },
       ],
-    }),
-    defineField({
-      name: 'description',
-      title: 'Description Link',
-      type: 'url',
     }),
   ],
 })
