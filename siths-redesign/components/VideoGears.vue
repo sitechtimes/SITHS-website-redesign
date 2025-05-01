@@ -11,7 +11,7 @@
       >
         <div class="absolute inset-0 flex items-center justify-center">
           <img
-            :src="`${thumbnail1}`"
+            :src="thumbnail1"
             class="h-[180px] max-h-full w-[180px] rounded-full object-contain sm:h-[220px] sm:w-[220px]"
             alt="Large Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
@@ -32,8 +32,8 @@
       >
         <div class="absolute inset-0 flex items-center justify-center">
           <img
-            class="h-[140px] max-h-full rounded-full object-contain sm:h-[180px]"
-            :src="`${thumbnail2}`"
+            class="max-h-full rounded-full object-contain sm:h-[180px] lg:h-[100px]"
+            :src="thumbnail2"
             alt="Medium Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
           />
@@ -55,7 +55,7 @@
           <img
             class="max-h-full w-[100px] rounded-full sm:w-[130px]"
             :src="thumbnail3"
-            alt="Large Gear Thumbnail"
+            alt="Small Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
           />
         </div>
@@ -71,58 +71,38 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref, computed } from 'vue'
 import { useWebsiteDataStore } from '~/stores/websiteData'
 import FullVideo from './FullVideo.vue'
 
-export default {
-  components: {
-    FullVideo
-  },
-  setup() {
-    const websiteData = useWebsiteDataStore()
-    const link1 = computed(() => websiteData.videos[0]?.Llink || '')
-    const link2 = computed(() => websiteData.videos[0]?.Mlink || '')
-    const link3 = computed(() => websiteData.videos[0]?.Slink || '')
-    const thumbnail1 = computed(() => websiteData.videos[0]?.Sthumbnail || '')
-    const thumbnail2 = computed(() => websiteData.videos[0]?.Mthumbnail || '')
-    const thumbnail3 = computed(() => websiteData.videos[0]?.Lthumbnail || '')
-    const videoOpen = ref(false)
-    const selectedVideo = ref('')
+const websiteData = useWebsiteDataStore()
 
-    function closeVideo() {
-      videoOpen.value = false
-    }
+const link1 = computed(() => websiteData.videos[0]?.Llink || '')
+const link2 = computed(() => websiteData.videos[0]?.Mlink || '')
+const link3 = computed(() => websiteData.videos[0]?.Slink || '')
+const thumbnail1 = computed(() => websiteData.videos[0]?.Sthumbnail || '')
+const thumbnail2 = computed(() => websiteData.videos[0]?.Mthumbnail || '')
+const thumbnail3 = computed(() => websiteData.videos[0]?.Lthumbnail || '')
 
-    function selectItem(videoId) {
-      selectedVideo.value = videoId
-      videoOpen.value = true
-    }
+const videoOpen = ref(false)
+const selectedVideo = ref('')
 
-    const isYouTube = (videoId) => {
-      return typeof videoId === 'string' && videoId.includes('youtube.com')
-    }
+function closeVideo() {
+  videoOpen.value = false
+}
 
-    const getYouTubeId = (videoUrl) => {
-      const match = videoUrl?.match(/(?:youtube\.com\/.*v=|youtu\.be\/)([^&\n?#]+)/)
-      return match ? match[1] : ''
-    }
+function selectItem(videoId) {
+  selectedVideo.value = videoId
+  videoOpen.value = true
+}
 
-    return {
-      thumbnail1,
-      thumbnail2,
-      thumbnail3,
-      link1,
-      link2,
-      link3,
-      videoOpen,
-      selectedVideo,
-      selectItem,
-      closeVideo,
-      isYouTube,
-      getYouTubeId
-    }
-  }
+const isYouTube = (videoId) => {
+  return typeof videoId === 'string' && videoId.includes('youtube.com')
+}
+
+const getYouTubeId = (videoUrl) => {
+  const match = videoUrl?.match(/(?:youtube\.com\/.*v=|youtu\.be\/)([^&\n?#]+)/)
+  return match ? match[1] : ''
 }
 </script>

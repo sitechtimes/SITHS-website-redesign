@@ -3,7 +3,7 @@
     class="absolute left-1/2 top-1/2 h-[85vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 transform overflow-hidden bg-black"
   >
     <button
-      @click="close"
+      @click="emit('close')"
       class="absolute right-[1rem] top-[1rem] z-50 rounded-full bg-black p-4 text-white"
     >
       <img
@@ -30,30 +30,30 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    videoSource: String
-  },
-  methods: {
-    close() {
-      this.$emit('close')
-    },
-    isYouTube(url) {
-      return typeof url === 'string' && (url.includes('youtube.com') || url.includes('youtu.be'))
-    },
-    getYouTubeVideoId(url) {
-      const match = url.match(
-        /(?:https?:\/\/(?:www\.)?youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
-      )
-      return match ? match[1] : null
-    },
-    getYouTubeEmbedUrl(url) {
-      const videoId = this.getYouTubeVideoId(url)
-      return videoId
-        ? `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&playlist=${videoId}&loop=1`
-        : ''
-    }
-  }
+<script setup>
+import { defineProps, defineEmits } from 'vue'
+
+const props = defineProps({
+  videoSource: String
+})
+
+const emit = defineEmits(['close'])
+
+function isYouTube(url) {
+  return typeof url === 'string' && (url.includes('youtube.com') || url.includes('youtu.be'))
+}
+
+function getYouTubeVideoId(url) {
+  const match = url.match(
+    /(?:https?:\/\/(?:www\.)?youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+  )
+  return match ? match[1] : null
+}
+
+function getYouTubeEmbedUrl(url) {
+  const videoId = getYouTubeVideoId(url)
+  return videoId
+    ? `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&playlist=${videoId}&loop=1`
+    : ''
 }
 </script>
