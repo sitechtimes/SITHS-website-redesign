@@ -4,19 +4,19 @@
       <FullVideo :videoSource="selectedVideo" @close="closeVideo" />
     </div>
 
-    <div class="lg:h-full lg:w-1/3">
-      <div id="LGearParent" class="w-70 absolute sm:top-28 sm:w-80 md:left-8 lg:top-28">
+    <div class="lg:h-full lg:w-80">
+      <div id="LGearParent" class="w-70 absolute size-48 sm:top-28 sm:w-80 md:left-8 lg:top-28">
         <div class="absolute inset-0 flex items-center justify-center">
           <img
             :src="thumbnail1"
-            class="sm:max-w-9/10 relative rounded-full object-cover sm:h-48 sm:w-48"
+            class="relative size-32 rounded-full object-cover sm:h-48 sm:w-48"
             alt="Large Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
           />
         </div>
         <img
           id="large-gear"
-          class="relative z-10 animate-spin-slow cursor-pointer sm:w-80"
+          class="relative z-10 size-48 animate-spin-slow cursor-pointer sm:w-80"
           src="../assets/imgs/lg-gear.svg"
           alt="Large Gear"
           @click="selectItem(link1)"
@@ -25,11 +25,11 @@
 
       <div
         id="MGearParent"
-        class="absolute left-[30%] top-[15rem] mx-auto w-[190px] sm:left-[20rem] sm:top-[13rem] sm:w-[270px] md:left-[22rem] md:top-[10rem] lg:top-[20rem]"
+        class="absolute left-1/3 top-60 mx-auto w-48 sm:left-[20rem] sm:top-[13rem] sm:w-60 md:left-80 md:top-0 lg:top-80"
       >
         <div class="absolute inset-0 flex items-center justify-center">
           <img
-            class="max-h-full rounded-full object-contain sm:h-[180px] lg:h-[100px]"
+            class="h-32 w-32 rounded-full object-cover sm:h-40 sm:w-40 md:h-40 md:w-40 lg:h-40 lg:w-40"
             :src="thumbnail2"
             alt="Medium Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
@@ -37,7 +37,7 @@
         </div>
         <img
           id="med-gear"
-          class="relative z-10 w-[240px] animate-spin-slower cursor-pointer transition-transform duration-300 sm:w-[290px]"
+          class="relative z-10 w-60 animate-spin-slower cursor-pointer transition-transform duration-300 sm:w-72"
           src="../assets/imgs/med-gear.svg"
           alt="Medium Gear"
           @click="selectItem(link2)"
@@ -46,11 +46,11 @@
 
       <div
         id="SGearParent"
-        class="absolute left-[5%] top-[25rem] mx-auto w-[130px] sm:left-[22rem] sm:top-[0rem] sm:w-[200px] md:left-[37rem] md:top-[3rem] lg:left-[12rem] lg:top-[33rem]"
+        class="top-100 absolute left-[5%] mx-auto w-32 sm:left-96 sm:top-0 sm:w-52 md:left-[32rem] md:top-48 lg:left-48 lg:top-[33rem]"
       >
         <div class="absolute inset-0 flex items-center justify-center">
           <img
-            class="max-h-full w-[100px] rounded-full sm:w-[130px]"
+            class="max-h-full w-24 rounded-full sm:h-32 sm:w-32"
             :src="thumbnail3"
             alt="Small Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
@@ -58,7 +58,7 @@
         </div>
         <img
           id="small-gear"
-          class="relative z-10 w-[200px] animate-spin-med cursor-pointer"
+          class="relative z-10 w-52 animate-spin-med cursor-pointer"
           src="../assets/imgs/sml-gear.svg"
           alt="Small Gear"
           @click="selectItem(link3)"
