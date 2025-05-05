@@ -1,5 +1,5 @@
 <template>
-  <div class="flex max-w-max items-center justify-center border-white">
+  <div class="transition-(width) flex max-w-max items-center justify-center border-white">
     <div class="relative flex w-5/6 items-center justify-center">
       <input
         type="text"
