@@ -4,7 +4,7 @@
   >
     <button
       @click="emit('close')"
-      class="absolute right-[1rem] top-[1rem] z-50 rounded-full bg-black p-4 text-white"
+      class="absolute right-4 top-4 z-50 rounded-full bg-black p-4 text-white"
     >
       <img
         id="x-symbol"

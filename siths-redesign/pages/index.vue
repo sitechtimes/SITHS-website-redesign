@@ -69,7 +69,7 @@
     </div>
 
     <div
-      class="z-10 w-full pb-[33rem] sm:h-1/3 sm:w-full sm:pb-[29rem] md:h-1/3 md:w-full md:pb-[26rem] lg:h-full lg:w-1/3 lg:p-10"
+      class="z-10 w-full pb-[60vh] sm:h-1/3 sm:w-full sm:pb-[29rem] md:h-1/3 md:w-full md:pb-[26rem] lg:h-full lg:w-1/3 lg:p-10"
     >
       <div class="relative"><VideoGears /></div>
     </div>
