@@ -13,17 +13,14 @@
       </div>
 
       <!-- carousel -->
-      <div
-        class="xl:1/3 relative flex flex-col items-center justify-center py-2 md:py-8 lg:w-3/5"
-        ref="carouselElement"
-      >
+      <div class="xl:1/3 relative flex flex-col items-center justify-center py-2 md:py-8 lg:w-3/5">
         <div class="carousel flex w-full items-center justify-between">
           <!-- slide 1 -->
           <div
             id="slide1"
             class="carousel-item relative flex min-h-full w-full flex-grow items-center justify-center pb-4"
           >
-            <a href="#slide2" class="btn btn-circle text-xl lg:mx-6">❮</a>
+            <a href="#slide2" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❮</a>
             <div class="mx-2 flex h-2/3 w-2/3 flex-col space-y-4 text-center">
               <h1 class="text-4xl font-semibold text-gray">VISION</h1>
               <p class="text-xl text-gray">
@@ -35,7 +32,7 @@
                 potential and succeed in a multicultural global society.
               </p>
             </div>
-            <a href="#slide2" class="btn btn-circle text-xl lg:mx-6">❯</a>
+            <a href="#slide2" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❯</a>
           </div>
 
           <!-- slide 2 -->
@@ -43,7 +40,7 @@
             id="slide2"
             class="carousel-item relative flex min-h-full w-full flex-grow items-center justify-center pb-4"
           >
-            <a href="#slide1" class="btn btn-circle text-xl lg:mx-6">❮</a>
+            <a href="#slide1" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❮</a>
             <div class="mx-2 flex h-2/3 w-2/3 flex-col space-y-4 text-center">
               <h1 class="text-4xl font-semibold text-gray">MISSION</h1>
               <p class="text-xl text-gray">
@@ -57,7 +54,7 @@
                 Mission/Vision)
               </p>
             </div>
-            <a href="#slide1" class="btn btn-circle text-xl lg:mx-6">❯</a>
+            <a href="#slide1" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❯</a>
           </div>
         </div>
       </div>
@@ -66,12 +63,16 @@
 </template>
 
 <script setup>
-import { useTemplateRef } from 'vue'
+const preventScroll = (event) => {
+  console.log('hh')
+  event.preventDefault()
+  const button = event.currentTarget
 
-const carouselElement = useTemplateRef('carouselElement')
-
-const preventScroll = (e) => {
-  e.preventDefault()
-  const button = e.currentTarget
+  const href = button.getAttribute('href')
+  console.log(href)
+  const carouselElement = button.parentElement.parentElement.parentElement
+  const target = carouselElement.querySelector(href)
+  const left = target.offsetLeft
+  carouselElement.scrollTo({ left: left, behavior: 'smooth' })
 }
 </script>
