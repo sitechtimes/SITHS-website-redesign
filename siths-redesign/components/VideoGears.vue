@@ -6,12 +6,12 @@
     <div class="lg:w-90 lg:h-full">
       <div
         id="LGearParent"
-        class="absolute left-0 top-0 mx-auto size-52 sm:left-[20rem] sm:top-[13rem] sm:w-60 md:left-80 md:top-0 lg:top-80"
+        class="absolute left-0 top-0 mx-auto size-52 sm:left-0 sm:top-0 sm:size-60 md:left-20 md:top-40 lg:top-80"
       >
         <div class="absolute inset-0 flex items-center justify-center">
           <img
-            class="h-32 w-32 rounded-full object-cover sm:h-40 sm:w-40 md:h-40 md:w-40 lg:h-40 lg:w-40"
-            :src="thumbnail2"
+            class="h-32 w-32 rounded-full object-cover sm:h-40 sm:w-40 md:size-40 lg:size-40"
+            :src="thumbnail1"
             alt="Large Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
           />
@@ -21,12 +21,12 @@
           class="relative z-10 w-60 animate-spin-slow cursor-pointer sm:w-72"
           src="../assets/imgs/lg-gear.svg"
           alt="Large Gear"
-          @click="selectItem(link2)"
+          @click="selectItem(link1)"
         />
       </div>
       <div
         id="MGearParent"
-        class="absolute right-0 top-48 mx-auto w-40 sm:left-[20rem] sm:top-[13rem] sm:w-60 md:left-80 md:top-0 lg:top-80"
+        class="absolute right-0 top-48 mx-auto w-40 sm:left-0 sm:top-48 sm:w-60 md:right-20 md:top-0 lg:top-80"
       >
         <div class="absolute inset-0 flex items-center justify-center">
           <img
