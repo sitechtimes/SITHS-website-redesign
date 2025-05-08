@@ -72,14 +72,14 @@
 
 <script setup>
 const preventScroll = (event) => {
-  event.preventDefault()
+  event.preventDefault() //stops the carousel from working
   const button = event.currentTarget
-  const href = button.getAttribute('href')
   const carouselElement = button.parentElement.parentElement.parentElement
+  const href = button.getAttribute('href')
   const target = carouselElement.querySelector(href)
   if (target) {
-    const left = target.offsetLeft
-    carouselElement.scrollTo({ left: left, behavior: 'smooth' })
+    const left = target.offsetLeft //amount to scroll
+    carouselElement.scrollTo({ left: left, behavior: 'smooth' }) //scroll
   }
 }
 </script>
