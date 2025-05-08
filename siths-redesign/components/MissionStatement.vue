@@ -67,12 +67,15 @@ const preventScroll = (event) => {
   console.log('hh')
   event.preventDefault()
   const button = event.currentTarget
-
   const href = button.getAttribute('href')
   console.log(href)
   const carouselElement = button.parentElement.parentElement.parentElement
   const target = carouselElement.querySelector(href)
-  const left = target.offsetLeft
+  if (target) {
+    console.log("here")
+    const left = target.offsetLeft
   carouselElement.scrollTo({ left: left, behavior: 'smooth' })
+  }
+  
 }
 </script>
