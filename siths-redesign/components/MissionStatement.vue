@@ -20,7 +20,6 @@
             id="slide1"
             class="carousel-item relative flex min-h-full w-full flex-grow items-center justify-center pb-4"
           >
-            <a href="#slide2" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❮</a>
             <div class="mx-2 flex h-2/3 w-2/3 flex-col space-y-4 text-center">
               <h1 class="text-4xl font-semibold text-gray">VISION</h1>
               <p class="text-xl text-gray">
@@ -32,7 +31,12 @@
                 potential and succeed in a multicultural global society.
               </p>
             </div>
-            <a href="#slide2" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❯</a>
+            <div
+              class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+            >
+              <a href="#slide2" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❮</a>
+              <a href="#slide2" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❯</a>
+            </div>
           </div>
 
           <!-- slide 2 -->
@@ -40,7 +44,6 @@
             id="slide2"
             class="carousel-item relative flex min-h-full w-full flex-grow items-center justify-center pb-4"
           >
-            <a href="#slide1" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❮</a>
             <div class="mx-2 flex h-2/3 w-2/3 flex-col space-y-4 text-center">
               <h1 class="text-4xl font-semibold text-gray">MISSION</h1>
               <p class="text-xl text-gray">
@@ -54,7 +57,12 @@
                 Mission/Vision)
               </p>
             </div>
-            <a href="#slide1" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❯</a>
+            <div
+              class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+            >
+              <a href="#slide1" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❮</a>
+              <a href="#slide1" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❯</a>
+            </div>
           </div>
         </div>
       </div>
@@ -64,18 +72,14 @@
 
 <script setup>
 const preventScroll = (event) => {
-  console.log('hh')
   event.preventDefault()
   const button = event.currentTarget
   const href = button.getAttribute('href')
-  console.log(href)
   const carouselElement = button.parentElement.parentElement.parentElement
   const target = carouselElement.querySelector(href)
   if (target) {
-    console.log("here")
     const left = target.offsetLeft
-  carouselElement.scrollTo({ left: left, behavior: 'smooth' })
+    carouselElement.scrollTo({ left: left, behavior: 'smooth' })
   }
-  
 }
 </script>
