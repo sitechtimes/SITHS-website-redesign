@@ -6,11 +6,11 @@
     <div class="lg:w-90 lg:h-full">
       <div
         id="LGearParent"
-        class="absolute left-0 top-0 mx-auto size-52 sm:left-0 sm:top-0 sm:size-60 md:left-20 md:top-40 lg:top-80"
+        class="absolute left-0 top-0 mx-auto size-52 sm:left-0 sm:top-0 sm:size-60 md:left-20 md:top-40 lg:top-0 lg:size-80"
       >
         <div class="absolute inset-0 flex items-center justify-center">
           <img
-            class="h-32 w-32 rounded-full object-cover sm:h-40 sm:w-40 md:size-40 lg:size-40"
+            class="h-32 w-32 rounded-full object-cover sm:h-40 sm:w-40 md:size-40 lg:size-48"
             :src="thumbnail1"
             alt="Large Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
@@ -18,7 +18,7 @@
         </div>
         <img
           id="lg-gear"
-          class="relative z-10 w-60 animate-spin-slow cursor-pointer sm:w-72"
+          class="relative z-10 w-60 animate-spin-slow cursor-pointer sm:w-80"
           src="../assets/imgs/lg-gear.svg"
           alt="Large Gear"
           @click="selectItem(link1)"
@@ -26,7 +26,7 @@
       </div>
       <div
         id="MGearParent"
-        class="absolute right-0 top-48 mx-auto w-40 sm:left-0 sm:top-48 sm:w-60 md:right-20 md:top-0 lg:top-80"
+        class="absolute right-0 top-48 mx-auto w-40 sm:left-0 sm:top-48 sm:w-60 md:left-20 md:top-0 lg:left-80 lg:top-60 lg:size-60"
       >
         <div class="absolute inset-0 flex items-center justify-center">
           <img
@@ -38,7 +38,7 @@
         </div>
         <img
           id="med-gear"
-          class="relative z-10 w-60 animate-spin-slower cursor-pointer sm:w-72"
+          class="relative z-10 w-60 animate-spin-slower cursor-pointer sm:w-72 lg:w-60"
           src="../assets/imgs/med-gear.svg"
           alt="Medium Gear"
           @click="selectItem(link2)"
@@ -46,7 +46,7 @@
       </div>
       <div
         id="SGearParent"
-        class="absolute left-[5%] top-72 mx-auto w-32 sm:left-80 sm:top-0 sm:w-52 md:left-[32rem] md:top-48 lg:left-48 lg:top-[33rem]"
+        class="absolute left-[5%] top-72 mx-auto w-32 sm:left-80 sm:top-0 sm:w-52 md:left-[32rem] md:top-48 lg:left-48 lg:top-[28rem]"
       >
         <div class="absolute inset-0 flex items-center justify-center">
           <img

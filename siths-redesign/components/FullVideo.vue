@@ -4,11 +4,11 @@
   >
     <button
       @click="emit('close')"
-      class="absolute right-4 top-4 z-50 rounded-full bg-black p-4 text-white"
+      class="absolute right-4 top-4 z-50 rounded-full bg-black p-2 text-white"
     >
       <img
         id="x-symbol"
-        class="w-[35px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+        class="w-5 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
         src="../assets/imgs/x-symbol.svg"
         alt="exit symbol"
         aria-hidden="true"
