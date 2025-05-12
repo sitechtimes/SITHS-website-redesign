@@ -147,15 +147,15 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       opportunities.value = data.value.opportunities
       summerHomework.value = data.value.summerHomework
       partnerships.value = data.value.partnerships
-      ;(videos.value = data.value.video.map((v) => ({
-        Slink: v.SvideoFileUrl || v.SvideoUrl || '',
-        Mlink: v.MvideoFileUrl || v.MvideoUrl || '',
-        Llink: v.LvideoFileUrl || v.LvideoUrl || '',
-        Sthumbnail: v.SthumbnailUrl || '',
-        Mthumbnail: v.MthumbnailUrl || '',
-        Lthumbnail: v.LthumbnailUrl || ''
-      }))),
-        (fetchLoading.value = false)
+      videos.value = d.video.map((video) => {
+        const links = ['S', 'M', 'L'].reduce((acc, size) => {
+          acc[`${size}link`] = video[`${size}videoFileUrl`] || video[`${size}videoUrl`] || ''
+          acc[`${size}thumbnail`] = video[`${size}thumbnailUrl`] || ''
+          return acc
+        }, {})
+        return links
+      })
+      fetchLoading.videovalue = false
     } catch (error) {
       console.error('Error fetching posts:', error)
     }

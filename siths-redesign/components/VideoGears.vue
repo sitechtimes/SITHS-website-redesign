@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="videoOpen" class="fixed bottom-0 left-0 right-0 top-0 z-20 bg-black bg-opacity-50">
+    <div v-if="videoOpen" class="fixed inset-0 z-20 bg-black bg-opacity-50">
       <FullVideo :videoSource="selectedVideo" @close="closeVideo" />
     </div>
     <div class="lg:w-90 lg:h-full">
