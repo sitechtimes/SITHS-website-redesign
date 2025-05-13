@@ -35,14 +35,14 @@
                   class="text-md group flex flex-row items-center font-normal transition-all duration-300 hover:text-gold"
                 >
                   {{ link.name }}
-                  <div class="relative">
+                  <div>
                     <img
-                      class="absolute ml-2 inline h-5 w-5 invert duration-300 group-hover:opacity-0"
+                      class="left-0 top-0 ml-2 inline h-5 w-5 invert duration-300 group-hover:opacity-0"
                       src="../assets/icons/xlink.png"
                       alt="Navigation leads to external site"
                     />
                     <img
-                      class="absolute ml-2 inline h-5 w-5 opacity-0 invert duration-300 group-hover:opacity-100"
+                      class="ml-2 inline h-5 w-5 opacity-0 invert duration-300 group-hover:opacity-100"
                       src="../assets/icons/xlink-hover.svg"
                       alt="Navigation leads to external site"
                     />
