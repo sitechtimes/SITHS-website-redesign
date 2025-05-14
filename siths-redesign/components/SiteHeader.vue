@@ -35,14 +35,14 @@
                   class="text-md group flex flex-row items-center font-normal transition-all duration-300 hover:text-gold"
                 >
                   {{ link.name }}
-                  <div>
+                  <div class="relative flex h-5 w-5">
                     <img
-                      class="left-0 top-0 ml-2 inline h-5 w-5 invert duration-300 group-hover:opacity-0"
-                      src="../assets/icons/xlink.png"
+                      class="absolute left-0 top-0 ml-2 inline h-5 w-5 scale-90 invert duration-300 group-hover:opacity-0"
+                      src="../assets/icons/xlink.svg"
                       alt="Navigation leads to external site"
                     />
                     <img
-                      class="ml-2 inline h-5 w-5 opacity-0 invert duration-300 group-hover:opacity-100"
+                      class="absolute left-0 top-0 ml-2 inline h-5 w-5 scale-90 opacity-0 duration-300 group-hover:opacity-100"
                       src="../assets/icons/xlink-hover.svg"
                       alt="Navigation leads to external site"
                     />
@@ -56,7 +56,7 @@
     </div>
 
     <!-- menu, logo, and search -->
-    <div class="flex flex-row items-center justify-between p-4 text-white">
+    <div class="relative top-0 flex flex-row items-center justify-between p-4 text-white">
       <!-- menu icon -->
       <div
         class="z-50 flex h-5 w-8 cursor-pointer flex-col items-center justify-between"
