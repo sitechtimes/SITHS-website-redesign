@@ -56,35 +56,40 @@
     </div>
 
     <!-- menu, logo, and search -->
-    <div class="relative top-0 flex flex-row items-center justify-between p-4 text-white">
-      <!-- menu icon -->
-      <div
-        class="z-50 flex h-5 w-8 cursor-pointer flex-col items-center justify-between"
-        @click="toggleMenu"
-      >
+    <div class="h-12 overflow-visible">
+      <div class="sticky top-0 flex flex-row items-center justify-between p-4 text-white">
+        <!-- menu icon -->
         <div
-          :class="menuVisibility ? 'translate-y-2 rotate-45' : ''"
-          class="h-1 w-full bg-gold transition-all duration-500"
-        ></div>
-        <div
-          :class="menuVisibility ? 'opacity-0' : ''"
-          class="h-1 w-full bg-gold transition-all duration-500"
-        ></div>
-        <div
-          :class="menuVisibility ? '-translate-y-2 -rotate-45' : ''"
-          class="h-1 w-full bg-gold transition-all duration-500"
-        ></div>
-      </div>
+          class="z-50 flex h-5 w-8 cursor-pointer flex-col items-center justify-between"
+          @click="toggleMenu"
+        >
+          <div
+            :class="menuVisibility ? 'translate-y-2 rotate-45' : ''"
+            class="h-1 w-full bg-gold transition-all duration-500"
+          ></div>
+          <div
+            :class="menuVisibility ? 'opacity-0' : ''"
+            class="h-1 w-full bg-gold transition-all duration-500"
+          ></div>
+          <div
+            :class="menuVisibility ? '-translate-y-2 -rotate-45' : ''"
+            class="h-1 w-full bg-gold transition-all duration-500"
+          ></div>
+        </div>
 
-      <!-- logo -->
-      <NuxtLink to="/" class="flex flex-row items-center justify-center gap-2 text-3xl text-white">
-        <img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo" />
-        SITHS
-      </NuxtLink>
+        <!-- logo -->
+        <NuxtLink
+          to="/"
+          class="flex flex-row items-center justify-center gap-2 text-3xl text-white"
+        >
+          <img src="../assets/icons/animated-logo.gif" class="w-12" alt="SITHS logo" />
+          SITHS
+        </NuxtLink>
 
-      <!-- search icon -->
-      <div class="z-40 w-fit p-4">
-        <button><img src="/assets/icons/search.svg" alt="Search website" /></button>
+        <!-- search icon -->
+        <div class="z-40 w-fit p-4">
+          <button><img src="/assets/icons/search.svg" alt="Search website" /></button>
+        </div>
       </div>
     </div>
   </header>
