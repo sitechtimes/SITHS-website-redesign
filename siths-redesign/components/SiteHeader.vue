@@ -56,8 +56,8 @@
     </div>
 
     <!-- menu, logo, and search -->
-    <div class="h-12 overflow-visible">
-      <div class="sticky top-0 flex flex-row items-center justify-between p-4 text-white">
+    <div class="sticky top-0 z-40">
+      <div class="flex flex-row items-center justify-between p-4 text-white">
         <!-- menu icon -->
         <div
           class="z-50 flex h-5 w-8 cursor-pointer flex-col items-center justify-between"
