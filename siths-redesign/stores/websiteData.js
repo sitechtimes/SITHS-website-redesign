@@ -147,7 +147,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       opportunities.value = data.value.opportunities
       summerHomework.value = data.value.summerHomework
       partnerships.value = data.value.partnerships
-      videos.value = d.video.map((video) => {
+      videos.value = data.value.video.map((video) => {
         const links = ['S', 'M', 'L'].reduce((acc, size) => {
           acc[`${size}link`] = video[`${size}videoFileUrl`] || video[`${size}videoUrl`] || ''
           acc[`${size}thumbnail`] = video[`${size}thumbnailUrl`] || ''

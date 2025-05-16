@@ -11,7 +11,7 @@
         <div class="absolute inset-0 flex items-center justify-center">
           <img
             class="h-32 w-32 rounded-full object-cover sm:h-40 sm:w-40 md:size-40 lg:size-48"
-            :src="thumbnail1"
+            :src="Lthumbnail"
             alt="Large Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
           />
@@ -21,7 +21,7 @@
           class="relative z-10 w-60 animate-spin-slow cursor-pointer sm:w-80"
           src="../assets/imgs/lg-gear.svg"
           alt="Large Gear"
-          @click="selectItem(link1)"
+          @click="selectItem(Llink)"
         />
       </div>
       <div
@@ -31,7 +31,7 @@
         <div class="absolute inset-0 flex items-center justify-center">
           <img
             class="size-28 rounded-full object-cover sm:h-40 sm:w-40 md:h-40 md:w-40 lg:h-40 lg:w-40"
-            :src="thumbnail2"
+            :src="Mthumbnail"
             alt="Medium Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
           />
@@ -41,7 +41,7 @@
           class="relative z-10 w-60 animate-spin-slower cursor-pointer sm:w-72 lg:w-60"
           src="../assets/imgs/med-gear.svg"
           alt="Medium Gear"
-          @click="selectItem(link2)"
+          @click="selectItem(Mlink)"
         />
       </div>
       <div
@@ -51,7 +51,7 @@
         <div class="absolute inset-0 flex items-center justify-center">
           <img
             class="max-h-full w-24 rounded-full sm:h-32 sm:w-32"
-            :src="thumbnail3"
+            :src="Sthumbnail"
             alt="Small Gear Thumbnail"
             @error="console.error('Thumbnail failed to load')"
           />
@@ -61,7 +61,7 @@
           class="relative z-10 w-52 animate-spin-med cursor-pointer"
           src="../assets/imgs/sml-gear.svg"
           alt="Small Gear"
-          @click="selectItem(link3)"
+          @click="selectItem(Slink)"
         />
       </div>
     </div>
@@ -75,12 +75,12 @@ import FullVideo from './FullVideo.vue'
 
 const websiteData = useWebsiteDataStore()
 
-const link1 = computed(() => websiteData.videos[0]?.Llink || '')
-const link2 = computed(() => websiteData.videos[0]?.Mlink || '')
-const link3 = computed(() => websiteData.videos[0]?.Slink || '')
-const thumbnail1 = computed(() => websiteData.videos[0]?.Sthumbnail || '')
-const thumbnail2 = computed(() => websiteData.videos[0]?.Mthumbnail || '')
-const thumbnail3 = computed(() => websiteData.videos[0]?.Lthumbnail || '')
+const [Llink, Mlink, Slink] = ['Llink', 'Mlink', 'Slink'].map((key) =>
+  computed(() => websiteData.videos[0]?.[key] || '')
+)
+const [Lthumbnail, Mthumbnail, Sthumbnail] = ['Lthumbnail', 'Mthumbnail', 'Sthumbnail'].map((key) =>
+  computed(() => websiteData.videos[0]?.[key] || '')
+)
 
 const videoOpen = ref(false)
 const selectedVideo = ref('')
@@ -92,14 +92,5 @@ function closeVideo() {
 function selectItem(videoId) {
   selectedVideo.value = videoId
   videoOpen.value = true
-}
-
-const isYouTube = (videoId) => {
-  return typeof videoId === 'string' && videoId.includes('youtube.com')
-}
-
-const getYouTubeId = (videoUrl) => {
-  const match = videoUrl?.match(/(?:youtube\.com\/.*v=|youtu\.be\/)([^&\n?#]+)/)
-  return match ? match[1] : ''
 }
 </script>
