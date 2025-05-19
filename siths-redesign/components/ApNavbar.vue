@@ -1,5 +1,5 @@
 <template>
-  <div class="align-center mx-8 flex w-1/4 flex-col rounded-md bg-white p-10 text-black">
+  <!-- <div class="align-center mx-8 flex w-1/4 flex-col rounded-md bg-white p-10 text-black">
     <btn class="my-5 flex flex-row">
       <img class="mx-5" src="../assets/icons/home.svg" alt="home icon" />
       <h3>Welcome</h3>
@@ -36,6 +36,23 @@
       <img class="mx-5" src="../assets/icons/rubric.svg" alt="rubric icon" />
       <h3>Rubric</h3>
     </btn>
+  </div> -->
+  <h2 class="py-4">{{ type }}</h2>
+  <div class="grid grid-cols-3 gap-4 py-2">
+    <div
+      v-for="item in resources"
+      :key="item.name"
+      class="w-7/8 rounded-md border-[1px] border-white p-8 transition-all duration-300 hover:border-gold"
+      @click="
+        selected = true
+        selectedItem = item
+      "
+    >
+      <div>
+        <h4 class="pb-2">{{ item.name }}</h4>
+        <p class="text-sm">{{ item.note }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
