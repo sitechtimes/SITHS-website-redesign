@@ -6,10 +6,7 @@
         v-for="item in resources"
         :key="item.name"
         class="w-7/8 rounded-md border-[1px] border-white p-8 transition-all duration-300 hover:border-gold"
-        @click="
-          selected = true
-          selectedItem = item
-        "
+        @click="((selected = true), (selectedItem = item))"
       >
         <div>
           <h4 class="pb-2">{{ item.name }}</h4>

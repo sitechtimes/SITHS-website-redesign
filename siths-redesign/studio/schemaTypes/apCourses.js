@@ -6,7 +6,7 @@ export const apCourses = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'name',
+      name: 'heading',
       title: 'Heading',
       type: 'string',
     }),
@@ -19,13 +19,13 @@ export const apCourses = defineType({
           type: 'object',
           fields: [
             defineField({
-              name: 'name',
+              name: 'courseName',
               title: 'Course Name',
               type: 'string',
             }),
 
             defineField({
-              name: 'Grades',
+              name: 'grades',
               title: 'Grades Taken',
               type: 'string',
               type: 'array',
@@ -50,7 +50,7 @@ export const apCourses = defineType({
               type: 'url',
             }),
             defineField({
-              name: 'BasedOn',
+              name: 'basedOn',
               title: 'Selection Basis',
               type: 'array',
               of: [
