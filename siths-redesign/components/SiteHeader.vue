@@ -1,5 +1,5 @@
 <template>
-  <div class="max-h-full overflow-visible">
+  <div class="min-h-screen">
     <!-- menu toggle -->
     <div
       v-show="menuVisibility"
@@ -56,7 +56,7 @@
     </div>
 
     <!-- menu, logo, and search -->
-    <div class="sticky top-0 z-40">
+    <header class="sticky top-0 z-40 bg-black">
       <div class="flex flex-row items-center justify-between p-4 text-white">
         <!-- menu icon -->
         <div
@@ -91,7 +91,7 @@
           <button><img src="/assets/icons/search.svg" alt="Search website" /></button>
         </div>
       </div>
-    </div>
+    </header>
   </div>
 </template>
 
