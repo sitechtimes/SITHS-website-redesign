@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
     <SubpageMenu
-      :pages="apCourses"
+      :pages="apCourseLinks"
       :active="'Welcome'"
       class="mb-4 w-full md:mb-0 md:mr-8 md:w-auto"
     />
@@ -9,14 +9,32 @@
 </template>
 
 <script setup>
-function getApCourses(apCoursesData) {
-  if (!apCoursesData?.length) return []
+import { computed } from 'vue'
+import { useWebsiteDataStore } from '~/stores/websiteData'
 
-  return apCoursesData[0].courses.map((course) => ({
-    name: course.courseName,
-    path: course.description || '#'
-  }))
-}
+const websiteData = useWebsiteDataStore()
 
-const apCourses = getApCourses(websiteData.apCourses)
+const apCourseLinks = computed(() => {
+  const links = [
+    {
+      name: 'All AP Courses',
+      path: '/ap-courses'
+    }
+  ]
+
+  websiteData.apCourses.forEach((courseGroup) => {
+    if (courseGroup.heading) {
+      const slug = courseGroup.heading
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^a-z0-9\-]/g, '')
+
+      links.push({
+        name: courseGroup.heading,
+        path: `/ap-courses/${slug}`
+      })
+    }
+  })
+  return links
+})
 </script>
