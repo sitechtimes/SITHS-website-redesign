@@ -21,6 +21,10 @@ const subpageLinks = [
   {
     name: "Contacts",
     path: "/athletics/contacts",
+  },
+  {
+    name: "Opportunities",
+    path: "/athletics/opportunities"
   }
 ];
 

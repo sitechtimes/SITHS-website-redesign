@@ -15,6 +15,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
   const partnerships = ref([]);
   const directLinks = ref([]);
   const athletics = ref([]);
+  const nhs = ref([])
 
   async function fetchAllData() {
     fetchLoading.value = true;
@@ -49,6 +50,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
         name,
         role,
         email,
+        involvements,
         category,
         description,
         "imageUrl": image.asset->url
@@ -124,6 +126,12 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
         description,
         contacts,
       },
+      "nhs": *[_type == "nhs"]{
+        _id,
+        name,
+        description,
+        opportunities,
+      },
     }`;
 
     try {
@@ -141,6 +149,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
       summerHomework.value = data.value.summerHomework;
       partnerships.value = data.value.partnerships;
       athletics.value = data.value.athletics
+      nhs.value = data.value.nhs
 
       fetchLoading.value = false;
     } catch (error) {
@@ -168,5 +177,6 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
     summerHomework,
     terrusaPosts,
     athletics,
+    nhs
   };
 });

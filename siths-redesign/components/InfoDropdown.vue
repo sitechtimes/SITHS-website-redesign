@@ -4,7 +4,7 @@
       <input v-if="index == 0" type="checkbox" class="peer" checked @click="getImageDimensions(post.imageUrl)"/>
       <input v-else type="checkbox" class="peer" @click="getImageDimensions(post.imageUrl)"/>
       <div class="collapse-title text-xl font-medium">
-        <h3 class="font-semibold text-black">{{ post.PostTitle }}</h3>
+        <h3 class="font-semibold">{{ post.PostTitle }}</h3>
       </div>
       <div class="collapse-content flex flex-col justify-center">
         <div class="mx-1 mb-4 border-t-[1px] border-gold"/>

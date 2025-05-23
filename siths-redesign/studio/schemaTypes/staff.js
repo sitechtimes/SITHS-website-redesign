@@ -21,6 +21,18 @@ export const staff = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'involvements',
+      title: 'Other Involvements',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'National Honor Society', value: 'nhs' },
+        ],
+        layout: 'checkbox',
+      },
+    }),
+    defineField({
       name:'description',
       title:"Description (only for Erlenwein/Terrusa profiles)",
       type: 'string'

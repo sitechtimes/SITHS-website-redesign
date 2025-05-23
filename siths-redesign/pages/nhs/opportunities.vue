@@ -1,11 +1,12 @@
 <template>
   <h1 class="text-2xl md:text-3xl lg:text-4xl text-center mb-4">National Honor Society</h1>
   <div class="flex flex-col md:flex-row justify-center items-start px-4">
-    <SubpageMenu :pages="subpageLinks" :active="'About'" class="absolute top-48 left-8 mb-4 md:mb-0 md:mr-8" />
-    <div class="flex items-start justify-center flex-col items-center md:w-5/6">
-      <div class="bg-black/40 rounded-lg p-8 my-4 w-2/3 z-20" v-for="item in websiteData.nhs" :key="item._id">
-        <PortableText :value="item.description" :components="myPortableTextComponents"/>
-      </div>
+    <SubpageMenu :pages="subpageLinks" :active="'Opportunities'" class="absolute top-48 left-8 mb-4 md:mb-0 md:mr-8" />
+    <div v-for="item in websiteData.nhs" class="flex items-start justify-center flex-col items-center md:w-5/6">
+      <div v-for="opp in item.opportunities" class="bg-black/40 rounded-lg p-8 my-4 w-2/3 z-20">
+        <div @click="() => { selected = true; selectedItem = item }">{{ opp.title }}</div>
+        <PopUp v-if="selected" :item="opp" @closeEvent="closePopup"
+        class="absolute inset-0 flex items-center justify-center" />      </div>
     </div>
   </div>
 </template>
@@ -28,18 +29,28 @@ const subpageLinks = [
   }
 ];
 
+const selected = ref(false)
+const selectedItem = ref({})
+
+const closePopup = () => {
+  selected.value = false
+}
+
 const myPortableTextComponents = {
   types: {
     image: ({ value }) => h('img', { src: value.imageUrl }),
     callToAction: ({ value, isInline }, { slots }) =>
       isInline
         ? h('a', { href: value.url }, value.text)
-        : h('span', { class: 'callToAction' }, value.text),
+        : h('div', { class: 'callToAction' }, value.text),
   },
 
   list: {
+    // Ex. 1: customizing common list types
     bullet: (_, { slots }) => h('li', { class: 'list-disc list-inside' }, slots.default?.()),
     number: (_, { slots }) => h('ol', { class: 'list-decimal list-inside' }, slots.default?.()),
+
+    // Ex. 2: rendering custom lists
     checkmarks: (_, { slots }) => h('ol', { class: 'm-auto text-lg' }, slots.default?.()),
   },
 
