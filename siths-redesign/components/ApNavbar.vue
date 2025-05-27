@@ -14,27 +14,42 @@ import { useWebsiteDataStore } from '~/stores/websiteData'
 
 const websiteData = useWebsiteDataStore()
 
-const apCourseLinks = computed(() => {
-  const links = [
-    {
-      name: 'All AP Courses',
-      path: '/ap-courses'
-    }
-  ]
-
-  websiteData.apCourses.forEach((courseGroup) => {
-    if (courseGroup.heading) {
-      const slug = courseGroup.heading
-        .toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/[^a-z0-9\-]/g, '')
-
-      links.push({
-        name: courseGroup.heading,
-        path: `/ap-courses/${slug}`
-      })
-    }
-  })
-  return links
-})
+const apCourseLinks = [
+  {
+    name: 'Welcome',
+    path: '/ap-courses'
+  },
+  {
+    name: 'Selection',
+    path: '/ap-courses/selection'
+  },
+  {
+    name: 'Rubric',
+    path: '/ap-courses/rubric'
+  },
+  {
+    name: 'English',
+    path: '/ap-courses/english'
+  },
+  {
+    name: 'Russian',
+    path: '/ap-courses/russian'
+  },
+  {
+    name: 'History',
+    path: '/ap-courses/history'
+  },
+  {
+    name: 'Science',
+    path: '/ap-courses/science'
+  },
+  {
+    name: 'Math',
+    path: '/ap-courses/math'
+  },
+  {
+    name: 'Technology',
+    path: '/ap-courses/technology'
+  }
+]
 </script>
