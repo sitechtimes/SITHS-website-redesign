@@ -1,5 +1,5 @@
 <template>
-  <div class="max-h-screen">
+  <header class="max-h-screen">
     <!-- menu toggle -->
     <div
       v-show="menuVisibility"
@@ -56,7 +56,7 @@
     </div>
 
     <!-- menu, logo, and search -->
-    <header class="sticky top-0 z-40 bg-[#323232]">
+    <div class="sticky top-0 z-40 bg-[#323232]">
       <div class="flex flex-row items-center justify-between p-4 text-white">
         <!-- menu icon -->
         <div
@@ -91,8 +91,8 @@
           <button><img src="/assets/icons/search.svg" alt="Search website" /></button>
         </div>
       </div>
-    </header>
-  </div>
+    </div>
+  </header>
 </template>
 
 <script setup>
