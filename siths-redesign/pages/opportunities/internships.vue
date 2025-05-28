@@ -15,7 +15,12 @@
             the appropriate personnel.
           </p>
           <div>
-            <div v-for="internship in websiteData.internships" :key="internship"></div>
+            <div v-for="internship in websiteData.internships" :key="internship">
+              <p>h</p>
+              <h2>{{ internship.name }}</h2>
+              <p>{{ internship.description }}</p>
+              <PortableText :value="internship.instructions" />
+            </div>
           </div>
         </div>
         <SpecialOpp
@@ -28,6 +33,7 @@
 </template>
 
 <script setup>
+import { PortableText } from '@portabletext/vue'
 const websiteData = useWebsiteDataStore()
 
 const subpageLinks = [

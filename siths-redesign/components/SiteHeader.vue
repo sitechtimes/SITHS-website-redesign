@@ -56,7 +56,7 @@
     </div>
 
     <!-- menu, logo, and search -->
-    <div class="sticky top-0 z-40 bg-[#323232]">
+    <div class="fixed top-0 z-40 w-full bg-[#323232]">
       <div class="flex flex-row items-center justify-between p-4 text-white">
         <!-- menu icon -->
         <div
