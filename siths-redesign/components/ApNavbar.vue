@@ -9,11 +9,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { useWebsiteDataStore } from '~/stores/websiteData'
-
-const websiteData = useWebsiteDataStore()
-
 const apCourseLinks = [
   {
     name: 'Welcome',
