@@ -14,14 +14,6 @@
             Use the forms below to apply for various job and internship opportunities, and return to
             the appropriate personnel.
           </p>
-          <div>
-            <div v-for="internship in websiteData.internships" :key="internship">
-              <p>h</p>
-              <h2>{{ internship.name }}</h2>
-              <p>{{ internship.description }}</p>
-              <PortableText :value="internship.instructions" />
-            </div>
-          </div>
         </div>
         <SpecialOpp
           type="Internships"
