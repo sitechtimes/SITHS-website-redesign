@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import {defineField, defineType} from 'sanity'
 
 export const calendar = defineType({
   name: 'calendar',
@@ -45,5 +45,17 @@ export const calendar = defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'graphId',
+      title: `microsoft graph id (don't touch)`,
+      type: 'string',
+      hidden: true,
+    }),
+    defineField({
+      name: 'graphChangeKey',
+      title: `microsoft graph change key (don't touch)`,
+      type: 'string',
+      hidden: true,
+    }),
   ],
-});
+})
