@@ -2,13 +2,17 @@
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
     <SubpageMenu
       :pages="apCourseLinks"
-      :active="'Welcome'"
+      :active="openPage"
       class="mb-4 w-full md:mb-0 md:mr-8 md:w-auto"
     />
   </div>
 </template>
 
 <script setup>
+defineProps({
+  type: String,
+  openPage: String
+})
 const apCourseLinks = [
   {
     name: 'Welcome',
