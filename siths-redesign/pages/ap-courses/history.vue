@@ -6,11 +6,4 @@
   </div>
 </template>
 
-<script setup>
-import { onMounted } from 'vue'
-import { useWebsiteDataStore } from '~/stores/websiteData'
-
-const websiteData = useWebsiteDataStore()
-
-console.log(websiteData.apCourses)
-</script>
+<script setup></script>
