@@ -8,4 +8,6 @@
 
 <script setup>
 const websiteData = useWebsiteDataStore()
+
+console.log(websiteData.apCourses)
 </script>
