@@ -6,8 +6,13 @@ export const calendar = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'event',
+      name: 'subject',
       title: 'Event',
+      type: 'string',
+    }),
+    defineField({
+      name: 'descriptionPreview',
+      title: 'Description preview',
       type: 'string',
     }),
     defineField({
