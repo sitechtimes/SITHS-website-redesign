@@ -11,6 +11,9 @@
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy"
   },
+  "overrides": {
+    "chokidar": "^3.6.0"
+  },
   "keywords": [
     "sanity"
   ],
