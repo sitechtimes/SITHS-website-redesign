@@ -7,7 +7,6 @@ export default defineNuxtConfig({
   experimental: {
     watcher: 'chokidar-granular'
   },
-  ignore: ['**/node_modules/**'],
   runtimeConfig: {
     sanity: {
       projectId: 'cb6mdrtg',
