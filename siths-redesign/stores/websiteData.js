@@ -1,20 +1,18 @@
-import { directLinks } from '~/studio/schemaTypes/directLinks'
-
 export const useWebsiteDataStore = defineStore('websiteData', () => {
   const fetchLoading = ref(false)
 
-  const posts = ref([]);
-  const erlenweinPosts = ref([]);
-  const terrusaPosts = ref([]);
-  const schedules = ref([]);
-  const staff = ref([]);
-  const events = ref([]);
-  const resources = ref([]);
-  const opportunities = ref([]);
-  const summerHomework = ref([]);
-  const partnerships = ref([]);
-  const directLinks = ref([]);
-  const athletics = ref([]);
+  const posts = ref([])
+  const erlenweinPosts = ref([])
+  const terrusaPosts = ref([])
+  const schedules = ref([])
+  const staff = ref([])
+  const events = ref([])
+  const resources = ref([])
+  const opportunities = ref([])
+  const summerHomework = ref([])
+  const partnerships = ref([])
+  const directLinks = ref([])
+  const athletics = ref([])
   const videos = ref([])
 
   async function fetchAllData() {
@@ -58,7 +56,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         _id,
         date,
         event,
-        description,
+        description
       },
       "resources": *[_type == "resources"]{
         _id,
@@ -66,7 +64,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         resource,
         description,
         link,
-        category,
+        category
       },
       "opportunities": *[_type == "opportunities"]{
         _id,
@@ -74,7 +72,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         opptype,
         note,
         description,
-        link,
+        link
       },
       "summerHomework": *[_type == "summerHomework"]{
         _id,
@@ -83,13 +81,13 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         ninth,
         tenth,
         eleventh,
-        twelfth,
+        twelfth
       },
       "partnerships": *[_type == "partnerships"]{
         _id,
         name,
         description,
-        image,
+        image
       },
       "directLinks": *[_type == "directLinks"]{
         _id,
@@ -123,8 +121,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         _id,
         name,
         description,
-        contacts,
-      },
+        contacts
       },
       "video": *[_type == "video"]{
          _id,
@@ -138,12 +135,16 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         "LvideoFileUrl": LvideoFile.asset->url,
         "LvideoUrl": LyoutubeUrl,
         "LthumbnailUrl": Lthumbnail.asset->url
-      },  
-    }`;
+      }
     }`
 
     try {
-      const { data } = await useSanityQuery(query)
+      const { data, error } = await useSanityQuery(query)
+      if (!data.value) {
+        console.error('Sanity query returned no data:', error)
+        fetchLoading.value = false
+        return
+      }
 
       directLinks.value = data.value.directLinks
       posts.value = data.value.yearlyinfo
@@ -165,7 +166,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         }, {})
         return links
       })
-      fetchLoading.videovalue = false
+      fetchLoading.value = false
     } catch (error) {
       console.error('Error fetching posts:', error)
     }
@@ -191,8 +192,6 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     summerHomework,
     terrusaPosts,
     athletics,
-  };
-});
     videos
   }
 })

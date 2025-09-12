@@ -4,9 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/main.css'],
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sanity', '@pinia/nuxt'],
-  experimental: {
-    watcher: 'chokidar-granular'
-  },
   runtimeConfig: {
     sanity: {
       projectId: 'cb6mdrtg',
