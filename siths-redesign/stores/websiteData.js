@@ -1,6 +1,5 @@
-import sanityClient from '@sanity/client'
 export const useWebsiteDataStore = defineStore('websiteData', () => {
-  const client = sanityClient({
+  const client = createSanityClient({
     projectId: 'cb6mdrtg', // your project ID
     dataset: 'website-data', // your dataset
     useCdn: false, // false if you want fresh data
@@ -153,6 +152,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         fetchLoading.value = false
         return
       }
+      console.log(data)
       directLinks.value = data.directLinks
       posts.value = data.yearlyinfo
       erlenweinPosts.value = data.erlenwein
@@ -173,6 +173,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         }, {})
         return links
       })
+      console.log(events.value)
       fetchLoading.value = false
     } catch (error) {
       console.error('Error fetching posts:', error)
