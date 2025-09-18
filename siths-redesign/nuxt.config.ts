@@ -18,5 +18,10 @@ export default defineNuxtConfig({
         useCdn: true
       }
     }
+  },
+  vite: {
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react-compiler-runtime']
+    }
   }
 })

@@ -1,4 +1,12 @@
+import sanityClient from '@sanity/client'
 export const useWebsiteDataStore = defineStore('websiteData', () => {
+  const client = sanityClient({
+    projectId: 'cb6mdrtg', // your project ID
+    dataset: 'website-data', // your dataset
+    useCdn: false, // false if you want fresh data
+    apiVersion: '2024-09-16' // use a date string
+  })
+
   const fetchLoading = ref(false)
 
   const posts = ref([])
@@ -17,7 +25,9 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
 
   async function fetchAllData() {
     fetchLoading.value = true
-    const query = `{
+
+    try {
+      const data = await client.fetch(`{
       "yearlyinfo": *[_type == "yearlyinfo"]{
         _id,
         PostTitle,
@@ -136,29 +146,26 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         "LvideoUrl": LyoutubeUrl,
         "LthumbnailUrl": Lthumbnail.asset->url
       }
-    }`
+    }`)
 
-    try {
-      const { data, error } = await useSanityQuery(query)
-      if (!data.value) {
+      if (!data) {
         console.error('Sanity query returned no data:', error)
         fetchLoading.value = false
         return
       }
-
-      directLinks.value = data.value.directLinks
-      posts.value = data.value.yearlyinfo
-      erlenweinPosts.value = data.value.erlenwein
-      terrusaPosts.value = data.value.terrusa
-      schedules.value = data.value.schedules
-      staff.value = data.value.staff
-      events.value = data.value.events
-      resources.value = data.value.resources
-      opportunities.value = data.value.opportunities
-      summerHomework.value = data.value.summerHomework
-      partnerships.value = data.value.partnerships
-      athletics.value = data.value.athletics
-      videos.value = data.value.video.map((video) => {
+      directLinks.value = data.directLinks
+      posts.value = data.yearlyinfo
+      erlenweinPosts.value = data.erlenwein
+      terrusaPosts.value = data.terrusa
+      schedules.value = data.schedules
+      staff.value = data.staff
+      events.value = data.events
+      resources.value = data.resources
+      opportunities.value = data.opportunities
+      summerHomework.value = data.summerHomework
+      partnerships.value = data.partnerships
+      athletics.value = data.athletics
+      videos.value = data.video.map((video) => {
         const links = ['S', 'M', 'L'].reduce((acc, size) => {
           acc[`${size}link`] = video[`${size}videoFileUrl`] || video[`${size}videoUrl`] || ''
           acc[`${size}thumbnail`] = video[`${size}thumbnailUrl`] || ''
@@ -173,10 +180,9 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   }
 
   onMounted(async () => {
-    await nextTick()
     await fetchAllData()
   })
-
+  console.log(events.value)
   return {
     directLinks,
     erlenweinPosts,
