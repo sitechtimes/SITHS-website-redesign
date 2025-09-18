@@ -1,14 +1,18 @@
 <template>
-  <div v-if="show"
-    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 duration-300 transition-all ease-in-out">
-    <div class="bg-gray border-gold border border-1 rounded-lg p-6 w-[25rem] max-w-full mx-4">
-      <div class="text-center mb-4">
-        <h3 class="text-white font-semibold">{{ eventDetails.event }}</h3>
+  <div
+    v-if="show"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-all duration-300 ease-in-out"
+  >
+    <div class="border-1 mx-4 w-[25rem] max-w-full rounded-lg border border-gold bg-gray p-6">
+      <div class="mb-4 text-center">
+        <h3 class="font-semibold text-white">{{ eventDetails.subject }}</h3>
         <p class="text-sm">{{ formattedDate }}</p>
       </div>
-      <p class="overflow-y-auto max-h-[8rem] mb-4">{{ eventDetails.description }}</p>
-      <button @click="$emit('close')"
-        class="bg-gold text-black rounded-md py-2 w-full font-semibold transition duration-300 hover:brightness-75">
+      <p class="mb-4 max-h-[8rem] overflow-y-auto">{{ eventDetails.description }}</p>
+      <button
+        @click="$emit('close')"
+        class="w-full rounded-md bg-gold py-2 font-semibold text-black transition duration-300 hover:brightness-75"
+      >
         Close
       </button>
     </div>
@@ -25,14 +29,18 @@ const props = defineProps({
     type: Object,
     default: () => ({})
   }
-});
+})
 
 const formattedDate = computed(() => {
-  const date = new Date(props.eventDetails.date);
+  const startDate =
+    typeof props.eventDetails.date === 'object'
+      ? props.eventDetails.date.start
+      : props.eventDetails.date
+  const date = new Date(startDate)
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
-  });
-});
+  })
+})
 </script>

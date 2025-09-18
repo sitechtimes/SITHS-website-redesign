@@ -46,7 +46,7 @@
                     class="bg-gold text-sm text-gray"
                     :class="`mb-1 w-full cursor-pointer truncate rounded-md p-1.5 text-center font-bold transition duration-500 hover:opacity-80 hover:shadow-md`"
                   >
-                    {{ event.event }}
+                    {{ event.subject || 'Untitled Event' }}
                   </p>
                 </div>
               </div>
@@ -69,12 +69,10 @@ const show = ref(false) //control modal visibility
 const eventsOnDate = (dateInfo) => {
   const matchingEvents = events.value.filter((event) => {
     if (!event.date || !event.date.start) return false // ensure start date exists
-
-    const eventDateObj = new Date(event.date.start) // parse the start date
+    const eventDateObj = new Date(event.date.start)
     const eventYear = eventDateObj.getFullYear()
-    const eventMonth = eventDateObj.getMonth() // 0-based
+    const eventMonth = eventDateObj.getMonth()
     const eventDay = eventDateObj.getDate()
-
     // compare with current calendar cell
     return (
       eventYear === dateInfo.year &&
