@@ -14,7 +14,7 @@
 
       <!-- carousel -->
       <div class="relative flex flex-col items-center justify-center py-2 md:py-8 lg:w-3/5 xl:1/3">
-        <div class="carousel flex w-full items-center justify-between">
+        <div class="carousel snap-none flex w-full items-center justify-between">
           <!-- slide 1 -->
           <div
             id="slide1"
