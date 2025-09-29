@@ -5,7 +5,6 @@ export const news = defineType({
     title: "Alumni News",
     type: 'document',
     fields: [
-        
         defineField({
             name: 'Post Title',
             title: 'Post Title',
@@ -58,7 +57,6 @@ export const news = defineType({
             options: {
                 hotspot: true,
             }
-        }),
-        
+        }),   
     ]
 });
