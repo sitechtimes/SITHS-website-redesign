@@ -12,6 +12,7 @@ import { summerHomework } from './summerHomework'
 import { directLinks } from './directLinks'
 import { athletics } from './athletics'
 import { alumniNews } from './alumniNews'
+import { alumOpportunities } from './alumOpportunities'
 
 
 export const timeValueType = defineType({
@@ -48,4 +49,5 @@ export const schemaTypes = [
   directLinks, 
   athletics,
   alumniNews,
+  alumOpportunities
 ]
