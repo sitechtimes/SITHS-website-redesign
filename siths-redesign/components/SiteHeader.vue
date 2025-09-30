@@ -119,7 +119,7 @@ const navLinks = [
     categoryValue: "alumni",
     links: [
       { name: "Donations", path: "/", directLink: false },
-      { name: "News", path: "/", directLink: false },
+      { name: "News", path: "/alumniNews", directLink: false },
       { name: "Opportunities", path: "/", directLink: false },
       { name: "Transcript Request", path: "/", directLink: false }
     ]

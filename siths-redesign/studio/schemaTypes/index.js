@@ -49,5 +49,5 @@ export const schemaTypes = [
   directLinks, 
   athletics,
   alumniNews,
-  alumOpportunities
+  alumOpportunities,
 ]

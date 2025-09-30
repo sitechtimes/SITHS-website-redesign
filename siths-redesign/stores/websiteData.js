@@ -15,6 +15,8 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
   const partnerships = ref([]);
   const directLinks = ref([]);
   const athletics = ref([]);
+  const alumniNews = ref([]);
+  const alumOpportunities = ref([]);
 
   async function fetchAllData() {
     fetchLoading.value = true;
@@ -90,6 +92,22 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
         description,
         image,
       },
+      "alumOpportunities": *[_type == "alumOpportunities"]{
+        _id,
+        PostTitle,
+        thumbnail,
+        date,
+        description,
+        image,
+      },
+      "alumniNews": *[_type == "alumniNews"]{
+        _id,
+        post-title,
+        thumbnail,
+        date,
+        description,
+        image,
+      },
       "directLinks": *[_type == "directLinks"]{
         _id,
         title,
@@ -140,7 +158,9 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
       opportunities.value = data.value.opportunities;
       summerHomework.value = data.value.summerHomework;
       partnerships.value = data.value.partnerships;
-      athletics.value = data.value.athletics
+      athletics.value = data.value.athletics;
+      alumOpportunities.value = data.value.alumOpportunities;
+      alumniNews.value = data.value.alumniNews;
 
       fetchLoading.value = false;
     } catch (error) {
@@ -168,5 +188,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
     summerHomework,
     terrusaPosts,
     athletics,
+    alumniNews,
+    alumOpportunities,
   };
 });
