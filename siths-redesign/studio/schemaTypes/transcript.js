@@ -1,6 +1,6 @@
 
 export const summerHomework = defineType({
-  name: 'trascript',
+  name: 'transcript',
   title: 'Transcript Request',
   type: 'document',
   fields: [

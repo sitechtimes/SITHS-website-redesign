@@ -17,6 +17,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
   const athletics = ref([]);
   const alumniNews = ref([]);
   const alumOpportunities = ref([]);
+  const transcript = ref([]);
 
   async function fetchAllData() {
     fetchLoading.value = true;
@@ -91,24 +92,38 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
         name,
         description,
         image,
-      },
-      "alumOpportunities": *[_type == "alumOpportunities"]{
-        _id,
-        PostTitle,
-        thumbnail,
-        date,
-        description,
-        image,
-      },
+  },
       "alumniNews": *[_type == "alumniNews"]{
         _id,
-        post-title,
         thumbnail,
+        title,
         date,
         description,
-        image,
-      },
-      "directLinks": *[_type == "directLinks"]{
+        image,      
+  },
+        "alumniNews": *[_type == "alumniNews"]{
+        _id,
+        thumbnail,
+        title,
+        date,
+        description,
+        image,      
+  },
+        "alumOpportunities": *[_type == "alumOpportunities"]{
+        _id,
+        thumbnail,
+        title,
+        date,
+        description,
+        image,      
+  },
+    },
+        "transcript": *[_type == "transcript"]{
+        _id,
+        title,
+        instructions,     
+  },
+        "directLinks": *[_type == "directLinks"]{
         _id,
         title,
         main[]{
@@ -161,6 +176,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
       athletics.value = data.value.athletics;
       alumOpportunities.value = data.value.alumOpportunities;
       alumniNews.value = data.value.alumniNews;
+      transcript.value = data.value.transcript;
 
       fetchLoading.value = false;
     } catch (error) {
@@ -190,5 +206,6 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
     athletics,
     alumniNews,
     alumOpportunities,
+    transcript,
   };
 });

@@ -120,8 +120,8 @@ const navLinks = [
     links: [
       { name: "Donations", path: "/", directLink: false },
       { name: "News", path: "/alumniNews", directLink: false },
-      { name: "Opportunities", path: "/", directLink: false },
-      { name: "Transcript Request", path: "/", directLink: false }
+      { name: "Opportunities", path: "/alumOpportunities", directLink: false },
+      { name: "Transcript Request", path: "/transcript", directLink: false }
     ]
   },
   {

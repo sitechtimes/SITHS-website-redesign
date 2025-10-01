@@ -6,15 +6,10 @@ export const news = defineType({
     type: 'document',
     fields: [
         defineField({
-            name: 'post-title',
-            title: 'Post Title',
+            name: 'title',
+            title: 'Title',
             type: 'url',
-        }),
-        defineField({
-            name: 'page-title',
-            title: 'Page Title',
-            type: 'string',
-        }),
+        }),        
         defineField({
             name: 'thumbnail',
             title: 'Thumbnail',
