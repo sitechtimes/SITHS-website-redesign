@@ -15,9 +15,9 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
   const partnerships = ref([]);
   const directLinks = ref([]);
   const athletics = ref([]);
-  const alumniNews = ref([]);
-  const alumOpportunities = ref([]);
-  const transcript = ref([]);
+  // const alumniNews = ref([]);
+  // const alumOpportunities = ref([]);
+  // const transcript = ref([]);
 
   async function fetchAllData() {
     fetchLoading.value = true;
@@ -93,36 +93,6 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
         description,
         image,
   },
-      "alumniNews": *[_type == "alumniNews"]{
-        _id,
-        thumbnail,
-        title,
-        date,
-        description,
-        image,      
-  },
-        "alumniNews": *[_type == "alumniNews"]{
-        _id,
-        thumbnail,
-        title,
-        date,
-        description,
-        image,      
-  },
-        "alumOpportunities": *[_type == "alumOpportunities"]{
-        _id,
-        thumbnail,
-        title,
-        date,
-        description,
-        image,      
-  },
-    },
-        "transcript": *[_type == "transcript"]{
-        _id,
-        title,
-        instructions,     
-  },
         "directLinks": *[_type == "directLinks"]{
         _id,
         title,
@@ -174,9 +144,9 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
       summerHomework.value = data.value.summerHomework;
       partnerships.value = data.value.partnerships;
       athletics.value = data.value.athletics;
-      alumOpportunities.value = data.value.alumOpportunities;
-      alumniNews.value = data.value.alumniNews;
-      transcript.value = data.value.transcript;
+      // alumOpportunities.value = data.value.alumOpportunities;
+      // alumniNews.value = data.value.alumniNews;
+      // transcript.value = data.value.transcript;
 
       fetchLoading.value = false;
     } catch (error) {
@@ -204,8 +174,32 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
     summerHomework,
     terrusaPosts,
     athletics,
-    alumniNews,
-    alumOpportunities,
-    transcript,
+    // alumniNews,
+    // alumOpportunities,
+    // transcript,
   };
 });
+
+
+  //     "alumniNews": *[_type == "alumniNews"]{
+  //       _id,
+  //       thumbnail,
+  //       title,
+  //       date,
+  //       description,
+  //       image,      
+  // },
+  //       "alumOpportunities": *[_type == "alumOpportunities"]{
+  //       _id,
+  //       thumbnail,
+  //       title,
+  //       date,
+  //       description,
+  //       image,      
+  // },
+  //   },
+  //       "transcript": *[_type == "transcript"]{
+  //       _id,
+  //       title,
+  //       instructions,     
+  // },
