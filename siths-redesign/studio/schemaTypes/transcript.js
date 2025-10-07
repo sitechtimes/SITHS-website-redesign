@@ -1,5 +1,6 @@
+import {defineField, defineType} from 'sanity'
 
-export const summerHomework = defineType({
+export const transcript = defineType({
   name: 'transcript',
   title: 'Transcript Request',
   type: 'document',
@@ -13,8 +14,7 @@ export const summerHomework = defineType({
       name: 'instructions',
       title: 'Instructions',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [{type: 'block'}],
     }),
-    
   ],
-});
+})
