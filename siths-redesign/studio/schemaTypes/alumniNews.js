@@ -11,6 +11,11 @@ export const alumniNews = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'string',
+    }),
+    defineField({
       name: 'thumbnail',
       title: 'Thumbnail',
       type: 'image',
@@ -50,6 +55,20 @@ export const alumniNews = defineType({
         },
       ],
     }),
-
+    defineField({
+      name: 'photos',
+      title: 'Photos',
+      type: 'array',
+      of: [{
+        type: 'image',
+        title:'Image',
+        options: {
+        hotspot: true,
+      },
+    
+    }
+  ]
+    }),
+    
   ],
 })

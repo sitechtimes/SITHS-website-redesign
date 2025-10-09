@@ -12,6 +12,11 @@ export const alumOpportunities = defineType({
     }),
 
     defineField({
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'string',
+    }),
+    defineField({
       name: 'thumbnail',
       title: 'Thumbnail',
       type: 'image',
@@ -47,12 +52,19 @@ export const alumOpportunities = defineType({
       ],
     }),
     defineField({
-      name: 'image',
-      title: 'Image',
-      type: 'image',
-      options: {
+      name: 'photos',
+      title: 'Photos',
+      type: 'array',
+      of: [{
+        type: 'image',
+        title:'Image',
+        options: {
         hotspot: true,
       },
+    
+    }
+  ]
     }),
+    
   ],
 })
