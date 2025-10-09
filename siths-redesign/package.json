@@ -15,6 +15,7 @@
     "@pinia/nuxt": "^0.5.5",
     "@portabletext/vue": "^1.0.12",
     "@sanity/client": "^6.21.3",
+    "@sanity/vision": "^4.10.2",
     "gsap": "^3.12.5",
     "nuxt": "^3.12.3",
     "pinia": "^2.2.4",

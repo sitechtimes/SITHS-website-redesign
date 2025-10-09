@@ -8,7 +8,7 @@ export const alumOpportunities = defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'url',
+      type: 'string',
     }),
 
     defineField({
