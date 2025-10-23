@@ -23,11 +23,6 @@ export const alumniNews = defineType({
         hotspot: true,
       },
     }),
-      defineField({
-      name: 'subtitle',
-      title: 'Subtitle',
-      type: 'string',
-    }),
     defineField({
       name: 'date',
       title: 'Date',
