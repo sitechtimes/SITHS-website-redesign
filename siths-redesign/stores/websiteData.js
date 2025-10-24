@@ -95,7 +95,7 @@ const query = `{
   "alumniNews": *[_type == "alumniNews"]{
     _id,
     thumbnail,
-    title,
+    PostTitle,
     subtitle,
     date,
     description,
