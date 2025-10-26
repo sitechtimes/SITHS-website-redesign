@@ -173,8 +173,6 @@ const query = `{
       transcript.value = data.transcript;
 
       fetchLoading.value = false;
-      console.log(fetchLoading);
-      console.log(data);
     } catch (error) {
       console.error("Error fetching posts:", error);
     }

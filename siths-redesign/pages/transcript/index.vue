@@ -1,0 +1,67 @@
+<template> 
+
+  <h1 class="p-6 text-center text-4xl font-semibold"> {{ title }}</h1>
+  <div class="flex flex-col md:flex-row justify-center items-start px-4" >
+    <div class="flex items-center justify-center flex-col w-full md:w-5/6">
+    <div>
+       <span v-for="(item, index) in text_blocks" :key="index" class=" justify-center inline-block">
+        <PortableText v-if="item?.children?.length" :value="item" :components="myPortableTextComponents" />
+        <div v-else>No content found</div>
+      </span> 
+      </div>
+      
+  </div>
+  </div>
+</template>
+
+
+<script setup>
+import { PortableText } from '@portabletext/vue';
+
+const websiteData = useWebsiteDataStore()
+const text_blocks = computed(() => websiteData.transcript[0]?.instructions)
+const title = computed(() => websiteData.transcript[0]?.title);
+ 
+onMounted(() => {
+  console.log('hi')
+  console.log(text_blocks)
+
+})
+
+
+const myPortableTextComponents = {
+  types: {
+    image: ({ value }) => h('img', { src: value.imageUrl }),
+    callToAction: ({ value, isInline }, { slots }) =>
+      isInline
+        ? h('a', { href: value.url, class: 'text-white' }, value.text)
+        : h('div', { class: 'callToAction' }, value.text),
+  },
+
+  list: {
+    // Ex. 1: customizing common list types
+    bullet: (_, { slots }) => h('li', { class: 'list-disc list-inside text-white' }, slots.default?.()),
+    number: (_, { slots }) => h('ol', { class: 'list-decimal list-inside text-white' }, slots.default?.()),
+
+    // Ex. 2: rendering custom lists
+    checkmarks: (_, { slots }) => h('ol', { class: 'm-auto text-lg' }, slots.default?.()),
+  },
+
+  marks: {
+    em: (_, { slots }) => h('em', { class: 'text-red-600 font-semibold' }, slots.default?.()),
+    link: ({ value }, { slots }) => {
+      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
+      return h('a', { class: 'text-white underline font-semibold text-lg', href: value.href, rel }, slots.default?.());
+    },
+  },
+
+  
+  block: {
+    normal: (_, { slots }) => h('p', { class: 'text-white text-lg mt-2 mb-2' }, slots.default?.()),
+    h1: (_, { slots }) => h('h1', { class: 'text-2xl text-left font-bold text-white p-0 mt-6 mb-6' }, slots.default?.()),
+    h2: (_, { slots }) => h('h2', { class: 'text-lg font-semibold text-white mt-4 mb-4' }, slots.default?.()),
+  },
+};
+
+
+</script>
