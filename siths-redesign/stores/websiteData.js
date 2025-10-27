@@ -90,16 +90,17 @@ const query = `{
     _id,
     name,
     description,
-    image
+    image  }
   },
   "alumniNews": *[_type == "alumniNews"]{
     _id,
-    thumbnail,
+    "imageUrl": image.asset->url,
     PostTitle,
     subtitle,
     date,
     description,
-    photos
+    "photos": image[]{
+      "url": asset->url
   },
   "alumOpportunities": *[_type == "alumOpportunities"]{
     _id,

@@ -16,7 +16,7 @@ export const alumniNews = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'thumbnail',
+      name: 'imageUrl',
       title: 'Thumbnail',
       type: 'image',
       options: {
