@@ -4,10 +4,10 @@
   <div class="flex flex-col md:flex-row justify-center items-start px-4" >
     <div class="flex items-center justify-center flex-col w-full md:w-5/6">
     <div>
-       <span v-for="(item, index) in text_blocks" :key="index" class=" justify-center inline-block">
+       <div v-for="(item, index) in text_blocks" :key="index" class="justify-center">
         <PortableText v-if="item?.children?.length" :value="item" :components="myPortableTextComponents" />
         <div v-else>No content found</div>
-      </span> 
+      </div> 
       </div>
       
   </div>
@@ -20,6 +20,9 @@ import { PortableText } from '@portabletext/vue';
 
 const websiteData = useWebsiteDataStore()
 const text_blocks = computed(() => websiteData.transcript[0]?.instructions)
+// const nonEmptyBlocks = computed(() => { for (text_blocks)
+  
+// })
 const title = computed(() => websiteData.transcript[0]?.title);
  
 onMounted(() => {
