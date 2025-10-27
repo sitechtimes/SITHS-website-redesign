@@ -171,7 +171,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   onMounted(async () => {
     await fetchAllData()
   })
-  console.log(events.value)
+
   return {
     directLinks,
     erlenweinPosts,
