@@ -6,7 +6,7 @@ export const alumOpportunities = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'title',
+      name: 'PostTitle',
       title: 'Title',
       type: 'string',
     }),

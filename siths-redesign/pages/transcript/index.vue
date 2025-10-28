@@ -25,11 +25,11 @@ const text_blocks = computed(() => websiteData.transcript[0]?.instructions)
 // })
 const title = computed(() => websiteData.transcript[0]?.title);
  
-onMounted(() => {
-  console.log('hi')
-  console.log(text_blocks)
+// onMounted(() => {
+//   console.log('hi')
+//   console.log(text_blocks)
 
-})
+// })
 
 
 const myPortableTextComponents = {

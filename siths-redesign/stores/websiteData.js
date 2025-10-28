@@ -45,7 +45,10 @@ const query = `{
     description,
     "imageUrl": image.asset->url
   },
-  "schedules": *[_type == "schedules"],
+  "schedules": *[_type == "schedules"]{
+  name,
+  periods
+  },
   "staff": *[_type == "staff"]{
     _id,
     name,
@@ -90,11 +93,11 @@ const query = `{
     _id,
     name,
     description,
-    image
+    image 
   },
   "alumniNews": *[_type == "alumniNews"]{
     _id,
-    thumbnail,
+    "imageUrl": image.asset->url,
     PostTitle,
     subtitle,
     date,

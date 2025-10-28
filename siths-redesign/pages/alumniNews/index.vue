@@ -1,18 +1,15 @@
 <template>
   <h1 class="p-6 text-center text-4xl font-semibold">ALUMNI NEWS</h1>
-  <InfoDropdown :posts="posts" >
-    <div v-for="post in posts">
-    <slot class="collapse-title text-md font-small"> {{post.subtitle}}</slot>
-    </div>
-  </InfoDropdown>
+  <InfoDropdown :posts="posts"/>  
 </template>
 
 <script setup>
+import InfoDropdown from '~/components/InfoDropdown.vue'
 const websiteData = useWebsiteDataStore()
+const posts = websiteData.alumniNews
 
-const posts = websiteData.alumniNews //computed function to map field names to those used in component
-
-
-//postTitle, imageUrl, description, map to fields
+onMounted(()=> {
+  console.log('data', posts)
+})
 
 </script>
