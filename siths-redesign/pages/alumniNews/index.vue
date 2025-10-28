@@ -1,20 +1,15 @@
 <template>
   <h1 class="p-6 text-center text-4xl font-semibold">ALUMNI NEWS</h1>
-  <InfoDropdown :posts="posts"/>
-  <div v-for="post in posts">
-    <span class="collapse-title text-md font-small"> {{post.subtitle}}</span>
-  </div>
+  <InfoDropdown :posts="posts"/>  
 </template>
 
 <script setup>
+import InfoDropdown from '~/components/InfoDropdown.vue'
 const websiteData = useWebsiteDataStore()
 const posts = websiteData.alumniNews
 
-onMounted(() => {
-  console.log('hi')
-  console.log(posts)
+onMounted(()=> {
+  console.log('data', posts)
 })
-
-
 
 </script>
