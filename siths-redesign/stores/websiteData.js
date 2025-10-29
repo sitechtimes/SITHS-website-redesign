@@ -108,12 +108,14 @@ const query = `{
   },
   "alumOpportunities": *[_type == "alumOpportunities"]{
     _id,
-    thumbnail,
-    title,
+    "thumbnail": image.asset->url,
+    PostTitle,
     subtitle,
     date,
     description,
-    photos
+    "photos": photos[]{
+    "url": asset->url
+  }
   },
   "transcript": *[_type == "transcript"]{
     _id,

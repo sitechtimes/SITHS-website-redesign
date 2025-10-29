@@ -1,12 +1,16 @@
 <template>
-  <h1 class="p-6 text-center text-4xl font-semibold">ALUMNI NEWS</h1>
-  <InfoDropdown :posts="websiteData.alumOpportunities" >
-
-  </InfoDropdown>
+  <h1 class="p-6 text-center text-4xl font-semibold">ALUMNI OPPORTUNITIES</h1>
+<NewsPosts :posts="posts"></NewsPosts>
 </template>
 
 <script setup>
-const websiteData = useWebsiteDataStore()
+import NewsPosts from '~/components/NewsPosts.vue';
 
-//map the photos property to imageUrl
+const websiteData = useWebsiteDataStore()
+const posts = websiteData.alumOpportunities
+
+onMounted(()=> {
+  console.log('data', posts)
+})
+
 </script>
