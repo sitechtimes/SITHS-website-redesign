@@ -71,4 +71,5 @@ const getImageDimensions = (url) => {
   image.src = url
 }
 
+
 </script>

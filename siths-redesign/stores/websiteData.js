@@ -97,12 +97,14 @@ const query = `{
   },
   "alumniNews": *[_type == "alumniNews"]{
     _id,
-    "imageUrl": image.asset->url,
+    "thumbnail": image.asset->url,
     PostTitle,
     subtitle,
     date,
     description,
-    photos
+    "photos": photos[]{
+    "url": asset->url
+  }
   },
   "alumOpportunities": *[_type == "alumOpportunities"]{
     _id,
