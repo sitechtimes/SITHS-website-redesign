@@ -17,7 +17,7 @@ export const alumOpportunities = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'thumbnail',
+      name: 'image',
       title: 'Thumbnail',
       type: 'image',
       options: {

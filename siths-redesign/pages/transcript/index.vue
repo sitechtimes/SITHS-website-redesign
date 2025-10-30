@@ -20,18 +20,9 @@ import { PortableText } from '@portabletext/vue';
 
 const websiteData = useWebsiteDataStore()
 const text_blocks = computed(() => websiteData.transcript[0]?.instructions)
-// const nonEmptyBlocks = computed(() => { for (text_blocks)
-  
-// })
+
 const title = computed(() => websiteData.transcript[0]?.title);
  
-// onMounted(() => {
-//   console.log('hi')
-//   console.log(text_blocks)
-
-// })
-
-
 const myPortableTextComponents = {
   types: {
     image: ({ value }) => h('img', { src: value.imageUrl }),
