@@ -16,5 +16,17 @@ export const transcript = defineType({
       type: 'array',
       of: [{type: 'block'}],
     }),
+    defineField({
+      name: 'email_instr',
+      title: 'Email Instructions',
+      type: 'array',
+      of: [{type: 'block'}],
+    }),
+    defineField({
+      name: 'edu_ver',
+      title: 'Education Verification',
+      type: 'array',
+      of: [{type: 'block'}],
+    }),
   ],
 })

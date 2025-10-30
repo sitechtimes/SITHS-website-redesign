@@ -120,7 +120,9 @@ const query = `{
   "transcript": *[_type == "transcript"]{
     _id,
     title,
-    instructions
+    instructions,
+    email_instr,
+    edu_ver
   },
   "directLinks": *[_type == "directLinks"]{
     _id,

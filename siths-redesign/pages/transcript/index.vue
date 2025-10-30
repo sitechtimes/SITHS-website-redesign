@@ -1,14 +1,24 @@
 <template> 
 
-  <h1 class="p-6 text-center text-4xl font-semibold"> {{ title }}</h1>
+  <h1 class="p-6 text-center text-4xl font-semibold"> {{ info?.title }}</h1>
   <div class="flex flex-col md:flex-row justify-center items-start px-4" >
     <div class="flex items-center justify-center flex-col w-full md:w-5/6">
-    <div>
-       <div v-for="(item, index) in text_blocks" :key="index" class="justify-center">
+       <div v-for="(item, index) in info?.instructions" :key="index" class="justify-center">
+        <PortableText v-if="item?.children?.length" :value="item" :components="myPortableTextComponents" />
+        <div v-else>No content found</div>
+      </div> 
+      <div class="bg-gray-200 p-4 m-8">
+        <div v-for="(item, index) in info?.email_instr" :key="index" class="justify-center">
         <PortableText v-if="item?.children?.length" :value="item" :components="myPortableTextComponents" />
         <div v-else>No content found</div>
       </div> 
       </div>
+       
+       <div v-for="(item, index) in info?.edu_ver" :key="index" class="justify-center">
+        <PortableText v-if="item?.children?.length" :value="item" :components="myPortableTextComponents" />
+        <div v-else>No content found</div>
+      </div> 
+
       
   </div>
   </div>
@@ -19,9 +29,12 @@
 import { PortableText } from '@portabletext/vue';
 
 const websiteData = useWebsiteDataStore()
-const text_blocks = computed(() => websiteData.transcript[0]?.instructions)
 
-const title = computed(() => websiteData.transcript[0]?.title);
+const info = websiteData.transcript[0]
+
+onMounted(()=> {
+  console.log(websiteData.transcript[0])
+})
  
 const myPortableTextComponents = {
   types: {
