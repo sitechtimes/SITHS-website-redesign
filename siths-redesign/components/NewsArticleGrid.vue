@@ -4,8 +4,8 @@
             <a v-for="article in paginatedArticles" :key="article._id" :href="article.link" target="_blank"
                 rel="noopener noreferrer" class="group">
                 <div
-                    class="bg-white text-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row">
-                    <div class="w-full md:w-1/3 lg:w-2/5 h-64 md:h-auto flex-shrink-0 overflow-hidden">
+                    class="bg-white text-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col lg:flex-row">
+                    <div class="w-full lg:w-2/5 h-32 md:h-auto flex-shrink-0 overflow-hidden">
                         <img :src="article.imageUrl" :alt="article.headline"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
