@@ -1,20 +1,20 @@
 <template> 
 
   <h1 class="p-6 text-center text-4xl font-semibold"> {{ info?.title }}</h1>
-  <div class="flex flex-col md:flex-row justify-center items-start px-4" >
-    <div class="flex items-center justify-center flex-col w-full md:w-5/6">
-       <div v-for="(item, index) in info?.instructions" :key="index" class="justify-center">
+  <div class="flex flex-col md:flex-row justify-center items-start px-4 mb-20" >
+    <div class="flex flex-col w-full md:w-2/3 ">
+       <div v-for="(item, index) in info?.instructions" :key="index">
         <PortableText v-if="item?.children?.length" :value="item" :components="myPortableTextComponents" />
         <div v-else>No content found</div>
       </div> 
-      <div class="bg-gray-200 p-4 m-8">
-        <div v-for="(item, index) in info?.email_instr" :key="index" class="justify-center">
+      <div class="p-4 m-8 self-center bg-stone-500 text-black rounded-lg">
+        <div v-for="(item, index) in info?.email_instr" :key="index">
         <PortableText v-if="item?.children?.length" :value="item" :components="myPortableTextComponents" />
         <div v-else>No content found</div>
       </div> 
       </div>
        
-       <div v-for="(item, index) in info?.edu_ver" :key="index" class="justify-center">
+       <div v-for="(item, index) in info?.edu_ver" :key="index" >
         <PortableText v-if="item?.children?.length" :value="item" :components="myPortableTextComponents" />
         <div v-else>No content found</div>
       </div> 
@@ -47,7 +47,7 @@ const myPortableTextComponents = {
 
   list: {
     // Ex. 1: customizing common list types
-    bullet: (_, { slots }) => h('li', { class: 'list-disc list-inside text-white' }, slots.default?.()),
+    bullet: (_, { slots }) => h('li', { class: 'text-white ml-10 mb-4' }, slots.default?.()),
     number: (_, { slots }) => h('ol', { class: 'list-decimal list-inside text-white' }, slots.default?.()),
 
     // Ex. 2: rendering custom lists
@@ -65,8 +65,8 @@ const myPortableTextComponents = {
   
   block: {
     normal: (_, { slots }) => h('p', { class: 'text-white text-lg mt-2 mb-2' }, slots.default?.()),
-    h1: (_, { slots }) => h('h1', { class: 'text-2xl text-left font-bold text-white p-0 mt-6 mb-6' }, slots.default?.()),
-    h2: (_, { slots }) => h('h2', { class: 'text-lg font-semibold text-white mt-4 mb-4' }, slots.default?.()),
+    h1: (_, { slots }) => h('h1', { class: 'text-2xl text-center font-bold text-white p-0 mt-6 mb-6' }, slots.default?.()),
+    h2: (_, { slots }) => h('h2', { class: 'text-xl text-left font-semibold text-white mt-4 mb-4' }, slots.default?.()),
   },
 };
 
