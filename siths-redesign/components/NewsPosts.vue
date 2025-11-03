@@ -1,10 +1,16 @@
 <template>
   <div class="flex flex-col items-center justify-center my-8 lg:mx-16">
+    <div v-if="expanded.value === true"  @closeEvent="closePopup" class="flex flex-col bg-stone-200 text-black p-12 rounded-md w-3/4 z-20">
+      <!-- <button @click="emit('closeEvent')" class="absolute w-8 h-8 self-end cursor-pointer">
+        <img src="../assets/icons/x.png" alt="x" @click="selected = false">
+      </button>
+      <img :src="this.url" class="absolute w-full"></img> -->
+      <h1>SHOWING</h1>
+      </div>
     <div
       v-for="(post, index) in posts"
       :key="index"
-      class="my-2 collapse rounded-lg collapse-arrow bg-white border border-gold text-black w-full lg:w-3/4"
-    >
+      class="my-2 collapse rounded-lg collapse-arrow bg-white border border-gold text-black w-full lg:w-3/4">
       <!-- Input controls open/closed -->
       <input type="checkbox" class="peer" :checked="index === 0" />
 
@@ -36,7 +42,7 @@
         </div>
         <div class="flex flex-row content-start justify-center">
             <div v-for="(photo, index) in post.photos" :key="index" class="w-1/4 m-4 self-center">
-            <img :src="photo.url"></img>
+            <img :src="photo.url" @click="showImg()" class="hover:cursor-pointer"></img>
         </div>
         </div>
         
@@ -46,16 +52,29 @@
 
       </div>
     </div>
-  </div>
+    </div>
 </template>
 
 <script setup>
+
+//left off: when showimg activate,d this.url is null and image div is not showing up
+
 import { PortableText } from '@portabletext/vue';
 
 const props = defineProps({
   posts: Array
 })
 
+const expanded = ref(false)
+
+function showImg() {
+  expanded.value === true
+  console.log(this.url)
+}
+
+const closePopup = () => {
+  expanded.value === false
+}
 
 const dimensions = ref({})
 
@@ -112,5 +131,7 @@ const myPortableTextComponents = {
     h2: (_, { slots }) => h('h2', { class: 'text-lg font-semibold text-black mt-4' }, slots.default?.()),
   },
 };
+
+
 
 </script>
