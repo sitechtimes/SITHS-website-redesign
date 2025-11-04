@@ -1,10 +1,10 @@
 <template>
   <div class="flex flex-col items-center justify-center my-8 lg:mx-16">
-    <div v-if="expanded.value === true"  @closeEvent="closePopup" class="flex flex-col bg-stone-200 text-black p-12 rounded-md w-3/4 z-20">
+    <div v-if="expanded.value === true" @expand="handleExpand(photo)"  @closeEvent="closePopup" class=" absolute flex flex-col bg-stone-200 text-black p-12 rounded-md w-3/4 z-20">
       <!-- <button @click="emit('closeEvent')" class="absolute w-8 h-8 self-end cursor-pointer">
         <img src="../assets/icons/x.png" alt="x" @click="selected = false">
       </button>
-      <img :src="this.url" class="absolute w-full"></img> -->
+      <img :src="photo.url" class="absolute w-full"></img> -->
       <h1>SHOWING</h1>
       </div>
     <div
@@ -42,7 +42,7 @@
         </div>
         <div class="flex flex-row content-start justify-center">
             <div v-for="(photo, index) in post.photos" :key="index" class="w-1/4 m-4 self-center">
-            <img :src="photo.url" @click="showImg()" class="hover:cursor-pointer"></img>
+            <img :src="photo.url" @click="expandImage()" class="hover:cursor-pointer"></img>
         </div>
         </div>
         
@@ -67,9 +67,16 @@ const props = defineProps({
 
 const expanded = ref(false)
 
-function showImg() {
-  expanded.value === true
-  console.log(this.url)
+defineEmits(['expand'])
+
+function expandImage() {
+  emit('expand', photo)
+}
+
+function handleExpand(photo) {
+  expanded.value === true;
+  const expandURL = photo.url
+  console.log('Success: ', expandURL)
 }
 
 const closePopup = () => {
