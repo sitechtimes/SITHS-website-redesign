@@ -1,12 +1,17 @@
 <template>
-  <div class="flex flex-col items-center justify-center my-8 lg:mx-16">
-    <div v-if="expanded.value === true" @expand="handleExpand(photo)"  @closeEvent="closePopup" class=" absolute flex flex-col bg-stone-200 text-black p-12 rounded-md w-3/4 z-20">
-      <!-- <button @click="emit('closeEvent')" class="absolute w-8 h-8 self-end cursor-pointer">
-        <img src="../assets/icons/x.png" alt="x" @click="selected = false">
+  
+    <!-- Image -->
+    <div v-if="expanded" class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center
+ z-50">
+    <div class="relative bg-stone-200 text-black p-6 rounded-md max-w-3xl w-auto max-h-3/4">
+      <button @click="closeImage()" class="absolute w-8 p-2 h-8 right-4 cursor-pointer rounded hover:bg-stone-500">
+        <img src="../assets/icons/x.png" alt="x" >
       </button>
-      <img :src="photo.url" class="absolute w-full"></img> -->
-      <h1>SHOWING</h1>
+      <img :src="selectedPhoto" class="justify-self-center w-auto object-scale-down h-screen rounded-lg shadow-lg transition" ></img>
       </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-center my-8 lg:mx-16">
     <div
       v-for="(post, index) in posts"
       :key="index"
@@ -42,7 +47,7 @@
         </div>
         <div class="flex flex-row content-start justify-center">
             <div v-for="(photo, index) in post.photos" :key="index" class="w-1/4 m-4 self-center">
-            <img :src="photo.url" @click="expandImage()" class="hover:cursor-pointer"></img>
+            <img :src="photo.url"  @click="expandImage(photo)" class="hover:cursor-pointer"></img>
         </div>
         </div>
         
@@ -56,9 +61,6 @@
 </template>
 
 <script setup>
-
-//left off: when showimg activate,d this.url is null and image div is not showing up
-
 import { PortableText } from '@portabletext/vue';
 
 const props = defineProps({
@@ -66,22 +68,27 @@ const props = defineProps({
 })
 
 const expanded = ref(false)
+const selectedPhoto = ref('')
 
-defineEmits(['expand'])
+onMounted(() => {
+  expanded.value = false
+  selectedPhoto.value = null
+})
 
-function expandImage() {
-  emit('expand', photo)
+
+//photo clicked = function
+
+function expandImage(photo) {
+  selectedPhoto.value = photo.url
+  expanded.value = true
+  console.log(selectedPhoto, expanded)
 }
 
-function handleExpand(photo) {
-  expanded.value === true;
-  const expandURL = photo.url
-  console.log('Success: ', expandURL)
+function closeImage() {
+  selectedPhoto.value = null
+  expanded.value = false
 }
 
-const closePopup = () => {
-  expanded.value === false
-}
 
 const dimensions = ref({})
 
