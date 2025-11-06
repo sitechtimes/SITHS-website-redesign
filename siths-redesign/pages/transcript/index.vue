@@ -16,10 +16,8 @@
        
        <div v-for="(item, index) in info?.edu_ver" :key="index" >
         <PortableText v-if="item?.children?.length" :value="item" :components="myPortableTextComponents" />
-        <div v-else>No content found</div>
+        <p v-else>No content found</p>
       </div> 
-
-      
   </div>
   </div>
 </template>
@@ -31,10 +29,6 @@ import { PortableText } from '@portabletext/vue';
 const websiteData = useWebsiteDataStore()
 
 const info = websiteData.transcript[0]
-
-onMounted(()=> {
-  console.log(websiteData.transcript[0])
-})
  
 const myPortableTextComponents = {
   types: {
@@ -70,5 +64,7 @@ const myPortableTextComponents = {
   },
 };
 
-
+onMounted(()=> {
+  console.log(websiteData.transcript[0])
+})
 </script>
