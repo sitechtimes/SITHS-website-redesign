@@ -4,8 +4,8 @@
             <a v-for="article in paginatedArticles" :key="article._id" :href="article.link" target="_blank"
                 rel="noopener noreferrer" class="group">
                 <div
-                    class="bg-white text-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col lg:flex-row">
-                    <div class="w-full lg:w-2/5 h-32 md:h-auto flex-shrink-0 overflow-hidden">
+                    class="bg-white text-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/3 lg:w-2/5 h-64 md:h-auto flex-shrink-0 overflow-hidden">
                         <img :src="article.imageUrl" :alt="article.headline"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                     </div>
@@ -30,12 +30,10 @@
             <button @click="previousPage" :disabled="currentPage === 1" class="btn">
                 ← Previous
             </button>
-            <div class="join">
-                <button v-for="page in totalPages" :key="page" @click="goToPage(page)"
-                    :class="{ 'btn-active': currentPage === page }" class="join-item btn">
-                    {{ page }}
-                </button>
-            </div>
+            <button v-for="page in totalPages" :key="page" @click="goToPage(page)"
+                :class="{ 'btn-active': currentPage === page }" class="join-item btn">
+                {{ page }}
+            </button>
             <button @click="nextPage" :disabled="currentPage === totalPages" class="btn">
                 Next →
             </button>
@@ -49,33 +47,43 @@ const props = defineProps({
         type: Array,
         default: () => []
     },
+    articlesPerPage: {
+        type: Number,
+        default: 5
+    }
 })
 
 const currentPage = ref(1)
-const articlesPerPage = 5
 
 const totalPages = computed(() => {
-    return Math.ceil(props.articles.length / articlesPerPage)
+    return Math.ceil(props.articles.length / props.articlesPerPage)
 })
 const paginatedArticles = computed(() => {
-    const start = (currentPage.value - 1) * articlesPerPage
-    const end = start + articlesPerPage
+    const start = (currentPage.value - 1) * props.articlesPerPage
+    const end = start + props.articlesPerPage
     return props.articles.slice(start, end)
 })
-const nextPage = () => {
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+function nextPage() {
     if (currentPage.value < totalPages.value) {
         currentPage.value++
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+        scrollToTop()
     }
 }
-const previousPage = () => {
+
+function previousPage() {
     if (currentPage.value > 1) {
         currentPage.value--
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+        scrollToTop()
     }
 }
-const goToPage = (page) => {
+
+function goToPage(page) {
     currentPage.value = page
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    scrollToTop()
 }
 </script>

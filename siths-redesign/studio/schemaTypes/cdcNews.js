@@ -1,5 +1,3 @@
-import {defineField, defineType} from 'sanity'
-
 export const cdcNews = defineType({
   name: 'cdcNews',
   title: 'CDC in the News',
@@ -9,11 +7,13 @@ export const cdcNews = defineType({
       name: 'headline',
       title: 'Article headline',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'link',
@@ -27,6 +27,7 @@ export const cdcNews = defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     }),
   ],
 })
