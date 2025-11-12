@@ -1,5 +1,3 @@
-import { client } from "~/client";
-
 export const useWebsiteDataStore = defineStore("websiteData", () => {
   const fetchLoading = ref(false);
   const posts = ref([]);
@@ -162,8 +160,8 @@ const query = `{
 
 
     try {
-
-      const data = await client.fetch(query);
+      const { data } = useSanityQuery(query);
+      console.log(data)
 
       directLinks.value = data.directLinks;
       posts.value = data.yearlyinfo;
