@@ -8,5 +8,9 @@ import NewsPosts from '~/components/NewsPosts.vue'
 const websiteData = useWebsiteDataStore()
 const posts = websiteData.alumniNews
 
+onMounted(() => {
+  console.log(websiteData)
+
+})
 
 </script>
