@@ -19,22 +19,28 @@
                             </h3>
                             <p class="text-gray-700 text-base leading-relaxed">{{ article.description }}</p>
                         </div>
-                        <div class="mt-4 text-gold font-semibold text-sm group-hover:underline">
+                        <div v-if="article.link" class="mt-4 text-gold font-semibold text-sm group-hover:underline">
                             Read More →
                         </div>
                     </div>
                 </div>
             </a>
         </div>
-        <div v-if="totalPages > 1" class="flex justify-center items-center gap-4 mt-8">
-            <button @click="previousPage" :disabled="currentPage === 1" class="btn">
+        <div v-if="totalPages > 1" class="flex justify-center items-center gap-4 mt-8 w-full">
+            <button @click="previousPage" :disabled="currentPage === 1" 
+                :class="{ 'opacity-50 cursor-not-allowed': currentPage === 1 }" 
+                class="btn">
                 ← Previous
             </button>
-            <button v-for="page in totalPages" :key="page" @click="goToPage(page)"
-                :class="{ 'btn-active': currentPage === page }" class="join-item btn">
-                {{ page }}
-            </button>
-            <button @click="nextPage" :disabled="currentPage === totalPages" class="btn">
+            <div class="flex gap-2">
+                <button v-for="page in totalPages" :key="page" @click="goToPage(page)"
+                    :class="{ 'btn-active': currentPage === page }" class="join-item btn">
+                    {{ page }}
+                </button>
+            </div>
+            <button @click="nextPage" :disabled="currentPage === totalPages" 
+                :class="{ 'opacity-50 cursor-not-allowed': currentPage === totalPages }" 
+                class="btn">
                 Next →
             </button>
         </div>
