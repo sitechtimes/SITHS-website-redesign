@@ -161,7 +161,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
     }`;
 
     try {
-      const { data } = await useSanityQuery(query);
+      const { data } = useSanityQuery(query);
 
       directLinks.value = data.value.directLinks;
       posts.value = data.value.yearlyinfo;
@@ -180,6 +180,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
       transcript.value = data.value.transcript;
 
       fetchLoading.value = false;
+      console.log(data)
     } catch (error) {
       console.error("Error fetching posts:", error);
     }

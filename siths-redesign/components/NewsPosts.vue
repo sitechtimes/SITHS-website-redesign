@@ -1,95 +1,61 @@
 <template>
-<<<<<<< Updated upstream
-  <div
-    v-if="selectedPhoto.value"
-    class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 bg-stone-200 text-black p-6 rounded-md max-w-3xl max-h-3/4"
+<div
+  v-if="selectedPhoto.value"
+  class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-6 rounded-md max-w-3xl max-h-3/4"
+>
+  <button
+    @click="selectedPhoto.value = null"
+    class="absolute w-8 p-2 h-8 right-4 cursor-pointer rounded hover:bg-stone-500"
   >
-    <button
-      @click="selectedPhoto.value = null"
-      class="absolute w-8 p-2 h-8 right-4 cursor-pointer rounded hover:bg-stone-500"
+    <img src="../assets/icons/x.png" alt="x" />
+  </button>
+
+  <img
+    :src="selectedPhoto.value"
+    class="w-full object-scale-down h-screen rounded-lg shadow-lg transition"
+  />
+</div>
+
+<div class="my-8 lg:mx-16">
+  <div
+    v-for="(post, index) in posts"
+    :key="index"
+    class="my-2 collapse rounded-lg collapse-arrow bg-white border border-gold text-black w-full lg:w-3/4 mx-auto"
+  >
+    <input type="checkbox" class="peer" :checked="index === 0" />
+
+    <div v-if="post.thumbnail" class="collapse-title flex items-center gap-4">
+      <img
+        :src="post.thumbnail"
+        alt="post image"
+        class="w-full h-24 max-w-80 object-cover rounded-md"
+      />
+    </div>
+
+    <h1 class="font-semibold text-black text-lg">{{ post.PostTitle }}</h1>
+
+    <h2
+      v-if="post.subtitle"
+      class="font-medium mt-1 text-black text-base"
     >
-      <img src="../assets/icons/x.png" alt="x" />
-    </button>
+      {{ post.subtitle }}
+    </h2>
 
-    <img
-      :src="selectedPhoto"
-      class="justify-self-center w-full object-scale-down h-screen rounded-lg shadow-lg transition"
-    />
-=======
-  <div v-if="selectedPhoto.value != null" class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 bg-stone-200 text-black p-6 rounded-md max-w-3xl max-h-3/4">
-      <button @click="selectedPhoto.value = null" class="absolute w-8 p-2 h-8 right-4 cursor-pointer rounded hover:bg-stone-500">
-        <img src="../assets/icons/x.png" alt="x" >
-      </button>
-      <img :src="selectedPhoto" class="justify-self-center w-full object-scale-down h-screen rounded-lg shadow-lg transition"></img>
->>>>>>> Stashed changes
-  </div>
+    <div class="collapse-content flex flex-col justify-center">
+      <div class="mx-1 mb-4 border-t border-gold"></div>
 
-  <div class="flex flex-col items-center justify-center my-8 lg:mx-16">
-    <div
-      v-for="(post, index) in posts"
-      :key="index"
-      class="my-2 collapse rounded-lg collapse-arrow bg-white border border-gold text-black w-full lg:w-3/4"
-    >
-      <input type="checkbox" class="peer" :checked="index === 0" />
+      <PortableText :value="post.description" :components="myPortableTextComponents" />
 
-      <div v-if="post.thumbnail" class="collapse-title flex flex-shrink-0 items-center gap-4">
-<<<<<<< Updated upstream
-        <img
-          :src="post.thumbnail"
-          alt="post image"
-          class="w-full h-24 max-w-80 object-cover rounded-md"
-        />
-      </div>
-
-      <div class="flex flex-col justify-center text-left">
-        <h3 class="font-semibold text-black text-lg">{{ post.PostTitle }}</h3>
-
-        <h4
-          v-if="post.subtitle"
-          class="font-medium mt-1 text-black text-base"
-        >
-          {{ post.subtitle }}
-        </h4>
-=======
-          <img
-            :src="post.thumbnail"
-            alt="post image"
-            class="h-24 max-w-80 object-cover rounded-md"
-          />
-      </div>
-
-      <div class="flex flex-col justify-center text-left">
-        <h1 class="font-semibold text-black text-lg">
-            {{ post.PostTitle }}
-        </h1>
-        <p v-if="post.subtitle" class="font-medium mt-1 text-black" >
-            {{ post.subtitle }}
-        </p>
-      </div>
->>>>>>> Stashed changes
-      </div>
-
-      <div class="collapse-content flex flex-col justify-center">
-        <div class="mx-1 mb-4 border-t border-gold"></div>
-<<<<<<< Updated upstream
-
-        <PortableText :value="post.description" :components="myPortableTextComponents" />
-
-        <div
-          v-for="(photo, index) in post.photos"
-          :key="index"
-          class="flex content-start justify-center w-1/4 m-4 self-center hover:cursor-pointer"
-        >
-          <img :src="photo.url" @click="selectedPhoto.value = photo.url" />
-=======
-          <PortableText :value="post.description" :components="myPortableTextComponents"/>
-          <div class="flex content-start justify-center w-1/4 m-4 self-center hover:cursor-pointer  " v-for="(photo, index) in post.photos" :key="index">
-            <img :src="photo.url"  @click="selectedPhoto.value = photo.url"></img>
->>>>>>> Stashed changes
-        </div>
-      </div>
+      <img
+        v-for="(photo, index) in post.photos"
+        :key="index"
+        :src="photo.url"
+        class="w-1/4 m-4 self-center hover:cursor-pointer"
+        @click="selectedPhoto.value = photo.url"
+      />
     </div>
   </div>
+</div>
 </template>
 
 <script setup>

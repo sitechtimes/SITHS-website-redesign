@@ -25,6 +25,7 @@ export default defineNuxtConfig({
         projectId: 'cb6mdrtg',
         dataset: "website-data",
         useCdn: true,
+        apiVersion: "2024-09-16",
   // @ts-ignore
         visualEditing:false,
       }
