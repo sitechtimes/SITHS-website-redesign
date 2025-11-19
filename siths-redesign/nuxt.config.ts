@@ -4,15 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/main.css'],
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sanity', "@pinia/nuxt"],
-  vite: {
-    optimizeDeps: {
-      include:[
-        'react',
-        'react-dom',
-        'react-compiler-runtime'
-      ]
-    }
-  },
+
   runtimeConfig: {
     sanity: {
       projectId: "cb6mdrtg",
@@ -24,11 +16,11 @@ export default defineNuxtConfig({
       sanity: {
         projectId: 'cb6mdrtg',
         dataset: "website-data",
+        apiVersion: "2024-09-16",
         useCdn: true,
-  // @ts-ignore
-        visualEditing:false,
+        // @ts-ignore
+        visualEditing: false,
       }
     },
-
   },
 });
