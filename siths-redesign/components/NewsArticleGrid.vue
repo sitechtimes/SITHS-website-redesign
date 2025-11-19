@@ -27,9 +27,10 @@
             </a>
         </div>
         <div v-if="totalPages > 1" class="flex justify-center items-center gap-4 mt-8 w-full">
-            <button @click="previousPage" :disabled="currentPage === 1" 
-                :class="{ 'opacity-50 cursor-not-allowed': currentPage === 1 }" 
-                class="btn">
+            <button 
+                @click="currentPage > 1 ? previousPage() : null" 
+                :class="currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'" 
+                class="btn inline-flex">
                 ← Previous
             </button>
             <div class="flex gap-2">
@@ -38,9 +39,10 @@
                     {{ page }}
                 </button>
             </div>
-            <button @click="nextPage" :disabled="currentPage === totalPages" 
-                :class="{ 'opacity-50 cursor-not-allowed': currentPage === totalPages }" 
-                class="btn">
+            <button 
+                @click="currentPage < totalPages ? nextPage() : null" 
+                :class="currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'" 
+                class="btn inline-flex">
                 Next →
             </button>
         </div>
