@@ -16,7 +16,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
   const alumniNews = ref([]);
   const alumOpportunities = ref([]);
   const transcript = ref([]);
-
+  const cdcNews = ref([]);
 
   async function fetchAllData() {
     fetchLoading.value = true;
@@ -156,8 +156,15 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
         _id,
         name,
         description,
-        contacts
-      }
+        contacts,
+      },
+      "cdcNews": *[_type == "cdcNews"]{
+        _id,
+        headline,
+        description,
+        link,
+        "imageUrl": image.asset->url
+      },
     }`;
 
     try {
@@ -178,6 +185,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
       alumOpportunities.value = data.value.alumOpportunities;
       alumniNews.value = data.value.alumniNews;
       transcript.value = data.value.transcript;
+      cdcNews.value = data.value.cdcNews
 
       fetchLoading.value = false;
       console.log(data)
@@ -209,6 +217,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
     alumniNews,
     alumOpportunities,
     transcript,
+    cdcNews,
   };
 });  
 
