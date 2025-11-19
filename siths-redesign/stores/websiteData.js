@@ -15,6 +15,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
   const partnerships = ref([]);
   const directLinks = ref([]);
   const athletics = ref([]);
+  const cdcNews = ref([]);
 
   async function fetchAllData() {
     fetchLoading.value = true;
@@ -124,6 +125,13 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
         description,
         contacts,
       },
+      "cdcNews": *[_type == "cdcNews"]{
+        _id,
+        headline,
+        description,
+        link,
+        "imageUrl": image.asset->url
+      },
     }`;
 
     try {
@@ -141,6 +149,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
       summerHomework.value = data.value.summerHomework;
       partnerships.value = data.value.partnerships;
       athletics.value = data.value.athletics
+      cdcNews.value = data.value.cdcNews
 
       fetchLoading.value = false;
     } catch (error) {
@@ -168,5 +177,6 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
     summerHomework,
     terrusaPosts,
     athletics,
+    cdcNews,
   };
 });
