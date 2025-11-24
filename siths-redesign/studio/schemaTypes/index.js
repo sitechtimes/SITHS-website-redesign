@@ -12,6 +12,7 @@ import { summerHomework } from './summerHomework'
 import { directLinks } from './directLinks'
 import { athletics } from './athletics'
 import { cdcNews } from './cdcNews'
+import { makerspace } from './makerspace'
 
 
 export const timeValueType = defineType({
@@ -47,5 +48,6 @@ export const schemaTypes = [
   partnerships, 
   directLinks, 
   athletics,
-  cdcNews
+  cdcNews,
+  makerspace
 ]
