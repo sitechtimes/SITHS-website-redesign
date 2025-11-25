@@ -168,8 +168,20 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
     }`;
 
     try {
-      const { data } = useSanityQuery(query);
+      const { data, error } = useSanityQuery(query);
 
+      // Watch for when data updates
+      watch(data, (newVal) => {
+        console.log("Sanity data updated:", newVal);
+      });
+
+      watch(error, (err) => {
+        if (err) console.error("Sanity error:", err);
+      });
+
+      // Assign to your refs when data arrives
+      watch(data, (newVal) => {
+        if (!newVal) return;
       directLinks.value = data.value.directLinks;
       posts.value = data.value.yearlyinfo;
       erlenweinPosts.value = data.value.erlenwein;
@@ -186,12 +198,11 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
       alumniNews.value = data.value.alumniNews;
       transcript.value = data.value.transcript;
       cdcNews.value = data.value.cdcNews
-
       fetchLoading.value = false;
-      console.log(data)
+      });
     } catch (error) {
       console.error("Error fetching posts:", error);
-    }
+    } 
   }
 
   onMounted(async () => {

@@ -1,18 +1,18 @@
 <template>
 <div
-  v-if="selectedPhoto.value"
-  class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-6 rounded-md max-w-3xl max-h-3/4"
+  v-if="selectedPhoto"
+  class="fixed inset-0 bg-black/70 backdrop-blur flex w-full items-center justify-center z-50"
 >
   <button
-    @click="selectedPhoto.value = null"
-    class="absolute w-8 p-2 h-8 right-4 cursor-pointer rounded hover:bg-stone-500"
+    @click="selectedPhoto = null"
+    class="absolute w-8 p-2 right-4 top-4 cursor-pointer rounded bg-stone-300 hover:bg-stone-600"
   >
     <img src="../assets/icons/x.png" alt="x" />
   </button>
 
   <img
-    :src="selectedPhoto.value"
-    class="w-full object-scale-down h-screen rounded-lg shadow-lg transition"
+    :src="selectedPhoto"
+    class="w-full h-full object-scale-down p-4"
   />
 </div>
 
@@ -24,22 +24,25 @@
   >
     <input type="checkbox" class="peer" :checked="index === 0" />
 
-    <div v-if="post.thumbnail" class="collapse-title flex items-center gap-4">
-      <img
+    <div class ="collapse-title flex">
+      <img v-if="post.thumbnail" class="relative object-contain mr-4 justify-start"
         :src="post.thumbnail"
         alt="post image"
-        class="w-full h-24 max-w-80 object-cover rounded-md"
       />
-    </div>
-
-    <h1 class="font-semibold text-black text-lg">{{ post.PostTitle }}</h1>
-
-    <h2
-      v-if="post.subtitle"
-      class="font-medium mt-1 text-black text-base"
-    >
-      {{ post.subtitle }}
-    </h2>
+      <div> 
+        <p class="text-3xl font-semibold text-black"
+      >
+      {{ post.PostTitle }}
+      </p>
+      <p
+        v-if="post.subtitle"
+        class="mt-1 text-black"
+      >
+        {{ post.subtitle }}
+      </p>
+      </div>
+      
+      </div>
 
     <div class="collapse-content flex flex-col justify-center">
       <div class="mx-1 mb-4 border-t border-gold"></div>
@@ -51,7 +54,7 @@
         :key="index"
         :src="photo.url"
         class="w-1/4 m-4 self-center hover:cursor-pointer"
-        @click="selectedPhoto.value = photo.url"
+        @click="selectedPhoto = photo.url"
       />
     </div>
   </div>
@@ -66,17 +69,7 @@ const props = defineProps({
 })
 
 const selectedPhoto = ref(null)
-
 const dimensions = ref({})
-
-onMounted(() => {
-   props.posts.forEach((el) => {
-    expanded.value = false
-    selectedPhoto.value = null
-    if (el.thumbnail) getImageDimensions(el.thumbnail)
-    if (el.photos) el.photos.forEach(p => getImageDimensions(p.imageUrl))
-  })
-})
 
 const getImageDimensions = (url, index) => {
   if (!url) return
@@ -120,4 +113,11 @@ const myPortableTextComponents = {
     h2: (_, { slots }) => h('h2', { class: 'text-lg font-semibold text-black mt-4' }, slots.default?.()),
   },
 };
+
+onMounted(() => {
+   props.posts.forEach((el) => {
+    if (el.thumbnail) getImageDimensions(el.thumbnail)
+    if (el.photos) el.photos.forEach(p => getImageDimensions(p.imageUrl))
+  })
+})
 </script>
