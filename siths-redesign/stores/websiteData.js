@@ -136,8 +136,9 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       "makerspace": *[_type == "makerspace"]{
         _id,
         headline,
+        "slug": slug.current,
         description,
-        link,
+        fullContent,
         "imageUrl": image.asset->url
       },
     }`
