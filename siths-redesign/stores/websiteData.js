@@ -133,12 +133,11 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         link,
         "imageUrl": image.asset->url
       },
-      "makerspace": *[_type == "makerspace"]{
+      "makerspace": *[_type == "makerspace"] | order(_createdAt asc){
         _id,
         headline,
-        "slug": slug.current,
-        description,
         fullContent,
+        externalLink,
         "imageUrl": image.asset->url
       },
     }`
