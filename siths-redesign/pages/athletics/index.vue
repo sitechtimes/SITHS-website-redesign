@@ -1,18 +1,19 @@
 <template>
-  <h1 class="text-2xl md:text-3xl lg:text-4xl text-center mb-4">Athletics</h1>
+  <h1 class="text-2xl md:text-3xl lg:text-4xl text-center md:mb-4">Athletics</h1>
   <div class="flex flex-col md:flex-row justify-center items-start px-4">
-    <SubpageMenu :pages="subpageLinks" :active="'About'" class="absolute top-48 left-8 mb-4 md:mb-0 md:mr-8" />
-    <div class="flex items-start justify-center flex-col items-center md:w-5/6">
-      <h3>McKee - Staten Island Tech Public Schools Athletics League</h3>
-      <p>Home of the Seagulls</p>
+    <SubpageMenu :pages="subpageLinks" :active="'About'" class="block lg:absolute top-48 left-8 mb-4 md:mb-0 md:mr-8" />
+    <div class="flex justify-center flex-col items-center md:w-5/6">
+      <div class="flex flex-col gap-2 text-center">
+        <h3>McKee - Staten Island Tech Public Schools Athletics League</h3>
+        <p>Home of the Seagulls</p>
+      </div>
       <!-- psal director message -->
-      <div class="bg-black/40 rounded-lg p-8 my-4 w-2/3 z-20">
+      <div class="bg-black/40 rounded-lg p-8 my-4 md:w-2/3 z-20">
         <PortableText v-for="item in websiteData.athletics" :value="item.description"
           :components="myPortableTextComponents" />
       </div>
     </div>
-    <img class="absolute top-40 right-28 brightness-125 h-1/2 z-0" src="@/assets/imgs/baller.png" alt="">
-    <img class="absolute bottom-36 left-40 brightness-125 h-1/3 z-0" src="@/assets/imgs/ballerina.png" alt="">
+    <img class="absolute bottom-12 md:left-auto top-80 h-2/3 lg:top-60 lg:h-1/2 max-h-[800px] z-0 brightness-0" src="@/assets/imgs/background-athletes.png" alt="">
 
   </div>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="my-4 flex flex-row items-center justify-center lg:justify-start mx-2 md:mx-4 lg:mx-16">
+  <div class="my-4 flex flex-row items-center justify-center lg:justify-start mx-2 md:mx-4 lg:mx-auto lg:max-w-[70vw]">
     <div v-for="staffMember in websiteData.staff" :key="staffMember._id" class="flex flex-row items-center">
       <div v-if="staffMember.name === staffName" class="flex gap-2 flex-col md:flex-row items-center">
         <img :src="staffMember.imageUrl" :alt="staffMember.name + `'s photo'`"
