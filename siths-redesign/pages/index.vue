@@ -109,10 +109,5 @@ onMounted(() => {
     x: 50,
     stagger: 0.4
   })
-
-  gsap.to('#right-side', {
-    duration: 2,
-    opacity: 1
-  })
 })
 </script>

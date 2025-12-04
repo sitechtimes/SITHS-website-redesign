@@ -1,8 +1,5 @@
-import { directLinks } from '~/studio/schemaTypes/directLinks'
-
 export const useWebsiteDataStore = defineStore('websiteData', () => {
   const fetchLoading = ref(false)
-
   const posts = ref([])
   const erlenweinPosts = ref([])
   const terrusaPosts = ref([])
@@ -130,23 +127,23 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         "LvideoFileUrl": LvideoFile.asset->url,
         "LvideoUrl": LyoutubeUrl,
         "LthumbnailUrl": Lthumbnail.asset->url
-      },  
+      }
     }`
 
     try {
-      const { data } = await useSanityQuery(query)
+      const { data } = await useSanityQuery(query);
 
-      directLinks.value = data.value.directLinks
-      posts.value = data.value.yearlyinfo
-      erlenweinPosts.value = data.value.erlenwein
-      terrusaPosts.value = data.value.terrusa
-      schedules.value = data.value.schedules
-      staff.value = data.value.staff
-      events.value = data.value.events
-      resources.value = data.value.resources
-      opportunities.value = data.value.opportunities
-      summerHomework.value = data.value.summerHomework
-      partnerships.value = data.value.partnerships
+      directLinks.value = data.value.directLinks;
+      posts.value = data.value.yearlyinfo;
+      erlenweinPosts.value = data.value.erlenwein;
+      terrusaPosts.value = data.value.terrusa;
+      schedules.value = data.value.schedules;
+      staff.value = data.value.staff;
+      events.value = data.value.events;
+      resources.value = data.value.resources;
+      opportunities.value = data.value.opportunities;
+      summerHomework.value = data.value.summerHomework;
+      partnerships.value = data.value.partnerships;
       videos.value = data.value.video.map((video) => {
         const links = ['S', 'M', 'L'].reduce((acc, size) => {
           acc[`${size}link`] = video[`${size}videoFileUrl`] || video[`${size}videoUrl`] || ''
@@ -154,17 +151,12 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
           return acc
         }, {})
         return links
-      })
-      fetchLoading.videovalue = false
-    } catch (error) {
-      console.error('Error fetching posts:', error)
+      });
+      fetchLoading.value = false;
+      }
+     catch (error) {
+      console.error('Error fetching posts:', error);
     }
-  }
-
-  onMounted(async () => {
-    await nextTick()
-    await fetchAllData()
-  })
 
   return {
     directLinks,
@@ -182,4 +174,10 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     terrusaPosts,
     videos
   }
-})
+}
+onMounted(async () => {
+    await nextTick()
+    await fetchAllData()
+  })
+}
+)

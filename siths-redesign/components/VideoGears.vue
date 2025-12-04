@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div v-if="videoOpen" class="fixed inset-0 z-20 bg-black bg-opacity-50">
       <FullVideo :videoSource="selectedVideo" @close="closeVideo" />
     </div>
@@ -21,7 +20,7 @@
           class="relative z-10 w-60 animate-spin-slow cursor-pointer sm:w-80"
           src="../assets/imgs/lg-gear.svg"
           alt="Large Gear"
-          @click="selectItem(Llink)"
+          <!-- @click="selectItem(Llink)" -->
         />
       </div>
       <div
@@ -41,7 +40,7 @@
           class="relative z-10 w-60 animate-spin-slower cursor-pointer sm:w-72 lg:w-60"
           src="../assets/imgs/med-gear.svg"
           alt="Medium Gear"
-          @click="selectItem(Mlink)"
+          <!-- @click="selectItem(Mlink)" -->
         />
       </div>
       <div
@@ -61,11 +60,10 @@
           class="relative z-10 w-52 animate-spin-med cursor-pointer"
           src="../assets/imgs/sml-gear.svg"
           alt="Small Gear"
-          @click="selectItem(Slink)"
+          <!-- @click="selectItem(Slink)" -->
         />
       </div>
     </div>
-  </div>
 </template>
 
 <script setup>
@@ -93,4 +91,9 @@ function selectItem(videoId) {
   selectedVideo.value = videoId
   videoOpen.value = true
 }
+
+onMounted(() => {
+  console.log('Links', Llink, Mlink, SLink)
+})
+
 </script>

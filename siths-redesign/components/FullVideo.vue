@@ -17,7 +17,7 @@
 
     <iframe
       v-if="isYouTube(videoSource)"
-      class="h-full w-full"
+      class="h-full w-full allow-popups"
       :src="getYouTubeEmbedUrl(videoSource)"
       frameborder="0"
       allow="autoplay; encrypted-media"
