@@ -1,25 +1,25 @@
-export const useWebsiteDataStore = defineStore("websiteData", () => {
-  const fetchLoading = ref(false);
+export const useWebsiteDataStore = defineStore('websiteData', () => {
+  const fetchLoading = ref(false)
 
-  const posts = ref([]);
-  const erlenweinPosts = ref([]);
-  const terrusaPosts = ref([]);
-  const schedules = ref([]);
-  const staff = ref([]);
-  const events = ref([]);
-  const resources = ref([]);
-  const opportunities = ref([]);
-  const summerHomework = ref([]);
-  const partnerships = ref([]);
-  const directLinks = ref([]);
-  const athletics = ref([]);  
-  const alumniNews = ref([]);
-  const alumOpportunities = ref([]);
-  const transcript = ref([]);
-  const cdcNews = ref([]);
+  const posts = ref([])
+  const erlenweinPosts = ref([])
+  const terrusaPosts = ref([])
+  const schedules = ref([])
+  const staff = ref([])
+  const events = ref([])
+  const resources = ref([])
+  const opportunities = ref([])
+  const summerHomework = ref([])
+  const partnerships = ref([])
+  const directLinks = ref([])
+  const athletics = ref([])
+  const alumniNews = ref([])
+  const alumOpportunities = ref([])
+  const transcript = ref([])
+  const cdcNews = ref([])
 
   async function fetchAllData() {
-    fetchLoading.value = true;
+    fetchLoading.value = true
     const query = `{
       "yearlyinfo": *[_type == "yearlyinfo"]{
         _id,
@@ -156,7 +156,7 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
         _id,
         name,
         description,
-        contacts,
+        contacts
       },
       "cdcNews": *[_type == "cdcNews"]{
         _id,
@@ -165,39 +165,38 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
         link,
         "imageUrl": image.asset->url
       },
-    }`;
+    }`
 
     try {
-      const { data } = useSanityQuery(query);
+      const { data } = await useSanityQuery(query)
 
-      directLinks.value = data.value.directLinks;
-      posts.value = data.value.yearlyinfo;
-      erlenweinPosts.value = data.value.erlenwein;
-      terrusaPosts.value = data.value.terrusa;
-      schedules.value = data.value.schedules;
-      staff.value = data.value.staff;
-      events.value = data.value.events;
-      resources.value = data.value.resources;
-      opportunities.value = data.value.opportunities;
-      summerHomework.value = data.value.summerHomework;
-      partnerships.value = data.value.partnerships;
-      athletics.value = data.value.athletics;
-      alumOpportunities.value = data.value.alumOpportunities;
-      alumniNews.value = data.value.alumniNews;
-      transcript.value = data.value.transcript;
+      directLinks.value = data.value.directLinks
+      posts.value = data.value.yearlyinfo
+      erlenweinPosts.value = data.value.erlenwein
+      terrusaPosts.value = data.value.terrusa
+      schedules.value = data.value.schedules
+      staff.value = data.value.staff
+      events.value = data.value.events
+      resources.value = data.value.resources
+      opportunities.value = data.value.opportunities
+      summerHomework.value = data.value.summerHomework
+      partnerships.value = data.value.partnerships
+      athletics.value = data.value.athletics
+      alumOpportunities.value = data.value.alumOpportunities
+      alumniNews.value = data.value.alumniNews
+      transcript.value = data.value.transcript
       cdcNews.value = data.value.cdcNews
 
-      fetchLoading.value = false;
-      console.log(data)
+      fetchLoading.value = false
     } catch (error) {
-      console.error("Error fetching posts:", error);
+      console.error('Error fetching posts:', error)
     }
   }
 
   onMounted(async () => {
-    await nextTick();
-    await fetchAllData();
-  });
+    await nextTick()
+    await fetchAllData()
+  })
 
   return {
     directLinks,
@@ -217,9 +216,6 @@ export const useWebsiteDataStore = defineStore("websiteData", () => {
     alumniNews,
     alumOpportunities,
     transcript,
-    cdcNews,
-  };
-});  
-
-
-  
+    cdcNews
+  }
+})
