@@ -19,7 +19,7 @@
     "nuxt": "^3.12.3",
     "pinia": "^2.2.4",
     "rxjs": "npm:@esm-bundle/rxjs@^7.8.1",
-    "sanity": "^4.10.2",
+    "sanity": "^3.60.0",
     "vue": "latest",
     "vue-router": "^4.3.3"
   },
