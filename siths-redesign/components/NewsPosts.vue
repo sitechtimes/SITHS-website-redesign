@@ -1,55 +1,58 @@
 <template>
-  <div
-    v-if="selectedPhoto"
-    class="fixed inset-0 z-50 flex w-full items-center justify-center rounded-md bg-black/70 p-6 backdrop-blur-sm"
-  >
+  <div v-if="selectedPhoto" class="fixed inset-0 z-50 flex w-full items-center justify-center">
+    <div
+      class="pointer-events-auto absolute inset-0 w-full bg-black/50"
+      @click="selectedPhoto = null"
+    ></div>
+
     <button
       @click="selectedPhoto = null"
-      class="absolute right-4 top-4 h-8 w-8 cursor-pointer rounded p-2 bg-slate-50 hover:bg-stone-500"
+      class="absolute right-4 top-4 h-8 w-8 cursor-pointer rounded bg-slate-50 p-2 hover:bg-stone-500"
     >
       <img src="../assets/icons/x.png" alt="x" />
     </button>
 
     <img
       :src="selectedPhoto"
-      class="w-full h-screen object-contain p-6"
+      class="pointer-events-none absolute h-screen w-full object-contain p-6"
     />
   </div>
 
-    <div
-      v-for="(post, index) in posts"
-      :key="index"
-      class="collapse collapse-arrow mx-auto my-2 w-full rounded-lg border border-gold bg-white text-black lg:w-3/4"
-    >
-      <input type="checkbox" class="peer" :checked="index === 0" />
+  <div
+    v-for="(post, index) in posts"
+    :key="index"
+    class="collapse collapse-arrow mx-auto my-2 w-full rounded-lg border border-gold bg-white text-black lg:w-3/4"
+  >
+    <input type="checkbox" class="peer" :checked="index === 0" />
 
-      <div class="collapse-title inline-flex">
-        <img v-if="post.thumbnail"
-          :src="post.thumbnail"
-          alt="post image"
-          class="max-w-80 min-w-48 min-h-32 max-h-60 object-contain rounded-md mr-4"
-        />
-        <div>
-        <p class="text-2xl m-2 font-semibold text-black">{{ post.PostTitle }}</p>
-        <p v-if="post.subtitle" class=" m-2 text-sm text-black">
+    <div class="collapse-title inline-flex">
+      <img
+        v-if="post.thumbnail"
+        :src="post.thumbnail"
+        alt="post image"
+        class="mr-4 max-h-60 min-h-32 min-w-48 max-w-80 rounded-md object-contain"
+      />
+      <div>
+        <p class="m-2 text-2xl font-semibold text-black">{{ post.PostTitle }}</p>
+        <p v-if="post.subtitle" class="m-2 text-sm text-black">
           {{ post.subtitle }}
-        </p>        
-      </div>
-      </div>
-      
-      <div class="mx-1 mb-4 border-t border-gold"></div>
-
-      <div class="collapse-content flex flex-col justify-center">
-        <PortableText :value="post.description || []" :components="myPortableTextComponents" />
-        <img
-          v-for="(photo, index) in post.photos || []"
-          :key="index"
-          :src="photo?.url || ''"
-          class="m-4 w-1/4 self-center hover:cursor-pointer"
-          @click="selectedPhoto = photo?.url"
-        />
+        </p>
       </div>
     </div>
+
+    <div class="mx-1 mb-4 border-t border-gold"></div>
+
+    <div class="collapse-content flex flex-col justify-center">
+      <PortableText :value="post.description || []" :components="myPortableTextComponents" />
+      <img
+        v-for="(photo, index) in post.photos || []"
+        :key="index"
+        :src="photo?.url || ''"
+        class="m-4 w-1/4 self-center hover:cursor-pointer"
+        @click="selectedPhoto = photo?.url"
+      />
+    </div>
+  </div>
 </template>
 
 <script setup>
