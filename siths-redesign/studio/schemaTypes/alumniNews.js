@@ -26,7 +26,10 @@ export const alumniNews = defineType({
     defineField({
       name: 'date',
       title: 'Date',
-      type: 'string',
+      type: 'datetime',
+      options: {
+        dateFormat: 'MM-DD-YYYY',
+      },
     }),
     defineField({
       name: 'description',
@@ -54,16 +57,15 @@ export const alumniNews = defineType({
       name: 'photos',
       title: 'Photos',
       type: 'array',
-      of: [{
-        type: 'image',
-        title:'Image',
-        options: {
-        hotspot: true,
-      },
-    
-    }
-  ]
+      of: [
+        {
+          type: 'image',
+          title: 'Image',
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
     }),
-    
   ],
 })

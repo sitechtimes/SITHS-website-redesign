@@ -5,8 +5,4 @@
 
 <script setup>
 const websiteData = useWebsiteDataStore()
-
-onMounted(() => {
-  console.log(websiteData.alumOpportunities)
-})
 </script>
