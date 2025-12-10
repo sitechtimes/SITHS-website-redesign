@@ -1,10 +1,9 @@
 <template>
-  <div v-if="selectedPhoto" class="fixed inset-0 z-50 flex w-full items-center justify-center">
-    <div
-      class="pointer-events-auto absolute inset-0 w-full bg-black/50"
-      @click="selectedPhoto = null"
-    ></div>
-
+  <div
+    v-if="selectedPhoto"
+    @click.self="selectedPhoto = null"
+    class="fixed inset-0 z-50 flex w-full cursor-pointer items-center justify-center rounded-md bg-black/70 p-6 backdrop-blur-sm"
+  >
     <button
       @click="selectedPhoto = null"
       class="absolute right-4 top-4 h-8 w-8 cursor-pointer rounded bg-slate-50 p-2 hover:bg-stone-500"
@@ -12,10 +11,7 @@
       <img src="../assets/icons/x.png" alt="x" />
     </button>
 
-    <img
-      :src="selectedPhoto"
-      class="pointer-events-none absolute h-screen w-full object-contain p-6"
-    />
+    <img :src="selectedPhoto" class="h-screen object-contain p-6" />
   </div>
 
   <div
@@ -40,9 +36,8 @@
       </div>
     </div>
 
-    <div class="mx-1 mb-4 border-t border-gold"></div>
-
     <div class="collapse-content flex flex-col justify-center">
+      <div class="mx-1 mb-4 border-t border-gold"></div>
       <PortableText :value="post.description || []" :components="myPortableTextComponents" />
       <img
         v-for="(photo, index) in post.photos || []"
