@@ -6,7 +6,7 @@
   >
     <button
       @click="selectedPhoto = null"
-      class="absolute right-4 top-4 h-8 w-8 cursor-pointer rounded bg-slate-50 p-2 hover:bg-stone-500"
+      class="absolute right-4 top-4 h-8 w-8 cursor-pointer rounded bg-slate-200 p-2 hover:bg-stone-500"
     >
       <img src="../assets/icons/x.png" alt="x" />
     </button>
@@ -37,15 +37,17 @@
     </div>
 
     <div class="collapse-content flex flex-col justify-center">
-      <div class="mx-1 mb-4 border-t border-gold"></div>
+      <hr class="border-gold" />
       <PortableText :value="post.description || []" :components="myPortableTextComponents" />
-      <img
-        v-for="(photo, index) in post.photos || []"
-        :key="index"
-        :src="photo?.url || ''"
-        class="m-4 w-1/4 self-center hover:cursor-pointer"
-        @click="selectedPhoto = photo?.url"
-      />
+      <div class="inline-flex justify-center">
+        <img
+          v-for="(photo, index) in post.photos || []"
+          :key="index"
+          :src="photo?.url || ''"
+          class="m-4 w-1/4 hover:cursor-pointer"
+          @click="selectedPhoto = photo?.url"
+        />
+      </div>
     </div>
   </div>
 </template>
