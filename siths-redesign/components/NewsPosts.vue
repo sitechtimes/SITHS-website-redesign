@@ -26,7 +26,7 @@
         v-if="post.thumbnail"
         :src="post.thumbnail"
         alt="post image"
-        class="mr-4 max-h-48 min-h-32 min-w-32 max-w-64 rounded-md object-contain"
+        class="mr-4 mt-2 max-h-40 min-h-24 min-w-32 max-w-64 rounded-md object-contain"
       />
       <div>
         <p class="m-2 text-2xl font-semibold text-black">{{ post.PostTitle }}</p>
