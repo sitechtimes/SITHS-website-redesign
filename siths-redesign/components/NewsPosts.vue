@@ -34,7 +34,7 @@
           {{ post.subtitle }}
         </p>
       </div>
-      <p v-else class="m-2 w-full self-center text-3xl font-semibold text-black">
+      <p v-else class="m-2 self-center text-2xl font-semibold text-black">
         {{ post.PostTitle }}
       </p>
     </div>
