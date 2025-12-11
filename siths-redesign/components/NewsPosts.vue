@@ -28,12 +28,15 @@
         alt="post image"
         class="mr-4 mt-2 max-h-40 min-h-24 min-w-32 max-w-64 rounded-md object-contain"
       />
-      <div>
+      <div v-if="post.subtitle">
         <p class="m-2 text-2xl font-semibold text-black">{{ post.PostTitle }}</p>
         <p v-if="post.subtitle" class="m-2 text-sm text-black">
           {{ post.subtitle }}
         </p>
       </div>
+      <p v-else class="m-2 w-full self-center text-3xl font-semibold text-black">
+        {{ post.PostTitle }}
+      </p>
     </div>
 
     <div class="collapse-content flex flex-col justify-center">
