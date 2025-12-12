@@ -68,7 +68,6 @@
 
 <script setup>
 const websiteData = useWebsiteDataStore()
-
 const selectedVideo = ref(null)
 const [Llink, Mlink, Slink] = ['Llink', 'Mlink', 'Slink'].map((key) =>
   computed(() => websiteData.videos?.[0]?.[key] || '')

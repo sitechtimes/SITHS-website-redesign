@@ -153,30 +153,30 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         return links
       })
       fetchLoading.value = false
-      console.log(data.value)
     } catch (error) {
       console.error('Error fetching posts:', error)
     }
-
-    return {
-      directLinks,
-      erlenweinPosts,
-      events,
-      fetchAllData,
-      fetchLoading,
-      opportunities,
-      partnerships,
-      posts,
-      resources,
-      schedules,
-      staff,
-      summerHomework,
-      terrusaPosts,
-      videos
-    }
   }
+
   onMounted(async () => {
     await nextTick()
     await fetchAllData()
   })
+
+  return {
+    directLinks,
+    erlenweinPosts,
+    events,
+    fetchAllData,
+    fetchLoading,
+    opportunities,
+    partnerships,
+    posts,
+    resources,
+    schedules,
+    staff,
+    summerHomework,
+    terrusaPosts,
+    videos
+  }
 })
