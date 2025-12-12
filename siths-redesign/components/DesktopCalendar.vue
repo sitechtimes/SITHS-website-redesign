@@ -117,7 +117,6 @@ onMounted(() => {
     },
     { immediate: true }
   )
-  console.log(websiteData.events)
 })
 
 let todaysDate = new Date()
