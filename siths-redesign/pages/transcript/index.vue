@@ -10,7 +10,7 @@
         />
       </div>
       <div class="m-8 self-center rounded-lg bg-stone-500 p-4 text-black">
-        <div v-for="(item, index) in info?.email_instr" :key="index">
+        <div v-for="(item, index) in info?.emailInstructions" :key="index">
           <PortableText
             v-if="item?.children?.length"
             :value="item"
@@ -19,7 +19,7 @@
         </div>
       </div>
 
-      <div v-for="(item, index) in info?.edu_ver" :key="index">
+      <div v-for="(item, index) in info?.educationVerification" :key="index">
         <PortableText
           v-if="item?.children?.length"
           :value="item"

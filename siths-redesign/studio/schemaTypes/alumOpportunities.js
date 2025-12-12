@@ -6,15 +6,18 @@ export const alumOpportunities = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'PostTitle',
+      name: 'postTitle',
       title: 'Title',
       type: 'string',
+      description: 'Enter a clear, concise title for this opportunity.',
+      validation: (Rule) => Rule.required().error('Title is required.'),
     }),
 
     defineField({
       name: 'subtitle',
       title: 'Subtitle',
       type: 'string',
+      description: 'Optional: a short subtitle or tagline for this post.',
     }),
     defineField({
       name: 'image',
@@ -27,7 +30,8 @@ export const alumOpportunities = defineType({
     defineField({
       name: 'date',
       title: 'Date',
-      type: 'string',
+      type: 'datetime',
+      description: 'Enter the date and time for this opportunity.',
     }),
     defineField({
       name: 'description',
@@ -55,16 +59,24 @@ export const alumOpportunities = defineType({
       name: 'photos',
       title: 'Photos',
       type: 'array',
-      of: [{
-        type: 'image',
-        title:'Image',
-        options: {
-        hotspot: true,
-      },
-    
-    }
-  ]
+      description: 'Additional images related to this opportunity.',
+      of: [
+        {
+          type: 'image',
+          title: 'Image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alt Text',
+              description: 'Alternative text for this image.',
+            },
+          ],
+        },
+      ],
     }),
-    
   ],
 })

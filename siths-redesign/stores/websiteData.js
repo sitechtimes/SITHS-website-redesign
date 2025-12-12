@@ -23,7 +23,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     const query = `{
       "yearlyinfo": *[_type == "yearlyinfo"]{
         _id,
-        PostTitle,
+        postTitle,
         author,
         date,
         description,
@@ -31,7 +31,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       },
       "erlenwein": *[_type == "erlenwein"]{
         _id,
-        PostTitle,
+        postTitle,
         author,
         date,
         description,
@@ -39,7 +39,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       },
       "terrusa": *[_type == "terrusa"]{
         _id,
-        PostTitle,
+        postTitle,
         author,
         date,
         description,
@@ -98,7 +98,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       "alumniNews": *[_type == "alumniNews"]{
         _id,
         "thumbnail": image.asset->url,
-        PostTitle,
+        postTitle,
         subtitle,
         date,
         description,
@@ -109,7 +109,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       "alumOpportunities": *[_type == "alumOpportunities"]{
         _id,
         "thumbnail": image.asset->url,
-        PostTitle,
+        postTitle,
         subtitle,
         date,
         description,
@@ -121,8 +121,8 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         _id,
         title,
         instructions,
-        email_instr,
-        edu_ver
+        emailInstructions,
+        educationVerification
       },
       "directLinks": *[_type == "directLinks"]{
         _id,

@@ -6,7 +6,7 @@ export const alumniNews = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'PostTitle',
+      name: 'postTitle',
       title: 'Title',
       type: 'string',
     }),
