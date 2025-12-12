@@ -35,7 +35,7 @@ const myPortableTextComponents = {
 
   list: {
     // Ex. 1: customizing common list types
-    bullet: (_, { slots }) => h('ul', { class: 'list-disc list-inside' }, slots.default?.()),
+    bullet: (_, { slots }) => h('li', { class: 'list-disc list-inside' }, slots.default?.()),
     number: (_, { slots }) => h('ol', { class: 'list-decimal list-inside' }, slots.default?.()),
 
     // Ex. 2: rendering custom lists

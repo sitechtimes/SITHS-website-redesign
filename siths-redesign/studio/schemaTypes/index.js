@@ -11,9 +11,6 @@ import {defineType} from 'sanity'
 import {summerHomework} from './summerHomework'
 import {directLinks} from './directLinks'
 import {athletics} from './athletics'
-import {alumniNews} from './alumniNews'
-import {alumOpportunities} from './alumOpportunities'
-import {transcript} from './transcript'
 import {cdcNews} from './cdcNews'
 import {video} from './video'
 
@@ -50,9 +47,6 @@ export const schemaTypes = [
   partnerships,
   directLinks,
   athletics,
-  alumniNews,
-  alumOpportunities,
-  transcript,
   cdcNews,
   video,
 ]

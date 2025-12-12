@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export const yearlyinfo = defineType({
   name: 'yearlyinfo',
@@ -6,7 +6,7 @@ export const yearlyinfo = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'postTitle',
+      name: 'PostTitle',
       title: 'Post Title',
       type: 'string',
     }),
@@ -29,18 +29,22 @@ export const yearlyinfo = defineType({
           type: 'block',
           // Only allow these block styles
           styles: [
-            {title: 'Normal', value: 'normal'},
-            {title: 'H1', value: 'h1'},
-            {title: 'H2', value: 'h2'},
+            { title: 'Normal', value: 'normal' },
+            { title: 'H1', value: 'h1' },
+            { title: 'H2', value: 'h2' }
           ],
           // Only allow numbered lists
-          lists: [{title: 'Numbered', value: 'number'}],
+          lists: [
+            { title: 'Numbered', value: 'number' }
+          ],
           marks: {
             // Only allow these decorators
-            decorators: [{title: 'Strong', value: 'strong'}],
-          },
-        },
-      ],
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+            ]
+          }
+        }
+      ]
     }),
     defineField({
       name: 'image',
@@ -48,7 +52,7 @@ export const yearlyinfo = defineType({
       type: 'image',
       options: {
         hotspot: true,
-      },
+      }
     }),
   ],
-})
+});

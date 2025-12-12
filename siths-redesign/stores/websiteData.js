@@ -11,11 +11,8 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const summerHomework = ref([])
   const partnerships = ref([])
   const directLinks = ref([])
-  const alumniNews = ref([])
-  const alumOpportunities = ref([])
-  const transcript = ref([])
-  const cdcNews = ref([])
-  const athletics = ref([])
+  const athletics = ref([]);
+  const cdcNews = ref([]);
   const videos = ref([])
 
   async function fetchAllData() {
@@ -23,7 +20,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     const query = `{
       "yearlyinfo": *[_type == "yearlyinfo"]{
         _id,
-        postTitle,
+        PostTitle,
         author,
         date,
         description,
@@ -31,7 +28,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       },
       "erlenwein": *[_type == "erlenwein"]{
         _id,
-        postTitle,
+        PostTitle,
         author,
         date,
         description,
@@ -39,16 +36,13 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       },
       "terrusa": *[_type == "terrusa"]{
         _id,
-        postTitle,
+        PostTitle,
         author,
         date,
         description,
         "imageUrl": image.asset->url
       },
-      "schedules": *[_type == "schedules"]{
-      name,
-      periods
-      },
+      "schedules": *[_type == "schedules"],
       "staff": *[_type == "staff"]{
         _id,
         name,
@@ -62,7 +56,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         _id,
         date,
         event,
-        description
+        description,
       },
       "resources": *[_type == "resources"]{
         _id,
@@ -70,7 +64,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         resource,
         description,
         link,
-        category
+        category,
       },
       "opportunities": *[_type == "opportunities"]{
         _id,
@@ -78,7 +72,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         opptype,
         note,
         description,
-        link
+        link,
       },
       "summerHomework": *[_type == "summerHomework"]{
         _id,
@@ -87,42 +81,13 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         ninth,
         tenth,
         eleventh,
-        twelfth
+        twelfth,
       },
       "partnerships": *[_type == "partnerships"]{
         _id,
         name,
         description,
-        image 
-      },
-      "alumniNews": *[_type == "alumniNews"]{
-        _id,
-        "thumbnail": image.asset->url,
-        postTitle,
-        subtitle,
-        date,
-        description,
-        "photos": photos[]{
-        "url": asset->url
-      }
-      },
-      "alumOpportunities": *[_type == "alumOpportunities"]{
-        _id,
-        "thumbnail": image.asset->url,
-        postTitle,
-        subtitle,
-        date,
-        description,
-        "photos": photos[]{
-        "url": asset->url
-      }
-      },
-      "transcript": *[_type == "transcript"]{
-        _id,
-        title,
-        instructions,
-        emailInstructions,
-        educationVerification
+        image,
       },
       "directLinks": *[_type == "directLinks"]{
         _id,
@@ -156,7 +121,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         _id,
         name,
         description,
-        contacts
+        contacts,
       },
       "cdcNews": *[_type == "cdcNews"]{
         _id,
@@ -195,9 +160,6 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       summerHomework.value = data.value.summerHomework
       partnerships.value = data.value.partnerships
       athletics.value = data.value.athletics
-      alumOpportunities.value = data.value.alumOpportunities
-      alumniNews.value = data.value.alumniNews
-      transcript.value = data.value.transcript
       cdcNews.value = data.value.cdcNews
       videos.value = data.value.video.map((video) => {
         const links = ['S', 'M', 'L'].reduce((acc, size) => {
@@ -233,10 +195,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     summerHomework,
     terrusaPosts,
     athletics,
-    alumniNews,
-    alumOpportunities,
-    transcript,
     cdcNews,
     videos
-  }
-})
+  };
+});

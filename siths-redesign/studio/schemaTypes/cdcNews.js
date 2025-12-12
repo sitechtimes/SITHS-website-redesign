@@ -1,5 +1,3 @@
-import {defineField, defineType} from 'sanity'
-
 export const cdcNews = defineType({
   name: 'cdcNews',
   title: 'CDC in the News',
