@@ -14,7 +14,8 @@ import {athletics} from './athletics'
 import {alumniNews} from './alumniNews'
 import {alumOpportunities} from './alumOpportunities'
 import {transcript} from './transcript'
-import { cdcNews } from './cdcNews'
+import {cdcNews} from './cdcNews'
+import {video} from './video'
 
 export const timeValueType = defineType({
   name: 'timeValue',
@@ -52,5 +53,6 @@ export const schemaTypes = [
   alumniNews,
   alumOpportunities,
   transcript,
-  cdcNews
+  cdcNews,
+  video,
 ]

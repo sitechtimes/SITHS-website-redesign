@@ -1,6 +1,5 @@
 export const useWebsiteDataStore = defineStore('websiteData', () => {
   const fetchLoading = ref(false)
-
   const posts = ref([])
   const erlenweinPosts = ref([])
   const terrusaPosts = ref([])
@@ -12,11 +11,12 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const summerHomework = ref([])
   const partnerships = ref([])
   const directLinks = ref([])
-  const athletics = ref([])
   const alumniNews = ref([])
   const alumOpportunities = ref([])
   const transcript = ref([])
   const cdcNews = ref([])
+  const athletics = ref([])
+  const videos = ref([])
 
   async function fetchAllData() {
     fetchLoading.value = true
@@ -165,6 +165,19 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         link,
         "imageUrl": image.asset->url
       },
+      "video": *[_type == "video"]{
+         _id,
+        title,
+        "SvideoFileUrl": SvideoFile.asset->url,
+        "SvideoUrl": SyoutubeUrl,
+        "SthumbnailUrl": Sthumbnail.asset->url,
+        "MvideoFileUrl": MvideoFile.asset->url,
+        "MvideoUrl": MyoutubeUrl,
+        "MthumbnailUrl": Mthumbnail.asset->url,
+        "LvideoFileUrl": LvideoFile.asset->url,
+        "LvideoUrl": LyoutubeUrl,
+        "LthumbnailUrl": Lthumbnail.asset->url
+      }
     }`
 
     try {
@@ -186,7 +199,14 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       alumniNews.value = data.value.alumniNews
       transcript.value = data.value.transcript
       cdcNews.value = data.value.cdcNews
-
+      videos.value = data.value.video.map((video) => {
+        const links = ['S', 'M', 'L'].reduce((acc, size) => {
+          acc[`${size}link`] = video[`${size}videoFileUrl`] || video[`${size}videoUrl`] || ''
+          acc[`${size}thumbnail`] = video[`${size}thumbnailUrl`] || ''
+          return acc
+        }, {})
+        return links
+      })
       fetchLoading.value = false
     } catch (error) {
       console.error('Error fetching posts:', error)
@@ -216,6 +236,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     alumniNews,
     alumOpportunities,
     transcript,
-    cdcNews
+    cdcNews,
+    videos
   }
 })
