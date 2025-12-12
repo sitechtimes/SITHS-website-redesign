@@ -1,7 +1,7 @@
 <template>
     <div class="w-full lg:w-3/5 xl:w-3/6 px-4">
         <div class="flex flex-col gap-6">
-            <component 
+            <articleRows 
                 v-for="article in paginatedArticles" 
                 :key="article._id"
                 :is="article.externalLink ? 'a' : 'div'"
@@ -19,7 +19,7 @@
                     <div class="p-6 md:p-8 flex flex-col flex-grow justify-between">
                         <div>
                             <h3
-                                :class="['text-xl md:text-2xl font-semibold mb-3 transition-colors duration-300 flex items-start justify-between gap-2', article.externalLink ? 'group-hover:text-gold' : '']">
+                                :class="['text-xl md:text-2xl font-semibold mb-3 transition-colors duration-300 flex items-start justify-between gap-2']">
                                 <span class="flex-1">{{ article.headline }}</span>
                                 <img v-if="article.externalLink" src="../assets/icons/xlink.png" alt="external link"
                                     class="inline h-5 flex-shrink-0">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-            </component>
+            </articleRows>
         </div>
         <div v-if="totalPages > 1" class="flex justify-center items-center gap-4 mt-8 w-full">
             <button 

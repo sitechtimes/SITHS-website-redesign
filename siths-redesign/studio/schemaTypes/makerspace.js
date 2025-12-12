@@ -7,7 +7,7 @@ export const makerspace = defineType({
   fields: [
     defineField({
       name: 'headline',
-      title: 'Article headline',
+      title: 'Article Headline',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
@@ -20,7 +20,7 @@ export const makerspace = defineType({
     }),
     defineField({
       name: 'image',
-      title: 'Article image',
+      title: 'Article Image',
       type: 'image',
       options: {
         hotspot: true,
