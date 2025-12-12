@@ -1,13 +1,15 @@
 <template>
   <div class="mb-12" v-if="calendarData.dateInfo.length > 0">
     <div class="flex flex-row justify-center">
-      <table class="calendar w-full md:w-5/6 lg:w-full max-w-[900px] table-fixed">
+      <table class="calendar w-full max-w-[900px] table-fixed md:w-5/6 lg:w-full">
         <caption class="pb-2 text-3xl font-bold">
-          <div class="flex justify-center mb-4">
+          <div class="mb-4 flex justify-center">
             <span class="arrow cursor-pointer select-none" id="prev" @click="changeMonth(-1)">
               &#10094;
             </span>
-            <h2 class="mx-2 w-fit text-center text-2xl px-4">{{ months[todaysMonth] }} {{ todaysYear }}</h2>
+            <h2 class="mx-2 w-fit px-4 text-center text-2xl">
+              {{ months[todaysMonth] }} {{ todaysYear }}
+            </h2>
             <span class="arrow cursor-pointer select-none" id="next" @click="changeMonth(1)">
               &#10095;
             </span>
@@ -27,16 +29,23 @@
         <tbody>
           <!-- height of 1px is for the table cell's height 100% to work?? -->
           <tr v-for="i in 5" :key="i" class="h-[1px]">
-            <td v-for="date in calendarData.dateInfo.slice((i - 1) * 7, i * 7)" :key="date.id"
-              class="overflow-y-auto overflow-x-clip break-words border-2 border-zinc-400" style="height: inherit"
-              :aria-label="`${months[date.month]} ${date.todaysDate}, ${date.year}`">
+            <td
+              v-for="date in calendarData.dateInfo.slice((i - 1) * 7, i * 7)"
+              :key="date.id"
+              class="overflow-y-auto overflow-x-clip break-words border-2 border-zinc-400"
+              style="height: inherit"
+              :aria-label="`${months[date.month]} ${date.todaysDate}, ${date.year}`"
+            >
               <div class="h-full min-h-20 p-0.5 md:p-1">
                 <span :class="{ 'text-stone-400': date.type !== 'current' }">{{
                   date.todaysDate
                 }}</span>
                 <div v-for="event in eventsOnDate(date)" :key="event._id">
-                  <p @click="toggleDetails(event)" class="bg-gold text-gray text-sm"
-                    :class="`mb-1 w-full cursor-pointer truncate rounded-md p-1.5 text-center font-bold transition duration-500 hover:opacity-80 hover:shadow-md`">
+                  <p
+                    @click="toggleDetails(event)"
+                    class="bg-gold text-sm text-gray"
+                    :class="`mb-1 w-full cursor-pointer truncate rounded-md p-1.5 text-center font-bold transition duration-500 hover:opacity-80 hover:shadow-md`"
+                  >
                     {{ event.event }}
                   </p>
                 </div>
@@ -45,7 +54,7 @@
           </tr>
         </tbody>
       </table>
-      <CalendarModal :show="show" :eventDetails="eventDetails"  @close="toggleDetails(event)" />
+      <CalendarModal :show="show" :eventDetails="eventDetails" @close="toggleDetails(event)" />
     </div>
   </div>
 </template>
@@ -108,6 +117,7 @@ onMounted(() => {
     },
     { immediate: true }
   )
+  console.log(websiteData)
 })
 
 let todaysDate = new Date()
@@ -170,4 +180,3 @@ const changeMonth = (next) => {
   renderCalendar()
 }
 </script>
-
