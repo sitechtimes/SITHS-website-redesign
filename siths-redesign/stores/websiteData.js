@@ -61,7 +61,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       "events": *[_type == "calendar"]{
         _id,
         date,
-        event,
+        subject,
         description
       },
       "resources": *[_type == "resources"]{

@@ -46,7 +46,7 @@
                     class="bg-gold text-sm text-gray"
                     :class="`mb-1 w-full cursor-pointer truncate rounded-md p-1.5 text-center font-bold transition duration-500 hover:opacity-80 hover:shadow-md`"
                   >
-                    {{ event.event }}
+                    {{ event.subject }}
                   </p>
                 </div>
               </div>
@@ -68,7 +68,7 @@ const show = ref(false) //control modal visibility
 //matching events to calendar cell information
 const eventsOnDate = (dateInfo) => {
   const matchingEvents = events.value.filter((event) => {
-    const eventDate = event.date
+    const eventDate = event.date.start.toString()
 
     //split the event date into year, month, and day (YYYY-MM-DD)
     const [eventYear, eventMonth, eventDay] = eventDate.split('-')
@@ -117,7 +117,7 @@ onMounted(() => {
     },
     { immediate: true }
   )
-  console.log(websiteData)
+  console.log(websiteData.events)
 })
 
 let todaysDate = new Date()
