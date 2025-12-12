@@ -1,24 +1,35 @@
 import {defineField, defineType} from 'sanity'
 
-export const terrusa = defineType({
-  name: 'terrusa',
-  title: 'Terrusa Announcements',
+export const alumniNews = defineType({
+  name: 'alumniNews',
+  title: 'Alumni News',
   type: 'document',
   fields: [
     defineField({
       name: 'postTitle',
-      title: 'Post Title',
+      title: 'Title',
       type: 'string',
     }),
     defineField({
-      name: 'author',
-      title: 'Author',
+      name: 'subtitle',
+      title: 'Subtitle',
       type: 'string',
+    }),
+    defineField({
+      name: 'image',
+      title: 'Thumbnail',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: 'date',
       title: 'Date',
-      type: 'string',
+      type: 'datetime',
+      options: {
+        dateFormat: 'MM-DD-YYYY',
+      },
     }),
     defineField({
       name: 'description',
@@ -43,12 +54,18 @@ export const terrusa = defineType({
       ],
     }),
     defineField({
-      name: 'image',
-      title: 'Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      name: 'photos',
+      title: 'Photos',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          title: 'Image',
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
     }),
   ],
 })
