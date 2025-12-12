@@ -1,18 +1,18 @@
-import { calendar } from './calendar'
-import { schedules } from './schedules'
-import { staff } from './staff'
-import { yearlyinfo } from './yearlyinfo'
-import { erlenwein } from './erlenwein'
-import { terrusa } from './terrusa'
-import { resources } from './resources'
-import { opportunities } from './opportunities'
-import { partnerships } from './partnerships'
-import { defineType } from 'sanity'
-import { summerHomework } from './summerHomework'
-import { directLinks } from './directLinks'
-import { athletics } from './athletics'
-import { cdcNews } from './cdcNews'
-
+import {calendar} from './calendar'
+import {schedules} from './schedules'
+import {staff} from './staff'
+import {yearlyinfo} from './yearlyinfo'
+import {erlenwein} from './erlenwein'
+import {terrusa} from './terrusa'
+import {resources} from './resources'
+import {opportunities} from './opportunities'
+import {partnerships} from './partnerships'
+import {defineType} from 'sanity'
+import {summerHomework} from './summerHomework'
+import {directLinks} from './directLinks'
+import {athletics} from './athletics'
+import {cdcNews} from './cdcNews'
+import {video} from './video'
 
 export const timeValueType = defineType({
   name: 'timeValue',
@@ -34,18 +34,19 @@ export function ALLOWED_TIMES() {
 }
 
 export const schemaTypes = [
-  calendar, 
-  erlenwein, 
-  schedules, 
-  staff, 
-  terrusa, 
-  timeValueType, 
-  yearlyinfo, 
-  resources, 
-  opportunities, 
-  summerHomework, 
-  partnerships, 
-  directLinks, 
+  calendar,
+  erlenwein,
+  schedules,
+  staff,
+  terrusa,
+  timeValueType,
+  yearlyinfo,
+  resources,
+  opportunities,
+  summerHomework,
+  partnerships,
+  directLinks,
   athletics,
-  cdcNews
+  cdcNews,
+  video,
 ]
