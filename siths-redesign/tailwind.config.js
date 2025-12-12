@@ -9,22 +9,33 @@ export default {
   ],
   theme: {
     extend: {
-      colors:{
-        "gold":"#C4B466",
-        "dark-gold": "#4E4A38",
-        "gray":"#323232",
-        "light-gray": "#d1d1d1",
-        "black" : "#1c1b1b" //dark gray
+      colors: {
+        gold: '#C4B466',
+        'dark-gold': '#4E4A38',
+        gray: '#323232',
+        'light-gray': '#d1d1d1',
+        black: '#1c1b1b' //dark gray
+      },
+      animation: {
+        'spin-med': 'spin 9.8s linear infinite',
+        'spin-slow': 'spin 9.9s linear infinite',
+        'spin-slower': 'spin-reverse 10s linear infinite'
+      },
+      keyframes: {
+        'spin-reverse': {
+          from: { transform: 'rotate(360deg)' },
+          to: { transform: 'rotate(0deg)' }
+        }
       },
       fontFamily: {
-        "kumbh": ["Kumbh Sans", "sans-serif"],
-        "ebgaramond": ["EB Garamond", "serif"]
+        kumbh: ['Kumbh Sans', 'sans-serif'],
+        ebgaramond: ['EB Garamond', 'serif']
       },
       backgroundImage: {
-        "city-skyline" : "url('/assets/imgs/cityskyline.png')",
-        "siths-building" : "url('/assets/imgs/siths-building.png')"
+        'city-skyline': "url('/assets/imgs/cityskyline.png')",
+        'siths-building': "url('/assets/imgs/siths-building.png')"
       }
-    },
+    }
   },
-  plugins: [require('daisyui')],
+  plugins: [require('daisyui')]
 }
