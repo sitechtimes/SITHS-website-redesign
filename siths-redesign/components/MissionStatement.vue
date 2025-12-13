@@ -3,9 +3,9 @@
     <div class="flex w-full flex-col justify-center lg:flex-row">
       <!-- picture -->
       <div class="flex items-center justify-center lg:w-2/5 xl:w-1/2">
-        <div class="relative md:h-[28rem] w-full">
+        <div class="relative w-full md:h-[28rem]">
           <img
-            class="h-[15rem] md:h-full md:w-full object-cover rounded-lg"
+            class="h-[15rem] rounded-lg object-cover md:h-full md:w-full"
             src="../assets/imgs/staten-island-technical-high-school.jpg"
             alt="Staten Island Technical High School"
           />
@@ -13,15 +13,14 @@
       </div>
 
       <!-- carousel -->
-      <div class="relative flex flex-col items-center justify-center py-2 md:py-8 lg:w-3/5 xl:1/3">
+      <div class="xl:1/3 relative flex flex-col items-center justify-center py-2 md:py-8 lg:w-3/5">
         <div class="carousel flex w-full items-center justify-between">
           <!-- slide 1 -->
           <div
             id="slide1"
-            class="carousel-item relative flex w-full min-h-full flex-grow items-center justify-center pb-4"
+            class="carousel-item relative flex min-h-full w-full flex-grow items-center justify-center pb-4"
           >
-            <a href="#slide2" class="btn btn-circle text-xl lg:mx-6">❮</a>
-            <div class="flex mx-2 h-2/3 w-2/3 flex-col space-y-4 text-center">
+            <div class="mx-2 flex h-2/3 w-2/3 flex-col space-y-4 text-center">
               <h1 class="text-4xl font-semibold text-gray">VISION</h1>
               <p class="text-xl text-gray">
                 Staten Island Technical High School places a high priority on academics and
@@ -32,16 +31,20 @@
                 potential and succeed in a multicultural global society.
               </p>
             </div>
-            <a href="#slide2" class="btn btn-circle text-xl lg:mx-6">❯</a>
+            <div
+              class="absolute left-5 right-5 top-1/2 mx-7 flex -translate-y-1/2 transform justify-between"
+            >
+              <a href="#slide2" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❮</a>
+              <a href="#slide2" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❯</a>
+            </div>
           </div>
 
           <!-- slide 2 -->
           <div
             id="slide2"
-            class="carousel-item relative flex w-full min-h-full flex-grow items-center justify-center pb-4"
+            class="carousel-item relative flex min-h-full w-full flex-grow items-center justify-center pb-4"
           >
-            <a href="#slide1" class="btn btn-circle text-xl lg:mx-6">❮</a>
-            <div class="flex mx-2 h-2/3 w-2/3 flex-col space-y-4 text-center">
+            <div class="mx-2 flex h-2/3 w-2/3 flex-col space-y-4 text-center">
               <h1 class="text-4xl font-semibold text-gray">MISSION</h1>
               <p class="text-xl text-gray">
                 The SITHS community fosters the development of well-rounded, passionate life-long
@@ -54,10 +57,29 @@
                 Mission/Vision)
               </p>
             </div>
-            <a href="#slide1" class="btn btn-circle text-xl lg:mx-6">❯</a>
+            <div
+              class="absolute left-5 right-5 top-1/2 mx-7 flex -translate-y-1/2 transform justify-between"
+            >
+              <a href="#slide1" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❮</a>
+              <a href="#slide1" class="btn btn-circle text-xl lg:mx-6" @click="preventScroll">❯</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+const preventScroll = (event) => {
+  event.preventDefault() //stops the carousel from working
+  const button = event.currentTarget
+  const carouselElement = button.parentElement.parentElement.parentElement
+  const href = button.getAttribute('href')
+  const target = carouselElement.querySelector(href)
+  if (target) {
+    const left = target.offsetLeft //amount to scroll
+    carouselElement.scrollTo({ left: left, behavior: 'smooth' }) //scroll
+  }
+}
+</script>
