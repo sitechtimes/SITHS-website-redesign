@@ -44,7 +44,7 @@ const subpageLinks = [
     path: 'https://www.psal.org/psalsports/school/psal_schoolprofile.asp?cschool=31511'
   },
   {
-    name: 'Schedule ',
+    name: 'Schedule',
     path: 'https://www.psal.org/profiles/school-profile.aspx#31511'
   }
 ]
