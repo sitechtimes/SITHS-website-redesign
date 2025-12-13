@@ -1,3 +1,4 @@
+import { makerspace } from './makerspace'
 import {calendar} from './calendar'
 import {schedules} from './schedules'
 import {staff} from './staff'
@@ -50,6 +51,7 @@ export const schemaTypes = [
   partnerships,
   directLinks,
   athletics,
+  makerspace,
   alumniNews,
   alumOpportunities,
   transcript,

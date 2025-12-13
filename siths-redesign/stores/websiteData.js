@@ -11,6 +11,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const summerHomework = ref([])
   const partnerships = ref([])
   const directLinks = ref([])
+  const makerspace = ref([])
   const alumniNews = ref([])
   const alumOpportunities = ref([])
   const transcript = ref([])
@@ -166,6 +167,13 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         link,
         "imageUrl": image.asset->url
       },
+      "makerspace": *[_type == "makerspace"] | order(_createdAt asc){
+        _id,
+        headline,
+        fullContent,
+        externalLink,
+        "imageUrl": image.asset->url
+      },
       "video": *[_type == "video"]{
          _id,
         title,
@@ -200,6 +208,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       alumniNews.value = data.value.alumniNews
       transcript.value = data.value.transcript
       cdcNews.value = data.value.cdcNews
+      makerspace.value = data.value.makerspace
       videos.value = data.value.video.map((video) => {
         const links = ['S', 'M', 'L'].reduce((acc, size) => {
           acc[`${size}link`] = video[`${size}videoFileUrl`] || video[`${size}videoUrl`] || ''
@@ -238,6 +247,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     alumOpportunities,
     transcript,
     cdcNews,
+    makerspace,
     videos
   }
 })
