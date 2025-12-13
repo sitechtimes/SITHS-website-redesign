@@ -1,10 +1,23 @@
 <template>
-  <h1 class="text-2xl md:text-3xl lg:text-4xl text-center mb-4">Contacts</h1>
-  <div class="flex flex-col md:flex-row justify-center items-start px-4">
-    <SubpageMenu :pages="subpageLinks" :active="'Contacts'" class="absolute top-48 left-8 mb-4 md:mb-0 md:mr-8" />
-    <div class="flex flex-col justify-center items-center w-1/2">
-      <input type="text" placeholder="Search" v-model="searchQuery" class="mb-6 p-2 rounded-md w-2/3">
-      <contactCard v-for="item in websiteData.athletics" title="All (A-Z)" :contacts="item.contacts" />
+  <h1 class="mb-4 text-center text-2xl md:text-3xl lg:text-4xl">Contacts</h1>
+  <div class="flex flex-col items-start justify-center px-4 md:flex-row">
+    <SubpageMenu
+      :pages="subpageLinks"
+      :active="'Contacts'"
+      class="absolute left-8 top-48 mb-4 md:mb-0 md:mr-8"
+    />
+    <div class="flex w-1/2 flex-col items-center justify-center">
+      <input
+        type="text"
+        placeholder="Search"
+        v-model="searchQuery"
+        class="mb-6 w-2/3 rounded-md p-2"
+      />
+      <contactCard
+        v-for="item in websiteData.athletics"
+        title="All (A-Z)"
+        :contacts="item.contacts"
+      />
     </div>
   </div>
 </template>
@@ -19,10 +32,20 @@ const subpageLinks = [
     path: '/athletics'
   },
   {
-    name: "Contacts",
-    path: "/athletics/contacts",
+    name: 'Contacts',
+    path: '/athletics/contacts'
+  },
+  {
+    name: 'Athletic Forms',
+    path: '/athletics/forms'
+  },
+  {
+    name: 'Teams',
+    path: 'https://www.psal.org/psalsports/school/psal_schoolprofile.asp?cschool=31511'
+  },
+  {
+    name: 'Schedule ',
+    path: 'https://www.psal.org/profiles/school-profile.aspx#31511'
   }
-];
-
-
-</script>=
+]
+</script>

@@ -1,23 +1,21 @@
 <template>
-  <h1 class="mb-4 text-center text-2xl md:text-3xl lg:text-4xl">Athletics</h1>
+  <h1 class="mb-4 text-center text-2xl md:text-3xl lg:text-4xl">Athletic Forms</h1>
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
     <SubpageMenu
       :pages="subpageLinks"
-      :active="'About'"
+      :active="'Athletic Forms'"
       class="absolute left-8 top-48 mb-4 md:mb-0 md:mr-8"
     />
-    <div class="flex flex-col items-center justify-center md:w-5/6">
-      <h3>McKee - Staten Island Tech Public Schools Athletics League</h3>
-      <p>Home of the Seagulls</p>
-      <!-- psal director message -->
-      <div class="z-20 my-4 w-2/3 rounded-lg bg-black/40 p-8">
-        <PortableText
-          v-for="item in websiteData.athletics"
-          :value="item.description"
-          :components="myPortableTextComponents"
-        />
-      </div>
+    <div
+      class="z-20 my-4 flex w-1/2 flex-col items-center justify-center rounded-lg bg-black/40 p-8"
+    >
+      <PortableText
+        v-for="item in websiteData.athletics"
+        :value="item.forms"
+        :components="myPortableTextComponents"
+      />
     </div>
+
     <img
       class="absolute right-28 top-40 z-0 h-1/2 brightness-125"
       src="@/assets/imgs/baller.png"
@@ -56,7 +54,6 @@ const subpageLinks = [
     path: 'https://www.psal.org/profiles/school-profile.aspx#31511'
   }
 ]
-
 const myPortableTextComponents = {
   types: {
     image: ({ value }) => h('img', { src: value.imageUrl }),
