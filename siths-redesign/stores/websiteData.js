@@ -158,7 +158,8 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         _id,
         name,
         description,
-        contacts
+        contacts,
+        forms
       },
       "cdcNews": *[_type == "cdcNews"]{
         _id,
