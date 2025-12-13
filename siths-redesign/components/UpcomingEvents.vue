@@ -1,6 +1,6 @@
 <template>
   <div class="mt-6 flex flex-col items-center justify-center space-y-8">
-    <h2 class="my-2 text-3xl lg:text-4xl font-semibold">UPCOMING EVENTS</h2>
+    <h2 class="my-2 text-3xl font-semibold lg:text-4xl">UPCOMING EVENTS</h2>
     <div class="flex w-full flex-col items-center justify-center lg:flex-row">
       <!-- latest 5 events -->
       <div
@@ -40,7 +40,7 @@ const latestEvents = computed(() => {
     .slice(0, 5)
     .reverse()
     .map((event) => {
-      const formattedDate = new Date(event.date).toLocaleDateString('en-US', {
+      const formattedDate = new Date(event.date.start).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
