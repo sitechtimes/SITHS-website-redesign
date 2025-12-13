@@ -1,8 +1,5 @@
-import { directLinks } from '~/studio/schemaTypes/directLinks'
-
 export const useWebsiteDataStore = defineStore('websiteData', () => {
   const fetchLoading = ref(false)
-
   const posts = ref([])
   const erlenweinPosts = ref([])
   const terrusaPosts = ref([])
@@ -14,16 +11,20 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const summerHomework = ref([])
   const partnerships = ref([])
   const directLinks = ref([])
-  const athletics = ref([])
-  const cdcNews = ref([])
   const makerspace = ref([])
+  const alumniNews = ref([])
+  const alumOpportunities = ref([])
+  const transcript = ref([])
+  const cdcNews = ref([])
+  const athletics = ref([])
+  const videos = ref([])
 
   async function fetchAllData() {
     fetchLoading.value = true
     const query = `{
       "yearlyinfo": *[_type == "yearlyinfo"]{
         _id,
-        PostTitle,
+        postTitle,
         author,
         date,
         description,
@@ -31,7 +32,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       },
       "erlenwein": *[_type == "erlenwein"]{
         _id,
-        PostTitle,
+        postTitle,
         author,
         date,
         description,
@@ -39,13 +40,16 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       },
       "terrusa": *[_type == "terrusa"]{
         _id,
-        PostTitle,
+        postTitle,
         author,
         date,
         description,
         "imageUrl": image.asset->url
       },
-      "schedules": *[_type == "schedules"],
+      "schedules": *[_type == "schedules"]{
+      name,
+      periods
+      },
       "staff": *[_type == "staff"]{
         _id,
         name,
@@ -58,8 +62,9 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       "events": *[_type == "calendar"]{
         _id,
         date,
-        event,
+        subject,
         description,
+        descriptionPreview
       },
       "resources": *[_type == "resources"]{
         _id,
@@ -67,7 +72,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         resource,
         description,
         link,
-        category,
+        category
       },
       "opportunities": *[_type == "opportunities"]{
         _id,
@@ -75,7 +80,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         opptype,
         note,
         description,
-        link,
+        link
       },
       "summerHomework": *[_type == "summerHomework"]{
         _id,
@@ -84,13 +89,42 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         ninth,
         tenth,
         eleventh,
-        twelfth,
+        twelfth
       },
       "partnerships": *[_type == "partnerships"]{
         _id,
         name,
         description,
-        image,
+        image 
+      },
+      "alumniNews": *[_type == "alumniNews"]{
+        _id,
+        "thumbnail": image.asset->url,
+        postTitle,
+        subtitle,
+        date,
+        description,
+        "photos": photos[]{
+        "url": asset->url
+      }
+      },
+      "alumOpportunities": *[_type == "alumOpportunities"]{
+        _id,
+        "thumbnail": image.asset->url,
+        postTitle,
+        subtitle,
+        date,
+        description,
+        "photos": photos[]{
+        "url": asset->url
+      }
+      },
+      "transcript": *[_type == "transcript"]{
+        _id,
+        title,
+        instructions,
+        emailInstructions,
+        educationVerification
       },
       "directLinks": *[_type == "directLinks"]{
         _id,
@@ -124,7 +158,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         _id,
         name,
         description,
-        contacts,
+        contacts
       },
       "cdcNews": *[_type == "cdcNews"]{
         _id,
@@ -140,6 +174,19 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         externalLink,
         "imageUrl": image.asset->url
       },
+      "video": *[_type == "video"]{
+         _id,
+        title,
+        "SvideoFileUrl": SvideoFile.asset->url,
+        "SvideoUrl": SyoutubeUrl,
+        "SthumbnailUrl": Sthumbnail.asset->url,
+        "MvideoFileUrl": MvideoFile.asset->url,
+        "MvideoUrl": MyoutubeUrl,
+        "MthumbnailUrl": Mthumbnail.asset->url,
+        "LvideoFileUrl": LvideoFile.asset->url,
+        "LvideoUrl": LyoutubeUrl,
+        "LthumbnailUrl": Lthumbnail.asset->url
+      }
     }`
 
     try {
@@ -157,9 +204,19 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       summerHomework.value = data.value.summerHomework
       partnerships.value = data.value.partnerships
       athletics.value = data.value.athletics
+      alumOpportunities.value = data.value.alumOpportunities
+      alumniNews.value = data.value.alumniNews
+      transcript.value = data.value.transcript
       cdcNews.value = data.value.cdcNews
       makerspace.value = data.value.makerspace
-
+      videos.value = data.value.video.map((video) => {
+        const links = ['S', 'M', 'L'].reduce((acc, size) => {
+          acc[`${size}link`] = video[`${size}videoFileUrl`] || video[`${size}videoUrl`] || ''
+          acc[`${size}thumbnail`] = video[`${size}thumbnailUrl`] || ''
+          return acc
+        }, {})
+        return links
+      })
       fetchLoading.value = false
     } catch (error) {
       console.error('Error fetching posts:', error)
@@ -186,7 +243,11 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     summerHomework,
     terrusaPosts,
     athletics,
+    alumniNews,
+    alumOpportunities,
+    transcript,
     cdcNews,
     makerspace,
+    videos
   }
 })

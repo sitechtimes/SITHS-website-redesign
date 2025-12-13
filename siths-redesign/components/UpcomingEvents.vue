@@ -1,12 +1,12 @@
 <template>
   <div class="mt-6 flex flex-col items-center justify-center space-y-8">
-    <h2 class="my-2 text-3xl lg:text-4xl font-semibold">UPCOMING EVENTS</h2>
+    <h2 class="my-2 text-3xl font-semibold lg:text-4xl">UPCOMING EVENTS</h2>
     <div class="flex w-full flex-col items-center justify-center lg:flex-row">
       <!-- latest 5 events -->
       <div
         v-for="(event, index) in latestEvents"
         :key="index"
-        class="flex flex-col md:flex-row items-center justify-center"
+        class="flex flex-col items-center justify-center md:flex-row"
       >
         <div class="flex flex-col items-center">
           <p class="mb-2 font-semibold underline underline-offset-2">{{ event.formattedDate }}</p>
@@ -16,12 +16,16 @@
           </div>
         </div>
         <!-- vert/horz line between each event, except for last event -->
-        <span v-if="index < latestEvents.length - 1" class="inline my-4 md:mx-4 h-[1px] w-24 md:h-24 md:w-[1px] bg-gold"></span>
+        <span
+          v-if="index < latestEvents.length - 1"
+          class="my-4 inline h-[1px] w-24 bg-gold md:mx-4 md:h-24 md:w-[1px]"
+        ></span>
       </div>
     </div>
     <NuxtLink
-      class="font-bold mt-8 text-lg text-gold bg-left-bottom bg-gradient-to-r from-gold to-gold bg-[length:0%_2px] bg-no-repeat transition-all duration-500 ease-out hover:bg-[length:100%_2px]"
-      to="/calendar">
+      class="mt-8 bg-gradient-to-r from-gold to-gold bg-[length:0%_2px] bg-left-bottom bg-no-repeat text-lg font-bold text-gold transition-all duration-500 ease-out hover:bg-[length:100%_2px]"
+      to="/calendar"
+    >
       Show All Events
     </NuxtLink>
   </div>
@@ -36,7 +40,7 @@ const latestEvents = computed(() => {
     .slice(0, 5)
     .reverse()
     .map((event) => {
-      const formattedDate = new Date(event.date).toLocaleDateString('en-US', {
+      const formattedDate = new Date(event.date.start).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
