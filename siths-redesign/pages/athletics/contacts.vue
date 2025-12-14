@@ -11,13 +11,9 @@
         type="text"
         placeholder="Search"
         v-model="searchQuery"
-        class="mb-6 w-2/3 rounded-md p-2"
+        class="mb-6 w-2/3 rounded-md p-2 text-black"
       />
-      <contactCard
-        v-for="item in websiteData.athletics"
-        title="All (A-Z)"
-        :contacts="item.contacts"
-      />
+      <contactCard v-for="item in filteredAthletics" title="All (A-Z)" :contacts="item.contacts" />
     </div>
   </div>
 </template>
@@ -25,6 +21,21 @@
 <script setup>
 const websiteData = useWebsiteDataStore()
 const searchQuery = ref('')
+const filteredAthletics = computed(() => {
+  const query = searchQuery.value.trim().toLowerCase()
+  if (!query) return websiteData.athletics
+  return websiteData.athletics.map((athletic) => ({
+    ...athletic,
+    contacts: athletic.contacts.filter(
+      //overwrites contacts
+      (contact) =>
+        contact.coach?.toLowerCase().includes(query) ||
+        contact.email?.toLowerCase().includes(query) ||
+        contact.sport?.toLowerCase().includes(query) ||
+        contact.season?.toLowerCase().includes(query)
+    )
+  }))
+})
 
 const subpageLinks = [
   {
