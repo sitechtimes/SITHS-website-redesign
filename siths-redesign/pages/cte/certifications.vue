@@ -1,5 +1,7 @@
 <template>
-  <h1 class="mb-4 text-center text-2xl md:text-3xl lg:text-4xl">Career and Technical Education</h1>
+  <h1 class="text-center text-2xl md:mb-4 md:text-3xl lg:text-4xl">
+    Career and Technical Education
+  </h1>
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
     <SubpageMenu :pages="cteLinks" :active="'Certifications'" class="left-8 top-40" />
     <div class="flex w-full flex-col items-center justify-center md:w-5/6">
