@@ -84,6 +84,13 @@ const props = defineProps({
   }
 })
 
+const showArticlePopup = ref(false)
+const closePopup = (event) => {
+  if (event.target === event.currentTarget) {
+    showFilterPopup.value = false
+  }
+}
+
 const currentPage = ref(1)
 const totalPages = computed(function () {
   return Math.ceil(props.articles.length / props.articlesPerPage)
