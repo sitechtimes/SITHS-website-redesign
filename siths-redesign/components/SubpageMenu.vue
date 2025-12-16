@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full rounded-md p-1 md:w-1/6">
+  <div class="mb-8 w-full rounded-md p-1 md:static md:m-4 md:w-1/6 lg:absolute">
     <ul class="grid grid-cols-2 md:flex md:flex-col md:flex-wrap">
       <li
         v-for="subpage in pages"
