@@ -3,7 +3,7 @@
     Career and Technical Education
   </h1>
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
-    <SubpageMenu :pages="cteLinks" :active="'About'" class="left-8 top-40 mb-4 block" />
+    <SubpageMenu :pages="cteLinks" :active="'About'" class="left-8 top-40 mb-4 block lg:absolute" />
     <div class="flex w-full flex-col items-center justify-center md:w-5/6">
       <div class="w-full md:w-3/4 lg:w-3/5">
         <p class="mb-4 text-sm md:text-base">

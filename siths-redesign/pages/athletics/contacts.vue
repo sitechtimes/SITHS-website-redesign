@@ -4,7 +4,7 @@
     <SubpageMenu
       :pages="subpageLinks"
       :active="'Contacts'"
-      class="absolute left-8 top-48 mb-4 md:mb-0 md:mr-8"
+      class="left-8 top-48 mb-4 md:mb-0 md:mr-8"
     />
     <div class="flex w-1/2 flex-col items-center justify-center">
       <input

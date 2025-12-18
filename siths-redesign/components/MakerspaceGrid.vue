@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full px-4 lg:w-3/5 xl:w-3/6">
+  <div class="w-full">
     <div class="flex flex-col gap-6">
       <div
         v-for="article in paginatedArticles"

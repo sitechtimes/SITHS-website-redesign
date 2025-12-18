@@ -1,37 +1,40 @@
 <!-- for athletics only -->
 <template>
-    <div class="flex flex-col justify-center w-full">
-        <h3>{{ title }}</h3>
-        <div v-for="contact in contacts" class="relative bg-white/20 rounded-lg p-6 my-4 ml-0">
-            <p class="absolute top-1 right-1 bg-black/45 rounded-md px-2 p-1 text-md text-gold">
-                {{ contact.season.toUpperCase() }}
-            </p>
-            <div class="flex flex-row items-center">
-                <div class="w-1/3 ">
-                    <h4 class="my-1">{{ contact.sport }}</h4>
-                    <p v-for="item in contact.type"
-                        class="inline bg-black/45 rounded-md px-2 py-1 my-2 text-gold text-sm">
-                        {{ item.toUpperCase() }}</p>
-                </div>
-                <div class="w-1/3 my-1">
-                    <p>
-                        {{ contact.coach }}
-                    </p>
-                </div>
-                <div class="w-1/3 my-1">
-                    <p>
-                        {{ contact.email }}
-                    </p>
-                </div>
-            </div>
+  <div class="flex w-full flex-col justify-center">
+    <h3>{{ title }}</h3>
+    <div
+      v-for="contact in contacts"
+      class="w-200 relative my-4 ml-0 flex justify-center rounded-lg bg-white/20 p-6"
+    >
+      <p class="text-md absolute right-1 top-1 rounded-md bg-black/45 p-1 px-2 text-gold">
+        {{ contact.season.toUpperCase() }}
+      </p>
+      <div class="mt-2 flex flex-wrap items-center md:flex-row">
+        <div class="p-2">
+          <p class="my-1">{{ contact.sport }}</p>
+          <p
+            v-for="item in contact.type"
+            class="my-2 inline rounded-md bg-black/45 px-2 py-1 text-sm text-gold"
+          >
+            {{ item.toUpperCase() }}
+          </p>
         </div>
-
+        <div class="my-1 p-4">
+          <p>
+            {{ contact.coach }}
+          </p>
+          <p>
+            {{ contact.email }}
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script setup>
 defineProps({
-    title: String,
-    contacts: Array
+  title: String,
+  contacts: Array
 })
 </script>
