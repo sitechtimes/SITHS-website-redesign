@@ -2,11 +2,13 @@
   <h1 class="mb-4 text-center text-2xl md:text-3xl lg:text-4xl">Athletics</h1>
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
     <SubpageMenu :pages="subpageLinks" :active="'About'" class="left-8 top-48 z-20" />
-    <div class="z-20 flex flex-col items-center justify-center md:w-5/6">
-      <h3>McKee - Staten Island Tech Public Schools Athletics League</h3>
-      <p>Home of the Seagulls</p>
+    <div class="z-20 flex w-full flex-col text-center md:mx-10 md:w-1/2">
       <!-- psal director message -->
-      <div class="z-20 my-4 w-2/3 rounded-lg bg-black/40 p-8">
+      <h2>McKee - Staten Island Tech Public Schools Athletics League</h2>
+      <p>Home of the Seagulls</p>
+      <div
+        class="z-20 my-4 flex w-full flex-col items-center justify-center rounded-lg bg-black/40 p-8"
+      >
         <PortableText
           v-for="item in websiteData.athletics"
           :value="item.description"

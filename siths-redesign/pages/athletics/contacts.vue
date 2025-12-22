@@ -1,12 +1,8 @@
 <template>
   <h1 class="mb-4 text-center text-2xl md:text-3xl lg:text-4xl">Contacts</h1>
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
-    <SubpageMenu
-      :pages="subpageLinks"
-      :active="'Contacts'"
-      class="left-8 top-48 mb-4 md:mb-0 md:mr-8"
-    />
-    <div class="flex w-1/2 flex-col items-center justify-center">
+    <SubpageMenu :pages="subpageLinks" :active="'Contacts'" class="left-8 top-48 z-20" />
+    <div class="z-20 flex w-full flex-col items-center md:w-1/2">
       <input
         type="text"
         placeholder="Search"

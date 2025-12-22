@@ -3,7 +3,7 @@
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
     <SubpageMenu :pages="subpageLinks" :active="'Athletic Forms'" />
     <div
-      class="z-20 my-4 flex w-1/2 flex-col items-center justify-center rounded-lg bg-black/40 p-8"
+      class="z-20 mb-10 flex w-full flex-col self-center rounded-lg bg-black/40 p-8 text-center md:mx-10 md:w-1/2"
     >
       <PortableText
         v-for="item in websiteData.athletics"
