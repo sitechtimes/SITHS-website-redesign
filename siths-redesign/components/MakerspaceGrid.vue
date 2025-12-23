@@ -81,70 +81,21 @@
         </div>
       </div>
     </div>
-    <div
-      v-if="selectedArticle"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
-      @click="selectedArticle = null"
-    >
-      <div
-        class="flex max-h-[85vh] w-full max-w-3xl flex-col overflow-hidden rounded-xl bg-white text-black shadow-2xl"
-        @click.stop
-      >
-        <div class="border-gray-200 flex items-start justify-between border-b p-6">
-          <h2 class="text-gray-900 pr-4 text-2xl font-bold">{{ selectedArticle.headline }}</h2>
-          <button
-            @click="selectedArticle = null"
-            class="text-gray-400 hover:text-gray-600 p-1 transition-colors hover:cursor-pointer"
-          ></button>
-        </div>
-        <div class="flex-1 overflow-y-auto p-6">
-          <img
-            v-if="selectedArticle.imageUrl"
-            :src="selectedArticle.imageUrl"
-            :alt="selectedArticle.headline"
-            class="mb-6 h-64 w-full rounded-lg object-cover"
-          />
-          <p class="text-gray-700 whitespace-pre-wrap text-base leading-relaxed">
-            {{ selectedArticle.fullContent }}
-          </p>
-        </div>
-      </div>
-    </div>
-    <div v-if="totalPages > 1" class="mt-8 flex w-full items-center justify-center gap-4">
-      <button
-        @click="currentPage > 1 ? previousPage() : null"
-        :class="[
-          'btn inline-flex',
-          currentPage === 1 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'
-        ]"
-      >
-        ← Previous
-      </button>
-      <div class="flex gap-2">
-        <button
-          v-for="page in totalPages"
-          :key="page"
-          @click="goToPage(page)"
-          :class="{ 'btn-active': currentPage === page }"
-          class="btn join-item"
-        >
-          {{ page }}
-        </button>
-      </div>
-      <button
-        @click="currentPage < totalPages ? nextPage() : null"
-        :class="[
-          'btn inline-flex',
-          currentPage === totalPages ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'
-        ]"
-      >
-        Next →
-      </button>
-    </div>
+    <FullArticle :article="selectedArticle" @close="selectedArticle = null" />
+    <Pagination
+      :current-page="currentPage"
+      :total-pages="totalPages"
+      @previous="previousPage"
+      @next="nextPage"
+      @go-to="goToPage"
+    />
   </div>
 </template>
 
 <script setup>
+import FullArticle from './FullArticle.vue'
+import Pagination from './Pagination.vue'
+
 const props = defineProps({
   articles: {
     type: Array,
