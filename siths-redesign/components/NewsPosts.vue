@@ -17,16 +17,16 @@
   <div
     v-for="(post, index) in posts"
     :key="index"
-    class="collapse collapse-arrow mx-auto my-2 w-full rounded-lg border border-gold bg-white text-black lg:w-3/4"
+    class="collapse collapse-arrow m-6 my-2 w-full rounded-lg border border-gold bg-white text-black md:mx-auto lg:w-3/4"
   >
     <input type="checkbox" class="peer" :checked="index === 0" />
 
-    <div class="collapse-title inline-flex text-wrap">
+    <div class="collapse-title flex flex-row text-wrap md:inline-flex">
       <img
         v-if="post.thumbnail"
         :src="post.thumbnail"
         alt="post image"
-        class="mr-4 mt-2 max-h-40 min-h-24 min-w-32 max-w-64 rounded-md object-contain"
+        class="m-2 w-full object-cover md:max-h-28 md:w-1/3 md:object-contain"
       />
       <div>
         <p class="m-2 text-2xl font-semibold text-black">{{ post.postTitle }}</p>
@@ -39,12 +39,12 @@
     <div class="collapse-content flex flex-col justify-center">
       <hr class="border-gold" />
       <PortableText :value="post.description || []" :components="myPortableTextComponents" />
-      <div class="inline-flex justify-center">
+      <div class="justify-center sm:flex sm:flex-row md:inline-flex">
         <img
           v-for="(photo, index) in post.photos || []"
           :key="index"
           :src="photo?.url || ''"
-          class="m-4 w-1/4 hover:cursor-pointer"
+          class="w-full p-8 hover:cursor-pointer md:w-1/3"
           @click="selectedPhoto = photo?.url"
         />
       </div>
