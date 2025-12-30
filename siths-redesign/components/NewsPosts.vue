@@ -17,28 +17,31 @@
   <div
     v-for="(post, index) in posts"
     :key="index"
-    class="collapse collapse-arrow m-6 my-2 w-full rounded-lg border border-gold bg-white text-black md:mx-auto lg:w-3/4"
+    class="collapse collapse-arrow mx-auto my-2 w-full rounded-lg border border-gold bg-white text-black md:w-5/6 lg:w-3/4"
   >
     <input type="checkbox" class="peer" :checked="index === 0" />
 
-    <div class="collapse-title flex flex-row text-wrap md:inline-flex">
+    <div class="collapse-title m-2 flex flex-col text-wrap md:flex-row">
       <img
         v-if="post.thumbnail"
         :src="post.thumbnail"
         alt="post image"
-        class="m-2 w-full object-cover md:max-h-28 md:w-1/3 md:object-contain"
+        class="w-1/2 object-cover md:max-h-48 md:object-contain md:pr-4"
       />
-      <div>
-        <p class="m-2 text-2xl font-semibold text-black">{{ post.postTitle }}</p>
-        <p v-if="post.subtitle" class="m-2 text-sm text-black">
+      <div class="w-full text-center md:text-start lg:w-auto">
+        <p class="text-2xl font-semibold text-black">{{ post.postTitle }}</p>
+        <p v-if="post.subtitle" class="text-sm text-black">
           {{ post.subtitle }}
         </p>
       </div>
     </div>
 
-    <div class="collapse-content flex flex-col justify-center">
+    <div class="collapse-content flex flex-col text-center md:text-start">
       <hr class="border-gold" />
-      <PortableText :value="post.description || []" :components="myPortableTextComponents" />
+      <div class="mt-4">
+        <PortableText :value="post.description || []" :components="myPortableTextComponents" />
+      </div>
+
       <div class="justify-center sm:flex sm:flex-row md:inline-flex">
         <img
           v-for="(photo, index) in post.photos || []"
