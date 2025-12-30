@@ -21,14 +21,14 @@
   >
     <input type="checkbox" class="peer" :checked="index === 0" />
 
-    <div class="collapse-title m-2 flex flex-col text-wrap md:flex-row">
+    <div class="collapse-title m-2 flex flex-col text-wrap lg:flex-row">
       <img
         v-if="post.thumbnail"
         :src="post.thumbnail"
         alt="post image"
-        class="w-1/2 object-cover md:max-h-48 md:object-contain md:pr-4"
+        class="max-h-48 w-full object-contain lg:max-w-64 lg:pr-4"
       />
-      <div class="w-full text-center md:text-start lg:w-auto">
+      <div class="text-center md:text-start">
         <p class="text-2xl font-semibold text-black">{{ post.postTitle }}</p>
         <p v-if="post.subtitle" class="text-sm text-black">
           {{ post.subtitle }}
