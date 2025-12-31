@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="collapse-content flex w-full flex-col lg:flex-row">
+    <div class="collapse-content flex w-full flex-col overflow-hidden">
       <hr class="border-gold" />
       <PortableText :value="post.description || []" :components="myPortableTextComponents" />
 
@@ -43,7 +43,7 @@
           v-for="(photo, index) in post.photos || []"
           :key="index"
           :src="photo?.url || ''"
-          class="w-full p-4 hover:cursor-pointer lg:w-1/3"
+          class="w-full object-contain p-4 lg:w-1/3"
           @click="selectedPhoto = photo?.url"
         />
       </div>
