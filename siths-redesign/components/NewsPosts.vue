@@ -17,34 +17,33 @@
   <div
     v-for="(post, index) in posts"
     :key="index"
-    class="collapse collapse-arrow mx-auto my-2 w-full rounded-lg border border-gold bg-white text-black lg:w-3/4"
+    class="collapse collapse-arrow mx-auto my-2 w-5/6 rounded-lg border border-gold bg-white text-black lg:w-3/4"
   >
     <input type="checkbox" class="peer" :checked="index === 0" />
 
-    <div class="collapse-title inline-flex text-wrap">
-      <img
-        v-if="post.thumbnail"
-        :src="post.thumbnail"
-        alt="post image"
-        class="mr-4 mt-2 max-h-40 min-h-24 min-w-32 max-w-64 rounded-md object-contain"
-      />
-      <div>
-        <p class="m-2 text-2xl font-semibold text-black">{{ post.postTitle }}</p>
-        <p v-if="post.subtitle" class="m-2 text-sm text-black">
+    <div class="collapse-title flex w-full flex-col items-center lg:flex-row">
+      <div v-if="post.thumbnail" class="flex w-full justify-center lg:max-w-64 lg:pr-4">
+        <img :src="post.thumbnail" alt="post image" class="max-h-32 max-w-full object-contain" />
+      </div>
+
+      <div class="m-2 min-w-0 space-y-2 text-center lg:text-start">
+        <p class="text-lg font-semibold text-black md:text-2xl">{{ post.postTitle }}</p>
+        <p v-if="post.subtitle" class="text-sm text-black">
           {{ post.subtitle }}
         </p>
       </div>
     </div>
 
-    <div class="collapse-content flex flex-col justify-center">
+    <div class="collapse-content flex w-full flex-col overflow-hidden">
       <hr class="border-gold" />
       <PortableText :value="post.description || []" :components="myPortableTextComponents" />
-      <div class="inline-flex justify-center">
+
+      <div class="flex flex-col justify-center lg:flex-row">
         <img
           v-for="(photo, index) in post.photos || []"
           :key="index"
           :src="photo?.url || ''"
-          class="m-4 w-1/4 hover:cursor-pointer"
+          class="w-full object-contain p-4 lg:w-1/3"
           @click="selectedPhoto = photo?.url"
         />
       </div>
