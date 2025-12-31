@@ -2,12 +2,12 @@
   <h1 class="mb-4 text-center text-2xl md:text-3xl lg:text-4xl">Contacts</h1>
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
     <SubpageMenu :pages="subpageLinks" :active="'Contacts'" class="left-8 top-48 z-20" />
-    <div class="z-20 flex w-full flex-col items-center md:w-1/2">
+    <div class="z-20 mx-auto flex w-full flex-col items-center md:w-1/2">
       <input
         type="text"
         placeholder="Search"
         v-model="searchQuery"
-        class="mb-6 w-2/3 rounded-md p-2 text-black"
+        class="mb-6 w-full rounded-md p-2 text-black lg:w-2/3"
       />
       <contactCard v-for="item in filteredAthletics" title="All (A-Z)" :contacts="item.contacts" />
     </div>
