@@ -1,31 +1,31 @@
 <!-- for athletics only -->
 <template>
-  <div class="flex w-full flex-col justify-center">
+  <div class="flex w-full flex-col justify-center md:ml-8 lg:w-auto">
     <h3>{{ title }}</h3>
     <div
       v-for="contact in contacts"
-      class="w-200 relative my-4 ml-0 flex justify-center rounded-lg bg-white/20 p-6"
+      class="relative my-4 flex justify-center rounded-lg bg-white/20 p-6"
     >
       <p class="text-md absolute right-1 top-1 rounded-md bg-black/45 p-1 px-2 text-gold">
         {{ contact.season.toUpperCase() }}
       </p>
-      <div class="mt-2 flex flex-wrap items-center md:flex-row">
-        <div class="p-2">
-          <p class="my-1">{{ contact.sport }}</p>
-          <p
+      <div class="mt-2 flex flex-wrap items-center lg:space-x-10">
+        <div class="m-2 flex flex-col">
+          <span>{{ contact.sport }}</span>
+          <span
             v-for="item in contact.type"
-            class="my-2 inline rounded-md bg-black/45 px-2 py-1 text-sm text-gold"
+            class="rounded-md bg-black/45 px-2 py-1 text-center text-sm text-gold"
           >
             {{ item.toUpperCase() }}
-          </p>
+          </span>
         </div>
-        <div class="my-1 p-4">
-          <p>
+        <div class="m-2 flex flex-col">
+          <span>
             {{ contact.coach }}
-          </p>
-          <p>
+          </span>
+          <span>
             {{ contact.email }}
-          </p>
+          </span>
         </div>
       </div>
     </div>
