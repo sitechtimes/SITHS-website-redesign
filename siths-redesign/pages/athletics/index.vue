@@ -2,7 +2,7 @@
   <h1 class="mb-4 text-center text-2xl md:text-3xl lg:text-4xl">Athletics</h1>
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
     <SubpageMenu :pages="subpageLinks" :active="'About'" class="left-8 top-48 z-20" />
-    <div class="z-20 flex w-full flex-col text-center md:mx-10 md:w-1/2">
+    <div class="z-20 flex w-full flex-col text-center md:mx-auto md:w-1/2">
       <!-- psal director message -->
       <h2>McKee - Staten Island Tech Public Schools Athletics League</h2>
       <p>Home of the Seagulls</p>

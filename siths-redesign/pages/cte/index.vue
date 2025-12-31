@@ -33,38 +33,41 @@
           ></iframe>
         </div>
         <h2 class="py-4 text-xl md:text-2xl">Work-Based Learning</h2>
-        <p class="mb-4 text-sm md:text-base">
-          Work-based learning (WBL) is the “umbrella” term used to identify activities that engage
-          employers and schools in providing structured learning experiences for students. Our WBL
-          program is a school-business partnership program that provides high school students, age
-          14 and above, the opportunity to obtain on-site, career exploration and development
-          experiences. The focus of the program is to give students meaningful, hands-on, career
-          exploration opportunities.
-        </p>
-        <br />
-        <p class="mb-4 text-sm md:text-base">
-          The philosophy behind Staten Island Technical High School’s program is to move our
-          students’ education into the 21st Century and better assist our students with their future
-          career plans. We believe in steady and consistent integration of this information and
-          experience throughout the students' four years at Staten Island Tech. In the ninth grade,
-          students begin with Career Awareness to learn about the variety of career fields available
-          to them. In the 10th grade, students focus on Career Exploration, where they further
-          research jobs and internships that they would be interested and shadow professionals in
-          these fields. Lastly, in the 11th and 12th grades, students do intense Career Preparation
-          by working both paid and unpaid internships in the fields of their interest to become
-          fully equipped with the skills needed to succeed.
-        </p>
-        <br />
-        <p class="mb-4 text-sm md:text-base">
-          Participating in the program helps bring our students to a higher level academically,
-          professionally, and personally. Students are able to experience job shadowing experiences
-          and career days, and come in contact with positive adult role models who can help
-          demonstrate, instill, and reinforce important behaviors such as a positive attitude,
-          integrity, ethics, human relations, teamwork, and timeliness. The WBL program gives
-          students the chance to become hands-on learners, build confidence in themselves and gain
-          experience that will benefit them for the rest of their lives. The map below highlights
-          the locations and businesses that have participated in our WBL program in recent years.
-        </p>
+        <div class="mb-4 text-sm md:text-base">
+          <p>
+            Work-based learning (WBL) is the “umbrella” term used to identify activities that engage
+            employers and schools in providing structured learning experiences for students. Our WBL
+            program is a school-business partnership program that provides high school students, age
+            14 and above, the opportunity to obtain on-site, career exploration and development
+            experiences. The focus of the program is to give students meaningful, hands-on, career
+            exploration opportunities.
+          </p>
+          <br />
+          <p>
+            The philosophy behind Staten Island Technical High School’s program is to move our
+            students’ education into the 21st Century and better assist our students with their
+            future career plans. We believe in steady and consistent integration of this information
+            and experience throughout the students' four years at Staten Island Tech. In the ninth
+            grade, students begin with Career Awareness to learn about the variety of career fields
+            available to them. In the 10th grade, students focus on Career Exploration, where they
+            further research jobs and internships that they would be interested and shadow
+            professionals in these fields. Lastly, in the 11th and 12th grades, students do intense
+            Career Preparation by working both paid and unpaid internships in the fields of their
+            interest to become fully equipped with the skills needed to succeed.
+          </p>
+          <br />
+          <p>
+            Participating in the program helps bring our students to a higher level academically,
+            professionally, and personally. Students are able to experience job shadowing
+            experiences and career days, and come in contact with positive adult role models who can
+            help demonstrate, instill, and reinforce important behaviors such as a positive
+            attitude, integrity, ethics, human relations, teamwork, and timeliness. The WBL program
+            gives students the chance to become hands-on learners, build confidence in themselves
+            and gain experience that will benefit them for the rest of their lives. The map below
+            highlights the locations and businesses that have participated in our WBL program in
+            recent years.
+          </p>
+        </div>
         <div class="my-8 flex items-center justify-center">
           <iframe
             class="h-[300px] w-full max-w-[640px] md:h-[480px]"
