@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full flex flex-col justify-center items-center">
-        <h1 class="text-4xl font-kumbh font-semibold text-center p-6">School Calendar</h1>
-        <DesktopCalendar class="mt-8"/>
-    </div>
+  <div class="flex w-full flex-col items-center justify-center">
+    <h1 class="p-6 text-center font-kumbh text-4xl font-semibold">School Calendar</h1>
+    <DesktopCalendar class="mt-8" />
+  </div>
 </template>

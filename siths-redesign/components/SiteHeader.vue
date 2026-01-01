@@ -7,8 +7,8 @@
     >
       <!-- nav links -->
       <div id="menu-content" class="absolute top-10 z-10 w-full space-y-8">
-        <nav class="flex flex-row flex-wrap p-8">
-          <div v-for="(category, index) in navLinks" :key="index" class="w-1/4 px-4 py-8">
+        <nav class="flex flex-col flex-wrap p-8 md:flex-row">
+          <div v-for="(category, index) in navLinks" :key="index" class="w-full px-4 py-8 md:w-1/4">
             <h3 class="font-kumhb mb-2 border-b-[1px] border-gold font-bold text-white">
               {{ category.category }}
             </h3>

@@ -1,13 +1,9 @@
 <template>
   <h1 class="mb-4 text-center text-2xl md:text-3xl lg:text-4xl">Athletic Forms</h1>
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
-    <SubpageMenu
-      :pages="subpageLinks"
-      :active="'Athletic Forms'"
-      class="absolute left-8 top-48 mb-4 md:mb-0 md:mr-8"
-    />
+    <SubpageMenu :pages="subpageLinks" :active="'Athletic Forms'" />
     <div
-      class="z-20 my-4 flex w-1/2 flex-col items-center justify-center rounded-lg bg-black/40 p-8"
+      class="z-20 mb-10 flex w-full flex-col self-center rounded-lg bg-black/40 p-8 text-center md:mx-auto md:w-1/2"
     >
       <PortableText
         v-for="item in websiteData.athletics"
