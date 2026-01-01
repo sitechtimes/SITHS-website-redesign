@@ -17,7 +17,7 @@
 
     <iframe
       v-if="isYouTube(videoSource)"
-      class="h-full w-full allow-popups"
+      class="allow-popups h-full w-full"
       :src="getYouTubeEmbedUrl(videoSource)"
       frameborder="0"
       allow="autoplay; encrypted-media"
@@ -31,8 +31,6 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue'
-
 const props = defineProps({
   videoSource: String
 })

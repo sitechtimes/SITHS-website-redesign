@@ -1,4 +1,4 @@
-import { makerspace } from './makerspace'
+import {makerspace} from './makerspace'
 import {calendar} from './calendar'
 import {schedules} from './schedules'
 import {staff} from './staff'
@@ -17,6 +17,7 @@ import {alumOpportunities} from './alumOpportunities'
 import {transcript} from './transcript'
 import {cdcNews} from './cdcNews'
 import {video} from './video'
+import {parent} from './parent'
 
 export const timeValueType = defineType({
   name: 'timeValue',
@@ -57,4 +58,5 @@ export const schemaTypes = [
   transcript,
   cdcNews,
   video,
+  parent,
 ]

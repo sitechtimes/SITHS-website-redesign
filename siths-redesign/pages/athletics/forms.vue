@@ -50,34 +50,4 @@ const subpageLinks = [
     path: 'https://www.psal.org/profiles/school-profile.aspx#31511'
   }
 ]
-const myPortableTextComponents = {
-  types: {
-    image: ({ value }) => h('img', { src: value.imageUrl }),
-    callToAction: ({ value, isInline }, { slots }) =>
-      isInline
-        ? h('a', { href: value.url }, value.text)
-        : h('div', { class: 'callToAction' }, value.text)
-  },
-
-  list: {
-    // Ex. 1: customizing common list types
-    bullet: (_, { slots }) => h('li', { class: 'list-disc list-inside' }, slots.default?.()),
-    number: (_, { slots }) => h('ol', { class: 'list-decimal list-inside' }, slots.default?.()),
-
-    // Ex. 2: rendering custom lists
-    checkmarks: (_, { slots }) => h('ol', { class: 'm-auto text-lg' }, slots.default?.())
-  },
-
-  marks: {
-    em: (_, { slots }) => h('em', { class: 'text-red-600 font-semibold' }, slots.default?.()),
-    link: ({ value }, { slots }) => {
-      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
-      return h(
-        'a',
-        { class: 'text-blue-500 underline font-semibold', href: value.href, rel },
-        slots.default?.()
-      )
-    }
-  }
-}
 </script>

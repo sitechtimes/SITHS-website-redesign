@@ -139,6 +139,16 @@ const navLinks = [
     ]
   },
   {
+    category: 'Parent',
+    categoryValue: 'parent',
+    links: [
+      { name: 'Absence Reporting', path: '/absence-reporting', directLink: false },
+      { name: 'Automated Telephone Message Directory', path: '/telephone', directLink: false },
+      { name: 'Parent Coordinator', path: '/coordinator', directLink: false },
+      { name: 'PTA', path: '/pta', directLink: false }
+    ]
+  },
+  {
     category: 'Alumni',
     categoryValue: 'alumni',
     links: [
@@ -162,6 +172,7 @@ function addDirectLinks(directLinks) {
     'School Information': directLinks.schoolInformation || [],
     Student: directLinks.student || [],
     'Clubs and Activities': directLinks.clubsActivities || [],
+    Parent: directLinks.parent || [],
     Alumni: directLinks.alumni || [],
     'Contact Us': directLinks.contactUs || []
   }
