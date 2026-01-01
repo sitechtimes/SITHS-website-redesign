@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import {defineField, defineType} from 'sanity'
 
 export const directLinks = defineType({
   name: 'directLinks',
@@ -118,6 +118,30 @@ export const directLinks = defineType({
       ],
     }),
     defineField({
+      name: 'parent',
+      title: 'Parent',
+      type: 'array',
+      of: [
+        defineType({
+          name: 'linkComponent',
+          title: 'Link Component',
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+            }),
+            defineField({
+              name: 'link',
+              title: 'Link',
+              type: 'url',
+            }),
+          ],
+        }),
+      ],
+    }),
+    defineField({
       name: 'alumni',
       title: 'Alumni',
       type: 'array',
@@ -166,4 +190,4 @@ export const directLinks = defineType({
       ],
     }),
   ],
-});
+})

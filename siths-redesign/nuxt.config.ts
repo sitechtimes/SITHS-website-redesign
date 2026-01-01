@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/main.css'],
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sanity', '@pinia/nuxt'],
+  imports: {
+    dirs: ['lib']
+  },
   runtimeConfig: {
     sanity: {
       projectId: 'cb6mdrtg',
