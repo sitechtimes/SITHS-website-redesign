@@ -38,11 +38,14 @@ watch(
 const subpageLinks = computed(() => {
   if (!websiteData.policies) return []
 
-  return websiteData.policies.map((policy) => {
-    return {
+  return [...websiteData.policies]
+    .sort((a, b) => {
+      // index === true should come first
+      return (b.index === true) - (a.index === true)
+    })
+    .map((policy) => ({
       name: policy.name,
       path: policy.index ? '/school-policies' : `/school-policies/${slugify(policy.name)}`
-    }
-  })
+    }))
 })
 </script>
