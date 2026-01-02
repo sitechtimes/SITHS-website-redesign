@@ -125,7 +125,8 @@ const navLinks = [
     links: [
       { name: "Principal Erlwenwein's Announcements", path: '/erlenwein', directLink: false },
       { name: 'Resources', path: '/resources', directLink: false },
-      { name: 'Summer Homework', path: '/summer-homework', directLink: false }
+      { name: 'Summer Homework', path: '/summer-homework', directLink: false },
+      { name: 'School Policies', path: '/school-policies', directLink: false }
     ]
   },
   {

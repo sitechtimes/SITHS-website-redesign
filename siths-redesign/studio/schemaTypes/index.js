@@ -18,6 +18,7 @@ import {transcript} from './transcript'
 import {cdcNews} from './cdcNews'
 import {video} from './video'
 import {parent} from './parent'
+import {policy} from './policy'
 
 export const timeValueType = defineType({
   name: 'timeValue',
@@ -59,4 +60,5 @@ export const schemaTypes = [
   cdcNews,
   video,
   parent,
+  policy,
 ]

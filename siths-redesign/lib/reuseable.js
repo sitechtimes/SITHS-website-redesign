@@ -35,3 +35,14 @@ export const myPortableTextComponents = {
       h('h2', { class: 'text-lg font-semibold text-white mt-4' }, slots.default?.())
   }
 }
+
+export function slugify(text) {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '')
+}

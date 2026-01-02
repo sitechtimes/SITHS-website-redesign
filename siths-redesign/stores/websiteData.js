@@ -19,6 +19,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const athletics = ref([])
   const videos = ref([])
   const parent = ref([])
+  const policies = ref([])
   async function fetchAllData() {
     fetchLoading.value = true
     const query = `{
@@ -199,6 +200,12 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         coordinator,
         absence,
       },
+      "policy": *[_type == "policy"]{
+        _id,
+        name,
+        description,
+        index
+      },
     }`
 
     try {
@@ -230,6 +237,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         return links
       })
       parent.value = data.value.parent
+      policies.value = data.value.policy
       fetchLoading.value = false
     } catch (error) {
       console.error('Error fetching posts:', error)
@@ -262,6 +270,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     cdcNews,
     makerspace,
     videos,
-    parent
+    parent,
+    policies
   }
 })
