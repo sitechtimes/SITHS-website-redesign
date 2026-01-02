@@ -1,6 +1,13 @@
 export const myPortableTextComponents = {
   types: {
-    image: ({ value }) => h('img', { src: value.imageUrl }),
+    image: ({ value }) =>
+      h('img', {
+        src: urlFor(value).width(800).auto('format').url(),
+        alt: value.alt || '',
+        loading: 'lazy',
+        class: 'my-6 rounded-lg'
+      }),
+
     callToAction: ({ value, isInline }, { slots }) =>
       isInline
         ? h('a', { href: value.url }, value.text)
