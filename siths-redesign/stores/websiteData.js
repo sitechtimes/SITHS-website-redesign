@@ -203,7 +203,13 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       "policy": *[_type == "policy"]{
         _id,
         name,
-        description,
+        description[]{
+          ...,
+          _type == "image" => {
+            ...,
+            "url": asset->url
+          }
+        },
         index
       },
     }`
