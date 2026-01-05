@@ -4,6 +4,10 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/sitechtimes/SITHS-website-redesign)
 ![GitHub watchers](https://img.shields.io/github/watchers/sitechtimes/SITHS-website-redesign)
 
+> ⚠️ **Work in Progress**  
+> This school website redesign is currently under active development.  
+> Features and content may change as the project progresses.
+
 ```bash
 Demo: https://sithsofficial.netlify.app/
 ```
