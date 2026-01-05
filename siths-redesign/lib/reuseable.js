@@ -1,6 +1,7 @@
 export const myPortableTextComponents = {
   types: {
-    image: ({ value }) => h('img', { src: value.imageUrl }),
+    image: ({ value }) => h('img', { src: value.url }),
+
     callToAction: ({ value, isInline }, { slots }) =>
       isInline
         ? h('a', { href: value.url }, value.text)
@@ -34,4 +35,15 @@ export const myPortableTextComponents = {
     h2: (_, { slots }) =>
       h('h2', { class: 'text-lg font-semibold text-white mt-4' }, slots.default?.())
   }
+}
+
+export function slugify(text) {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '')
 }
