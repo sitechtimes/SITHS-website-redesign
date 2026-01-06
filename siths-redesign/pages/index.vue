@@ -83,7 +83,6 @@
 
 <script setup>
 import { gsap } from 'gsap'
-import SchoolHistory from '~/components/SchoolHistory.vue'
 
 onMounted(() => {
   gsap.to('#header-texts', {

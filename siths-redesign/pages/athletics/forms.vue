@@ -1,13 +1,9 @@
 <template>
   <h1 class="mb-4 text-center text-2xl md:text-3xl lg:text-4xl">Athletic Forms</h1>
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
-    <SubpageMenu
-      :pages="subpageLinks"
-      :active="'Athletic Forms'"
-      class="absolute left-8 top-48 mb-4 md:mb-0 md:mr-8"
-    />
+    <SubpageMenu :pages="subpageLinks" :active="'Athletic Forms'" />
     <div
-      class="z-20 my-4 flex w-1/2 flex-col items-center justify-center rounded-lg bg-black/40 p-8"
+      class="z-20 mb-10 flex w-full flex-col self-center rounded-lg bg-black/40 p-8 text-center md:mx-auto md:w-1/2"
     >
       <PortableText
         v-for="item in websiteData.athletics"
@@ -54,34 +50,4 @@ const subpageLinks = [
     path: 'https://www.psal.org/profiles/school-profile.aspx#31511'
   }
 ]
-const myPortableTextComponents = {
-  types: {
-    image: ({ value }) => h('img', { src: value.imageUrl }),
-    callToAction: ({ value, isInline }, { slots }) =>
-      isInline
-        ? h('a', { href: value.url }, value.text)
-        : h('div', { class: 'callToAction' }, value.text)
-  },
-
-  list: {
-    // Ex. 1: customizing common list types
-    bullet: (_, { slots }) => h('li', { class: 'list-disc list-inside' }, slots.default?.()),
-    number: (_, { slots }) => h('ol', { class: 'list-decimal list-inside' }, slots.default?.()),
-
-    // Ex. 2: rendering custom lists
-    checkmarks: (_, { slots }) => h('ol', { class: 'm-auto text-lg' }, slots.default?.())
-  },
-
-  marks: {
-    em: (_, { slots }) => h('em', { class: 'text-red-600 font-semibold' }, slots.default?.()),
-    link: ({ value }, { slots }) => {
-      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
-      return h(
-        'a',
-        { class: 'text-blue-500 underline font-semibold', href: value.href, rel },
-        slots.default?.()
-      )
-    }
-  }
-}
 </script>

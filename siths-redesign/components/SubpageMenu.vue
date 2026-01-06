@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full rounded-md p-1 md:w-1/6">
+  <div class="left-8 top-48 z-20 mb-8 w-full rounded-md p-1 md:w-1/6 lg:absolute">
     <ul class="grid grid-cols-2 md:flex md:flex-col md:flex-wrap">
       <li
         v-for="subpage in pages"
@@ -11,15 +11,20 @@
           :href="subpage.path"
           target="_blank"
           rel="noopener noreferrer"
-          class="lg:text-md block text-sm text-white transition duration-300 ease-in-out hover:text-gold"
+          class="lg:text-md flex items-center text-sm text-white transition duration-300 ease-in-out hover:text-gold"
         >
           {{ subpage.name }}
+          <img
+            class="ml-2 inline h-5 w-5 invert"
+            src="../assets/icons/xlink.png"
+            alt="Navigation leads to external site"
+          />
         </a>
 
         <NuxtLink
           v-else
           :class="[
-            'lg:text-md block text-sm transition duration-300 ease-in-out',
+            'lg:text-md text-sm transition duration-300 ease-in-out',
             subpage.name === active ? 'text-gold' : 'text-white hover:text-gold'
           ]"
           :to="subpage.path"

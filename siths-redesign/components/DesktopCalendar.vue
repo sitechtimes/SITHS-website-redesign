@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-12" v-if="calendarData.dateInfo.length > 0">
+  <div class="mx-4 mb-12" v-if="calendarData.dateInfo.length > 0">
     <div class="flex flex-row justify-center">
       <table class="calendar w-full max-w-[900px] table-fixed md:w-5/6 lg:w-full">
         <caption class="pb-2 text-3xl font-bold">
