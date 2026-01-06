@@ -5,8 +5,9 @@
       <!-- latest 5 events -->
       <div
         v-for="(event, index) in latestEvents"
+        @click="toggleDetails(event)"
         :key="index"
-        class="flex flex-col items-center justify-center md:flex-row"
+        class="flex cursor-pointer flex-col items-center justify-center md:flex-row"
       >
         <div class="flex flex-col items-center">
           <p class="mb-2 font-semibold underline underline-offset-2">{{ event.formattedDate }}</p>
@@ -28,12 +29,19 @@
     >
       Show All Events
     </NuxtLink>
+    <CalendarModal :show="show" :eventDetails="eventDetails" @close="toggleDetails()" />
   </div>
 </template>
 
 <script setup>
 const websiteData = useWebsiteDataStore()
 
+const eventDetails = ref(null)
+const show = ref(false)
+const toggleDetails = (event) => {
+  eventDetails.value = event
+  show.value = !show.value
+}
 const latestEvents = computed(() => {
   //latest 5 events in ascending order
   return websiteData.events
