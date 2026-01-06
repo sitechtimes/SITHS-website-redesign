@@ -41,7 +41,7 @@ export const pta = defineType({
       ],
     }),
     defineField({
-      name: 'bake sales',
+      name: 'bakeSales',
       title: 'Bake Sales',
       type: 'array',
       of: [
