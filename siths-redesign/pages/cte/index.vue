@@ -100,6 +100,22 @@ const cteLinks = [
   {
     name: 'Partnerships',
     path: '/cte/partnerships'
-  }
+  },
+  {
+    name: '9th Grade Students',
+    path: '/cte/ninth-grade'
+  },
+  {
+    name: '10th Grade Students',
+    path: '/cte/tenth-grade'
+  },
+  {
+    name: '11th & 12th Grade Students',
+    path: '/cte/eleventh-twelfth-grades'
+  },
+  {
+    name: 'Backpacks to Briefcases',
+    path: '/cte/backpacks-to-briefcases'
+  },
 ]
 </script>
