@@ -163,6 +163,11 @@ const navLinks = [
     category: 'Contact Us',
     categoryValue: 'contactUs',
     links: [{ name: 'Directory', path: '/directory', directLink: false }]
+  },
+  {
+    category: 'Staff',
+    categoryValue: 'staff',
+    links: []
   }
 ]
 
@@ -175,7 +180,8 @@ function addDirectLinks(directLinks) {
     'Clubs and Activities': directLinks.clubsActivities || [],
     Parent: directLinks.parent || [],
     Alumni: directLinks.alumni || [],
-    'Contact Us': directLinks.contactUs || []
+    'Contact Us': directLinks.contactUs || [],
+    Staff: directLinks.staff || []
   }
 
   // iterates through the direct links and maps them to follow navLinks structure
