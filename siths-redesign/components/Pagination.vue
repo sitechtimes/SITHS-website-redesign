@@ -2,8 +2,8 @@
   <div v-if="totalPages > 1" class="mt-8 flex w-full items-center justify-center gap-4">
     <button
       @click="$emit('previous')"
-      :disabled="currentPage === 1"
-      class="btn inline-flex disabled:cursor-not-allowed disabled:opacity-50"
+      class="btn inline-flex"
+      :class="[currentPage === 1 && 'pointer-events-none opacity-80']"
     >
       ← Previous
     </button>
@@ -12,17 +12,16 @@
         v-for="page in totalPages"
         :key="page"
         @click="$emit('go-to', page)"
-        :disabled="currentPage === page"
-        :class="{ 'btn-active': currentPage === page }"
         class="btn join-item"
+        :class="{ 'btn-active': currentPage === page }"
       >
         {{ page }}
       </button>
     </div>
     <button
       @click="$emit('next')"
-      :disabled="currentPage === totalPages"
-      class="btn inline-flex disabled:cursor-not-allowed disabled:opacity-50"
+      class="btn inline-flex"
+      :class="[currentPage === totalPages && 'pointer-events-none opacity-80']"
     >
       Next →
     </button>
