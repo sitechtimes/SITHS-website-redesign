@@ -240,7 +240,6 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       parent.value = data.value.parent
       pta.value = data.value.pta
       fetchLoading.value = false
-      console.log(data.value)
     } catch (error) {
       console.error('Error fetching posts:', error)
     }

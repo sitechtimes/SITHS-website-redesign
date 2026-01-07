@@ -1,17 +1,21 @@
 <template>
   <h1>Bake Sales</h1>
-  <SubpageMenu :pages="ptaLinks" :active="'Bake Sales'" class="absolute left-8 top-40 mb-4" />
-  <div
-    class="z-20 mb-10 flex w-full flex-col self-center rounded-lg bg-black/40 p-8 text-center md:mx-auto md:w-1/2"
-  >
-    <PortableText
-      v-for="item in websiteData.pta"
-      :value="item.bakesales"
-      :components="myPortableTextComponents"
-    />
+  <div class="flex flex-col items-start justify-center px-4 md:flex-row">
+    <SubpageMenu :pages="ptaLinks" :active="'Bake Sales'" />
+    <div
+      class="mb-10 flex w-full flex-col self-center rounded-lg bg-black/40 p-8 text-center md:mx-auto md:w-1/2"
+    >
+      <PortableText
+        v-for="item in websiteData.pta"
+        :value="item.bakeSales"
+        :components="myPortableTextComponents"
+      />
+    </div>
   </div>
 </template>
-<script>
+<script setup>
+import { PortableText } from '@portabletext/vue'
+
 const websiteData = useWebsiteDataStore()
 const ptaLinks = [
   {
