@@ -290,7 +290,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     makerspace,
     videos,
     parent,
-    pta
+    pta,
     policies
   }
 })
