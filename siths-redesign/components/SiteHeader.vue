@@ -125,7 +125,8 @@ const navLinks = [
     links: [
       { name: "Principal Erlwenwein's Announcements", path: '/erlenwein', directLink: false },
       { name: 'Resources', path: '/resources', directLink: false },
-      { name: 'Summer Homework', path: '/summer-homework', directLink: false }
+      { name: 'Summer Homework', path: '/summer-homework', directLink: false },
+      { name: 'School Policies', path: '/school-policies', directLink: false }
     ]
   },
   {
@@ -147,6 +148,11 @@ const navLinks = [
       { name: 'Parent Coordinator', path: '/coordinator', directLink: false },
       { name: 'PTA', path: '/pta', directLink: false }
     ]
+  },
+  {
+    category: 'Staff',
+    categoryValue: 'staff',
+    links: []
   },
   {
     category: 'Alumni',
@@ -174,7 +180,8 @@ function addDirectLinks(directLinks) {
     'Clubs and Activities': directLinks.clubsActivities || [],
     Parent: directLinks.parent || [],
     Alumni: directLinks.alumni || [],
-    'Contact Us': directLinks.contactUs || []
+    'Contact Us': directLinks.contactUs || [],
+    Staff: directLinks.staff || []
   }
 
   // iterates through the direct links and maps them to follow navLinks structure

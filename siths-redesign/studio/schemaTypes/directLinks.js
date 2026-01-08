@@ -189,5 +189,29 @@ export const directLinks = defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'staff',
+      title: 'Staff',
+      type: 'array',
+      of: [
+        defineType({
+          name: 'linkComponent',
+          title: 'Link Component',
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+            }),
+            defineField({
+              name: 'link',
+              title: 'Link',
+              type: 'url',
+            }),
+          ],
+        }),
+      ],
+    }),
   ],
 })

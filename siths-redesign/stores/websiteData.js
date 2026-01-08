@@ -20,6 +20,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const videos = ref([])
   const parent = ref([])
   const pta = ref([])
+  const policies = ref([])
   async function fetchAllData() {
     fetchLoading.value = true
     const query = `{
@@ -157,7 +158,11 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         contactUs[]{
           title,
           link
-        }
+        },
+        staff[]{
+        title,
+        link
+      }
       },
       "athletics": *[_type == "athletics"]{
         _id,
@@ -206,6 +211,18 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       home,
       bakeSales,
       communications
+      },
+      "policy": *[_type == "policy"]{
+        _id,
+        name,
+        description[]{
+          ...,
+          _type == "image" => {
+            ...,
+            "url": asset->url
+          }
+        },
+        index
       }
     }`
 
@@ -239,6 +256,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       })
       parent.value = data.value.parent
       pta.value = data.value.pta
+      policies.value = data.value.policy
       fetchLoading.value = false
     } catch (error) {
       console.error('Error fetching posts:', error)
@@ -273,5 +291,6 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     videos,
     parent,
     pta
+    policies
   }
 })
