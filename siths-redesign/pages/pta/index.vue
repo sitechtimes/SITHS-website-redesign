@@ -1,7 +1,7 @@
 <template>
   <h1>Home</h1>
   <div class="flex flex-col items-start justify-center px-4 md:flex-row">
-    <SubpageMenu :pages="ptaLinks" active="'About'" />
+    <SubpageMenu :pages="ptaLinks" active="About" />
     <div
       class="mb-10 flex w-full flex-col self-center rounded-lg bg-black/40 p-8 text-center md:mx-auto md:w-1/2"
     >
