@@ -157,7 +157,11 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         contactUs[]{
           title,
           link
-        }
+        },
+        staff[]{
+        title,
+        link
+      }
       },
       "athletics": *[_type == "athletics"]{
         _id,
