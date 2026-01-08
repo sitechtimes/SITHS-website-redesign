@@ -19,6 +19,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const athletics = ref([])
   const videos = ref([])
   const parent = ref([])
+  const pta = ref([])
   const policies = ref([])
   async function fetchAllData() {
     fetchLoading.value = true
@@ -202,7 +203,14 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         name,
         telephone,
         coordinator,
-        absence,
+        absence
+      },
+      "pta": *[_type == "pta"]{
+      _id,
+      name,
+      home,
+      bakeSales,
+      communications
       },
       "policy": *[_type == "policy"]{
         _id,
@@ -215,7 +223,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
           }
         },
         index
-      },
+      }
     }`
 
     try {
@@ -247,6 +255,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         return links
       })
       parent.value = data.value.parent
+      pta.value = data.value.pta
       policies.value = data.value.policy
       fetchLoading.value = false
     } catch (error) {
@@ -281,6 +290,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     makerspace,
     videos,
     parent,
+    pta,
     policies
   }
 })
