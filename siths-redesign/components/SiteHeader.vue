@@ -150,6 +150,11 @@ const navLinks = [
     ]
   },
   {
+    category: 'Staff',
+    categoryValue: 'staff',
+    links: []
+  },
+  {
     category: 'Alumni',
     categoryValue: 'alumni',
     links: [
@@ -163,11 +168,6 @@ const navLinks = [
     category: 'Contact Us',
     categoryValue: 'contactUs',
     links: [{ name: 'Directory', path: '/directory', directLink: false }]
-  },
-  {
-    category: 'Staff',
-    categoryValue: 'staff',
-    links: []
   }
 ]
 
