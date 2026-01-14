@@ -21,6 +21,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const parent = ref([])
   const policies = ref([])
   const ninthGrade = ref([])
+  const tenthGrade = ref([])
   const backpacksBriefcases = ref([])
   async function fetchAllData() {
     fetchLoading.value = true
@@ -228,6 +229,15 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
           links,
           order,
         },
+        "tenthGrade": *[_type == "tenthGrade"]{
+          _id,
+          title,
+          subtitle,
+          description,
+          list,
+          links,
+          order,
+        },
         index
       },
     }`
@@ -253,6 +263,8 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       cdcNews.value = data.value.cdcNews
       makerspace.value = data.value.makerspace
       backpacksBriefcases.value = data.value.backpacksBriefcases
+      ninthGrade.value = data.value.ninthGrade
+      tenthGrade.value = data.value.tenthGrade
       videos.value = data.value.video.map((video) => {
         const links = ['S', 'M', 'L'].reduce((acc, size) => {
           acc[`${size}link`] = video[`${size}videoFileUrl`] || video[`${size}videoUrl`] || ''
@@ -297,6 +309,8 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     backpacksBriefcases,
     videos,
     parent,
-    policies
+    policies,
+    ninthGrade,
+    tenthGrade,
   }
 })
