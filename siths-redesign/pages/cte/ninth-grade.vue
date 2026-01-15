@@ -32,70 +32,17 @@
           students will be exposed to specific technology applications that align with current
           trends in industry.
         </p>
-        <div
-          tabindex="0"
-          class="collapse collapse-arrow rounded-xl bg-gold/10 shadow-md transition-all duration-300 hover:shadow-lg"
-        >
-          <div class="collapse-title text-lg font-bold text-gold">
-            Intro to Technology & Careers Lab
-            <span class="block text-sm font-normal text-white/70"
-              >2 terms (1 day per week) • Required</span
-            >
-          </div>
-          <div class="collapse-content pt-2">
-            <div class="rounded-lg bg-white/5 p-4">
-              <p class="mb-4 text-sm md:text-base">
-                The goal of this course is to provide you with the technical ability, knowledge, and
-                skills necessary to succeed in your future endeavors and prepare you for college and
-                career readiness. We are committed to providing you with a unique experience while
-                at Staten Island Tech, supporting each of you as you work towards building the 21st
-                century skills needed to stand apart in this competitive market.
-              </p>
-              <p class="mb-4 text-sm font-semibold text-gold">This course focuses on:</p>
-              <ul class="mb-4 ml-4 list-inside list-disc space-y-3 text-sm md:text-base">
-                <li>
-                  Acquiring and accurately using protocols for effective communication in oral,
-                  written, and multimedia/digital formats
-                </li>
-                <li>
-                  Examining multiple sources of career information from diverse formats to make
-                  informed career decisions and manage personal career plans
-                </li>
-                <li>
-                  Analyzing existing and emerging computer technologies to research and explore the
-                  global impacts to industry and the comprehensive job market
-                </li>
-                <li>Developing the key 'soft skills' needed for workplace success</li>
-                <li>
-                  Understanding how an individual's digital media presence is used by potential
-                  employers and post-secondary agencies to evaluate candidates
-                </li>
-                <li>
-                  Exploring work-based learning opportunities to demonstrate and expand upon
-                  knowledge and skills gained during classroom instruction
-                </li>
-                <li>
-                  Developing skills needed to transition from the classroom to the workplace,
-                  including core academic and technical knowledge, employability skills, and job
-                  specific training
-                </li>
-              </ul>
-              <p class="text-sm md:text-base">
-                The skills learned in this class can be applied broadly as you progress throughout
-                both your educational and professional careers. An emphasis will be placed on 21st
-                century learning skills and Oracy - a curriculum designed to provide students with
-                effective communication techniques that can be applied throughout their educational
-                and professional careers.
-              </p>
-            </div>
-          </div>
-        </div>
+        <CTEDropdowns :courses="ninthGradeCourses" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+const websiteData = useWebsiteDataStore()
+
+const ninthGradeCourses = computed(() => websiteData.ninthGrade || [])
+
 const cteLinks = [
   {
     name: 'About',

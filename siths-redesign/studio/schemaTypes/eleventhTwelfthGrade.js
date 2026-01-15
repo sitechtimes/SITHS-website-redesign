@@ -1,22 +1,29 @@
 import {defineField, defineType} from 'sanity'
 
-export const tenthGrade = defineType({
-  name: 'tenthGrade',
-  title: '10th Grade Courses',
+export const eleventhTwelfthGrade = defineType({
+  name: 'eleventhTwelfthGrade',
+  title: '11th & 12th Grade Courses',
   type: 'document',
   fields: [
+    defineField({
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      description: 'ex: Engineering, Digital Arts, Information Technology',
+      validation: (Rule) => Rule.required(),
+    }),
     defineField({
       name: 'title',
       title: 'Course Title',
       type: 'string',
-      description: 'ex: "Advanced Audio/Video Engineering & TV Studio"',
+      description: 'ex: "Advanced Computer Science"',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'subtitle',
       title: 'Course Subtitle',
       type: 'string',
-      description: 'ex: "2 Terms, Elective"',
+      description: 'ex: "2 Terms • Elective"',
     }),
     defineField({
       name: 'description',
@@ -50,14 +57,17 @@ export const tenthGrade = defineType({
       name: 'order',
       title: 'Display Order',
       type: 'number',
-      description: 'Order of courses appearing (lower numbers first)',
+      description: 'Order within a category (lower numbers first)',
     }),
   ],
   orderings: [
     {
-      title: 'Display Order',
-      name: 'orderAsc',
-      by: [{field: 'order', direction: 'asc'}],
+      title: 'Category, then Order',
+      name: 'categoryOrder',
+      by: [
+        {field: 'category', direction: 'asc'},
+        {field: 'order', direction: 'asc'},
+      ],
     },
   ],
 })

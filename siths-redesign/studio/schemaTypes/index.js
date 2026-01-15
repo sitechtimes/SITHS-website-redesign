@@ -20,6 +20,9 @@ import {video} from './video'
 import {parent} from './parent'
 import {policy} from './policy'
 import {ninthGrade} from './ninthGrade'
+import {tenthGrade} from './tenthGrade'
+import {backpacksBriefcases} from './backpacksBriefcases'
+import {eleventhTwelfthGrade} from './eleventhTwelfthGrade'
 
 export const timeValueType = defineType({
   name: 'timeValue',
@@ -63,4 +66,7 @@ export const schemaTypes = [
   parent,
   policy,
   ninthGrade,
+  tenthGrade,
+  backpacksBriefcases,
+  eleventhTwelfthGrade,
 ]

@@ -30,12 +30,37 @@
           ultimately your career. The course descriptions are linked below and are broken down by
           field of study.
         </p>
+        <div v-for="section in courseSections" :key="section.category" class="mb-10">
+          <h3 class="mb-4 text-lg font-semibold text-amber-200/80 underline md:text-xl">
+            {{ section.category }}
+          </h3>
+          <CTEDropdowns :courses="section.courses" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+const websiteData = useWebsiteDataStore()
+
+const courseSections = computed(() => {
+  const courses = websiteData.eleventhTwelfthGrade || []
+  const sections = new Map()
+
+  courses.forEach((course) => {
+    const category = course.category || 'Other'
+    if (!sections.has(category)) {
+      sections.set(category, [])
+    }
+    sections.get(category).push(course)
+  })
+
+  return Array.from(sections.entries()).map(([category, courses]) => ({
+    category,
+    courses
+  }))
+})
 const cteLinks = [
   {
     name: 'About',

@@ -24,12 +24,17 @@
           Principles, Electronics & Green Technology, or Adv. AV Engineering & TV Studio. The course
           descriptions are linked below.
         </p>
+        <CTEDropdowns :courses="tenthGradeCourses" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+const websiteData = useWebsiteDataStore()
+
+const tenthGradeCourses = computed(() => websiteData.tenthGrade || [])
+
 const cteLinks = [
   {
     name: 'About',
