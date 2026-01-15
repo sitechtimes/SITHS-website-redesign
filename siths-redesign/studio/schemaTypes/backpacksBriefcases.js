@@ -12,6 +12,13 @@ export const backpacksBriefcases = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'previewContent',
+      title: 'Preview Article Text',
+      type: 'text',
+      description: 'Preview of article text displayed on main Backpacks to Briefcases page',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'fullContent',
       title: 'Full Article Text',
       type: 'text',

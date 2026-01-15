@@ -187,6 +187,7 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       "backpacksBriefcases": *[_type == "backpacksBriefcases"] | order(_createdAt asc){
         _id,
         headline,
+        previewContent,
         fullContent,
         externalLink,
         "imageUrl": image.asset->url
