@@ -4,7 +4,7 @@
     </h1>
 
     <div class="flex flex-col items-start justify-center px-4 md:flex-row">
-        <SubpageMenu :pages="cteLinks" active="11th & 12th Grade Students" class="left-8 top-40 mb-4 block" />
+        <SubpageMenu :pages="cteLinks" active="Backpacks to Briefcases" class="left-8 top-40 mb-4 block" />
         <div class="flex w-full flex-col items-center justify-center">
             <h2 class="mb-4 text-xl md:mb-8 md:text-2xl">Backpacks to Briefcases</h2>
         </div>
