@@ -16,7 +16,7 @@
         >
           <div
             v-if="article.imageUrl"
-            class="h-64 w-full flex-shrink-0 overflow-hidden md:h-auto md:w-1/3 lg:w-2/5"
+            class="h-64 w-full flex-shrink-0 overflow-hidden md:h-1/3 md:w-1/3 lg:w-2/5"
           >
             <img
               :src="article.imageUrl"
