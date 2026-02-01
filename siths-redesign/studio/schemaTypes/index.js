@@ -18,6 +18,7 @@ import {transcript} from './transcript'
 import {cdcNews} from './cdcNews'
 import {video} from './video'
 import {parent} from './parent'
+import {pta} from './pta'
 import {policy} from './policy'
 import {ninthGrade} from './ninthGrade'
 import {tenthGrade} from './tenthGrade'
@@ -64,6 +65,7 @@ export const schemaTypes = [
   cdcNews,
   video,
   parent,
+  pta,
   policy,
   ninthGrade,
   tenthGrade,
