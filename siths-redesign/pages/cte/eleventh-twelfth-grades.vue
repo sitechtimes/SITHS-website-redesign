@@ -31,9 +31,9 @@
           field of study.
         </p>
         <div v-for="section in courseSections" :key="section.category" class="mb-10">
-          <h3 class="mb-4 text-lg font-semibold text-amber-200/80 underline md:text-xl">
+          <h4 class="mb-4 text-lg font-semibold text-amber-200/80 underline md:text-xl">
             {{ section.category }}
-          </h3>
+          </h4>
           <CTEDropdowns :courses="section.courses" />
         </div>
       </div>

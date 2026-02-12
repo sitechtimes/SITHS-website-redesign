@@ -82,10 +82,10 @@ function truncateText(text, maxLength) {
 }
 
 const currentPage = ref(1)
-const totalPages = computed(function () {
+const totalPages = computed(() => {
   return Math.ceil(props.articles.length / props.articlesPerPage)
 })
-const paginatedArticles = computed(function () {
+const paginatedArticles = computed(() => {
   const start = (currentPage.value - 1) * props.articlesPerPage
   const end = start + props.articlesPerPage
   return props.articles.slice(start, end)
