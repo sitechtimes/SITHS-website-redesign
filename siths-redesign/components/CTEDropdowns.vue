@@ -6,6 +6,7 @@
       tabindex="0"
       class="collapse collapse-arrow rounded-xl bg-gold/10 shadow-md transition-all duration-300 hover:shadow-lg"
     >
+    <input type="checkbox" />
       <div class="collapse-title text-lg font-bold text-gold">
         {{ course.title }}
         <span v-if="course.subtitle" class="block text-sm font-normal text-white/70">
