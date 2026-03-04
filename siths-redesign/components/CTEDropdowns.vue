@@ -6,6 +6,7 @@
       tabindex="0"
       class="collapse collapse-arrow rounded-xl bg-gold/10 shadow-md transition-all duration-300 hover:shadow-lg"
     >
+    <input type="checkbox" />
       <div class="collapse-title text-lg font-bold text-gold">
         {{ course.title }}
         <span v-if="course.subtitle" class="block text-sm font-normal text-white/70">
@@ -14,7 +15,7 @@
       </div>
       <div class="collapse-content pt-2">
         <div class="rounded-lg bg-white/5 p-4">
-          <div v-if="course.links && course.links.length" class="mb-4 flex flex-col gap-2">
+          <div v-if="course.links?.length" class="mb-4 flex flex-col gap-2">
             <a
               v-for="(link, index) in course.links"
               :key="index"
@@ -66,7 +67,8 @@ function splitParagraphs(text) {
     .filter(Boolean)
 }
 
-function isExternalLink(url) {
-  return url && !url.startsWith('/')
+function isExternalLink(url) { 
+  if (!url) return false 
+  return /^(https?:)?\/\//.test(url) 
 }
 </script>
