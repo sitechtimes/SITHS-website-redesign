@@ -21,6 +21,10 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
   const parent = ref([])
   const pta = ref([])
   const policies = ref([])
+  const ninthGrade = ref([])
+  const tenthGrade = ref([])
+  const backpacksBriefcases = ref([])
+  const eleventhTwelfthGrade = ref([])
   async function fetchAllData() {
     fetchLoading.value = true
     const query = `{
@@ -185,6 +189,42 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         externalLink,
         "imageUrl": image.asset->url
       },
+      "backpacksBriefcases": *[_type == "backpacksBriefcases"] | order(_createdAt asc){
+        _id,
+        headline,
+        previewContent,
+        fullContent,
+        externalLink,
+        "imageUrl": image.asset->url
+      },
+      "ninthGrade": *[_type == "ninthGrade"] | order(order asc){
+        _id,
+        title,
+        subtitle,
+        description,
+        list,
+        links,
+        order
+      },
+      "tenthGrade": *[_type == "tenthGrade"] | order(order asc){
+        _id,
+        title,
+        subtitle,
+        description,
+        list,
+        links,
+        order
+      },
+      "eleventhTwelfthGrade": *[_type == "eleventhTwelfthGrade"] | order(category asc, order asc){
+        _id,
+        category,
+        title,
+        subtitle,
+        description,
+        list,
+        links,
+        order
+      },
       "video": *[_type == "video"]{
          _id,
         title,
@@ -246,6 +286,10 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
       transcript.value = data.value.transcript
       cdcNews.value = data.value.cdcNews
       makerspace.value = data.value.makerspace
+      backpacksBriefcases.value = data.value.backpacksBriefcases
+      ninthGrade.value = data.value.ninthGrade
+      tenthGrade.value = data.value.tenthGrade
+      eleventhTwelfthGrade.value = data.value.eleventhTwelfthGrade
       videos.value = data.value.video.map((video) => {
         const links = ['S', 'M', 'L'].reduce((acc, size) => {
           acc[`${size}link`] = video[`${size}videoFileUrl`] || video[`${size}videoUrl`] || ''
@@ -288,9 +332,13 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     transcript,
     cdcNews,
     makerspace,
+    backpacksBriefcases,
     videos,
     parent,
+    policies,
+    ninthGrade,
+    tenthGrade,
+    eleventhTwelfthGrade,
     pta,
-    policies
   }
 })

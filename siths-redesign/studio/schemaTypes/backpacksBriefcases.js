@@ -1,0 +1,43 @@
+import {defineField, defineType} from 'sanity'
+
+export const backpacksBriefcases = defineType({
+  name: 'backpacksBriefcases',
+  title: 'Backpacks to Briefcases',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'headline',
+      title: 'Article Headline',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'previewContent',
+      title: 'Preview Article Text',
+      type: 'text',
+      description: 'Preview of article text displayed on main Backpacks to Briefcases page',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'fullContent',
+      title: 'Full Article Text',
+      type: 'text',
+      description: 'Complete article body text displayed on the detail page',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'image',
+      title: 'Article Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'externalLink',
+      title: 'External Article Link',
+      type: 'url',
+      description: 'Optional link to an outside article',
+    }),
+  ],
+})
