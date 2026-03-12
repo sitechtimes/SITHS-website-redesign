@@ -3,14 +3,22 @@
     <div class="flex flex-row justify-center">
       <table class="calendar w-full max-w-[900px] table-fixed md:w-5/6 lg:w-full">
         <caption class="pb-2 text-3xl font-bold">
-          <div class="mb-4 flex justify-center">
-            <span class="arrow cursor-pointer select-none" id="prev" @click="changeMonth(-1)">
+          <div class="mb-4 flex w-full items-center justify-between">
+            <span
+              class="arrow cursor-pointer select-none justify-start"
+              id="prev"
+              @click="changeMonth(-1)"
+            >
               &#10094;
             </span>
-            <h2 class="mx-2 w-fit px-4 text-center text-2xl">
+            <h2 class="mx-2 w-fit flex-1 px-4 text-center text-2xl">
               {{ months[todaysMonth] }} {{ todaysYear }}
             </h2>
-            <span class="arrow cursor-pointer select-none" id="next" @click="changeMonth(1)">
+            <span
+              class="arrow cursor-pointer select-none justify-end"
+              id="next"
+              @click="changeMonth(1)"
+            >
               &#10095;
             </span>
           </div>
