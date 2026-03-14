@@ -1,51 +1,71 @@
 <template>
-    <div class="min-h-screen w-full px-4 md:px-10 flex flex-col">
-        <h1 class="p-6 text-center text-4xl font-semibold">Resources</h1>
-        <div class="flex flex-row justify-center space-x-4 md:mb-6">
-            <div class="flex-col md:flex-row w-full flex justify-between">
-                <div class="bg-black p-2 rounded-3xl">
-                    <p class="text-md md:text-xl px-2 mr-64 opacity-90">Search</p>
-                </div>
-                <div class="flex justify-around bg-black p-2 rounded-3xl mx-20 my-2 md:m-0">
-                    <label class="cursor-pointer relative text-md md:text-xl px-2 opacity-90"
-                        :class="{ 'underline underline-offset-2 font-bold transition-all duration-300': selectedChoice === 'student,staff' }">
-                        <input type="radio" v-model="selectedChoice" value="student,staff" class="hidden" />
-                        <p>All</p>
-                    </label>
+  <div class="flex min-h-screen w-full flex-col px-4 md:px-10">
+    <h1 class="p-6 text-center text-4xl font-semibold">Resources</h1>
+    <div class="flex flex-row justify-center space-x-4 md:mb-6">
+      <div class="flex w-full flex-col justify-between md:flex-row">
+        <input
+          type="text"
+          placeholder="Search"
+          v-model="searchQuery"
+          class="text-md mr-64 rounded-3xl bg-black p-2 px-3 opacity-90 focus:outline-none md:text-xl"
+        />
 
-                    <label class="cursor-pointer relative text-md px-2 opacity-90"
-                        :class="{ 'underline underline-offset-2 font-bold transition-all duration-300': selectedChoice === 'student' }">
-                        <input type="radio" v-model="selectedChoice" value="student" class="hidden" />
-                        <p>Student</p>
-                    </label>
+        <div class="mx-20 my-2 flex justify-around rounded-3xl bg-black p-2 md:m-0">
+          <label
+            class="text-md relative cursor-pointer px-2 opacity-90 md:text-xl"
+            :class="{
+              'font-bold underline underline-offset-2 transition-all duration-300':
+                selectedChoice === 'student,staff'
+            }"
+          >
+            <input type="radio" v-model="selectedChoice" value="student,staff" class="hidden" />
+            <p>All</p>
+          </label>
 
-                    <label class="cursor-pointer relative text-md px-2 opacity-90"
-                        :class="{ 'underline underline-offset-2 font-bold transition-all duration-300': selectedChoice === 'staff' }">
-                        <input type="radio" v-model="selectedChoice" value="staff" class="hidden" />
-                        <p>Staff</p>
-                    </label>
-                </div>
-            </div>
+          <label
+            class="text-md relative cursor-pointer px-2 opacity-90"
+            :class="{
+              'font-bold underline underline-offset-2 transition-all duration-300':
+                selectedChoice === 'student'
+            }"
+          >
+            <input type="radio" v-model="selectedChoice" value="student" class="hidden" />
+            <p>Student</p>
+          </label>
+
+          <label
+            class="text-md relative cursor-pointer px-2 opacity-90"
+            :class="{
+              'font-bold underline underline-offset-2 transition-all duration-300':
+                selectedChoice === 'staff'
+            }"
+          >
+            <input type="radio" v-model="selectedChoice" value="staff" class="hidden" />
+            <p>Staff</p>
+          </label>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6">
-            <ResourcesCard :resources="filteredResources" />
-        </div>
+      </div>
     </div>
+    <div class="grid grid-cols-1 gap-x-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <ResourcesCard :resources="filteredResources" />
+    </div>
+  </div>
 </template>
 
 <script setup>
-const websiteData = useWebsiteDataStore();
-
-const selectedChoice = ref('student,staff');
+const websiteData = useWebsiteDataStore()
+const searchQuery = ref('')
+const selectedChoice = ref('student,staff')
 
 const filteredResources = computed(() => {
-    const categories = selectedChoice.value.split(',');
+  const categories = selectedChoice.value.split(',')
 
-    return websiteData.resources
-        .filter((el) =>
-            categories.some((category) => el.category.includes(category)) //'some' checks if at least one element in the array passes the test
-        )
-        .sort((a, b) => a.name.localeCompare(b.name));
-});
-
+  return websiteData.resources
+    .filter(
+      (el) =>
+        categories.some((category) => el.category.includes(category)) &
+        el.name.toLowerCase().includes(searchQuery.value.toLowerCase()) //'some' checks if at least one element in the array passes the test
+    )
+    .sort((a, b) => a.name.localeCompare(b.name))
+})
 </script>
