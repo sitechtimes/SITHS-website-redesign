@@ -22,7 +22,12 @@ export const myPortableTextComponents = {
       const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
       return h(
         'a',
-        { class: 'text-blue-500 underline font-semibold', href: value.href, rel },
+        {
+          class:
+            'text-blue-500 underline font-semibold break-all sm:break-normal [overflow-wrap:anywhere] sm:[overflow-wrap:normal]',
+          href: value.href,
+          rel
+        },
         slots.default?.()
       )
     }
