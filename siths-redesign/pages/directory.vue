@@ -1,8 +1,8 @@
 <template>
-    <div class="">
+    <div class="mx-6">
         <div class="flex justify-center flex-col items-center">
             <h1>Directory</h1>
-            <h3>Automated Telephone Message Directory</h3>
+            <h3 class="text-center mx-2 break-words mb-6">Automated Telephone Message Directory</h3>
             <h3>718-667-3222</h3>
         </div>
         <div class="flex flex-col justify-self-center">
@@ -17,8 +17,7 @@
                     <li>Please listen carefully to the following Options as our menu has changed.</li>
                 </ul>
             </div>
-
-            <div class="my-8">
+            <div class="my-8 mx-4">
                     <p class="">
                         <span class="font-extrabold">Press 1:</span> for the School Nurse, Coordinator of Student
                         Activities,
@@ -36,7 +35,7 @@
                         PTA Office, press 7 (1173) <br>
                     </p>
             </div>
-            <div class="my-8">
+            <div class="my-8 mx-4">
                 <p>
                     <span class="font-extrabold">Press 2:</span> to speak with Pupil Accounting, the College Office,
                     Supply
@@ -52,7 +51,7 @@
                     Order a Transcript or Graduation Document, press 6 (1392) <br>
                 </p>
             </div>
-            <div class="my-8">
+            <div class="my-8 mx-4">
                 <p>
                     <span class="font-extrabold">Press 3:</span> to speak with a Guidance Counselor or the Social Worker
                 </p>
@@ -66,7 +65,7 @@
                     Mrs. Vinci, press 7 (1372) <br>
                 </p>
             </div>
-            <div class="my-8">
+            <div class="my-8 mx-4">
                 <p>
                     <span class="font-extrabold">Press 4:</span> to reach an Assistant Principal
                 </p>
@@ -80,14 +79,14 @@
                     Mrs. Rodriguez, Science and Testing, press 6 (3191) <br>
                 </p>
             </div>
-            <div class="my-8">
+            <div class="my-8 mx-4">
                 <p>
                     <span class="font-extrabold">Press 5:</span> if this is a medical emergency. Otherwise, please press
                     1171 for
                     the Parent Coordinator.
                 </p>
             </div>
-            <div class="my-8">
+            <div class="my-8 mx-4">
                 <p>
                     <span class="font-bold">Press 0:</span> to replay the Directory Menu.
                 </p>
