@@ -54,7 +54,7 @@
                     class="bg-gold text-sm text-gray"
                     :class="`mb-1 w-full cursor-pointer truncate rounded-md p-1.5 text-center font-bold transition duration-500 hover:opacity-80 hover:shadow-md`"
                   >
-                    {{ event.subject }}
+                    {{ event.title }}
                   </p>
                 </div>
               </div>
@@ -75,20 +75,21 @@ const show = ref(false) //control modal visibility
 
 //matching events to calendar cell information
 const eventsOnDate = (dateInfo) => {
-  const matchingEvents = events.value.filter((event) => {
-    const eventDate = event.date.start.toString()
+  return events.value.filter((event) => {
+    if (!event.start) return false
 
-    //split the event date into year, month, and day (YYYY-MM-DD)
-    const [eventYear, eventMonth, eventDay] = eventDate.split('-')
+    const start = new Date(event.start)
+    const end = new Date(event.end || event.start)
 
-    //compare the event date to the date of the current calendar cell
-    const isMatch =
-      parseInt(eventYear) === dateInfo.year &&
-      parseInt(eventMonth) - 1 === dateInfo.month &&
-      parseInt(eventDay) === dateInfo.todaysDate
-    return isMatch
+    // build the calendar day (midnight)
+    const current = new Date(dateInfo.year, dateInfo.month, dateInfo.todaysDate)
+
+    // normalize time so comparison is clean
+    start.setHours(0, 0, 0, 0)
+    end.setHours(0, 0, 0, 0)
+
+    return current >= start && current <= end
   })
-  return matchingEvents
 }
 
 //toggle the modal and show event details

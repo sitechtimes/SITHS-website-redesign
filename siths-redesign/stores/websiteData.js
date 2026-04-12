@@ -65,12 +65,12 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
         description,
         "imageUrl": image.asset->url
       },
-      "events": *[_type == "calendar"]{
+      "events": *[_type == "calendarEvent"] | order(start asc){
         _id,
-        date,
-        subject,
-        description,
-        descriptionPreview
+        title,
+        start,
+        end,
+        description
       },
       "resources": *[_type == "resources"]{
         _id,
@@ -339,6 +339,6 @@ export const useWebsiteDataStore = defineStore('websiteData', () => {
     ninthGrade,
     tenthGrade,
     eleventhTwelfthGrade,
-    pta,
+    pta
   }
 })
