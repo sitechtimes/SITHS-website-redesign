@@ -19,12 +19,7 @@
         </div>
       </div>
     </div>
-    <PopUp
-      v-if="selected"
-      :item="selectedItem"
-      @closeEvent="closePopup"
-      class="absolute inset-0 flex items-center justify-center"
-    />
+    <PopUp v-if="selected" :item="selectedItem" @close-event="closePopup" />
   </div>
 </template>
 
